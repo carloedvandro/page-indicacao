@@ -21,8 +21,8 @@ const niveis = [
 
 export function ComoGanha() {
   return (
-    <section className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+    <section className="waves-bg px-4 py-16 sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <p className="eyebrow-pill">
             <CircleDollarSign className="size-4 text-primary" aria-hidden="true" />

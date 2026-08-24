@@ -72,8 +72,8 @@ export function Faq() {
   const [aberta, setAberta] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+    <section id="faq" className="waves-bg px-4 py-16 sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
             <MessageCircle className="size-4 text-primary" aria-hidden="true" />
@@ -103,21 +103,25 @@ export function Faq() {
                   type="button"
                   onClick={() => setAberta(ativa ? null : i)}
                   aria-expanded={ativa}
-                  className="flex w-full items-start gap-4 p-5 text-left"
+                  className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-4 p-5 text-left"
                 >
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary-soft sm:size-12">
                     <p.icone className="size-6 text-primary" aria-hidden="true" />
                   </span>
-                  <span className="flex-1">
+                  <span className="min-w-0">
                     <span className="block font-display text-base font-bold text-ink">
                       {p.pergunta}
                     </span>
                     <span
-                      className={`block text-sm leading-relaxed text-muted-foreground ${
-                        ativa ? "mt-2" : "mt-2 line-clamp-2"
+                      className={`grid overflow-hidden text-sm leading-relaxed text-muted-foreground transition-all duration-300 ${
+                        ativa
+                          ? "mt-2 grid-rows-[1fr] opacity-100"
+                          : "mt-0 grid-rows-[0fr] opacity-0"
                       }`}
                     >
-                      {p.resposta}
+                      <span className="min-h-0 overflow-hidden">
+                        {p.resposta}
+                      </span>
                     </span>
                   </span>
                   <ChevronDown
@@ -127,6 +131,7 @@ export function Faq() {
                     aria-hidden="true"
                   />
                 </button>
+
               </div>
             );
           })}
@@ -167,7 +172,7 @@ export function Faq() {
               href={whatsappLink("Olá! Quero ser Associado SmartVoz.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-gradient-primary px-7 py-4 font-display text-base font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:text-lg"
+              className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-gradient-primary px-5 py-4 font-display text-[0.9rem] font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-7 sm:text-base"
             >
               QUERO SER ASSOCIADO
               <ArrowRight className="size-5" aria-hidden="true" />
