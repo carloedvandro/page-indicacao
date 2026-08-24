@@ -42,7 +42,7 @@ export function Depoimentos() {
   return (
     <section className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="relative flex flex-col items-center gap-6 lg:block">
+        <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <div className="lg:absolute lg:left-0 lg:top-0">
             <Logo />
           </div>
@@ -91,7 +91,7 @@ export function Depoimentos() {
                 key={d.nome}
                 className="relative w-[82%] shrink-0 snap-center overflow-hidden rounded-3xl bg-ink shadow-card lg:w-auto"
               >
-                <div className="relative aspect-[3/4.15] w-full">
+                <div className="relative aspect-[3/4.7] w-full sm:aspect-[3/4.15]">
                   <img
                     src={d.foto}
                     alt={`${d.nome}, associado SmartVoz`}
@@ -105,7 +105,7 @@ export function Depoimentos() {
                   <button
                     type="button"
                     aria-label={`Assistir ao depoimento de ${d.nome}`}
-                    className="absolute left-1/2 top-[46%] flex size-14 -translate-x-1/2 items-center justify-center rounded-full bg-card shadow-card transition-transform duration-300 hover:scale-110 sm:size-16"
+                    className="absolute left-1/2 top-[27%] flex size-14 sm:top-[42%] -translate-x-1/2 items-center justify-center rounded-full bg-card shadow-card transition-transform duration-300 hover:scale-110 sm:size-16"
                   >
                     <Play
                       className="ml-0.5 size-6 fill-current text-primary"
