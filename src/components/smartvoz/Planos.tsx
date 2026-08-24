@@ -5,9 +5,8 @@ import {
   TrendingUp,
   Gem,
   ShieldCheck,
-  Umbrella,
-  Accessibility,
-  Gift,
+  GraduationCap,
+  CircleCheck,
   Wifi,
   ArrowRight,
   Lock,
@@ -43,11 +42,15 @@ const passos = [
   },
 ];
 
-const beneficios = [
-  { icone: Umbrella, titulo: "MORTE ACIDENTAL", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Accessibility, titulo: "INVALIDEZ POR ACIDENTE", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Users, titulo: "ASSISTÊNCIA FUNERAL FAMILIAR", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Gift, titulo: "SORTEIOS MENSAIS", senior: "de até R$ 10.000", premium: "de até R$ 10.000" },
+const academy = [
+  "Marketing Digital",
+  "Empreendedorismo",
+  "Tráfego Pago e Orgânico",
+  "Mentalidade",
+  "Vendas",
+  "Desenvolvimento Pessoal",
+  "Gestão Financeira",
+  "E muito mais",
 ];
 
 const garantias = [
@@ -159,44 +162,52 @@ function Plano({ variante }: PlanoProps) {
         </div>
 
         <div className="p-6">
-          <p className="flex items-center justify-center gap-2 font-display text-sm font-bold tracking-[0.1em] text-ink">
-            <ShieldCheck
-              className={`size-5 ${premium ? "text-gold-deep" : "text-primary"}`}
-              aria-hidden="true"
-            />
-            REDE DE BENEFÍCIOS
-          </p>
+          <div className="flex items-start gap-3">
+            <span
+              className={`flex size-11 shrink-0 items-center justify-center rounded-full ${
+                premium ? "bg-gradient-gold" : "bg-gradient-primary"
+              }`}
+            >
+              <GraduationCap
+                className={`size-6 ${
+                  premium ? "text-ink" : "text-primary-foreground"
+                }`}
+                aria-hidden="true"
+              />
+            </span>
+            <div>
+              <p
+                className={`font-display text-base font-extrabold tracking-wide ${
+                  premium ? "text-gold-deep" : "text-primary"
+                }`}
+              >
+                SMART ACADEMY
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                Conteúdos e treinamentos para você crescer pessoal e
+                profissionalmente.
+              </p>
+            </div>
+          </div>
 
-          <ul className="mt-5 grid gap-5 sm:grid-cols-2">
-            {beneficios.map((b) => (
-              <li key={b.titulo} className="flex items-start gap-2.5">
-                <span
-                  className={`flex size-9 shrink-0 items-center justify-center rounded-full ${
-                    premium ? "bg-gradient-gold" : "bg-gradient-primary"
+          <span className="mt-5 block h-px w-full bg-border" />
+
+          <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-1">
+            {academy.map((item) => (
+              <li key={item} className="flex min-w-0 items-center gap-2.5">
+                <CircleCheck
+                  className={`size-5 shrink-0 ${
+                    premium ? "text-gold-deep" : "text-primary"
                   }`}
-                >
-                  <b.icone
-                    className={`size-5 ${
-                      premium ? "text-ink" : "text-primary-foreground"
-                    }`}
-                    aria-hidden="true"
-                  />
+                  aria-hidden="true"
+                />
+                <span className="min-w-0 text-[0.82rem] font-medium leading-snug text-ink sm:text-sm">
+                  {item}
                 </span>
-                <div>
-                  <p className="font-display text-[0.62rem] font-bold uppercase leading-tight tracking-[0.04em] text-muted-foreground">
-                    {b.titulo}
-                  </p>
-                  <p
-                    className={`mt-1 font-display text-sm font-extrabold text-ink ${
-                      b.titulo === "SORTEIOS MENSAIS" ? "" : "whitespace-nowrap"
-                    }`}
-                  >
-                    {premium ? b.premium : b.senior}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>
+
 
           <div
             className={`mt-6 flex items-start gap-3 rounded-2xl p-4 ${
@@ -241,8 +252,8 @@ function Plano({ variante }: PlanoProps) {
           }`}
         >
           {premium
-            ? "QUERO SER ASSOCIADO PREMIUM"
-            : "QUERO SER ASSOCIADO SENIOR"}
+            ? "QUERO O SMART PREMIUM"
+            : "QUERO O SMART SENIOR"}
           <ArrowRight className="size-5" aria-hidden="true" />
         </a>
       </div>
