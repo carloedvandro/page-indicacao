@@ -172,7 +172,7 @@ export function Faq() {
               href={whatsappLink("Olá! Quero ser Associado SmartVoz.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-gradient-primary px-7 py-4 font-display text-base font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:text-lg"
+              className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-gradient-primary px-5 py-4 font-display text-[0.9rem] font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-7 sm:text-base"
             >
               QUERO SER ASSOCIADO
               <ArrowRight className="size-5" aria-hidden="true" />
