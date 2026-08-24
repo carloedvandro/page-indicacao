@@ -5,9 +5,8 @@ import {
   TrendingUp,
   Gem,
   ShieldCheck,
-  Umbrella,
-  Accessibility,
-  Gift,
+  GraduationCap,
+  CircleCheck,
   Wifi,
   ArrowRight,
   Lock,
@@ -43,11 +42,15 @@ const passos = [
   },
 ];
 
-const beneficios = [
-  { icone: Umbrella, titulo: "MORTE ACIDENTAL", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Accessibility, titulo: "INVALIDEZ POR ACIDENTE", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Users, titulo: "ASSISTÊNCIA FUNERAL FAMILIAR", senior: "R$ 10.000", premium: "R$ 30.000" },
-  { icone: Gift, titulo: "SORTEIOS MENSAIS", senior: "de até R$ 10.000", premium: "de até R$ 10.000" },
+const academy = [
+  "Marketing Digital",
+  "Empreendedorismo",
+  "Tráfego Pago e Orgânico",
+  "Mentalidade",
+  "Vendas",
+  "Desenvolvimento Pessoal",
+  "Gestão Financeira",
+  "E muito mais",
 ];
 
 const garantias = [
@@ -247,8 +250,8 @@ function Plano({ variante }: PlanoProps) {
           }`}
         >
           {premium
-            ? "QUERO SER ASSOCIADO PREMIUM"
-            : "QUERO SER ASSOCIADO SENIOR"}
+            ? "QUERO O SMART PREMIUM"
+            : "QUERO O SMART SENIOR"}
           <ArrowRight className="size-5" aria-hidden="true" />
         </a>
       </div>
