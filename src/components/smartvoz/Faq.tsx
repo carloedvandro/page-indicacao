@@ -72,7 +72,7 @@ export function Faq() {
   const [aberta, setAberta] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="waves-bg px-3 py-16 sm:px-6 lg:py-20">
+    <section id="faq" className="waves-bg px-3 py-8 sm:px-6 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
@@ -174,7 +174,7 @@ export function Faq() {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-gradient-primary px-5 py-4 font-display text-[0.9rem] font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-7 sm:text-base"
             >
-              QUERO SER ASSOCIADO
+              QUERO SER UM PARCEIRO SMARTVOZ
               <ArrowRight className="size-5" aria-hidden="true" />
             </a>
             <p className="mt-3 flex items-center justify-center gap-2 text-xs text-primary-foreground/70">
