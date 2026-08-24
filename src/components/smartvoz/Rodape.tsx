@@ -12,8 +12,8 @@ import {
   Users,
 } from "lucide-react";
 
-import { LogoAssociacao } from "./Logo";
 import { smartvoz, whatsappLink } from "@/lib/smartvoz";
+
 
 const colunas = [
   {
