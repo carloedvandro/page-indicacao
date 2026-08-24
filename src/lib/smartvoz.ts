@@ -25,7 +25,7 @@ export function youtubeId(valor: string): string {
   const match = bruto.match(
     /(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/,
   );
-  return match ? match[1] : bruto;
+  return match?.[1] ?? bruto;
 }
 
 export const whatsappLink = (mensagem: string) =>
