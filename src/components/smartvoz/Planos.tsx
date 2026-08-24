@@ -169,9 +169,9 @@ function Plano({ variante }: PlanoProps) {
 
           <ul className="mt-5 grid gap-5 sm:grid-cols-2">
             {beneficios.map((b) => (
-              <li key={b.titulo} className="flex items-start gap-3">
+              <li key={b.titulo} className="flex items-start gap-2.5">
                 <span
-                  className={`flex size-10 shrink-0 items-center justify-center rounded-full ${
+                  className={`flex size-9 shrink-0 items-center justify-center rounded-full ${
                     premium ? "bg-gradient-gold" : "bg-gradient-primary"
                   }`}
                 >
@@ -183,10 +183,10 @@ function Plano({ variante }: PlanoProps) {
                   />
                 </span>
                 <div>
-                  <p className="font-display text-[0.68rem] font-bold leading-tight tracking-[0.06em] text-muted-foreground">
+                  <p className="font-display text-[0.62rem] font-bold uppercase leading-tight tracking-[0.04em] text-muted-foreground">
                     {b.titulo}
                   </p>
-                  <p className="mt-1 font-display text-sm font-extrabold text-ink">
+                  <p className="mt-1 whitespace-nowrap font-display text-sm font-extrabold text-ink">
                     {premium ? b.premium : b.senior}
                   </p>
                 </div>
