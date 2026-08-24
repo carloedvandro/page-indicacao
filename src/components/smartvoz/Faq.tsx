@@ -103,21 +103,25 @@ export function Faq() {
                   type="button"
                   onClick={() => setAberta(ativa ? null : i)}
                   aria-expanded={ativa}
-                  className="flex w-full items-start gap-4 p-5 text-left"
+                  className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-4 p-5 text-left"
                 >
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary-soft sm:size-12">
                     <p.icone className="size-6 text-primary" aria-hidden="true" />
                   </span>
-                  <span className="flex-1">
+                  <span className="min-w-0">
                     <span className="block font-display text-base font-bold text-ink">
                       {p.pergunta}
                     </span>
                     <span
-                      className={`block text-sm leading-relaxed text-muted-foreground ${
-                        ativa ? "mt-2" : "mt-2 line-clamp-2"
+                      className={`grid overflow-hidden text-sm leading-relaxed text-muted-foreground transition-all duration-300 ${
+                        ativa
+                          ? "mt-2 grid-rows-[1fr] opacity-100"
+                          : "mt-0 grid-rows-[0fr] opacity-0"
                       }`}
                     >
-                      {p.resposta}
+                      <span className="min-h-0 overflow-hidden">
+                        {p.resposta}
+                      </span>
                     </span>
                   </span>
                   <ChevronDown
@@ -127,6 +131,7 @@ export function Faq() {
                     aria-hidden="true"
                   />
                 </button>
+
               </div>
             );
           })}
