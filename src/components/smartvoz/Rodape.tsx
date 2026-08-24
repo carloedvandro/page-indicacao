@@ -1,6 +1,6 @@
 export function Rodape() {
   return (
-    <footer className="waves-bg px-3 py-12 sm:px-6 sm:py-16">
+    <footer className="waves-bg px-3 pb-10 pt-4 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <div className="surface-card flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:gap-4 sm:px-10 sm:py-10">
           <p className="font-display text-sm font-extrabold tracking-[0.06em] text-ink sm:text-base">

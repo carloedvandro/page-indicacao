@@ -27,7 +27,7 @@ function PessoaIcone({ className = "" }: { className?: string }) {
 
 export function Multiplicacao() {
   return (
-    <section className="waves-bg px-3 py-16 sm:px-6 lg:py-20">
+    <section className="waves-bg px-3 py-8 sm:px-6 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
