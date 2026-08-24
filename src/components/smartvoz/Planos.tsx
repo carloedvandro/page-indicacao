@@ -244,15 +244,14 @@ function Plano({ variante }: PlanoProps) {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex w-full items-center justify-center gap-3 rounded-2xl px-6 py-4 font-display text-base font-extrabold tracking-wide transition-transform duration-300 hover:-translate-y-0.5 sm:text-lg ${
+          className={`flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-4 font-display text-[0.9rem] font-extrabold tracking-wide transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-6 sm:text-base ${
             premium
               ? "shadow-gold bg-gradient-gold text-ink"
               : "bg-gradient-primary text-primary-foreground shadow-glow"
           }`}
         >
-          {premium
-            ? "QUERO O SMART PREMIUM"
-            : "QUERO O SMART SENIOR"}
+          {premium ? "QUERO O SMART PREMIUM" : "QUERO O SMART SENIOR"}
+
           <ArrowRight className="size-5" aria-hidden="true" />
         </a>
       </div>
