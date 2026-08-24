@@ -33,17 +33,9 @@ export function Hero() {
 
       <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
-          <p
-            className="inline-flex max-w-full items-center justify-center rounded-full p-px shadow-soft"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, var(--primary), var(--brand-orange))",
-            }}
-          >
-            <span className="flex w-full items-center justify-center rounded-full bg-card px-4 py-2.5 text-center font-display text-[0.62rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:px-6 sm:text-[0.78rem] sm:tracking-[0.1em]">
-              O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E
-              DA <span className="ml-1 text-brand-orange">MULTIPLICAÇÃO</span>
-            </span>
+          <p className="w-full text-center font-display text-[0.78rem] font-extrabold uppercase leading-tight tracking-[0.1em] text-ink sm:text-[0.95rem] sm:tracking-[0.12em] lg:text-left">
+            O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
+            <span className="ml-1 text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
 
 
