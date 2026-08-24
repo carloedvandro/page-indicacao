@@ -14,7 +14,6 @@ import {
   Headset,
 } from "lucide-react";
 
-import { Logo } from "./Logo";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const passos = [
@@ -266,9 +265,6 @@ export function Planos() {
     <section id="planos" className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
-          <div className="lg:absolute lg:left-0 lg:top-0">
-            <Logo />
-          </div>
           <p className="eyebrow-pill">
             <Rocket className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">SUA CARTEIRA COMEÇA AGORA</span>
