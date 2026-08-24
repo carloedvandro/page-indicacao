@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
-import { Play, User, Volume2, Settings, Cast, Maximize } from "lucide-react";
+import { Play, Volume2, Settings, Cast, Maximize } from "lucide-react";
 
 import capaVideo from "@/assets/video-capa.jpg";
 import { Logo } from "./Logo";
-import { smartvoz, whatsappLink, youtubeId } from "@/lib/smartvoz";
+import { smartvoz, youtubeId } from "@/lib/smartvoz";
 
 export function Hero() {
   const [tocando, setTocando] = useState(false);
