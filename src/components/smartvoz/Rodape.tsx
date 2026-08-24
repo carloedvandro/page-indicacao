@@ -1,5 +1,3 @@
-import { smartvoz } from "@/lib/smartvoz";
-
 export function Rodape() {
   return (
     <footer className="waves-bg px-5 py-10 sm:px-8">
