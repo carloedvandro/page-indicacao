@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
-import { Play, User, Volume2, Settings, Cast, Maximize } from "lucide-react";
+import { Play, Volume2, Settings, Cast, Maximize } from "lucide-react";
 
 import capaVideo from "@/assets/video-capa.jpg";
 import { Logo } from "./Logo";
-import { smartvoz, whatsappLink, youtubeId } from "@/lib/smartvoz";
+import { smartvoz, youtubeId } from "@/lib/smartvoz";
 
 export function Hero() {
   const [tocando, setTocando] = useState(false);
@@ -18,17 +18,8 @@ export function Hero() {
 
   return (
     <header className="waves-bg overflow-hidden px-3 pb-8 pt-6 sm:px-6 sm:pb-10 lg:pb-12">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-        <Logo />
-        <a
-          href={whatsappLink("Olá! Já sou cliente SmartVoz e preciso de ajuda.")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2.5 text-sm font-semibold text-ink shadow-soft transition-colors hover:bg-accent sm:px-5"
-        >
-          <User className="size-4" aria-hidden="true" />
-          Já sou cliente
-        </a>
+      <div className="mx-auto flex max-w-7xl items-center justify-center px-4">
+        <Logo className="h-16 sm:h-24 lg:h-28" />
       </div>
 
       <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
