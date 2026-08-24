@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <header className="waves-bg overflow-hidden px-3 pb-8 pt-6 sm:px-6 sm:pb-10 lg:pb-12">
       <div className="mx-auto flex max-w-7xl items-center justify-center px-4">
-        <Logo className="h-14 sm:h-20 lg:h-24" />
+        <Logo className="h-16 sm:h-24 lg:h-28" />
       </div>
 
       <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
