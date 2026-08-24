@@ -169,12 +169,12 @@ export function Faq() {
 
           <div className="lg:ml-auto">
             <a
-              href={whatsappLink("Olá! Quero ser um Parceiro SmartVoz.")}
+              href={whatsappLink("Olá! Quero começar agora.")}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-gradient-primary px-5 py-4 font-display text-[0.9rem] font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-7 sm:text-base"
             >
-              QUERO SER UM PARCEIRO SMARTVOZ
+              QUERO COMEÇAR AGORA
               <ArrowRight className="size-5" aria-hidden="true" />
             </a>
             <p className="mt-3 flex items-center justify-center gap-2 text-xs text-primary-foreground/70">
