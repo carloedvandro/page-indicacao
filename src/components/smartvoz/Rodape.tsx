@@ -1,3 +1,5 @@
+import { Logo } from "./Logo";
+
 export function Rodape() {
   return (
     <footer className="waves-bg px-3 pb-10 pt-4 sm:px-6">
