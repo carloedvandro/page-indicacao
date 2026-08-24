@@ -8,15 +8,15 @@ import {
   MonitorSmartphone,
   Users,
   Plus,
+  Handshake,
 } from "lucide-react";
-import naAdesaoAsset from "@/assets/smartvoz-na-adesao.png.asset.json";
 
 const niveis = [
-  { nivel: "NÍVEL 1", descricao: "Suas indicações diretas", valor: "R$ 50\n+ R$ 20/mês" },
-  { nivel: "NÍVEL 2", descricao: "Rede do 2º nível", valor: "R$ 5" },
-  { nivel: "NÍVEL 3", descricao: "Rede do 3º nível", valor: "R$ 5" },
-  { nivel: "NÍVEL 4", descricao: "Rede do 4º nível", valor: "R$ 5" },
-  { nivel: "NÍVEL 5", descricao: "Rede do 5º nível", valor: "R$ 5" },
+  { nivel: "NÍVEL 1", descricao: "Suas indicações diretas", valor: "R$ 50,00\n+ R$ 20,00/mês" },
+  { nivel: "NÍVEL 2", descricao: "Rede do 2º nível", valor: "R$ 5,00" },
+  { nivel: "NÍVEL 3", descricao: "Rede do 3º nível", valor: "R$ 5,00" },
+  { nivel: "NÍVEL 4", descricao: "Rede do 4º nível", valor: "R$ 5,00" },
+  { nivel: "NÍVEL 5", descricao: "Rede do 5º nível", valor: "R$ 5,00" },
 ];
 
 export function ComoGanha() {
