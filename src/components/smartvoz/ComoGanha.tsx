@@ -68,12 +68,12 @@ export function ComoGanha() {
                   RECORRÊNCIA MENSAL
                 </span>
                 <p className="mt-6 font-display text-5xl font-extrabold text-primary">
-                  R$ 20
+                  R$ 20,00
                   <span className="text-xl font-bold">/mês</span>
                 </p>
                 <span className="mt-6 block h-px w-full bg-border" />
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  Você recebe <strong className="text-primary">R$ 20</strong>{" "}
+                  Você recebe <strong className="text-primary">R$ 20,00</strong>{" "}
                   todo mês enquanto seu cliente direto permanecer ativo e
                   elegível.
                 </p>
