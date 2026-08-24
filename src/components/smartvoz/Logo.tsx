@@ -1,41 +1,17 @@
+import logoOficial from "@/assets/smartvoz-logo.png.asset.json";
+
 type LogoProps = {
   className?: string;
 };
 
-/** Marca SMARTVOZ: "SMART" em degradê quente + "VOZ" em violeta com onda sonora. */
+/** Marca oficial SMARTVOZ. */
 export function Logo({ className = "" }: LogoProps) {
   return (
-    <span
-      className={`inline-flex select-none items-end font-display text-2xl font-extrabold tracking-tight sm:text-[1.75rem] ${className}`}
-      aria-label="SmartVoz"
-    >
-      <span
-        className="bg-clip-text text-transparent"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, oklch(0.58 0.22 28), oklch(0.72 0.19 52))",
-        }}
-      >
-        SMART
-      </span>
-      <span className="relative text-primary">
-        <svg
-          viewBox="0 0 60 18"
-          className="absolute -top-[0.62em] left-1/2 h-[0.6em] w-[2.1em] -translate-x-1/2 text-primary"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M1 15 L8 15 L13 3 L18 16 L23 7 L28 15 L34 2 L40 15 L47 11 L59 11"
-            stroke="currentColor"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        VOZ
-      </span>
-    </span>
+    <img
+      src={logoOficial.url}
+      alt="SmartVoz"
+      className={`h-9 w-auto shrink-0 select-none object-contain sm:h-11 ${className}`}
+    />
   );
 }
 
