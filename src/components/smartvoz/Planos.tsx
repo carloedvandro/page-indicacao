@@ -186,7 +186,11 @@ function Plano({ variante }: PlanoProps) {
                   <p className="font-display text-[0.62rem] font-bold uppercase leading-tight tracking-[0.04em] text-muted-foreground">
                     {b.titulo}
                   </p>
-                  <p className="mt-1 whitespace-nowrap font-display text-sm font-extrabold text-ink">
+                  <p
+                    className={`mt-1 font-display text-sm font-extrabold text-ink ${
+                      b.titulo === "SORTEIOS MENSAIS" ? "" : "whitespace-nowrap"
+                    }`}
+                  >
                     {premium ? b.premium : b.senior}
                   </p>
                 </div>

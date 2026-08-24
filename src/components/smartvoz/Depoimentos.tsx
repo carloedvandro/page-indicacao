@@ -105,7 +105,7 @@ export function Depoimentos() {
                   <button
                     type="button"
                     aria-label={`Assistir ao depoimento de ${d.nome}`}
-                    className="absolute left-1/2 top-[36%] flex size-14 -translate-x-1/2 items-center justify-center rounded-full bg-card shadow-card transition-transform duration-300 hover:scale-110 sm:size-16"
+                    className="absolute left-1/2 top-[27%] flex size-14 sm:top-[42%] -translate-x-1/2 items-center justify-center rounded-full bg-card shadow-card transition-transform duration-300 hover:scale-110 sm:size-16"
                   >
                     <Play
                       className="ml-0.5 size-6 fill-current text-primary"
