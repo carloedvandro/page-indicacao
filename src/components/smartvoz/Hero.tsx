@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Play, User, Volume2, Settings, Cast, Maximize } from "lucide-react";
 
 import capaVideo from "@/assets/video-capa.jpg";
@@ -7,7 +7,14 @@ import { smartvoz, whatsappLink, youtubeId } from "@/lib/smartvoz";
 
 export function Hero() {
   const [tocando, setTocando] = useState(false);
+  const player = useRef<HTMLDivElement>(null);
   const id = youtubeId(smartvoz.youtubeVideo);
+
+  const abrirPlayer = () => {
+    setTocando(true);
+    player.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
 
   return (
     <header className="waves-bg overflow-hidden px-5 pb-16 pt-6 sm:px-8 sm:pb-20 lg:pb-24">
