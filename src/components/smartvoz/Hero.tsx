@@ -51,7 +51,11 @@ export function Hero() {
           <span className="mt-6 block h-1 w-16 rounded-full bg-primary" />
         </div>
 
-        <div className="rise-in overflow-hidden rounded-3xl bg-ink shadow-card">
+        <div
+          id="video"
+          ref={player}
+          className="rise-in overflow-hidden rounded-3xl bg-ink shadow-card scroll-mt-24"
+        >
           <div className="relative aspect-video w-full">
             {tocando && id ? (
               <iframe
@@ -64,7 +68,7 @@ export function Hero() {
             ) : (
               <button
                 type="button"
-                onClick={() => setTocando(true)}
+                onClick={abrirPlayer}
                 className="group absolute inset-0 size-full cursor-pointer"
                 aria-label="Reproduzir o vídeo de apresentação da SmartVoz"
               >
@@ -137,7 +141,7 @@ export function Hero() {
       <div className="mx-auto mt-12 flex max-w-6xl justify-center">
         <button
           type="button"
-          onClick={() => setTocando(true)}
+          onClick={abrirPlayer}
           className="flex w-full max-w-xl items-center gap-4 rounded-2xl bg-gradient-primary px-6 py-4 text-left shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:px-9 sm:py-5"
         >
           <span className="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-primary-foreground/80 sm:size-14">
