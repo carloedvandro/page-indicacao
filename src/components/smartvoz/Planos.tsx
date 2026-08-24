@@ -239,8 +239,8 @@ function Plano({ variante }: PlanoProps) {
         <a
         href={whatsappLink(
           premium
-            ? "Olá! Quero ser um Parceiro SmartVoz (Plano Premium - R$ 124,90/mês)."
-            : "Olá! Quero ser um Parceiro SmartVoz (Plano Senior - R$ 99,90/mês).",
+            ? "Olá! Quero começar agora (Plano Premium - R$ 124,90/mês)."
+            : "Olá! Quero começar agora (Plano Senior - R$ 99,90/mês).",
         )}
         target="_blank"
         rel="noopener noreferrer"
@@ -250,7 +250,7 @@ function Plano({ variante }: PlanoProps) {
             : "bg-gradient-primary text-primary-foreground shadow-glow"
         }`}
       >
-        QUERO SER UM PARCEIRO SMARTVOZ
+        QUERO COMEÇAR AGORA
 
           <ArrowRight className="size-5" aria-hidden="true" />
         </a>
