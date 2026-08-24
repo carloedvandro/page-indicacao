@@ -2,7 +2,6 @@ import {
   CircleDollarSign,
   User,
   RefreshCcw,
-  Handshake,
   CalendarClock,
   Infinity as InfinityIcon,
   ShieldCheck,
@@ -10,6 +9,7 @@ import {
   Users,
   Plus,
 } from "lucide-react";
+import naAdesaoAsset from "@/assets/smartvoz-na-adesao.png.asset.json";
 
 const niveis = [
   { nivel: "NÍVEL 1", descricao: "Suas indicações diretas", valor: "R$ 50\n+ R$ 20/mês" },
@@ -40,22 +40,13 @@ export function ComoGanha() {
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           <div className="grid gap-5">
             <div className="relative grid gap-5 sm:grid-cols-2">
-              <article className="surface-card p-6 text-center">
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-2 font-display text-[0.68rem] font-bold tracking-[0.12em] text-accent-foreground">
-                  <User className="size-4" aria-hidden="true" />
-                  NA ADESÃO
-                </span>
-                <p className="mt-6 font-display text-5xl font-extrabold text-primary">
-                  R$ 50
-                </p>
-                <span className="mt-6 block h-px w-full bg-border" />
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  Você recebe <strong className="text-primary">R$ 50</strong>{" "}
-                  quando sua indicação direta realizar a adesão.
-                </p>
-                <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-primary-soft">
-                  <Handshake className="size-10 text-primary" aria-hidden="true" />
-                </span>
+              <article className="surface-card overflow-hidden rounded-3xl bg-card shadow-card">
+                <img
+                  src={naAdesaoAsset.url}
+                  alt="Na adesão: você recebe R$ 50,00 quando sua indicação direta realizar a adesão."
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </article>
 
               <span className="absolute left-1/2 top-1/2 z-10 hidden size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-card sm:flex">
