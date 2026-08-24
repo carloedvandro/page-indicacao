@@ -192,7 +192,7 @@ function Plano({ variante }: PlanoProps) {
 
           <span className="mt-5 block h-px w-full bg-border" />
 
-          <ul className="mt-5 grid gap-x-5 gap-y-3 sm:grid-cols-2">
+          <ul className="mt-5 grid gap-x-4 gap-y-3 sm:grid-cols-2">
             {academy.map((item) => (
               <li key={item} className="flex items-center gap-2.5">
                 <CircleCheck
@@ -201,7 +201,9 @@ function Plano({ variante }: PlanoProps) {
                   }`}
                   aria-hidden="true"
                 />
-                <span className="text-sm font-medium text-ink">{item}</span>
+                <span className="min-w-0 break-words text-[0.82rem] font-medium leading-snug text-ink sm:text-sm">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
