@@ -17,6 +17,5 @@ export function Rodape() {
       </div>
     </footer>
 
-    </footer>
   );
 }
