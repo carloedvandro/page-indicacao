@@ -193,30 +193,19 @@ export function Rodape() {
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-col items-center gap-5 sm:flex-row sm:items-start">
-          <div className="flex shrink-0 items-center gap-3">
-            <ShieldCheck className="size-10 text-primary" aria-hidden="true" />
-            <span className="font-display text-sm font-extrabold leading-tight tracking-[0.06em] text-ink">
-              ASSOCIAÇÃO
-              <span className="block">REGULAMENTADA</span>
-            </span>
-          </div>
-          <span className="hidden h-16 w-px bg-border sm:block" />
-          <p className="text-center text-sm leading-relaxed text-muted-foreground sm:text-left">
-            A SmartVoz é uma associação sem fins lucrativos que atua com o
-            programa de benefícios e indicações, conforme regras e condições
-            disponíveis nos documentos oficiais.
-            <span className="mt-2 block">
-              Este site não comercializa planos de telefonia. O serviço de
-              internet móvel é prestado por operadora parceira.
-            </span>
+        <div className="mt-8 text-center">
+          <p className="font-display text-sm font-extrabold tracking-[0.06em] text-ink">
+            SMARTVOZ ASSOCIAÇÃO
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            CNPJ: <strong className="text-ink">66.856.703/0001-24</strong>
+          </p>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            © 2026 <strong className="text-primary">SmartVoz</strong> Associação.
+            Todos os direitos reservados.
           </p>
         </div>
 
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          © 2026 <strong className="text-primary">SmartVoz</strong> Associação.
-          Todos os direitos reservados.
-        </p>
       </div>
     </footer>
   );
