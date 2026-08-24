@@ -66,24 +66,8 @@ export function Rodape() {
   return (
     <footer className="waves-bg px-5 pb-10 sm:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="surface-card grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.15fr_0.75fr_0.85fr_0.7fr_1fr]">
-          <div>
-            <LogoAssociacao />
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Conectamos pessoas a oportunidades reais de construir renda
-              recorrente através de indicações inteligentes.
-            </p>
-            <span className="mt-6 block h-px w-full bg-border" />
-            <div className="mt-6 flex items-start gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-soft">
-                <ShieldCheck className="size-6 text-primary" aria-hidden="true" />
-              </span>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Empresa regularizada como Associação, seguindo todas as normas e
-                diretrizes do programa e da legislação vigente.
-              </p>
-            </div>
-          </div>
+        <div className="surface-card grid gap-10 p-7 sm:p-10 lg:grid-cols-[0.85fr_0.9fr_0.8fr_1.1fr]">
+
 
           {colunas.map((c) => (
             <nav key={c.titulo} aria-label={c.titulo}>
