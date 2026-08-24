@@ -12,8 +12,8 @@ import {
   Users,
 } from "lucide-react";
 
-import { LogoAssociacao } from "./Logo";
 import { smartvoz, whatsappLink } from "@/lib/smartvoz";
+
 
 const colunas = [
   {
@@ -66,24 +66,8 @@ export function Rodape() {
   return (
     <footer className="waves-bg px-5 pb-10 sm:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="surface-card grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.15fr_0.75fr_0.85fr_0.7fr_1fr]">
-          <div>
-            <LogoAssociacao />
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Conectamos pessoas a oportunidades reais de construir renda
-              recorrente através de indicações inteligentes.
-            </p>
-            <span className="mt-6 block h-px w-full bg-border" />
-            <div className="mt-6 flex items-start gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-soft">
-                <ShieldCheck className="size-6 text-primary" aria-hidden="true" />
-              </span>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Empresa regularizada como Associação, seguindo todas as normas e
-                diretrizes do programa e da legislação vigente.
-              </p>
-            </div>
-          </div>
+        <div className="surface-card grid gap-10 p-7 sm:p-10 lg:grid-cols-[0.85fr_0.9fr_0.8fr_1.1fr]">
+
 
           {colunas.map((c) => (
             <nav key={c.titulo} aria-label={c.titulo}>
@@ -209,30 +193,19 @@ export function Rodape() {
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-col items-center gap-5 sm:flex-row sm:items-start">
-          <div className="flex shrink-0 items-center gap-3">
-            <ShieldCheck className="size-10 text-primary" aria-hidden="true" />
-            <span className="font-display text-sm font-extrabold leading-tight tracking-[0.06em] text-ink">
-              ASSOCIAÇÃO
-              <span className="block">REGULAMENTADA</span>
-            </span>
-          </div>
-          <span className="hidden h-16 w-px bg-border sm:block" />
-          <p className="text-center text-sm leading-relaxed text-muted-foreground sm:text-left">
-            A SmartVoz é uma associação sem fins lucrativos que atua com o
-            programa de benefícios e indicações, conforme regras e condições
-            disponíveis nos documentos oficiais.
-            <span className="mt-2 block">
-              Este site não comercializa planos de telefonia. O serviço de
-              internet móvel é prestado por operadora parceira.
-            </span>
+        <div className="mt-8 text-center">
+          <p className="font-display text-sm font-extrabold tracking-[0.06em] text-ink">
+            SMARTVOZ ASSOCIAÇÃO
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            CNPJ: <strong className="text-ink">66.856.703/0001-24</strong>
+          </p>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            © 2026 <strong className="text-primary">SmartVoz</strong> Associação.
+            Todos os direitos reservados.
           </p>
         </div>
 
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          © 2026 <strong className="text-primary">SmartVoz</strong> Associação.
-          Todos os direitos reservados.
-        </p>
       </div>
     </footer>
   );
