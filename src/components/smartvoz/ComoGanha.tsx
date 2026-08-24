@@ -2,7 +2,6 @@ import {
   CircleDollarSign,
   User,
   RefreshCcw,
-  Handshake,
   CalendarClock,
   Infinity as InfinityIcon,
   ShieldCheck,
@@ -10,6 +9,7 @@ import {
   Users,
   Plus,
 } from "lucide-react";
+import naAdesaoAsset from "@/assets/smartvoz-na-adesao.png.asset.json";
 
 const niveis = [
   { nivel: "NÍVEL 1", descricao: "Suas indicações diretas", valor: "R$ 50\n+ R$ 20/mês" },
