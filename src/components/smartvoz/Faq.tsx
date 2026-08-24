@@ -15,7 +15,6 @@ import {
   Lock,
 } from "lucide-react";
 
-import { Logo } from "./Logo";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const perguntas = [
@@ -76,9 +75,6 @@ export function Faq() {
     <section id="faq" className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
-          <div className="lg:absolute lg:left-0 lg:top-0">
-            <Logo />
-          </div>
           <p className="eyebrow-pill">
             <MessageCircle className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">DÚVIDAS FREQUENTES</span>

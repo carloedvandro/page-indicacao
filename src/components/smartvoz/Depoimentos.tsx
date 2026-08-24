@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, Play, Star, ShieldCheck } from "lucide-react";
 import lucas from "@/assets/depoimento-lucas.jpg";
 import juliana from "@/assets/depoimento-juliana.jpg";
 import rafael from "@/assets/depoimento-rafael.jpg";
-import { Logo } from "./Logo";
 
 const depoimentos = [
   {
@@ -43,9 +42,6 @@ export function Depoimentos() {
     <section className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
-          <div className="lg:absolute lg:left-0 lg:top-0">
-            <Logo />
-          </div>
           <p className="eyebrow-pill">
             <Star className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">

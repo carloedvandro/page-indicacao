@@ -82,8 +82,7 @@ export function Hero() {
                 <span className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
 
                 <span className="absolute left-6 top-1/2 -translate-y-1/2 text-left sm:left-9">
-                  <Logo className="text-xl sm:text-2xl" />
-                  <span className="mt-5 block font-display text-lg font-extrabold leading-tight tracking-tight sm:text-2xl">
+                  <span className="block font-display text-lg font-extrabold leading-tight tracking-tight sm:text-2xl">
                     <span className="block text-primary-foreground">
                       INDIQUE.
                     </span>
