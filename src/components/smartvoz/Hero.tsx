@@ -17,8 +17,8 @@ export function Hero() {
 
 
   return (
-    <header className="waves-bg overflow-hidden px-5 pb-16 pt-6 sm:px-8 sm:pb-20 lg:pb-24">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+    <header className="waves-bg overflow-hidden px-4 pb-16 pt-6 sm:px-8 sm:pb-20 lg:pb-24">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <Logo />
         <a
           href={whatsappLink("Olá! Já sou cliente SmartVoz e preciso de ajuda.")}
@@ -31,7 +31,7 @@ export function Hero() {
         </a>
       </div>
 
-      <div className="mx-auto mt-10 grid max-w-6xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
           <p className="eyebrow-pill">
             O PODER DA <span className="text-primary">RECORRÊNCIA</span>
@@ -137,7 +137,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-6xl justify-center">
+      <div className="mx-auto mt-12 flex max-w-7xl justify-center">
         <button
           type="button"
           onClick={abrirPlayer}

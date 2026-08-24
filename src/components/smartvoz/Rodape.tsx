@@ -1,7 +1,7 @@
 export function Rodape() {
   return (
-    <footer className="waves-bg px-5 py-12 sm:px-8 sm:py-16">
-      <div className="mx-auto max-w-6xl">
+    <footer className="waves-bg px-4 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-7xl">
         <div className="surface-card flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:gap-4 sm:px-10 sm:py-10">
           <p className="font-display text-sm font-extrabold tracking-[0.06em] text-ink sm:text-base">
             SMARTVOZ

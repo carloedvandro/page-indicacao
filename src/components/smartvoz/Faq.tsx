@@ -72,8 +72,8 @@ export function Faq() {
   const [aberta, setAberta] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="waves-bg px-5 py-16 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+    <section id="faq" className="waves-bg px-4 py-16 sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
             <MessageCircle className="size-4 text-primary" aria-hidden="true" />
