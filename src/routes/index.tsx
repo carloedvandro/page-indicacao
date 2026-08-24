@@ -1,24 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Hero } from "@/components/smartvoz/Hero";
+import { Depoimentos } from "@/components/smartvoz/Depoimentos";
+import { ComoGanha } from "@/components/smartvoz/ComoGanha";
+import { Multiplicacao } from "@/components/smartvoz/Multiplicacao";
+import { Planos } from "@/components/smartvoz/Planos";
+import { Faq } from "@/components/smartvoz/Faq";
+import { Rodape } from "@/components/smartvoz/Rodape";
+
+const titulo = "SmartVoz Associação | O Poder da Recorrência";
+const descricao =
+  "Indique, construa sua carteira e receba comissões todos os meses: R$ 50 na adesão, R$ 20/mês de recorrência e rede de até 5 níveis.";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: titulo },
+      { name: "description", content: descricao },
+      { property: "og:title", content: titulo },
+      { property: "og:description", content: descricao },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: PaginaOficial,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function PaginaOficial() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <Hero />
+      <Depoimentos />
+      <ComoGanha />
+      <Multiplicacao />
+      <Planos />
+      <Faq />
+      <Rodape />
+    </main>
   );
 }
