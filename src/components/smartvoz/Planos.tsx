@@ -194,7 +194,7 @@ function Plano({ variante }: PlanoProps) {
 
           <ul className="mt-5 grid gap-x-4 gap-y-3 sm:grid-cols-2">
             {academy.map((item) => (
-              <li key={item} className="flex items-center gap-2.5">
+              <li key={item} className="flex min-w-0 items-center gap-2.5">
                 <CircleCheck
                   className={`size-5 shrink-0 ${
                     premium ? "text-gold-deep" : "text-primary"
