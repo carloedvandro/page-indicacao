@@ -116,7 +116,7 @@ export function ComoGanha() {
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="grid grid-cols-[4.6rem_1.25rem_minmax(0,1fr)_7rem] items-center gap-2 rounded-2xl border border-border bg-secondary/60 px-2.5 py-3"
+                  className="grid grid-cols-[4.6rem_1.25rem_minmax(0,1fr)_7rem] items-center gap-2 px-1 py-2.5"
                 >
                   <span className="rounded-xl bg-primary-soft px-2 py-1.5 text-center font-display text-[0.68rem] font-bold tracking-wide text-accent-foreground">
                     {n.nivel}

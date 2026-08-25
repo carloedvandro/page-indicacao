@@ -10,8 +10,6 @@ import {
   Wifi,
   ArrowRight,
   Lock,
-  RotateCcw,
-  Headset,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
@@ -52,23 +50,6 @@ const academy = [
   "E muito mais",
 ];
 
-const garantias = [
-  {
-    icone: Lock,
-    titulo: "PAGAMENTO SEGURO",
-    texto: "Seus dados protegidos e sigilosos.",
-  },
-  {
-    icone: RotateCcw,
-    titulo: "7 DIAS DE GARANTIA",
-    texto: "Não ficou satisfeito? Devolvemos 100% do seu pagamento.",
-  },
-  {
-    icone: Headset,
-    titulo: "SUPORTE DEDICADO",
-    texto: "Time pronto para te ajudar em cada etapa.",
-  },
-];
 
 type PlanoProps = {
   variante: "senior" | "premium";
@@ -304,25 +285,6 @@ export function Planos() {
           <Plano variante="senior" />
           <Plano variante="premium" />
         </div>
-
-        <ul className="mt-8 grid gap-6 rounded-3xl bg-primary-deep p-6 sm:grid-cols-3 sm:gap-4 sm:p-8">
-          {garantias.map((g) => (
-            <li key={g.titulo} className="flex items-start gap-4">
-              <g.icone
-                className="size-9 shrink-0 text-primary-foreground"
-                aria-hidden="true"
-              />
-              <div>
-                <p className="font-display text-sm font-bold tracking-wide text-primary-foreground">
-                  {g.titulo}
-                </p>
-                <p className="mt-1 text-sm leading-relaxed text-primary-foreground/75">
-                  {g.texto}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
 
         <p className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <Lock className="size-4 text-primary" aria-hidden="true" />

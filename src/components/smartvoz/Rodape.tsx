@@ -128,7 +128,7 @@ export function Rodape() {
               ATENDIMENTO
             </h3>
             <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
-            <ul className="mx-auto mt-4 grid max-w-[17rem] gap-4 lg:mx-0 lg:max-w-none">
+            <ul className="mx-auto mt-4 grid max-w-[19rem] gap-4 lg:mx-0 lg:max-w-none">
               {atendimento.map((a) => (
                 <li
                   key={a.titulo}
@@ -153,7 +153,7 @@ export function Rodape() {
               SIGA NOSSAS REDES
             </h3>
             <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
-            <div className="mt-4 flex items-center justify-center gap-3 lg:justify-start">
+            <div className="mx-auto mt-4 flex max-w-[19rem] items-center gap-3 lg:mx-0 lg:max-w-none">
               {redes.map((r) => (
                 <span
                   key={r.nome}
