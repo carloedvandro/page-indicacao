@@ -85,7 +85,7 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center gap-3 rounded-2xl bg-secondary/70 p-4">
+            <div className="mt-6 flex items-center gap-3">
               <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
               <p className="text-sm font-semibold leading-tight text-ink">
                 Você indica 5 pessoas
@@ -95,7 +95,7 @@ export function Multiplicacao() {
               </p>
             </div>
 
-            <div className="mt-3 flex items-center gap-4 rounded-2xl bg-secondary/70 p-4">
+            <div className="mt-4 flex items-center gap-4">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <Coins className="size-5 text-primary-foreground" aria-hidden="true" />
               </span>
