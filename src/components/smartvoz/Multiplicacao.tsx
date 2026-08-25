@@ -259,7 +259,7 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 rounded-2xl border border-gold/25 bg-primary-foreground/[0.06] p-3"
+                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 px-1 py-2.5"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
