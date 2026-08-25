@@ -95,7 +95,7 @@ export function Multiplicacao() {
               </p>
             </div>
 
-            <div className="mt-4 flex items-start gap-4">
+            <div className="mt-4 flex items-start gap-3">
               <span className="mt-1 flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <Coins className="size-5 text-primary-foreground" aria-hidden="true" />
               </span>
@@ -103,22 +103,23 @@ export function Multiplicacao() {
                 <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary">
                   SEU GANHO NO NÍVEL 1
                 </p>
-                <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1">
-                  <span className="whitespace-nowrap font-display text-lg font-extrabold tabular-nums text-ink sm:text-xl">
+                <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-xl">
                     5 x R$ 20,00 =
                   </span>
-                  <span className="justify-self-end whitespace-nowrap rounded-xl bg-gradient-primary px-3 py-1.5 text-center font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-3 py-1.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
                     R$ 100,00
-                  </span>
-                  <span className="font-display text-[0.62rem] font-bold tracking-[0.1em] text-muted-foreground">
-                    DE COMISSÃO RECORRENTE
-                  </span>
-                  <span className="justify-self-center text-[0.62rem] font-semibold text-muted-foreground">
-                    /mês
+                    <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
+                      /mês
+                    </span>
                   </span>
                 </div>
+                <p className="mt-1.5 font-display text-[0.6rem] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  De comissão recorrente
+                </p>
               </div>
             </div>
+
 
 
             <p className="mt-6 flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary">
@@ -191,7 +192,7 @@ export function Multiplicacao() {
               </p>
             </div>
 
-            <div className="mt-4 flex items-start gap-4">
+            <div className="mt-4 flex items-start gap-3">
               <span className="mt-1 flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <Coins className="size-5 text-primary-foreground" aria-hidden="true" />
               </span>
@@ -199,22 +200,23 @@ export function Multiplicacao() {
                 <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary">
                   SEU GANHO NO NÍVEL 2
                 </p>
-                <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1">
-                  <span className="whitespace-nowrap font-display text-lg font-extrabold tabular-nums text-ink sm:text-xl">
+                <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-xl">
                     25 x R$ 5,00 =
                   </span>
-                  <span className="justify-self-end whitespace-nowrap rounded-xl bg-gradient-primary px-3 py-1.5 text-center font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-3 py-1.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
                     R$ 125,00
-                  </span>
-                  <span className="font-display text-[0.62rem] font-bold tracking-[0.1em] text-muted-foreground">
-                    DE COMISSÃO RECORRENTE
-                  </span>
-                  <span className="justify-self-center text-[0.62rem] font-semibold text-muted-foreground">
-                    /mês
+                    <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
+                      /mês
+                    </span>
                   </span>
                 </div>
+                <p className="mt-1.5 font-display text-[0.6rem] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  De comissão recorrente
+                </p>
               </div>
             </div>
+
 
 
             <p className="mt-6 flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary">
