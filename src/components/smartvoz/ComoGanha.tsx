@@ -116,19 +116,20 @@ export function ComoGanha() {
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="flex items-center gap-2 rounded-2xl border border-border bg-secondary/60 px-2.5 py-3 sm:gap-3 sm:px-3"
+                  className="grid grid-cols-[4.6rem_1.25rem_minmax(0,1fr)_7rem] items-center gap-2 rounded-2xl border border-border bg-secondary/60 px-2.5 py-3"
                 >
-                  <span className="w-[4.6rem] shrink-0 rounded-xl bg-primary-soft px-2 py-1.5 text-center font-display text-[0.68rem] font-bold tracking-wide text-accent-foreground">
+                  <span className="rounded-xl bg-primary-soft px-2 py-1.5 text-center font-display text-[0.68rem] font-bold tracking-wide text-accent-foreground">
                     {n.nivel}
                   </span>
                   <Users className="size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="flex-1 whitespace-nowrap text-[0.78rem] text-muted-foreground sm:whitespace-normal sm:text-sm">
+                  <span className="min-w-0 text-[0.78rem] leading-tight text-muted-foreground">
                     {n.descricao}
                   </span>
-                  <span className="w-[7.25rem] shrink-0 whitespace-pre-line text-right font-display text-[0.78rem] font-extrabold leading-tight tabular-nums text-primary sm:w-36 sm:text-sm">
+                  <span className="whitespace-pre-line text-right font-display text-[0.78rem] font-extrabold leading-tight tabular-nums text-primary">
                     {n.valor}
                   </span>
                 </li>
+
               ))}
             </ul>
 
