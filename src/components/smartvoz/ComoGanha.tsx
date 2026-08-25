@@ -112,24 +112,23 @@ export function ComoGanha() {
               </span>
             </div>
 
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-4 space-y-1">
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="grid grid-cols-[4.6rem_1.25rem_minmax(0,1fr)_7rem] items-center gap-2 px-1 py-2.5"
+                  className="grid grid-cols-[4.25rem_1.5rem_minmax(0,1fr)_6.5rem] items-center gap-2 py-2"
                 >
-                  <span className="rounded-xl bg-primary-soft px-2 py-1.5 text-center font-display text-[0.68rem] font-bold tracking-wide text-accent-foreground">
+                  <span className="rounded-full bg-primary-soft px-2 py-1.5 text-center font-display text-[0.62rem] font-bold tracking-wide text-accent-foreground">
                     {n.nivel}
                   </span>
                   <Users className="size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="min-w-0 text-[0.78rem] leading-tight text-muted-foreground">
+                  <span className="min-w-0 text-[0.8rem] leading-tight text-muted-foreground">
                     {n.descricao}
                   </span>
                   <span className="whitespace-pre-line text-right font-display text-[0.78rem] font-extrabold leading-tight tabular-nums text-primary">
                     {n.valor}
                   </span>
                 </li>
-
               ))}
             </ul>
 
