@@ -30,7 +30,7 @@ export function Hero() {
           </p>
 
 
-          <h1 className="mt-6 text-[2.1rem] font-extrabold leading-[1.05] text-ink sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 text-[1.85rem] font-extrabold leading-[1.08] text-ink sm:text-[2.6rem] lg:text-[3.4rem]">
             Todo mundo que você conhece já paga internet todos os meses.
           </h1>
 
