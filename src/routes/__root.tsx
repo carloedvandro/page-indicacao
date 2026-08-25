@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SmartVoz Associação | O Poder da Recorrência" },
+      { title: "SmartVoz | O Poder da Recorrência e da Multiplicação" },
       {
         name: "description",
         content:
-          "Indique, construa sua carteira e receba comissões recorrentes todos os meses com a SmartVoz Associação.",
+          "Indique, construa sua carteira e receba comissões recorrentes todos os meses com a SmartVoz.",
       },
-      { name: "author", content: "SmartVoz Associação" },
+      { name: "author", content: "SmartVoz" },
       { name: "theme-color", content: "#5B21F0" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

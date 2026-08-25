@@ -147,7 +147,7 @@ export function ComoGanha() {
               Comissões pagas de forma transparente e recorrente.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Acompanhe tudo pelo seu painel de associado.
+              Acompanhe tudo pelo seu escritório virtual.
             </p>
           </div>
           <span className="hidden h-14 w-px bg-border sm:block" />
