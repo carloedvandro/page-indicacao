@@ -10,9 +10,9 @@ import {
 
 
 const proximosNiveis = [
-  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
-  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5", valor: "R$ 3.125" },
-  { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5", valor: "R$ 15.625" },
+  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5,00", valor: "R$ 625,00" },
+  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5,00", valor: "R$ 3.125,00" },
+  { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5,00", valor: "R$ 15.625,00" },
 ];
 
 function PessoaIcone({ className = "" }: { className?: string }) {
@@ -104,11 +104,11 @@ export function Multiplicacao() {
                   SEU GANHO NO NÍVEL 1
                 </p>
                 <div className="mt-1 flex items-center gap-3">
-                  <span className="font-display text-xl font-extrabold text-ink">
-                    5 x R$ 20 =
+                  <span className="whitespace-nowrap font-display text-lg font-extrabold text-ink sm:text-xl">
+                    5 x R$ 20,00 =
                   </span>
-                  <span className="rounded-xl bg-gradient-primary px-3 py-1.5 font-display text-lg font-extrabold text-primary-foreground">
-                    R$ 100
+                  <span className="whitespace-nowrap rounded-xl bg-gradient-primary px-3 py-1.5 font-display text-base font-extrabold text-primary-foreground sm:text-lg">
+                    R$ 100,00
                   </span>
                 </div>
                 <p className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.1em] text-muted-foreground">
@@ -197,11 +197,11 @@ export function Multiplicacao() {
                   SEU GANHO NO NÍVEL 2
                 </p>
                 <div className="mt-1 flex items-center gap-3">
-                  <span className="font-display text-xl font-extrabold text-ink">
-                    25 x R$ 5 =
+                  <span className="whitespace-nowrap font-display text-lg font-extrabold text-ink sm:text-xl">
+                    25 x R$ 5,00 =
                   </span>
-                  <span className="rounded-xl bg-gradient-primary px-3 py-1.5 font-display text-lg font-extrabold text-primary-foreground">
-                    R$ 125
+                  <span className="whitespace-nowrap rounded-xl bg-gradient-primary px-3 py-1.5 font-display text-base font-extrabold text-primary-foreground sm:text-lg">
+                    R$ 125,00
                   </span>
                 </div>
                 <p className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.1em] text-muted-foreground">
@@ -273,8 +273,8 @@ export function Multiplicacao() {
                         {n.calculo}
                       </span>
                     </div>
-                    <span className="border-l border-gold/30 pl-3 text-right">
-                      <span className="block font-display text-2xl font-extrabold text-gold">
+                    <span className="w-28 shrink-0 border-l border-gold/30 pl-3 text-right sm:w-32">
+                      <span className="block whitespace-nowrap font-display text-xl font-extrabold text-gold sm:text-2xl">
                         {n.valor}
                       </span>
                       <span className="text-xs font-semibold text-primary-foreground/70">
@@ -298,8 +298,8 @@ export function Multiplicacao() {
                         pessoas
                       </span>
                     </span>
-                    <span className="border-l border-gold/30 pl-3 font-display text-3xl font-extrabold text-gold">
-                      R$ 20.500
+                    <span className="whitespace-nowrap border-l border-gold/30 pl-3 font-display text-2xl font-extrabold text-gold sm:text-3xl">
+                      R$ 20.500,00
                       <span className="block text-xs font-semibold text-primary-foreground/70">
                         /mês
                       </span>
