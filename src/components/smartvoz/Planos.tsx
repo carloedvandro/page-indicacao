@@ -52,23 +52,6 @@ const academy = [
   "E muito mais",
 ];
 
-const garantias = [
-  {
-    icone: Lock,
-    titulo: "PAGAMENTO SEGURO",
-    texto: "Seus dados protegidos e sigilosos.",
-  },
-  {
-    icone: RotateCcw,
-    titulo: "7 DIAS DE GARANTIA",
-    texto: "Não ficou satisfeito? Devolvemos 100% do seu pagamento.",
-  },
-  {
-    icone: Headset,
-    titulo: "SUPORTE DEDICADO",
-    texto: "Time pronto para te ajudar em cada etapa.",
-  },
-];
 
 type PlanoProps = {
   variante: "senior" | "premium";
