@@ -251,7 +251,7 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="flex items-center gap-3 rounded-2xl border border-gold/25 bg-primary-foreground/[0.06] p-3"
+                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_8.5rem] items-center gap-3 rounded-2xl border border-gold/25 bg-primary-foreground/[0.06] p-3"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
@@ -259,11 +259,11 @@ export function Multiplicacao() {
                         aria-hidden="true"
                       />
                     </span>
-                    <div className="flex-1">
+                    <div className="min-w-0">
                       <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary-foreground/85">
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground sm:text-lg">
+                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground">
                         {n.pessoas}{" "}
                         <span className="text-xs font-semibold text-primary-foreground/70">
                           pessoas
@@ -273,8 +273,8 @@ export function Multiplicacao() {
                         {n.calculo}
                       </span>
                     </div>
-                    <span className="w-[8.75rem] shrink-0 border-l border-gold/30 pl-3 text-right sm:w-40">
-                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold sm:text-2xl">
+                    <span className="border-l border-gold/30 pl-3 text-right">
+                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold">
                         {n.valor}
                       </span>
                       <span className="text-xs font-semibold text-primary-foreground/70">
@@ -282,6 +282,7 @@ export function Multiplicacao() {
                       </span>
                     </span>
                   </li>
+
                 ))}
               </ul>
 
