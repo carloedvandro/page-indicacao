@@ -261,7 +261,7 @@ function Plano({ variante }: PlanoProps) {
 
 export function Planos() {
   return (
-    <section id="planos" className="waves-bg px-3 py-8 sm:px-6 lg:py-12">
+    <section id="planos" className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
