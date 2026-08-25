@@ -22,7 +22,7 @@ const perguntas = [
     icone: User,
     pergunta: "Preciso vender para participar?",
     resposta:
-      "Não. Você pode usar os benefícios como Associado e indicar quando quiser para construir sua carteira.",
+      "Não. Você pode usar os benefícios como parceiro SmartVoz e indicar quando quiser para construir sua carteira.",
   },
   {
     icone: CircleDollarSign,
@@ -52,7 +52,7 @@ const perguntas = [
     icone: ShieldCheck,
     pergunta: "Existe fidelidade?",
     resposta:
-      "Não. Você pode cancelar sua associação quando quiser, sem multas ou taxas.",
+      "Não. Você pode cancelar seu plano quando quiser, sem multas ou taxas.",
   },
   {
     icone: CreditCard,
@@ -160,7 +160,7 @@ export function Faq() {
           <span className="hidden h-20 w-px bg-primary-foreground/20 lg:block" />
 
           <p className="text-sm leading-relaxed text-primary-foreground/80 lg:max-w-xs">
-            Junte-se a milhares de associados que já transformaram indicações em{" "}
+            Junte-se a milhares de parceiros que já transformaram indicações em{" "}
             <span className="font-semibold text-primary">
               liberdade financeira
             </span>

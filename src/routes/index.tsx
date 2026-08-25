@@ -8,7 +8,7 @@ import { Planos } from "@/components/smartvoz/Planos";
 import { Faq } from "@/components/smartvoz/Faq";
 import { Rodape } from "@/components/smartvoz/Rodape";
 
-const titulo = "SmartVoz Associação | O Poder da Recorrência";
+const titulo = "SmartVoz | O Poder da Recorrência e da Multiplicação";
 const descricao =
   "Indique, construa sua carteira e receba comissões todos os meses: R$ 50 na adesão, R$ 20/mês de recorrência e rede de até 5 níveis.";
 

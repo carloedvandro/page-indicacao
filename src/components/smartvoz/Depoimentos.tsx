@@ -90,7 +90,7 @@ export function Depoimentos() {
                 <div className="relative aspect-[3/4.7] w-full sm:aspect-[3/4.15]">
                   <img
                     src={d.foto}
-                    alt={`${d.nome}, associado SmartVoz`}
+                    alt={`${d.nome}, parceiro SmartVoz`}
                     width={768}
                     height={1024}
                     loading="lazy"
