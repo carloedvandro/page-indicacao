@@ -298,7 +298,7 @@ export function Multiplicacao() {
                         pessoas
                       </span>
                     </span>
-                    <span className="w-[8.75rem] shrink-0 whitespace-nowrap border-l border-gold/30 pl-3 font-display text-[1.15rem] font-extrabold tabular-nums text-gold sm:w-40 sm:text-3xl">
+                    <span className="w-[8.75rem] shrink-0 whitespace-nowrap border-l border-gold/30 pl-3 font-display text-[1.15rem] font-extrabold tabular-nums text-gold sm:w-40 sm:text-[1.6rem]">
                       R$ 20.500,00
                       <span className="block text-xs font-semibold text-primary-foreground/70">
                         /mês
