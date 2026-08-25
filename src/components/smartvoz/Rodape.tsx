@@ -128,16 +128,16 @@ export function Rodape() {
               ATENDIMENTO
             </h3>
             <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
-            <ul className="mt-4 space-y-4">
+            <ul className="mx-auto mt-4 grid max-w-[17rem] gap-4 lg:mx-0 lg:max-w-none">
               {atendimento.map((a) => (
                 <li
                   key={a.titulo}
-                  className="flex items-center justify-center gap-3 lg:justify-start"
+                  className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-3 text-left"
                 >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft">
                     <a.icone className="size-5 text-primary" aria-hidden="true" />
                   </span>
-                  <span className="text-left">
+                  <span className="min-w-0">
                     <span className="block text-sm font-bold text-ink">
                       {a.titulo}
                     </span>
@@ -171,7 +171,7 @@ export function Rodape() {
           {selos.map((s) => (
             <div
               key={s.texto}
-              className="flex items-center justify-center gap-3 lg:px-5"
+              className="mx-auto grid w-full max-w-[19rem] grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 text-left lg:max-w-none lg:px-5"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <s.icone
@@ -185,6 +185,7 @@ export function Rodape() {
             </div>
           ))}
         </div>
+
 
         <p className="mt-4 flex items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:text-base">
           <Globe className="size-4 text-primary" aria-hidden="true" />© 2026{" "}
