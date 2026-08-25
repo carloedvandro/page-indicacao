@@ -263,7 +263,7 @@ export function Multiplicacao() {
                       <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary-foreground/85">
                         {n.nivel}
                       </p>
-                      <p className="font-display text-lg font-extrabold text-primary-foreground">
+                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground sm:text-lg">
                         {n.pessoas}{" "}
                         <span className="text-xs font-semibold text-primary-foreground/70">
                           pessoas
@@ -273,8 +273,8 @@ export function Multiplicacao() {
                         {n.calculo}
                       </span>
                     </div>
-                    <span className="w-28 shrink-0 border-l border-gold/30 pl-3 text-right sm:w-32">
-                      <span className="block whitespace-nowrap font-display text-xl font-extrabold text-gold sm:text-2xl">
+                    <span className="w-[8.75rem] shrink-0 border-l border-gold/30 pl-3 text-right sm:w-40">
+                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold sm:text-2xl">
                         {n.valor}
                       </span>
                       <span className="text-xs font-semibold text-primary-foreground/70">
@@ -291,14 +291,14 @@ export function Multiplicacao() {
                   <p className="text-sm font-semibold text-primary-foreground/85">
                     Total em 5 níveis:
                   </p>
-                  <div className="mt-1 flex items-end gap-3">
+                  <div className="mt-1 flex items-end gap-3 sm:gap-4">
                     <span className="font-display text-2xl font-extrabold text-primary-foreground">
                       3.905
                       <span className="block text-xs font-semibold text-primary-foreground/70">
                         pessoas
                       </span>
                     </span>
-                    <span className="whitespace-nowrap border-l border-gold/30 pl-3 font-display text-2xl font-extrabold text-gold sm:text-3xl">
+                    <span className="shrink-0 whitespace-nowrap border-l border-gold/30 pl-3 font-display text-[1.15rem] font-extrabold tabular-nums text-gold sm:text-[1.35rem]">
                       R$ 20.500,00
                       <span className="block text-xs font-semibold text-primary-foreground/70">
                         /mês
