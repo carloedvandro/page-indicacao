@@ -125,7 +125,7 @@ export function ComoGanha() {
                   <span className="flex-1 text-sm text-muted-foreground">
                     {n.descricao}
                   </span>
-                  <span className="whitespace-pre-line text-right font-display text-sm font-extrabold leading-tight text-primary">
+                  <span className="w-[7.5rem] shrink-0 whitespace-pre-line text-right font-display text-[0.8rem] font-extrabold leading-tight text-primary sm:w-32 sm:text-sm">
                     {n.valor}
                   </span>
                 </li>
