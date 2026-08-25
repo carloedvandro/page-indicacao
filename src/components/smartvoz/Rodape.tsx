@@ -78,7 +78,7 @@ export function Rodape() {
         <div className="surface-card grid gap-9 px-5 py-7 sm:px-8 sm:py-9 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <Logo className="h-12 sm:h-16 lg:h-16" />
-            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mx-auto max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
               Conectamos pessoas a oportunidades reais de{" "}
               <span className="font-semibold text-primary">
                 gerar renda recorrente
@@ -86,7 +86,7 @@ export function Rodape() {
               através de indicações inteligentes.
             </p>
             <span className="h-px w-full bg-border" />
-            <div className="flex items-start gap-3 text-left">
+            <div className="mx-auto flex w-full max-w-sm flex-col items-center gap-3 text-center sm:flex-row sm:items-start sm:text-left lg:mx-0">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-soft">
                 <ShieldCheck className="size-6 text-primary" aria-hidden="true" />
               </span>
@@ -99,6 +99,7 @@ export function Rodape() {
               CNPJ: <strong className="text-ink">66.856.703/0001-24</strong>
             </p>
           </div>
+
 
           {colunas.map((coluna) => (
             <nav
