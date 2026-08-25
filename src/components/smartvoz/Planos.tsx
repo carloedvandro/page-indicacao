@@ -10,8 +10,6 @@ import {
   Wifi,
   ArrowRight,
   Lock,
-  RotateCcw,
-  Headset,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
