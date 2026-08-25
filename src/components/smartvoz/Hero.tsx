@@ -130,7 +130,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-7xl justify-center mb-10 sm:mt-12 sm:mb-12 lg:mt-14 lg:mb-14">
+      <div className="mx-auto mt-12 flex max-w-7xl justify-center mb-10 sm:mt-16 sm:mb-12 lg:mt-20 lg:mb-14">
         <button
           type="button"
           onClick={abrirPlayer}
