@@ -263,7 +263,7 @@ export function Multiplicacao() {
                       <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary-foreground/85">
                         {n.nivel}
                       </p>
-                      <p className="font-display text-lg font-extrabold text-primary-foreground">
+                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground sm:text-lg">
                         {n.pessoas}{" "}
                         <span className="text-xs font-semibold text-primary-foreground/70">
                           pessoas
