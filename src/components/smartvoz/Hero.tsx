@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1rem] font-extrabold uppercase leading-tight tracking-[0.1em] text-ink sm:text-[1.25rem] sm:tracking-[0.12em] lg:text-left">
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.1em] text-ink sm:text-[1.4rem] sm:tracking-[0.12em] lg:text-left">
             O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
             <span className="ml-1 text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
