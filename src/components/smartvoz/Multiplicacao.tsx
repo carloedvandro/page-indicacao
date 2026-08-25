@@ -294,7 +294,7 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-4 grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 rounded-2xl border-2 border-gold/70 bg-primary-foreground/[0.06] p-3">
+              <div className="mt-4 grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 border-t border-gold/40 px-1 pt-4">
                 <Trophy className="size-11 shrink-0 text-gold" aria-hidden="true" />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-primary-foreground/85">
