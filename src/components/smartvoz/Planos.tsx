@@ -15,11 +15,11 @@ import {
   CreditCard,
   Gauge,
   Gift,
-  Smartphone,
-  Signal,
 } from "lucide-react";
 
+import mapaCobertura from "@/assets/mapa-cobertura.png.asset.json";
 import { whatsappLink } from "@/lib/smartvoz";
+
 
 const passos = [
   {
