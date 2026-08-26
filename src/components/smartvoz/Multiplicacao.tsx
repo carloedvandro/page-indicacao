@@ -127,7 +127,7 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center gap-4 rounded-2xl bg-primary-soft/35 p-4">
+            <div className="mt-4 flex items-center gap-4 px-1 py-2">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
@@ -240,7 +240,7 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center gap-4 rounded-2xl bg-primary-soft/35 p-4">
+            <div className="mt-4 flex items-center gap-4 px-1 py-2">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
