@@ -267,22 +267,21 @@ export function Multiplicacao() {
 
           {/* ETAPAS 3, 4 E 5 */}
           <article className="relative overflow-hidden px-1 py-6 sm:px-4">
-            <div className="relative">
-              <p className="text-center">
+            <div className="relative text-center">
+              <p>
                 <span className="inline-block rounded-full bg-gradient-gold px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-ink">
                   ETAPAS 3, 4 E 5
                 </span>
               </p>
-              <h3 className="mt-5 text-center font-display text-2xl font-extrabold uppercase leading-tight text-ink">
-                <span className="text-gradient-gold">A MULTIPLICAÇÃO</span>
-                <span className="block text-ink">NÃO PARA!</span>
+              <h3 className="mt-5 font-display text-2xl font-extrabold uppercase leading-tight text-ink">
+                <span className="text-gradient-gold">A MULTIPLICAÇÃO NÃO PARA!</span>
               </h3>
-              <p className="mt-2 text-center text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Veja o poder nos{" "}
                 <span className="font-semibold text-primary">próximos níveis:</span>
               </p>
 
-              <ul className="mt-5 space-y-3">
+              <ul className="mx-auto mt-5 max-w-sm space-y-3">
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
@@ -294,7 +293,7 @@ export function Multiplicacao() {
                         aria-hidden="true"
                       />
                     </span>
-                    <div className="min-w-0">
+                    <div className="min-w-0 text-left">
                       <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary">
                         {n.nivel}
                       </p>
@@ -320,11 +319,11 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2">
+              <div className="mx-auto mt-3 grid max-w-sm grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
-                <div className="min-w-0">
+                <div className="min-w-0 text-left">
                   <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-muted-foreground">
                     TOTAL EM 5 NÍVEIS
                   </p>
@@ -345,7 +344,7 @@ export function Multiplicacao() {
                 </span>
               </div>
 
-              <div className="mt-3 px-4 py-5 text-center">
+              <div className="mx-auto mt-3 max-w-sm px-4 py-5 text-center">
                 <span className="flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-muted-foreground">
                   <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
                   RENDA RECORRENTE
