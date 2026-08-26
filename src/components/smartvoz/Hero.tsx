@@ -134,14 +134,15 @@ export function Hero() {
         <button
           type="button"
           onClick={abrirPlayer}
-          className="flex w-full max-w-xl items-center gap-4 rounded-2xl bg-gradient-primary px-6 py-4 text-left shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:px-9 sm:py-5">
+          className="flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl bg-gradient-primary px-6 py-4 shadow-soft ring-1 ring-primary-foreground/15 transition-colors duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:gap-5 sm:px-9 sm:py-5"
+        >
           <span className="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-primary-foreground/80 sm:size-14">
             <Play
               className="ml-0.5 size-5 fill-current text-primary-foreground sm:size-6"
               aria-hidden="true"
             />
           </span>
-          <span className="text-primary-foreground">
+          <span className="text-center text-primary-foreground">
             <span className="block font-display text-lg font-extrabold tracking-tight sm:text-2xl">
               ASSISTA AO VÍDEO
             </span>
