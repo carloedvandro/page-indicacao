@@ -147,10 +147,10 @@ export function Hero() {
           </span>
 
           <span className="relative text-center text-primary-foreground">
-            <span className="block font-display text-lg font-extrabold tracking-tight drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
+            <span className="block whitespace-nowrap font-display text-lg font-extrabold tracking-tight drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
               ASSISTA AO VÍDEO
             </span>
-            <span className="mt-1 block font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
+            <span className="mt-1 block whitespace-nowrap font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
               E ENTENDA COMO FUNCIONA
             </span>
           </span>
