@@ -10,17 +10,8 @@ import {
   Wifi,
   ArrowRight,
   Lock,
-  MapPinned,
-  Timer,
-  CreditCard,
-  Gauge,
-  Gift,
-  Smartphone,
-  Signal,
-  Zap,
 } from "lucide-react";
 
-import mapaCobertura from "@/assets/mapa-cobertura.png.asset.json";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const passos = [
@@ -59,33 +50,6 @@ const academy = [
   "E muito mais",
 ];
 
-const selos = [
-  {
-    icone: MapPinned,
-    titulo: "COBERTURA NACIONAL VIVO",
-    texto: "Sinal que conecta você em todo o Brasil.",
-  },
-  {
-    icone: Timer,
-    titulo: "ATIVAÇÃO EM ATÉ 24H",
-    texto: "Agilidade para você não perder tempo.",
-  },
-  {
-    icone: CreditCard,
-    titulo: "eSIM OU SIM CARD",
-    texto: "Mais praticidade na forma que preferir.",
-  },
-  {
-    icone: Gauge,
-    titulo: "CONEXÃO RÁPIDA E ESTÁVEL",
-    texto: "Mais desempenho para sua rotina com fluidez.",
-  },
-  {
-    icone: Users,
-    titulo: "COMPARTILHE COM QUEM QUISER",
-    texto: "Ganhe por indicação e aproveite mais.",
-  },
-];
 
 type PlanoProps = {
   variante: "senior" | "premium";
@@ -93,278 +57,182 @@ type PlanoProps = {
 
 function Plano({ variante }: PlanoProps) {
   const premium = variante === "premium";
-  const gb = premium ? "120" : "100";
-  const preco = premium ? "124" : "99";
 
   return (
     <article
       id={premium ? "plano-premium" : "plano-senior"}
-      className={`plan-card-3d overflow-hidden rounded-3xl border bg-card ${
-        premium ? "border-gold/60" : "border-border"
+      className={`overflow-hidden rounded-3xl border bg-card shadow-card ${
+        premium ? "border-gold/50" : "border-border"
       }`}
     >
-      {/* cabeçalho 3D: badge, GB, bônus e preço */}
-      <div
-        className={`relative overflow-hidden px-5 pb-7 pt-6 sm:px-8 ${
-          premium ? "bg-gradient-gold" : "bg-gradient-primary"
-        }`}
-      >
-        {/* decoração 3D */}
-        <div
-          className={`plan-data-disc ${premium ? "plan-data-disc-gold" : "plan-data-disc-purple"}`}
+      <p className="text-center">
+        <span
+          className={`inline-block rounded-b-2xl px-8 py-2.5 font-display text-sm font-extrabold tracking-[0.1em] ${
+            premium
+              ? "bg-gradient-gold text-ink"
+              : "bg-gradient-primary text-primary-foreground"
+          }`}
         >
-          <Signal className="size-7" aria-hidden="true" />
-        </div>
+          {premium ? "SMART PREMIUM" : "SMART SENIOR"}
+        </span>
+      </p>
+
+      <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
         <div
-          className={`plan-phone-3d ${premium ? "plan-phone-3d-gold" : "plan-phone-3d-purple"}`}
+          className={`p-6 ${
+            premium ? "bg-gradient-gold/10" : "bg-primary-deep"
+          }`}
+          style={
+            premium
+              ? {
+                  backgroundImage:
+                    "linear-gradient(160deg, oklch(0.32 0.08 62), oklch(0.5 0.12 70))",
+                }
+              : undefined
+          }
         >
-          <Smartphone className="size-8" aria-hidden="true" />
-        </div>
-
-        <p className="text-center">
-          <span
-            className={`inline-block rounded-full px-5 py-1.5 font-display text-xs font-extrabold tracking-[0.18em] ${
-              premium
-                ? "bg-ink/15 text-ink"
-                : "bg-white/20 text-primary-foreground"
-            }`}
-          >
-            {premium ? "SMART PREMIUM" : "SMART SENIOR"}
-          </span>
-        </p>
-
-        <div className="mt-5 flex flex-wrap items-end justify-center gap-1">
-          <span
-            className={`plan-gb-3d text-[4rem] leading-[0.85] sm:text-[5.2rem] ${premium ? "plan-gb-3d-gold" : ""}`}
-          >
-            {gb}
-          </span>
-          <span
-            className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
-          >
-            GB
-          </span>
-        </div>
-
-        <div className="mt-3 flex items-center justify-center gap-2">
-          <span
-            className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
-          >
-            +
-          </span>
-          <div
-            className={`flex items-center gap-2 rounded-xl border-2 px-3 py-1.5 ${
-              premium
-                ? "border-ink/25 bg-ink/10"
-                : "border-white/40 bg-white/15"
-            }`}
-          >
-            <span
-              className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
-            >
-              20
-              <span className="text-lg sm:text-xl">GB</span>
+          <p className="text-sm font-semibold text-primary-foreground/85">
+            Por apenas
+          </p>
+          <p className="mt-1 font-display text-4xl font-extrabold text-primary-foreground sm:text-5xl">
+            <span className="text-2xl">R$</span>
+            <span className={premium ? "text-gold" : "text-primary"}>
+              {premium ? "124" : "99"}
+              <span className="text-2xl">,{premium ? "90" : "90"}</span>
             </span>
-            <span className="flex flex-col items-start gap-0.5">
-              <span
-                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-extrabold tracking-wide ${
-                  premium
-                    ? "bg-ink/15 text-ink"
-                    : "bg-white/20 text-primary-foreground"
-                }`}
-              >
-                <Gift className="size-3" aria-hidden="true" />
-                DE BÔNUS
-              </span>
-              <span
-                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.55rem] font-extrabold tracking-wide ${
-                  premium
-                    ? "bg-white/80 text-ink"
-                    : "bg-white/90 text-primary"
-                }`}
-              >
-                <CreditCard className="size-3" aria-hidden="true" />
-                DÉBITO AUTOMÁTICO
-              </span>
-            </span>
-          </div>
-        </div>
+            <span className="text-lg font-bold">/mês</span>
+          </p>
 
-        <p className="mt-5 text-center font-display text-3xl font-extrabold text-white sm:text-4xl">
-          R$ {preco}
-          <span className="text-xl font-bold">,90</span>
-          <span className="block text-sm font-semibold tracking-wide opacity-90 sm:text-base">
-            /mês
-          </span>
-        </p>
-      </div>
+          <span className="mt-6 block h-px w-full bg-primary-foreground/20" />
 
-      {/* mapa + selos */}
-      <div className="border-y border-border px-5 py-6 sm:px-8">
-        <img
-          src={mapaCobertura.url}
-          alt={`Mapa do Brasil com cobertura 4G e 5G Vivo do plano de ${gb} GB`}
-          loading="lazy"
-          className="mx-auto w-full max-w-sm"
-        />
-
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-          {selos.map((s) => (
-            <li key={s.titulo} className="flex items-center gap-3">
-              <span
-                className={`plan-selo-coin shrink-0 ${premium ? "plan-selo-coin-gold" : ""}`}
-              >
-                <s.icone className="size-5" aria-hidden="true" />
-              </span>
-              <div className="min-w-0">
-                <p className="font-display text-[0.7rem] font-extrabold tracking-[0.08em] text-ink">
-                  {s.titulo}
-                </p>
-                <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
-                  {s.texto}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Smart Academy + benefícios + indicações */}
-      <div className="grid gap-5 px-5 py-6 sm:px-8">
-        <div className="flex items-start gap-3">
-          <span
-            className={`plan-icon-3d size-12 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}
-          >
+          <div className="mt-6 flex items-start gap-3">
             <Wifi
-              className={`size-6 ${premium ? "text-ink" : "text-primary-foreground"}`}
+              className="size-6 shrink-0 text-primary-foreground"
               aria-hidden="true"
             />
-          </span>
-          <div>
-            <p className="font-display text-sm font-extrabold tracking-wide text-ink">
-              INTERNET MÓVEL
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {gb} GB + 20 GB de bônus para navegar com liberdade.
-            </p>
+            <div>
+              <p className="font-display text-sm font-bold tracking-wide text-primary-foreground">
+                INTERNET MÓVEL
+              </p>
+              <p className="mt-1 font-display text-lg font-extrabold text-primary-foreground">
+                {premium ? "120 GB" : "100 GB"} + 20 GB de bônus
+              </p>
+              <p className="mt-1 text-xs text-primary-foreground/70">
+                Bônus ativado com débito automático
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="flex items-start gap-3">
-          <span
-            className={`plan-icon-3d size-12 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}
-          >
+          <span className="mt-6 block h-px w-full bg-primary-foreground/20" />
+
+          <div className="mt-6 flex items-start gap-3">
             <ShieldCheck
-              className={`size-6 ${premium ? "text-ink" : "text-primary-foreground"}`}
+              className="size-6 shrink-0 text-primary-foreground"
               aria-hidden="true"
             />
-          </span>
-          <div>
-            <p className="font-display text-sm font-extrabold tracking-wide text-ink">
-              CONEXÃO RÁPIDA E ESTÁVEL
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Use onde estiver, com qualidade e estabilidade.
-            </p>
+            <div>
+              <p className="font-display text-sm font-bold tracking-wide text-primary-foreground">
+                CONEXÃO RÁPIDA E ESTÁVEL
+              </p>
+              <p className="mt-1 text-sm text-primary-foreground/80">
+                Use onde estiver.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-start gap-3">
-          <span
-            className={`plan-icon-3d size-12 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}
-          >
-            <Zap
-              className={`size-6 ${premium ? "text-ink" : "text-primary-foreground"}`}
-              aria-hidden="true"
-            />
-          </span>
-          <div>
-            <p className="font-display text-sm font-extrabold tracking-wide text-ink">
-              SEM CONSULTA AO SPC/SERASA
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Aprovação simples e descomplicada.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-3">
-          <span
-            className={`plan-icon-3d size-12 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}
-          >
-            <GraduationCap
-              className={`size-6 ${premium ? "text-ink" : "text-primary-foreground"}`}
-              aria-hidden="true"
-            />
-          </span>
-          <div>
-            <p
-              className={`font-display text-sm font-extrabold tracking-wide ${
-                premium ? "text-gold-deep" : "text-primary"
+        <div className="p-6">
+          <div className="flex items-start gap-3">
+            <span
+              className={`flex size-11 shrink-0 items-center justify-center rounded-full ${
+                premium ? "bg-gradient-gold" : "bg-gradient-primary"
               }`}
             >
-              SMART ACADEMY
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Treinamentos para você crescer pessoal e profissionalmente.
-            </p>
-          </div>
-        </div>
-
-        <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
-          {academy.map((item) => (
-            <li key={item} className="flex min-w-0 items-center gap-2">
-              <CircleCheck
-                className={`size-4 shrink-0 ${premium ? "text-gold-deep" : "text-primary"}`}
+              <GraduationCap
+                className={`size-6 ${
+                  premium ? "text-ink" : "text-primary-foreground"
+                }`}
                 aria-hidden="true"
               />
-              <span className="min-w-0 text-xs font-medium leading-snug text-ink sm:text-sm">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
+            </span>
+            <div>
+              <p
+                className={`font-display text-base font-extrabold tracking-wide ${
+                  premium ? "text-gold-deep" : "text-primary"
+                }`}
+              >
+                SMART ACADEMY
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                Conteúdos e treinamentos para você crescer pessoal e
+                profissionalmente.
+              </p>
+            </div>
+          </div>
 
-        <div
-          className={`flex items-start gap-3 rounded-2xl p-4 ${
-            premium ? "bg-gold-soft" : "bg-primary-soft"
-          }`}
-        >
-          <Users
-            className={`size-7 shrink-0 ${premium ? "text-gold-deep" : "text-primary"}`}
-            aria-hidden="true"
-          />
-          <div>
-            <p className="font-display text-sm font-bold tracking-wide text-ink">
-              PROGRAMA DE INDICAÇÕES
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Ganhe na adesão, na recorrência e na sua rede de até{" "}
-              <strong className={premium ? "text-gold-deep" : "text-primary"}>
-                5 níveis
-              </strong>
-              .
-            </p>
+          <span className="mt-5 block h-px w-full bg-border" />
+
+          <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-1">
+            {academy.map((item) => (
+              <li key={item} className="flex min-w-0 items-center gap-2.5">
+                <CircleCheck
+                  className={`size-5 shrink-0 ${
+                    premium ? "text-gold-deep" : "text-primary"
+                  }`}
+                  aria-hidden="true"
+                />
+                <span className="min-w-0 text-[0.82rem] font-medium leading-snug text-ink sm:text-sm">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+
+          <div
+            className={`mt-6 flex items-start gap-3 rounded-2xl p-4 ${
+              premium ? "bg-gold-soft" : "bg-primary-soft"
+            }`}
+          >
+            <Users
+              className={`size-7 shrink-0 ${
+                premium ? "text-gold-deep" : "text-primary"
+              }`}
+              aria-hidden="true"
+            />
+            <div>
+              <p className="font-display text-sm font-bold tracking-wide text-ink">
+                PROGRAMA DE INDICAÇÕES
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ganhe na adesão, na recorrência e na sua rede de até{" "}
+                <strong className={premium ? "text-gold-deep" : "text-primary"}>
+                  5 níveis
+                </strong>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="px-5 pb-6 sm:px-8">
+      <div className="p-6 pt-0">
         <a
-          href={whatsappLink(
-            premium
-              ? "Olá! Quero começar agora (Plano Premium - R$ 124,90/mês)."
-              : "Olá! Quero começar agora (Plano Senior - R$ 99,90/mês).",
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-4 font-display text-[0.9rem] font-extrabold tracking-wide transition-colors duration-200 hover:brightness-110 sm:gap-3 sm:px-6 sm:text-base ${
-            premium
-              ? "bg-gradient-gold text-ink shadow-gold"
-              : "bg-gradient-primary text-primary-foreground shadow-soft"
-          }`}
-        >
-          QUERO COMEÇAR AGORA
+        href={whatsappLink(
+          premium
+            ? "Olá! Quero começar agora (Plano Premium - R$ 124,90/mês)."
+            : "Olá! Quero começar agora (Plano Senior - R$ 99,90/mês).",
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-4 font-display text-[0.9rem] font-extrabold tracking-wide transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-6 sm:text-base ${
+          premium
+            ? "shadow-gold bg-gradient-gold text-ink"
+            : "bg-gradient-primary text-primary-foreground shadow-glow"
+        }`}
+      >
+        QUERO COMEÇAR AGORA
+
           <ArrowRight className="size-5" aria-hidden="true" />
         </a>
       </div>
