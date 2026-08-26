@@ -53,12 +53,12 @@ export function ComoGanha() {
                   Você recebe <strong className="text-primary">R$ 50,00</strong>{" "}
                   quando sua indicação direta realizar a adesão.
                 </p>
-                <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-primary-soft">
-                  <Handshake className="size-10 text-primary" aria-hidden="true" />
+                <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-gradient-primary shadow-glow pulse-ring icon-float">
+                  <Handshake className="size-10 text-primary-foreground" aria-hidden="true" />
                 </span>
               </article>
 
-              <span className="absolute left-1/2 top-1/2 z-10 hidden size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-card sm:flex">
+              <span className="absolute left-1/2 top-1/2 z-10 hidden size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-card sm:flex pulse-ring">
                 <Plus className="size-5 text-primary" aria-hidden="true" />
               </span>
 
@@ -77,14 +77,14 @@ export function ComoGanha() {
                   todo mês enquanto seu cliente direto permanecer ativo e
                   elegível.
                 </p>
-                <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-primary-soft">
-                  <CalendarClock className="size-10 text-primary" aria-hidden="true" />
+                <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-gradient-primary shadow-glow pulse-ring icon-float">
+                  <CalendarClock className="size-10 text-primary-foreground" aria-hidden="true" />
                 </span>
               </article>
             </div>
 
             <div className="flex items-center gap-4 p-6">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary pulse-ring icon-float">
                 <InfinityIcon
                   className="size-7 text-primary-foreground"
                   aria-hidden="true"
@@ -103,26 +103,26 @@ export function ComoGanha() {
               <span className="text-primary">ATÉ O 5º NÍVEL</span>
             </p>
 
-            <div className="mt-6 flex items-center justify-center gap-3">
-              <span className="flex size-11 items-center justify-center rounded-full bg-gradient-primary shadow-glow">
-                <User className="size-6 text-primary-foreground" aria-hidden="true" />
+            <div className="mt-6 flex flex-col items-center justify-center">
+              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-primary shadow-glow pulse-ring icon-float">
+                <User className="size-7 text-primary-foreground" aria-hidden="true" />
               </span>
-              <span className="font-display text-xl font-extrabold text-ink">
+              <span className="mt-2 font-display text-xl font-extrabold text-ink">
                 VOCÊ
               </span>
             </div>
 
-            <ul className="mt-4 space-y-1">
+            <ul className="mt-5 space-y-2">
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="grid grid-cols-[4.5rem_1.5rem_minmax(0,1fr)_7rem] items-center gap-2 py-2"
+                  className="grid grid-cols-[3.75rem_1.25rem_1fr_6.75rem] items-center gap-2 rounded-2xl py-2.5"
                 >
-                  <span className="rounded-full bg-primary-soft px-2 py-1.5 text-center font-display text-[0.62rem] font-bold tracking-wide text-accent-foreground">
+                  <span className="rounded-full bg-gradient-primary px-2 py-1.5 text-center font-display text-[0.65rem] font-bold tracking-wide text-primary-foreground shadow-glow">
                     {n.nivel}
                   </span>
-                  <Users className="size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="min-w-0 text-[0.8rem] leading-tight text-muted-foreground">
+                  <Users className="size-5 shrink-0 text-primary icon-float" aria-hidden="true" />
+                  <span className="min-w-0 text-[0.82rem] font-medium leading-tight text-muted-foreground">
                     {n.descricao}
                   </span>
                   <span className="whitespace-pre-line text-right font-display text-[0.78rem] font-extrabold leading-tight tabular-nums text-primary">
@@ -140,7 +140,7 @@ export function ComoGanha() {
         </div>
 
         <div className="mt-5 flex flex-col items-center gap-5 p-6 sm:flex-row sm:p-8">
-          <ShieldCheck className="size-12 shrink-0 text-primary" aria-hidden="true" />
+          <ShieldCheck className="size-12 shrink-0 text-primary icon-float" aria-hidden="true" />
           <div className="flex-1 text-center sm:text-left">
             <p className="font-display text-base font-bold text-ink sm:text-lg">
               Comissões pagas de forma transparente e recorrente.
@@ -150,7 +150,7 @@ export function ComoGanha() {
             </p>
           </div>
           <span className="hidden h-14 w-px bg-border sm:block" />
-          <MonitorSmartphone className="size-12 shrink-0 text-primary" aria-hidden="true" />
+          <MonitorSmartphone className="size-12 shrink-0 text-primary icon-float" aria-hidden="true" />
         </div>
       </div>
     </section>
