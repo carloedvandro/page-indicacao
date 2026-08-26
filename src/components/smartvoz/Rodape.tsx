@@ -126,7 +126,7 @@ export function Rodape() {
                 {coluna.titulo}
               </h3>
               <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
-              <ul className="mt-4 inline-flex flex-col items-start gap-3 text-left">
+              <ul className="mt-4 flex w-full flex-col items-start gap-3 text-left">
                 {coluna.itens.map((item) => (
                   <li key={item.label}>
                     <span className="inline-flex items-center gap-3 text-base text-muted-foreground transition-colors hover:text-primary">
@@ -146,7 +146,7 @@ export function Rodape() {
               ATENDIMENTO
             </h3>
             <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
-            <ul className="mx-auto mt-4 grid w-full max-w-sm gap-4 text-left lg:mx-0 lg:max-w-none">
+            <ul className="mt-4 grid w-full gap-4 text-left">
               {atendimento.map((a) => (
                 <li
                   key={a.titulo}
@@ -171,7 +171,7 @@ export function Rodape() {
               SIGA NOSSAS REDES
             </h3>
             <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
-            <div className="mx-auto mt-4 flex w-full max-w-sm items-center justify-center gap-3 lg:mx-0 lg:max-w-none lg:justify-start">
+            <div className="mt-4 flex w-full items-center justify-start gap-3">
               {redes.map((r) => (
                 <span
                   key={r.nome}
@@ -189,7 +189,7 @@ export function Rodape() {
           {selos.map((s) => (
             <div
               key={s.texto}
-              className="mx-auto grid w-full max-w-sm grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 text-left lg:mx-0 lg:max-w-none lg:px-5"
+              className="grid w-full grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 text-left lg:px-5"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <s.icone
