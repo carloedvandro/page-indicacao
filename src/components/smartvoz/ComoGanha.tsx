@@ -21,7 +21,7 @@ const niveis = [
 
 export function ComoGanha() {
   return (
-    <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
+    <section className="waves-bg px-1.5 pb-6 pt-2 sm:px-4 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <p className="eyebrow-pill">
@@ -40,7 +40,7 @@ export function ComoGanha() {
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           <div className="grid gap-5">
             <div className="relative grid gap-5 sm:grid-cols-2">
-              <article className="flex flex-col items-center p-6 text-center">
+              <article className="flex flex-col items-center px-2 py-6 text-center sm:px-5">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-2 font-display text-[0.68rem] font-bold tracking-[0.12em] text-accent-foreground">
                   <User className="size-4" aria-hidden="true" />
                   NA ADESÃO
@@ -62,7 +62,7 @@ export function ComoGanha() {
                 <Plus className="size-5 text-primary" aria-hidden="true" />
               </span>
 
-              <article className="p-6 text-center">
+              <article className="px-2 py-6 text-center sm:px-5">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-2 font-display text-[0.68rem] font-bold tracking-[0.12em] text-accent-foreground">
                   <RefreshCcw className="size-4" aria-hidden="true" />
                   RECORRÊNCIA MENSAL
@@ -97,7 +97,7 @@ export function ComoGanha() {
             </div>
           </div>
 
-          <article className="p-6 sm:p-8">
+          <article className="px-1 py-6 sm:p-8">
             <p className="text-center font-display text-sm font-bold tracking-[0.06em] text-ink sm:text-base">
               SUA REDE PODE CHEGAR{" "}
               <span className="text-primary">ATÉ O 5º NÍVEL</span>
@@ -116,7 +116,7 @@ export function ComoGanha() {
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="grid grid-cols-[4.25rem_1.5rem_minmax(0,1fr)_6.5rem] items-center gap-2 py-2"
+                  className="grid grid-cols-[4.5rem_1.5rem_minmax(0,1fr)_7rem] items-center gap-2 py-2"
                 >
                   <span className="rounded-full bg-primary-soft px-2 py-1.5 text-center font-display text-[0.62rem] font-bold tracking-wide text-accent-foreground">
                     {n.nivel}

@@ -27,7 +27,7 @@ function PessoaIcone({ className = "" }: { className?: string }) {
 
 export function Multiplicacao() {
   return (
-    <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
+    <section className="waves-bg px-1.5 pb-6 pt-2 sm:px-4 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
           <p className="eyebrow-pill">
@@ -50,7 +50,7 @@ export function Multiplicacao() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {/* ETAPA 1 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden px-1 py-6 sm:px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 1
@@ -87,8 +87,8 @@ export function Multiplicacao() {
 
             <span className="mt-6 block h-px w-full bg-border" />
 
-            <div className="mt-4 flex items-center gap-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+            <div className="mt-4 grid grid-cols-[3rem_minmax(0,1fr)] items-center gap-3">
+              <span className="flex size-12 items-center justify-center rounded-full bg-primary-soft">
                 <Users className="size-6 text-primary" aria-hidden="true" />
               </span>
               <p className="text-base font-semibold leading-tight text-ink">
@@ -151,7 +151,7 @@ export function Multiplicacao() {
           </article>
 
           {/* ETAPA 2 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden px-1 py-6 sm:px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 2
@@ -201,8 +201,8 @@ export function Multiplicacao() {
 
             <span className="mt-6 block h-px w-full bg-border" />
 
-            <div className="mt-4 flex items-center gap-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+            <div className="mt-4 grid grid-cols-[3rem_minmax(0,1fr)] items-center gap-3">
+              <span className="flex size-12 items-center justify-center rounded-full bg-primary-soft">
                 <Users className="size-6 text-primary" aria-hidden="true" />
               </span>
               <p className="text-base font-semibold leading-tight text-ink">
@@ -265,7 +265,7 @@ export function Multiplicacao() {
           </article>
 
           {/* ETAPAS 3, 4 E 5 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden px-1 py-6 sm:px-4">
             <div className="relative">
               <p className="text-center">
                 <span className="inline-block rounded-full bg-gradient-gold px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-ink">
