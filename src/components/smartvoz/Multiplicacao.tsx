@@ -40,7 +40,8 @@ export function Multiplicacao() {
 
         <div className="mt-8 text-center">
           <h2 className="font-display text-[2rem] font-extrabold uppercase leading-[1.05] text-ink sm:text-[3.4rem]">
-            O PODER DA <span className="text-primary">MULTIPLICAÇÃO!</span>
+            O PODER DA <span className="text-primary">MULTIPLICAÇÃO</span>{" "}
+            <span className="text-primary">NÃO PARA!</span>
           </h2>
           <p className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg">
             INDIQUE <span className="text-primary">5 PESSOAS,</span> CADA UMA
