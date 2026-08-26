@@ -40,7 +40,7 @@ export function ComoGanha() {
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           <div className="grid gap-5">
             <div className="relative grid gap-5 sm:grid-cols-2">
-              <article className="surface-card flex flex-col items-center p-6 text-center">
+              <article className="flex flex-col items-center p-6 text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-2 font-display text-[0.68rem] font-bold tracking-[0.12em] text-accent-foreground">
                   <User className="size-4" aria-hidden="true" />
                   NA ADESÃO
@@ -62,7 +62,7 @@ export function ComoGanha() {
                 <Plus className="size-5 text-primary" aria-hidden="true" />
               </span>
 
-              <article className="surface-card p-6 text-center">
+              <article className="p-6 text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-2 font-display text-[0.68rem] font-bold tracking-[0.12em] text-accent-foreground">
                   <RefreshCcw className="size-4" aria-hidden="true" />
                   RECORRÊNCIA MENSAL
@@ -83,7 +83,7 @@ export function ComoGanha() {
               </article>
             </div>
 
-            <div className="surface-card flex items-center gap-4 p-6">
+            <div className="flex items-center gap-4 p-6">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <InfinityIcon
                   className="size-7 text-primary-foreground"
@@ -97,7 +97,7 @@ export function ComoGanha() {
             </div>
           </div>
 
-          <article className="surface-card p-6 sm:p-8">
+          <article className="p-6 sm:p-8">
             <p className="text-center font-display text-sm font-bold tracking-[0.06em] text-ink sm:text-base">
               SUA REDE PODE CHEGAR{" "}
               <span className="text-primary">ATÉ O 5º NÍVEL</span>
@@ -139,7 +139,7 @@ export function ComoGanha() {
           </article>
         </div>
 
-        <div className="surface-card mt-5 flex flex-col items-center gap-5 p-6 sm:flex-row sm:p-8">
+        <div className="mt-5 flex flex-col items-center gap-5 p-6 sm:flex-row sm:p-8">
           <ShieldCheck className="size-12 shrink-0 text-primary" aria-hidden="true" />
           <div className="flex-1 text-center sm:text-left">
             <p className="font-display text-base font-bold text-ink sm:text-lg">
