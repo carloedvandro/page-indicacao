@@ -203,7 +203,7 @@ function Plano({ variante }: PlanoProps) {
           <img
             src={mapaCobertura.url}
             alt={`Mapa do Brasil com cobertura 4G e 5G Vivo do plano de ${gb} GB`}
-            loading="lazy"
+            decoding="async"
             className="mx-auto w-full max-w-md"
           />
         </div>
