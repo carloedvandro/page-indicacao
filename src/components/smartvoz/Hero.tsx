@@ -135,11 +135,11 @@ export function Hero() {
           type="button"
           onClick={abrirPlayer}
           aria-label="Assista ao vídeo e entenda como funciona"
-          className="btn-video-3d group flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-5 text-center sm:gap-5 sm:px-8 sm:py-5"
+          className="btn-video-3d flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-5 text-center sm:gap-5 sm:px-8 sm:py-5"
         >
           <span className="btn-video-3d-shine" aria-hidden="true" />
 
-          <span className="relative flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-red shadow-[0_6px_14px_-6px_oklch(0.4_0.2_28/0.9),0_1px_0_oklch(1_0_0/0.35)_inset] sm:size-14">
+          <span className="group relative -ml-1 flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-red shadow-[0_6px_14px_-6px_oklch(0.4_0.2_28/0.9),0_1px_0_oklch(1_0_0/0.35)_inset] transition-transform duration-200 ease-out hover:scale-110 sm:-ml-2 sm:size-14">
             <Play
               className="ml-0.5 size-5 fill-current text-primary-foreground sm:size-6"
               aria-hidden="true"
