@@ -85,52 +85,68 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center gap-3">
-              <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
-              <p className="text-sm font-semibold leading-tight text-ink">
+            <span className="mt-6 block h-px w-full bg-border" />
+
+            <div className="mt-4 flex items-center gap-4">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+                <Users className="size-6 text-primary" aria-hidden="true" />
+              </span>
+              <p className="text-base font-semibold leading-tight text-ink">
                 Você indica 5 pessoas
-                <span className="block font-normal text-muted-foreground">
+                <span className="block text-sm font-normal text-muted-foreground">
                   (Nível 1)
                 </span>
               </p>
             </div>
 
-            <div className="mt-4 flex items-start gap-3">
-              <span className="mt-1 flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                <Coins className="size-5 text-primary-foreground" aria-hidden="true" />
+            <span className="mt-4 block h-px w-full bg-border" />
+
+            <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
+              Seu ganho no Nível 1
+            </p>
+
+            <div className="mt-3 flex items-center gap-3">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+                <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary">
-                  SEU GANHO NO NÍVEL 1
-                </p>
-                <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-xl">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
                     5 x R$ 20,00 =
                   </span>
-                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-3 py-1.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
                     R$ 100,00
                     <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
                       /mês
                     </span>
                   </span>
                 </div>
-                <p className="mt-1.5 font-display text-[0.6rem] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                <p className="mt-2 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
                   De comissão recorrente
                 </p>
               </div>
             </div>
 
+            <div className="mt-4 flex items-center gap-4 rounded-2xl bg-primary-soft/35 p-4">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+                <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-primary">
+                  RENDA RECORRENTE
+                </p>
+                <p className="mt-1 text-sm leading-snug text-muted-foreground">
+                  Ganhos todo mês enquanto sua rede permanece ativa.
+                </p>
+              </div>
+            </div>
 
-
-            <p className="mt-6 flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary">
-              <InfinityIcon className="size-5" aria-hidden="true" />
-              RENDA RECORRENTE
-            </p>
-            <p className="mt-4 text-center">
+            <p className="mt-5 text-center">
               <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                1/3
+                1 / 3
               </span>
             </p>
+
           </article>
 
           {/* ETAPA 2 */}
