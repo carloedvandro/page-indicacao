@@ -291,48 +291,49 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 px-1 py-2.5"
+                    className="grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl bg-primary-foreground/[0.06] p-3"
                   >
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+                    <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
-                        className="size-5 text-primary-foreground"
+                        className="size-6 text-primary-foreground"
                         aria-hidden="true"
                       />
                     </span>
                     <div className="min-w-0">
-                      <p className="font-display text-[0.68rem] font-bold tracking-[0.1em] text-primary-foreground/85">
+                      <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary">
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground">
+                      <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
                         {n.pessoas}{" "}
                         <span className="text-xs font-semibold text-primary-foreground/70">
                           pessoas
                         </span>
                       </p>
-                      <span className="mt-1 inline-block rounded-md bg-primary/70 px-2 py-0.5 text-[0.65rem] font-semibold text-primary-foreground">
+                      <span className="mt-1 inline-block rounded-full bg-primary/70 px-2.5 py-0.5 text-[0.65rem] font-semibold text-primary-foreground">
                         {n.calculo}
                       </span>
                     </div>
-                    <span className="border-l border-gold/30 pl-3 text-right">
-                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold">
+                    <span className="border-l border-primary-foreground/15 pl-3 text-right">
+                      <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
                         {n.valor}
                       </span>
-                      <span className="text-xs font-semibold text-primary-foreground/70">
+                      <span className="block text-xs font-semibold text-primary-foreground/70">
                         /mês
                       </span>
                     </span>
                   </li>
-
                 ))}
               </ul>
 
-              <div className="mt-4 grid grid-cols-[2.75rem_minmax(0,1fr)_7.25rem] items-center gap-3 border-t border-gold/40 px-1 pt-4">
-                <Trophy className="size-11 shrink-0 text-gold" aria-hidden="true" />
+              <div className="mt-3 grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl border border-gold/50 bg-primary-foreground/[0.06] p-3">
+                <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
+                  <Trophy className="size-7 text-gold" aria-hidden="true" />
+                </span>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-primary-foreground/85">
-                    Total em 5 níveis:
+                  <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary-foreground/85">
+                    TOTAL EM 5 NÍVEIS
                   </p>
-                  <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
                     3.905{" "}
                     <span className="text-xs font-semibold text-primary-foreground/70">
                       pessoas
@@ -340,30 +341,31 @@ export function Multiplicacao() {
                   </p>
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
-                  <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold">
+                  <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
                     R$ 20.500,00
                   </span>
-                  <span className="text-xs font-semibold text-primary-foreground/70">
+                  <span className="block text-xs font-semibold text-primary-foreground/70">
                     /mês
                   </span>
                 </span>
               </div>
 
-
-              <p className="mt-6 text-center">
+              <div className="mt-3 rounded-2xl bg-primary-foreground/[0.06] px-4 py-5 text-center">
                 <span className="flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary-foreground/85">
-                  <InfinityIcon className="size-5" aria-hidden="true" />
+                  <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
                   RENDA RECORRENTE
                 </span>
-                <span className="mt-1 block font-display text-xl font-extrabold tracking-tight text-primary">
+                <span className="mt-1 block font-display text-2xl font-extrabold tracking-tight text-primary">
                   EM ESCALA
                 </span>
-              </p>
+              </div>
+
               <p className="mt-4 text-center">
-                <span className="inline-block rounded-full border border-gold/40 bg-primary-foreground/10 px-4 py-1 text-xs font-semibold text-primary-foreground/80">
+                <span className="inline-block rounded-full border border-primary/50 bg-primary-foreground/10 px-4 py-1 text-xs font-semibold text-primary-foreground/80">
                   3/3
                 </span>
               </p>
+
             </div>
           </article>
         </div>
