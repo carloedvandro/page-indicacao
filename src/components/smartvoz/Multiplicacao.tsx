@@ -65,7 +65,7 @@ export function Multiplicacao() {
             </div>
 
             <div className="mt-6 flex flex-col items-center">
-              <PessoaIcone className="size-14" />
+              <PessoaIcone className="size-14 pulse-ring icon-float" />
               <span className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.14em] text-ink">
                 VOCÊ
               </span>
@@ -75,7 +75,7 @@ export function Multiplicacao() {
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
-                    <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card shadow-soft">
+                    <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card shadow-soft icon-float">
                       <User className="size-4 text-primary" aria-hidden="true" />
                     </span>
                     <span className="mt-1 text-[0.7rem] font-semibold text-muted-foreground">
