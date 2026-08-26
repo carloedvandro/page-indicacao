@@ -15,6 +15,8 @@ import {
   CreditCard,
   Gauge,
   Gift,
+  Smartphone,
+  Signal,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
@@ -96,19 +98,17 @@ function Plano({ variante }: PlanoProps) {
   return (
     <article
       id={premium ? "plano-premium" : "plano-senior"}
-      className={`overflow-hidden rounded-3xl border bg-card shadow-card ${
+      className={`plan-card-3d overflow-hidden rounded-3xl border bg-card ${
         premium ? "border-gold/60" : "border-border"
       }`}
     >
       {/* topo: destaque de dados no estilo da arte oficial */}
       <div
-        className="relative px-5 pb-7 pt-6 sm:px-8"
-        style={{
-          backgroundImage: premium
-            ? "linear-gradient(160deg, oklch(0.2 0.09 300), oklch(0.4 0.14 66))"
-            : "linear-gradient(160deg, oklch(0.18 0.1 300), oklch(0.34 0.2 303))",
-        }}
+        className={`relative overflow-hidden px-5 pb-7 pt-6 sm:px-8 ${
+          premium ? "plan-hero-premium" : "plan-hero-senior"
+        }`}
       >
+        <span className="plan-shine" aria-hidden="true" />
         <p className="text-center">
           <span
             className={`inline-block rounded-full px-6 py-2 font-display text-xs font-extrabold tracking-[0.18em] ${
@@ -122,12 +122,24 @@ function Plano({ variante }: PlanoProps) {
         </p>
 
         <div className="mt-6 flex flex-col items-center text-center">
-          <p className="flex items-baseline justify-center gap-1 font-display font-extrabold leading-none text-primary-foreground">
-            <span className="text-[3.6rem] tracking-tight sm:text-[4.6rem]">
-              {gb}
+          <div className="relative flex min-h-40 w-full items-center justify-center">
+            <span
+              className={`plan-data-disc ${premium ? "plan-data-disc-gold" : "plan-data-disc-purple"}`}
+              aria-hidden="true"
+            >
+              <Signal className="size-9" strokeWidth={2.5} />
             </span>
-            <span className="text-2xl sm:text-3xl">GB</span>
-          </p>
+            <span
+              className={`plan-phone-3d ${premium ? "plan-phone-3d-gold" : "plan-phone-3d-purple"}`}
+              aria-hidden="true"
+            >
+              <Smartphone className="size-12" strokeWidth={1.8} />
+            </span>
+            <p className="relative z-10 flex items-baseline justify-center gap-1 font-display font-extrabold leading-none text-primary-foreground">
+              <span className="text-[3.8rem] sm:text-[4.8rem]">{gb}</span>
+              <span className="text-2xl sm:text-3xl">GB</span>
+            </p>
+          </div>
 
           <p
             className={`mt-3 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border px-4 py-2 font-display text-sm font-extrabold tracking-wide ${
@@ -182,11 +194,7 @@ function Plano({ variante }: PlanoProps) {
       <ul className="grid grid-cols-1 gap-4 border-b border-border px-5 py-6 sm:grid-cols-2 sm:px-8">
         {selos.map((s) => (
           <li key={s.titulo} className="flex items-start gap-3">
-            <span
-              className={`flex size-10 shrink-0 items-center justify-center rounded-full ${
-                premium ? "bg-gradient-gold" : "bg-gradient-primary"
-              }`}
-            >
+            <span className={`plan-icon-3d size-11 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}>
               <s.icone
                 className={`size-5 ${
                   premium ? "text-ink" : "text-primary-foreground"
@@ -209,11 +217,7 @@ function Plano({ variante }: PlanoProps) {
       <div className="grid gap-6 px-5 py-6 sm:px-8 lg:grid-cols-2">
         <div>
           <div className="flex items-start gap-3">
-            <span
-              className={`flex size-11 shrink-0 items-center justify-center rounded-full ${
-                premium ? "bg-gradient-gold" : "bg-gradient-primary"
-              }`}
-            >
+            <span className={`plan-icon-3d size-12 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}>
               <GraduationCap
                 className={`size-6 ${
                   premium ? "text-ink" : "text-primary-foreground"
