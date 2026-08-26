@@ -141,11 +141,11 @@ export function Rodape() {
             </nav>
           ))}
 
-          <div className="text-center lg:text-left">
+          <div className="text-left">
             <h3 className="font-display text-sm font-bold tracking-wide text-ink">
               ATENDIMENTO
             </h3>
-            <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
+            <span className="mt-2 block h-0.5 w-10 bg-primary" />
             <ul className="mt-4 grid w-full gap-4 text-left">
               {atendimento.map((a) => (
                 <li
