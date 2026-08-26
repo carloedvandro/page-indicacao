@@ -10,6 +10,11 @@ import {
   Wifi,
   ArrowRight,
   Lock,
+  MapPinned,
+  Timer,
+  CreditCard,
+  Gauge,
+  Gift,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
