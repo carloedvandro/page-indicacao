@@ -73,12 +73,12 @@ const selos = [
 
 export function Rodape() {
   return (
-    <footer className="waves-bg px-3 pb-5 pt-2 sm:px-6 sm:pb-6 sm:pt-3">
+    <footer className="waves-bg px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-5">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-9 px-1 py-4 sm:px-2 sm:py-5 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
-          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+        <div className="grid gap-8 px-1 py-3 sm:px-2 sm:py-4 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
+          <div className="flex flex-col items-start gap-4 text-left">
             <Logo className="h-12 sm:h-16 lg:h-16" />
-            <p className="mx-auto max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
               Conectamos pessoas a oportunidades reais de{" "}
               <span className="font-semibold text-primary">
                 gerar renda recorrente
@@ -86,7 +86,7 @@ export function Rodape() {
               através de indicações inteligentes.
             </p>
             <span className="h-px w-full bg-border" />
-            <div className="mx-auto flex w-full max-w-sm flex-col items-center gap-3 text-center sm:flex-row sm:items-start sm:text-left lg:mx-0">
+            <div className="flex w-full flex-col items-start gap-3 text-left sm:flex-row">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-soft">
                 <ShieldCheck className="size-6 text-primary" aria-hidden="true" />
               </span>
@@ -100,17 +100,16 @@ export function Rodape() {
             </p>
           </div>
 
-
           {colunas.map((coluna) => (
             <nav
               key={coluna.titulo}
-              className="text-center lg:text-left"
+              className="text-left"
               aria-label={coluna.titulo}
             >
               <h3 className="font-display text-sm font-bold tracking-wide text-ink">
                 {coluna.titulo}
               </h3>
-              <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
+              <span className="mt-2 block h-0.5 w-10 bg-primary" />
               <ul className="mt-4 space-y-3">
                 {coluna.itens.map((item) => (
                   <li key={item}>
@@ -123,12 +122,12 @@ export function Rodape() {
             </nav>
           ))}
 
-          <div className="text-center lg:text-left">
+          <div className="text-left">
             <h3 className="font-display text-sm font-bold tracking-wide text-ink">
               ATENDIMENTO
             </h3>
-            <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
-            <ul className="mx-auto mt-4 grid max-w-[19rem] gap-4 lg:mx-0 lg:max-w-none">
+            <span className="mt-2 block h-0.5 w-10 bg-primary" />
+            <ul className="mt-4 grid w-full max-w-sm gap-4 lg:max-w-none">
               {atendimento.map((a) => (
                 <li
                   key={a.titulo}
@@ -152,8 +151,8 @@ export function Rodape() {
             <h3 className="mt-7 font-display text-sm font-bold tracking-wide text-ink">
               SIGA NOSSAS REDES
             </h3>
-            <span className="mt-2 block h-0.5 w-10 bg-primary lg:mx-0 mx-auto" />
-            <div className="mx-auto mt-4 flex max-w-[19rem] items-center gap-3 lg:mx-0 lg:max-w-none">
+            <span className="mt-2 block h-0.5 w-10 bg-primary" />
+            <div className="mt-4 flex w-full max-w-sm items-center justify-start gap-3 lg:max-w-none">
               {redes.map((r) => (
                 <span
                   key={r.nome}
@@ -171,7 +170,7 @@ export function Rodape() {
           {selos.map((s) => (
             <div
               key={s.texto}
-              className="mx-auto grid w-full max-w-[19rem] grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 text-left lg:max-w-none lg:px-5"
+              className="grid w-full max-w-sm grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 text-left lg:max-w-none lg:px-5"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <s.icone
@@ -186,8 +185,7 @@ export function Rodape() {
           ))}
         </div>
 
-
-        <p className="mt-4 flex items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:text-base">
+        <p className="mt-4 flex items-center justify-start gap-2 text-left text-sm text-muted-foreground sm:text-base">
           <Globe className="size-4 text-primary" aria-hidden="true" />© 2026{" "}
           <strong className="text-primary">SmartVoz</strong>. Todos os direitos
           reservados.
