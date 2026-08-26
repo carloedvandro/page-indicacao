@@ -75,7 +75,7 @@ export function Rodape() {
   return (
     <footer className="waves-bg px-3 pb-5 pt-2 sm:px-6 sm:pb-6 sm:pt-3">
       <div className="mx-auto max-w-7xl">
-        <div className="surface-card grid gap-9 px-5 py-7 sm:px-8 sm:py-9 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
+        <div className="grid gap-9 px-1 py-4 sm:px-2 sm:py-5 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <Logo className="h-12 sm:h-16 lg:h-16" />
             <p className="mx-auto max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
@@ -167,7 +167,7 @@ export function Rodape() {
           </div>
         </div>
 
-        <div className="surface-card mt-4 grid gap-4 px-5 py-5 sm:px-8 lg:grid-cols-4 lg:divide-x lg:divide-border">
+        <div className="mt-4 grid gap-4 px-1 py-3 sm:px-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {selos.map((s) => (
             <div
               key={s.texto}
