@@ -118,7 +118,7 @@ function Plano({ variante }: PlanoProps) {
 
         <div className="mt-6 grid items-center gap-6">
           <div className="min-w-0 text-center">
-            <p className="flex items-end justify-center gap-1 lg:justify-start">
+            <p className="flex items-end justify-center gap-1">
               <span
                 className={`plan-gb-3d text-[4.2rem] sm:text-[5.6rem] ${premium ? "plan-gb-3d-gold" : ""}`}
               >
@@ -131,7 +131,7 @@ function Plano({ variante }: PlanoProps) {
               </span>
             </p>
 
-            <div className="mt-4 flex items-center justify-center gap-2 lg:justify-start">
+            <div className="mt-4 flex items-center justify-center gap-2">
               <span
                 className={`plan-gb-3d text-3xl sm:text-4xl ${premium ? "plan-gb-3d-gold" : ""}`}
               >
@@ -186,7 +186,7 @@ function Plano({ variante }: PlanoProps) {
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               Por apenas
             </p>
-            <p className="mt-1 flex items-baseline justify-center gap-1 font-display font-extrabold text-ink lg:justify-start">
+            <p className="mt-1 flex items-baseline justify-center gap-1 font-display font-extrabold text-ink">
               <span className="text-xl">R$</span>
               <span
                 className={`text-5xl tabular-nums sm:text-6xl ${
