@@ -135,7 +135,7 @@ export function Hero() {
           type="button"
           onClick={abrirPlayer}
           aria-label="Assista ao vídeo e entenda como funciona"
-          className="btn-video-3d group flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-4 text-center sm:gap-5 sm:px-8 sm:py-5"
+          className="btn-video-3d group flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-5 text-center sm:gap-5 sm:px-8 sm:py-5"
         >
           <span className="btn-video-3d-shine" aria-hidden="true" />
 
@@ -147,7 +147,7 @@ export function Hero() {
           </span>
 
           <span className="relative text-center text-primary-foreground">
-            <span className="block whitespace-nowrap font-display text-lg font-extrabold tracking-tight drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
+            <span className="block whitespace-nowrap font-display text-lg font-extrabold drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
               ASSISTA AO VÍDEO
             </span>
             <span className="mt-1 block whitespace-nowrap font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
