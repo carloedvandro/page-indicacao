@@ -50,7 +50,7 @@ export function Multiplicacao() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {/* ETAPA 1 */}
-          <article className="surface-card relative overflow-hidden p-6">
+          <article className="relative overflow-hidden p-6">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 1
@@ -150,7 +150,7 @@ export function Multiplicacao() {
           </article>
 
           {/* ETAPA 2 */}
-          <article className="surface-card p-6">
+          <article className="relative overflow-hidden p-6">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 2
