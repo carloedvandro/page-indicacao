@@ -10,11 +10,17 @@ import {
   Wifi,
   ArrowRight,
   Lock,
+  MapPinned,
+  Timer,
+  CreditCard,
+  Gauge,
+  Gift,
   Smartphone,
   Signal,
   Zap,
 } from "lucide-react";
 
+import mapaCobertura from "@/assets/mapa-cobertura.png.asset.json";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const passos = [
@@ -53,6 +59,34 @@ const academy = [
   "E muito mais",
 ];
 
+const selos = [
+  {
+    icone: MapPinned,
+    titulo: "COBERTURA NACIONAL VIVO",
+    texto: "Sinal que conecta você em todo o Brasil.",
+  },
+  {
+    icone: Timer,
+    titulo: "ATIVAÇÃO EM ATÉ 24H",
+    texto: "Agilidade para você não perder tempo.",
+  },
+  {
+    icone: CreditCard,
+    titulo: "eSIM OU SIM CARD",
+    texto: "Mais praticidade na forma que preferir.",
+  },
+  {
+    icone: Gauge,
+    titulo: "CONEXÃO RÁPIDA E ESTÁVEL",
+    texto: "Mais desempenho para sua rotina com fluidez.",
+  },
+  {
+    icone: Users,
+    titulo: "COMPARTILHE COM QUEM QUISER",
+    texto: "Ganhe por indicação e aproveite mais.",
+  },
+];
+
 type PlanoProps = {
   variante: "senior" | "premium";
 };
@@ -69,9 +103,9 @@ function Plano({ variante }: PlanoProps) {
         premium ? "border-gold/60" : "border-border"
       }`}
     >
-      {/* cabeçalho com arte 3D */}
+      {/* cabeçalho 3D: badge, GB, bônus e preço */}
       <div
-        className={`relative overflow-hidden px-5 pb-8 pt-6 sm:px-8 ${
+        className={`relative overflow-hidden px-5 pb-7 pt-6 sm:px-8 ${
           premium ? "bg-gradient-gold" : "bg-gradient-primary"
         }`}
       >
@@ -99,20 +133,103 @@ function Plano({ variante }: PlanoProps) {
           </span>
         </p>
 
-        <p className="mt-5 text-center font-display text-4xl font-extrabold text-white sm:text-5xl">
+        <div className="mt-5 flex flex-wrap items-end justify-center gap-1">
+          <span
+            className={`plan-gb-3d text-[4rem] leading-[0.85] sm:text-[5.2rem] ${premium ? "plan-gb-3d-gold" : ""}`}
+          >
+            {gb}
+          </span>
+          <span
+            className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
+          >
+            GB
+          </span>
+        </div>
+
+        <div className="mt-3 flex items-center justify-center gap-2">
+          <span
+            className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
+          >
+            +
+          </span>
+          <div
+            className={`flex items-center gap-2 rounded-xl border-2 px-3 py-1.5 ${
+              premium
+                ? "border-ink/25 bg-ink/10"
+                : "border-white/40 bg-white/15"
+            }`}
+          >
+            <span
+              className={`plan-gb-3d text-2xl sm:text-3xl ${premium ? "plan-gb-3d-gold" : ""}`}
+            >
+              20
+              <span className="text-lg sm:text-xl">GB</span>
+            </span>
+            <span className="flex flex-col items-start gap-0.5">
+              <span
+                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-extrabold tracking-wide ${
+                  premium
+                    ? "bg-ink/15 text-ink"
+                    : "bg-white/20 text-primary-foreground"
+                }`}
+              >
+                <Gift className="size-3" aria-hidden="true" />
+                DE BÔNUS
+              </span>
+              <span
+                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.55rem] font-extrabold tracking-wide ${
+                  premium
+                    ? "bg-white/80 text-ink"
+                    : "bg-white/90 text-primary"
+                }`}
+              >
+                <CreditCard className="size-3" aria-hidden="true" />
+                DÉBITO AUTOMÁTICO
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <p className="mt-5 text-center font-display text-3xl font-extrabold text-white sm:text-4xl">
           R$ {preco}
-          <span className="text-2xl font-bold">,90</span>
-          <span className="block text-base font-semibold tracking-wide opacity-90 sm:text-lg">
+          <span className="text-xl font-bold">,90</span>
+          <span className="block text-sm font-semibold tracking-wide opacity-90 sm:text-base">
             /mês
           </span>
         </p>
-
-        <p className="mt-4 text-center text-sm font-medium text-white/90 sm:text-base">
-          {gb} GB + 20 GB de bônus
-        </p>
       </div>
 
-      {/* benefícios */}
+      {/* mapa + selos */}
+      <div className="border-y border-border px-5 py-6 sm:px-8">
+        <img
+          src={mapaCobertura.url}
+          alt={`Mapa do Brasil com cobertura 4G e 5G Vivo do plano de ${gb} GB`}
+          loading="lazy"
+          className="mx-auto w-full max-w-sm"
+        />
+
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+          {selos.map((s) => (
+            <li key={s.titulo} className="flex items-center gap-3">
+              <span
+                className={`plan-selo-coin shrink-0 ${premium ? "plan-selo-coin-gold" : ""}`}
+              >
+                <s.icone className="size-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="font-display text-[0.7rem] font-extrabold tracking-[0.08em] text-ink">
+                  {s.titulo}
+                </p>
+                <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
+                  {s.texto}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Smart Academy + benefícios + indicações */}
       <div className="grid gap-5 px-5 py-6 sm:px-8">
         <div className="flex items-start gap-3">
           <span
@@ -194,7 +311,7 @@ function Plano({ variante }: PlanoProps) {
           </div>
         </div>
 
-        <ul className="grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+        <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
           {academy.map((item) => (
             <li key={item} className="flex min-w-0 items-center gap-2">
               <CircleCheck
