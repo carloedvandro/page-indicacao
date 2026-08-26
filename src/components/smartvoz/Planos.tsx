@@ -102,105 +102,124 @@ function Plano({ variante }: PlanoProps) {
         premium ? "border-gold/60" : "border-border"
       }`}
     >
-      {/* topo: destaque de dados no estilo da arte oficial */}
-      <div
-        className={`relative overflow-hidden px-5 pb-7 pt-6 sm:px-8 ${
-          premium ? "plan-hero-premium" : "plan-hero-senior"
-        }`}
-      >
-        <span className="plan-shine" aria-hidden="true" />
-        <p className="text-center">
+      {/* arte oficial: números 3D + bônus + mapa de cobertura */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-secondary/70 to-card px-5 pb-7 pt-6 sm:px-8">
+        <p className="text-center lg:text-left">
           <span
             className={`inline-block rounded-full px-6 py-2 font-display text-xs font-extrabold tracking-[0.18em] ${
               premium
                 ? "bg-gradient-gold text-ink shadow-gold"
-                : "bg-card text-primary shadow-soft"
+                : "bg-gradient-primary text-primary-foreground shadow-soft"
             }`}
           >
             {premium ? "SMART PREMIUM" : "SMART SENIOR"}
           </span>
         </p>
 
-        <div className="mt-6 flex flex-col items-center text-center">
-          <div className="relative flex min-h-40 w-full items-center justify-center">
-            <span
-              className={`plan-data-disc ${premium ? "plan-data-disc-gold" : "plan-data-disc-purple"}`}
-              aria-hidden="true"
-            >
-              <Signal className="size-9" strokeWidth={2.5} />
-            </span>
-            <span
-              className={`plan-phone-3d ${premium ? "plan-phone-3d-gold" : "plan-phone-3d-purple"}`}
-              aria-hidden="true"
-            >
-              <Smartphone className="size-12" strokeWidth={1.8} />
-            </span>
-            <p className="relative z-10 flex items-baseline justify-center gap-1 font-display font-extrabold leading-none text-primary-foreground">
-              <span className="text-[3.8rem] sm:text-[4.8rem]">{gb}</span>
-              <span className="text-2xl sm:text-3xl">GB</span>
+        <div className="mt-6 grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)]">
+          <div className="min-w-0 text-center lg:text-left">
+            <p className="flex items-end justify-center gap-1 lg:justify-start">
+              <span
+                className={`plan-gb-3d text-[4.2rem] sm:text-[5.6rem] ${premium ? "plan-gb-3d-gold" : ""}`}
+              >
+                {gb}
+              </span>
+              <span
+                className={`plan-gb-3d text-3xl sm:text-4xl ${premium ? "plan-gb-3d-gold" : ""}`}
+              >
+                GB
+              </span>
+            </p>
+
+            <div className="mt-4 flex items-center justify-center gap-2 lg:justify-start">
+              <span
+                className={`plan-gb-3d text-3xl sm:text-4xl ${premium ? "plan-gb-3d-gold" : ""}`}
+              >
+                +
+              </span>
+              <div className="plan-bonus-frame justify-center lg:justify-start">
+                <span
+                  className={`plan-gb-3d text-3xl sm:text-4xl ${premium ? "plan-gb-3d-gold" : ""}`}
+                >
+                  20
+                  <span className="text-xl sm:text-2xl">GB</span>
+                </span>
+                <span className="flex flex-col items-start gap-1.5">
+                  <span className="plan-chip-deep text-[0.7rem] sm:text-xs">
+                    <Gift className="size-3.5 text-gold" aria-hidden="true" />
+                    DE BÔNUS
+                  </span>
+                  <span className="plan-chip-gold text-[0.62rem] sm:text-[0.7rem]">
+                    <CreditCard className="size-3.5" aria-hidden="true" />
+                    DÉBITO AUTOMÁTICO
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <p className="mt-4 font-display text-2xl font-extrabold text-ink sm:text-3xl">
+              de internet{" "}
+              <span className={premium ? "text-gold-deep" : "text-primary"}>
+                móvel
+              </span>
+            </p>
+
+            <span className="plan-gold-rule mx-auto mt-4 block w-48 lg:mx-0" />
+
+            <p className="mt-4 font-display text-base font-extrabold leading-snug text-ink sm:text-lg">
+              Internet móvel de{" "}
+              <span className={premium ? "text-gold-deep" : "text-primary"}>
+                alta franquia
+              </span>{" "}
+              para o que realmente importa.
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Mais velocidade, estabilidade e liberdade para você aproveitar
+              tudo o que importa: trabalho, estudos, jogos, streaming e muito
+              mais,{" "}
+              <strong className={premium ? "text-gold-deep" : "text-primary"}>
+                sem preocupações e com máxima performance.
+              </strong>
+            </p>
+
+            {/* valor abaixo, como na arte */}
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Por apenas
+            </p>
+            <p className="mt-1 flex items-baseline justify-center gap-1 font-display font-extrabold text-ink lg:justify-start">
+              <span className="text-xl">R$</span>
+              <span
+                className={`text-5xl tabular-nums sm:text-6xl ${
+                  premium ? "text-gold-deep" : "text-primary"
+                }`}
+              >
+                {preco}
+                <span className="text-2xl">,90</span>
+              </span>
+              <span className="text-base font-bold">/mês</span>
             </p>
           </div>
 
-          <p
-            className={`mt-3 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl border px-4 py-2 font-display text-sm font-extrabold tracking-wide ${
-              premium
-                ? "border-gold/70 text-gold"
-                : "border-primary-foreground/30 text-primary-foreground"
-            }`}
-          >
-            <Gift
-              className={`size-4 ${premium ? "text-gold" : "text-gold"}`}
-              aria-hidden="true"
-            />
-            + 20 GB DE BÔNUS
-            <span className="text-[0.65rem] font-semibold tracking-[0.12em] text-primary-foreground/75">
-              DÉBITO AUTOMÁTICO
-            </span>
-          </p>
-
-          <p className="mt-4 font-display text-xl font-extrabold text-primary-foreground sm:text-2xl">
-            de internet{" "}
-            <span className={premium ? "text-gold" : "text-primary-soft"}>
-              móvel
-            </span>
-          </p>
-
-          <span
-            className={`mt-5 block h-px w-40 ${
-              premium ? "bg-gold/60" : "bg-primary-foreground/25"
-            }`}
+          <img
+            src={mapaCobertura.url}
+            alt={`Mapa do Brasil com cobertura 4G e 5G Vivo do plano de ${gb} GB`}
+            loading="lazy"
+            className="mx-auto w-full max-w-sm lg:max-w-none"
           />
-
-          {/* valor abaixo, como pedido */}
-          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/70">
-            Por apenas
-          </p>
-          <p className="mt-1 flex items-baseline justify-center gap-1 font-display font-extrabold text-primary-foreground">
-            <span className="text-xl">R$</span>
-            <span
-              className={`text-5xl tabular-nums sm:text-6xl ${
-                premium ? "text-gold" : "text-primary-soft"
-              }`}
-            >
-              {preco}
-              <span className="text-2xl">,90</span>
-            </span>
-            <span className="text-base font-bold">/mês</span>
-          </p>
         </div>
       </div>
 
-      {/* selos de benefícios */}
-      <ul className="grid grid-cols-1 gap-4 border-b border-border px-5 py-6 sm:grid-cols-2 sm:px-8">
+      {/* selos de benefícios no estilo das moedas douradas */}
+      <ul className="grid grid-cols-1 gap-5 border-y border-border px-5 py-6 sm:grid-cols-2 sm:px-8 lg:grid-cols-5 lg:divide-x lg:divide-gold/40">
         {selos.map((s) => (
-          <li key={s.titulo} className="flex items-start gap-3">
-            <span className={`plan-icon-3d size-11 shrink-0 ${premium ? "plan-icon-3d-gold" : "plan-icon-3d-purple"}`}>
-              <s.icone
-                className={`size-5 ${
-                  premium ? "text-ink" : "text-primary-foreground"
-                }`}
-                aria-hidden="true"
-              />
+          <li
+            key={s.titulo}
+            className="flex items-center gap-3 lg:flex-col lg:px-2 lg:text-center"
+          >
+            <span
+              className={`plan-selo-coin shrink-0 ${premium ? "plan-selo-coin-gold" : ""}`}
+            >
+              <s.icone className="size-6" aria-hidden="true" />
             </span>
             <div className="min-w-0">
               <p className="font-display text-[0.72rem] font-extrabold tracking-[0.08em] text-ink">
@@ -213,6 +232,7 @@ function Plano({ variante }: PlanoProps) {
           </li>
         ))}
       </ul>
+
 
       <div className="grid gap-6 px-5 py-6 sm:px-8 lg:grid-cols-2">
         <div>
