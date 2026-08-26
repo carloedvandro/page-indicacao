@@ -167,11 +167,11 @@ export function Rodape() {
               ))}
             </ul>
 
-            <h3 className="mt-7 font-display text-sm font-bold tracking-wide text-ink">
+            <h3 className="mt-7 text-center font-display text-sm font-bold tracking-wide text-ink lg:text-left">
               SIGA NOSSAS REDES
             </h3>
             <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
-            <div className="mt-4 flex w-full items-center justify-start gap-3">
+            <div className="mt-4 flex w-full items-center justify-center gap-3 lg:justify-start">
               {redes.map((r) => (
                 <span
                   key={r.nome}
