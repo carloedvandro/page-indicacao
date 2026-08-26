@@ -119,13 +119,13 @@ export function Rodape() {
           {colunas.map((coluna) => (
             <nav
               key={coluna.titulo}
-              className="text-center lg:text-left"
+              className="text-left"
               aria-label={coluna.titulo}
             >
               <h3 className="font-display text-sm font-bold tracking-wide text-ink">
                 {coluna.titulo}
               </h3>
-              <span className="mx-auto mt-2 block h-0.5 w-10 bg-primary lg:mx-0" />
+              <span className="mt-2 block h-0.5 w-10 bg-primary" />
               <ul className="mt-4 flex w-full flex-col items-start gap-3 text-left">
                 {coluna.itens.map((item) => (
                   <li key={item.label}>
