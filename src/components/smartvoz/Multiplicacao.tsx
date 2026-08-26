@@ -65,7 +65,7 @@ export function Multiplicacao() {
             </div>
 
             <div className="mt-6 flex flex-col items-center">
-              <PessoaIcone className="size-14" />
+              <PessoaIcone className="size-14 pulse-ring icon-float" />
               <span className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.14em] text-ink">
                 VOCÊ
               </span>
@@ -75,7 +75,7 @@ export function Multiplicacao() {
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
-                    <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card shadow-soft">
+                    <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card shadow-soft icon-float">
                       <User className="size-4 text-primary" aria-hidden="true" />
                     </span>
                     <span className="mt-1 text-[0.7rem] font-semibold text-muted-foreground">
@@ -89,7 +89,7 @@ export function Multiplicacao() {
             <span className="mx-auto mt-6 block h-px w-[90%] bg-border" />
 
             <div className="mt-6 flex flex-col items-center text-center">
-              <span className="flex size-12 items-center justify-center rounded-full bg-primary-soft">
+              <span className="flex size-12 items-center justify-center rounded-full bg-primary-soft icon-float">
                 <Users className="size-6 text-primary" aria-hidden="true" />
               </span>
               <p className="mt-2 text-base font-semibold leading-tight text-ink">
@@ -107,7 +107,7 @@ export function Multiplicacao() {
             </p>
 
             <div className="mt-3 flex flex-col items-center text-center">
-              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-primary shadow-glow">
+              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-primary shadow-glow pulse-ring icon-float">
                 <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
               <div className="mt-2 min-w-0">
@@ -129,7 +129,7 @@ export function Multiplicacao() {
             </div>
 
             <div className="mt-4 flex flex-col items-center text-center">
-              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-primary shadow-glow">
+              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-primary shadow-glow pulse-ring icon-float">
                 <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
               <div className="mt-2 min-w-0">
