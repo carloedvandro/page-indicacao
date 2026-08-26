@@ -135,22 +135,22 @@ export function Hero() {
           type="button"
           onClick={abrirPlayer}
           aria-label="Assista ao vídeo e entenda como funciona"
-          className="btn-video-3d group flex w-full max-w-xl items-center gap-4 px-5 py-4 text-left hover:-translate-y-0.5 sm:gap-5 sm:px-8 sm:py-5"
+          className="btn-video-3d group flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-5 text-center sm:gap-5 sm:px-8 sm:py-5"
         >
           <span className="btn-video-3d-shine" aria-hidden="true" />
 
-          <span className="relative flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-red shadow-[0_6px_14px_-6px_oklch(0.4_0.2_28/0.9),0_1px_0_oklch(1_0_0/0.35)_inset] transition-transform duration-300 group-hover:scale-105 sm:size-14">
+          <span className="relative flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-red shadow-[0_6px_14px_-6px_oklch(0.4_0.2_28/0.9),0_1px_0_oklch(1_0_0/0.35)_inset] sm:size-14">
             <Play
               className="ml-0.5 size-5 fill-current text-primary-foreground sm:size-6"
               aria-hidden="true"
             />
           </span>
 
-          <span className="relative text-primary-foreground">
-            <span className="block font-display text-lg font-extrabold tracking-tight drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
+          <span className="relative text-center text-primary-foreground">
+            <span className="block whitespace-nowrap font-display text-lg font-extrabold drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
               ASSISTA AO VÍDEO
             </span>
-            <span className="mt-1 block font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
+            <span className="mt-1 block whitespace-nowrap font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
               E ENTENDA COMO FUNCIONA
             </span>
           </span>
