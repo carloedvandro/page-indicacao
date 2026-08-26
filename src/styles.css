@@ -125,6 +125,25 @@
     0 20px 45px -18px oklch(0.35 0.24 301 / 0.55);
   --shadow-gold: 0 0 0 1px oklch(0.8 0.16 84 / 0.55),
     0 24px 60px -24px oklch(0.7 0.15 68 / 0.6);
+
+  --gradient-plan-senior: linear-gradient(
+    155deg,
+    oklch(0.16 0.11 300),
+    oklch(0.38 0.24 303) 72%,
+    oklch(0.48 0.2 315)
+  );
+  --gradient-plan-premium: linear-gradient(
+    155deg,
+    oklch(0.16 0.08 300),
+    oklch(0.29 0.12 310) 58%,
+    oklch(0.5 0.13 70)
+  );
+  --shadow-plan-purple: 0 5px 0 oklch(0.19 0.13 300),
+    0 13px 24px oklch(0.18 0.13 300 / 0.34),
+    inset 0 2px 2px oklch(1 0 0 / 0.35);
+  --shadow-plan-gold: 0 5px 0 oklch(0.43 0.12 65),
+    0 13px 24px oklch(0.24 0.09 65 / 0.34),
+    inset 0 2px 2px oklch(1 0 0 / 0.4);
 }
 
 @layer base {
@@ -216,6 +235,93 @@
 
 @utility shadow-gold {
   box-shadow: var(--shadow-gold);
+}
+
+@utility plan-card-3d {
+  box-shadow: 0 7px 0 color-mix(in oklab, var(--color-primary-deep) 18%, transparent),
+    var(--shadow-card);
+}
+
+@utility plan-hero-senior {
+  background-image: var(--gradient-plan-senior);
+}
+
+@utility plan-hero-premium {
+  background-image: var(--gradient-plan-premium);
+}
+
+@utility plan-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 24%, oklch(1 0 0 / 0.12) 43%, transparent 58%);
+}
+
+@utility plan-data-disc {
+  position: absolute;
+  left: calc(50% - 8.3rem);
+  top: 0.4rem;
+  display: flex;
+  width: 4.75rem;
+  height: 4.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transform: rotate(-9deg);
+}
+
+@utility plan-data-disc-purple {
+  color: var(--color-primary-foreground);
+  background-image: var(--gradient-primary);
+  box-shadow: var(--shadow-plan-purple);
+}
+
+@utility plan-data-disc-gold {
+  color: var(--color-ink);
+  background-image: var(--gradient-gold);
+  box-shadow: var(--shadow-plan-gold);
+}
+
+@utility plan-phone-3d {
+  position: absolute;
+  right: calc(50% - 8.3rem);
+  bottom: 0.15rem;
+  display: flex;
+  width: 4.7rem;
+  height: 5.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.15rem;
+  transform: rotate(10deg);
+}
+
+@utility plan-phone-3d-purple {
+  color: var(--color-primary-foreground);
+  background-image: var(--gradient-primary);
+  box-shadow: var(--shadow-plan-purple);
+}
+
+@utility plan-phone-3d-gold {
+  color: var(--color-ink);
+  background-image: var(--gradient-gold);
+  box-shadow: var(--shadow-plan-gold);
+}
+
+@utility plan-icon-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+@utility plan-icon-3d-purple {
+  background-image: var(--gradient-primary);
+  box-shadow: var(--shadow-plan-purple);
+}
+
+@utility plan-icon-3d-gold {
+  background-image: var(--gradient-gold);
+  box-shadow: var(--shadow-plan-gold);
 }
 
 @utility eyebrow-pill {
