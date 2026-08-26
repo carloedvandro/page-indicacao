@@ -7,12 +7,46 @@ import {
   ShieldCheck,
   GraduationCap,
   CircleCheck,
-  Wifi,
   ArrowRight,
   Lock,
+  MapPinned,
+  Clock4,
+  CreditCard,
+  Gauge,
+  Share2,
+  Gift,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
+
+const beneficios = [
+  {
+    icone: MapPinned,
+    titulo: "COBERTURA NACIONAL VIVO",
+    texto: "Sinal que conecta você em todo o Brasil.",
+  },
+  {
+    icone: Clock4,
+    titulo: "ATIVAÇÃO EM ATÉ 24H",
+    texto: "Agilidade para você não perder tempo.",
+  },
+  {
+    icone: CreditCard,
+    titulo: "eSIM OU SIM CARD",
+    texto: "Mais praticidade na forma que preferir.",
+  },
+  {
+    icone: Gauge,
+    titulo: "CONEXÃO RÁPIDA E ESTÁVEL",
+    texto: "Mais desempenho para sua rotina com fluidez.",
+  },
+  {
+    icone: Share2,
+    titulo: "COMPARTILHE COM QUEM QUISER",
+    texto: "Ganhe por indicação e aproveite mais.",
+  },
+];
+
 
 const passos = [
   {
