@@ -283,7 +283,7 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl p-3"
+                    className="grid grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2"
                   >
                     <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
@@ -306,7 +306,7 @@ export function Multiplicacao() {
                       </span>
                     </div>
                     <span className="border-l border-border pl-3 text-right">
-                      <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-primary">
+                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-primary">
                         {n.valor}
                       </span>
                       <span className="block text-xs font-semibold text-muted-foreground">
@@ -317,7 +317,7 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl p-3">
+              <div className="mt-3 grid grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
@@ -333,7 +333,7 @@ export function Multiplicacao() {
                   </p>
                 </div>
                 <span className="border-l border-gold/50 pl-3 text-right">
-                  <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
+                  <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold">
                     R$ 20.500,00
                   </span>
                   <span className="block text-xs font-semibold text-muted-foreground">
