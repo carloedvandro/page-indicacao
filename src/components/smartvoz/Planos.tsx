@@ -104,7 +104,7 @@ function Plano({ variante }: PlanoProps) {
     >
       {/* arte oficial: números 3D + bônus + mapa de cobertura */}
       <div className="relative overflow-hidden bg-gradient-to-b from-secondary/70 to-card px-5 pb-7 pt-6 sm:px-8">
-        <p className="text-center lg:text-left">
+        <p className="text-center">
           <span
             className={`inline-block rounded-full px-6 py-2 font-display text-xs font-extrabold tracking-[0.18em] ${
               premium
@@ -116,8 +116,8 @@ function Plano({ variante }: PlanoProps) {
           </span>
         </p>
 
-        <div className="mt-6 grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)]">
-          <div className="min-w-0 text-center lg:text-left">
+        <div className="mt-6 grid items-center gap-6">
+          <div className="min-w-0 text-center">
             <p className="flex items-end justify-center gap-1 lg:justify-start">
               <span
                 className={`plan-gb-3d text-[4.2rem] sm:text-[5.6rem] ${premium ? "plan-gb-3d-gold" : ""}`}
@@ -137,7 +137,7 @@ function Plano({ variante }: PlanoProps) {
               >
                 +
               </span>
-              <div className="plan-bonus-frame justify-center lg:justify-start">
+              <div className="plan-bonus-frame justify-center">
                 <span
                   className={`plan-gb-3d text-3xl sm:text-4xl ${premium ? "plan-gb-3d-gold" : ""}`}
                 >
@@ -164,7 +164,7 @@ function Plano({ variante }: PlanoProps) {
               </span>
             </p>
 
-            <span className="plan-gold-rule mx-auto mt-4 block w-48 lg:mx-0" />
+            <span className="plan-gold-rule mx-auto mt-4 block w-48" />
 
             <p className="mt-4 font-display text-base font-extrabold leading-snug text-ink sm:text-lg">
               Internet móvel de{" "}
@@ -204,7 +204,7 @@ function Plano({ variante }: PlanoProps) {
             src={mapaCobertura.url}
             alt={`Mapa do Brasil com cobertura 4G e 5G Vivo do plano de ${gb} GB`}
             loading="lazy"
-            className="mx-auto w-full max-w-sm lg:max-w-none"
+            className="mx-auto w-full max-w-md"
           />
         </div>
       </div>
