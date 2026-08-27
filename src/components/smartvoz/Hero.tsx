@@ -34,12 +34,13 @@ export function Hero() {
             Todo mundo que você conhece já paga internet todos os meses.
           </h1>
 
-          <p className="mt-6 font-display text-xl font-bold leading-snug text-ink sm:text-3xl">
-            <span className="block">A pergunta é:</span>
-            <span className="block text-primary">
+          <p className="mt-6 font-display text-xl font-bold leading-[1.35] text-ink sm:text-3xl">
+            <span className="block pb-1">A pergunta é:</span>
+            <span className="block pb-1 text-primary">
               por que você ainda não ganha com isso?
             </span>
           </p>
+
 
 
           <span className="mt-6 block h-1 w-16 rounded-full bg-primary" />
