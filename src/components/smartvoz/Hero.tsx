@@ -22,9 +22,9 @@ export function Hero() {
         <Logo className="h-[5.5rem] sm:h-32 lg:h-40" />
       </div>
 
-      <div className="mx-auto mt-10 grid max-w-7xl items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto mt-4 grid max-w-7xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1.35rem] font-extrabold uppercase leading-tight tracking-[0.1em] text-ink sm:text-[1.7rem] sm:tracking-[0.12em] lg:text-left">
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left">
             O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
             <span className="ml-1 text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
@@ -35,11 +35,12 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 font-display text-xl font-bold leading-snug text-ink sm:text-3xl">
-            A pergunta é:{" "}
-            <span className="text-primary">
+            <span className="block">A pergunta é:</span>
+            <span className="block text-primary">
               por que você ainda não ganha com isso?
             </span>
           </p>
+
 
           <span className="mt-6 block h-1 w-16 rounded-full bg-primary" />
         </div>
