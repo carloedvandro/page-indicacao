@@ -5,7 +5,6 @@ import {
   CalendarClock,
   Infinity as InfinityIcon,
   ShieldCheck,
-  MonitorSmartphone,
   Users,
   Plus,
   Handshake,
