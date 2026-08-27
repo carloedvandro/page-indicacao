@@ -262,86 +262,180 @@ export function Multiplicacao() {
 
           </article>
 
-          {/* ETAPAS 3, 4 E 5 — bloco dourado */}
-          <article className="shadow-gold relative overflow-hidden rounded-3xl border border-gold/60 bg-ink p-6">
+          {/* ETAPAS 3, 4 E 5 — bloco escuro com brilho roxo e dourado */}
+          <article
+            className="relative overflow-hidden rounded-[2rem] p-6 sm:p-7"
+            style={{
+              backgroundImage:
+                "radial-gradient(900px 400px at 50% 0%, oklch(0.32 0.19 300 / 0.5), transparent 65%), linear-gradient(165deg, oklch(0.17 0.09 300), oklch(0.13 0.06 300) 60%, oklch(0.11 0.05 300))",
+              boxShadow:
+                "0 0 0 1px oklch(0.6 0.26 303 / 0.65), 0 0 45px oklch(0.55 0.25 303 / 0.45), 0 24px 60px -24px oklch(0.4 0.22 302 / 0.6)",
+            }}
+          >
+            {/* pontos de constelação */}
             <span
-              className="pointer-events-none absolute inset-0 opacity-40"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 80% 0%, oklch(0.79 0.15 82 / 0.35), transparent 55%), radial-gradient(circle at 0% 100%, oklch(0.49 0.26 283 / 0.4), transparent 55%)",
+                  "radial-gradient(oklch(0.72 0.18 303 / 0.5) 1.2px, transparent 1.4px)",
+                backgroundSize: "90px 90px",
+                maskImage:
+                  "radial-gradient(120% 90% at 50% 0%, black, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(120% 90% at 50% 0%, black, transparent 75%)",
               }}
-              aria-hidden="true"
             />
+
             <div className="relative">
               <p className="text-center">
-                <span className="inline-block rounded-full bg-gradient-gold px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-ink">
+                <span
+                  className="inline-block rounded-full px-6 py-2 font-display text-[0.72rem] font-bold tracking-[0.22em] text-gold"
+                  style={{
+                    border: "1px solid oklch(0.8 0.16 84 / 0.75)",
+                    boxShadow:
+                      "0 0 18px oklch(0.8 0.16 84 / 0.35), 0 0 0 1px oklch(0.55 0.25 303 / 0.4)",
+                  }}
+                >
                   ETAPAS 3, 4 E 5
                 </span>
               </p>
-              <h3 className="mt-5 text-center font-display text-2xl font-extrabold uppercase leading-tight">
-                <span className="text-gradient-gold">A MULTIPLICAÇÃO</span>
-                <span className="block text-primary-foreground">NÃO PARA!</span>
+
+              <h3 className="mt-6 text-center font-display font-extrabold uppercase leading-[1.02]">
+                <span
+                  className="block text-[1.9rem] sm:text-[2.2rem]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, oklch(0.85 0.12 303), oklch(0.62 0.24 303))",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                    textShadow: "0 0 30px oklch(0.6 0.26 303 / 0.45)",
+                  }}
+                >
+                  A MULTIPLICAÇÃO
+                </span>
+                <span className="block text-[1.9rem] text-primary-foreground sm:text-[2.2rem]">
+                  NÃO PARA!
+                </span>
               </h3>
-              <p className="mt-2 text-center text-sm text-primary-foreground/80">
+
+              <p className="mt-3 text-center text-sm text-primary-foreground/85 sm:text-base">
                 Veja o poder nos{" "}
-                <span className="font-semibold text-gold">próximos níveis:</span>
+                <span
+                  className="font-semibold"
+                  style={{ color: "oklch(0.75 0.2 303)" }}
+                >
+                  próximos níveis:
+                </span>
               </p>
 
-              <ul className="mt-5 space-y-3">
-                {proximosNiveis.map((n) => (
-                  <li
-                    key={n.nivel}
-                    className="grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl bg-primary-foreground/[0.06] p-3"
-                  >
-                    <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                      <Users
-                        className="size-6 text-primary-foreground"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary">
-                        {n.nivel}
-                      </p>
-                      <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
-                        {n.pessoas}{" "}
-                        <span className="text-xs font-semibold text-primary-foreground/70">
-                          pessoas
+              <ul className="mt-6">
+                {proximosNiveis.map((n, i) => (
+                  <li key={n.nivel}>
+                    {i > 0 && (
+                      <span className="relative my-4 block h-px w-full bg-primary-foreground/15">
+                        <span
+                          className="absolute left-1/2 top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                          style={{
+                            background: "oklch(0.75 0.2 303)",
+                            boxShadow: "0 0 12px 3px oklch(0.65 0.26 303 / 0.9)",
+                          }}
+                        />
+                      </span>
+                    )}
+                    <div className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3">
+                      <span
+                        className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
+                          boxShadow:
+                            "0 0 0 1px oklch(0.72 0.18 303 / 0.7), 0 0 24px oklch(0.55 0.26 303 / 0.8)",
+                        }}
+                      >
+                        <Users
+                          className="size-7 text-primary-foreground"
+                          aria-hidden="true"
+                        />
+                      </span>
+                      <div className="min-w-0">
+                        <p
+                          className="font-display text-[0.85rem] font-bold tracking-[0.14em]"
+                          style={{ color: "oklch(0.75 0.2 303)" }}
+                        >
+                          {n.nivel}
+                        </p>
+                        <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                          {n.pessoas}{" "}
+                          <span className="text-sm font-semibold text-primary-foreground/70">
+                            pessoas
+                          </span>
+                        </p>
+                        <span
+                          className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-display text-[0.72rem] font-semibold text-gold"
+                          style={{
+                            border: "1px solid oklch(0.8 0.16 84 / 0.7)",
+                          }}
+                        >
+                          {n.calculo}
                         </span>
-                      </p>
-                      <span className="mt-1 inline-block rounded-full bg-primary/70 px-2.5 py-0.5 text-[0.65rem] font-semibold text-primary-foreground">
-                        {n.calculo}
+                      </div>
+                      <span className="border-l border-primary-foreground/15 pl-3 text-right">
+                        <span
+                          className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
+                          style={{
+                            textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
+                          }}
+                        >
+                          {n.valor}
+                        </span>
+                        <span className="block text-xs font-semibold text-primary-foreground/70">
+                          /mês
+                        </span>
                       </span>
                     </div>
-                    <span className="border-l border-primary-foreground/15 pl-3 text-right">
-                      <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
-                        {n.valor}
-                      </span>
-                      <span className="block text-xs font-semibold text-primary-foreground/70">
-                        /mês
-                      </span>
-                    </span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl border border-gold/50 bg-primary-foreground/[0.06] p-3">
-                <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
+              <div
+                className="mt-5 grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                style={{
+                  border: "1px solid oklch(0.8 0.16 84 / 0.45)",
+                  background: "oklch(1 0 0 / 0.04)",
+                  boxShadow: "0 0 24px oklch(0.55 0.25 303 / 0.3)",
+                }}
+              >
+                <span
+                  className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    border: "1px solid oklch(0.8 0.16 84 / 0.65)",
+                    background: "oklch(0.8 0.16 84 / 0.1)",
+                    boxShadow: "0 0 20px oklch(0.8 0.16 84 / 0.35)",
+                  }}
+                >
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary-foreground/85">
+                  <p
+                    className="font-display text-[0.7rem] font-bold tracking-[0.12em]"
+                    style={{ color: "oklch(0.78 0.18 303)" }}
+                  >
                     TOTAL EM 5 NÍVEIS
                   </p>
-                  <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
                     3.905{" "}
-                    <span className="text-xs font-semibold text-primary-foreground/70">
+                    <span className="text-sm font-semibold text-primary-foreground/70">
                       pessoas
                     </span>
                   </p>
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
-                  <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
+                  <span
+                    className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
+                    style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
+                  >
                     R$ 20.500,00
                   </span>
                   <span className="block text-xs font-semibold text-primary-foreground/70">
@@ -350,22 +444,45 @@ export function Multiplicacao() {
                 </span>
               </div>
 
-              <div className="mt-3 rounded-2xl bg-primary-foreground/[0.06] px-4 py-5 text-center">
-                <span className="flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary-foreground/85">
-                  <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
+              <div className="mt-6 text-center">
+                <span className="flex items-center justify-center gap-4">
+                  <span className="h-px w-14 bg-gold/50" />
+                  <InfinityIcon
+                    className="size-6 text-gold"
+                    style={{ filter: "drop-shadow(0 0 8px oklch(0.8 0.16 84 / 0.8))" }}
+                    aria-hidden="true"
+                  />
+                  <span className="h-px w-14 bg-gold/50" />
+                </span>
+                <span
+                  className="mt-3 block font-display text-[0.85rem] font-bold tracking-[0.4em] text-gold"
+                  style={{ textShadow: "0 0 16px oklch(0.8 0.16 84 / 0.5)" }}
+                >
                   RENDA RECORRENTE
                 </span>
-                <span className="mt-1 block font-display text-2xl font-extrabold tracking-tight text-primary">
+                <span
+                  className="mt-1 block font-display text-[2.2rem] font-extrabold leading-none tracking-tight sm:text-[2.6rem]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, oklch(0.82 0.14 303), oklch(0.55 0.25 303))",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                    textShadow: "0 0 34px oklch(0.6 0.26 303 / 0.4)",
+                  }}
+                >
                   EM ESCALA
                 </span>
               </div>
 
-              <p className="mt-4 text-center">
-                <span className="inline-block rounded-full border border-primary/50 bg-primary-foreground/10 px-4 py-1 text-xs font-semibold text-primary-foreground/80">
+              <p className="mt-5 text-center">
+                <span
+                  className="inline-block rounded-full px-5 py-1.5 text-xs font-semibold text-primary-foreground"
+                  style={{ border: "1px solid oklch(0.72 0.18 303 / 0.7)" }}
+                >
                   3/3
                 </span>
               </p>
-
             </div>
           </article>
         </div>
