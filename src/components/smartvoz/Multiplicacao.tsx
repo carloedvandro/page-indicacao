@@ -1,6 +1,5 @@
 import {
   Star,
-  User,
   Users,
   Coins,
   Trophy,
@@ -14,16 +13,6 @@ const proximosNiveis = [
   { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5,00", valor: "R$ 3.125,00" },
   { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5,00", valor: "R$ 15.625,00" },
 ];
-
-function PessoaIcone({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`flex items-center justify-center rounded-full bg-gradient-primary ${className}`}
-    >
-      <User className="size-1/2 text-primary-foreground" aria-hidden="true" />
-    </span>
-  );
-}
 
 export function Multiplicacao() {
   return (
@@ -48,60 +37,30 @@ export function Multiplicacao() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid items-start gap-6 lg:grid-cols-3">
           {/* ETAPA 1 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden rounded-[2rem] p-6 lg:p-7">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 1
               </span>
-              <h3 className="mt-5 font-display text-2xl font-extrabold leading-tight text-ink">
-                Você começa indicando{" "}
-                <span className="text-primary">5 pessoas.</span>
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">Simples assim.</p>
-              <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-primary" />
             </div>
 
-            <div className="mt-6 flex flex-col items-center">
-              <PessoaIcone className="size-14" />
-              <span className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.14em] text-ink">
-                VOCÊ
+            <div className="mt-6 flex items-center gap-4">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+                <Users className="size-7 text-primary" aria-hidden="true" />
               </span>
-              <span className="h-4 w-px bg-primary/40" />
-              <span className="h-px w-[80%] bg-primary/40" />
-              <div className="flex w-full justify-between px-2 sm:px-3">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <span key={n} className="flex flex-col items-center">
-                    <span className="h-3 w-px bg-primary/40" />
-                    <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card shadow-soft">
-                      <User className="size-4 text-primary" aria-hidden="true" />
-                    </span>
-                    <span className="mt-1 text-[0.7rem] font-semibold text-muted-foreground">
-                      {n}
-                    </span>
-                  </span>
-                ))}
+              <div>
+                <p className="text-base font-semibold leading-tight text-ink sm:text-lg">
+                  Você indica 5 pessoas
+                </p>
+                <p className="text-sm text-muted-foreground">(Nível 1)</p>
               </div>
             </div>
 
-            <span className="mt-6 block h-px w-full bg-border" />
+            <span className="mt-5 block h-px w-full bg-border" />
 
-            <div className="mt-4 flex items-center gap-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-                <Users className="size-6 text-primary" aria-hidden="true" />
-              </span>
-              <p className="text-base font-semibold leading-tight text-ink">
-                Você indica 5 pessoas
-                <span className="block text-sm font-normal text-muted-foreground">
-                  (Nível 1)
-                </span>
-              </p>
-            </div>
-
-            <span className="mt-4 block h-px w-full bg-border" />
-
-            <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
+            <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
               Seu ganho no Nível 1
             </p>
 
@@ -146,75 +105,31 @@ export function Multiplicacao() {
                 1 / 3
               </span>
             </p>
-
           </article>
 
           {/* ETAPA 2 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden rounded-[2rem] p-6 lg:p-7">
             <div className="text-center">
               <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                 ETAPA 2
               </span>
-              <h3 className="mt-5 font-display text-2xl font-extrabold leading-tight text-ink">
-                Cada uma das 5 indica <span className="text-primary">mais 5.</span>
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                O poder da <span className="font-semibold text-primary">multiplicação!</span>
-              </p>
-              <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-primary" />
             </div>
 
-            <div className="mt-6 flex flex-col items-center">
-              <PessoaIcone className="size-12" />
-              <span className="mt-1 font-display text-[0.62rem] font-bold tracking-[0.14em] text-ink">
-                VOCÊ
+            <div className="mt-6 flex items-center gap-4">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+                <Users className="size-7 text-primary" aria-hidden="true" />
               </span>
-              <span className="h-4 w-px bg-primary/40" />
-              <span className="h-px w-[88%] bg-primary/40" />
-              <div className="flex w-full justify-between px-1 sm:px-2">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <span key={n} className="flex flex-col items-center">
-                    <span className="h-3 w-px bg-primary/40" />
-                    <PessoaIcone className="size-8" />
-                    <span className="mt-1 text-[0.65rem] font-semibold text-muted-foreground">
-                      {n}
-                    </span>
-                    <span className="h-2 w-px bg-primary/40" />
-                    <span className="h-px w-6 bg-primary/40" />
-                    <span className="mt-1 flex gap-0.5">
-                      {[1, 2, 3, 4, 5].map((m) => (
-                        <User
-                          key={m}
-                          className="size-2.5 fill-current text-primary"
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </span>
-                  </span>
-                ))}
+              <div>
+                <p className="text-base font-semibold leading-tight text-ink sm:text-lg">
+                  Total de 25 pessoas
+                </p>
+                <p className="text-sm text-muted-foreground">(Nível 2)</p>
               </div>
-              <span className="mt-3 rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-primary shadow-soft">
-                25 pessoas
-              </span>
             </div>
 
-            <span className="mt-6 block h-px w-full bg-border" />
+            <span className="mt-5 block h-px w-full bg-border" />
 
-            <div className="mt-4 flex items-center gap-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-                <Users className="size-6 text-primary" aria-hidden="true" />
-              </span>
-              <p className="text-base font-semibold leading-tight text-ink">
-                Total de 25 pessoas
-                <span className="block text-sm font-normal text-muted-foreground">
-                  (Nível 2)
-                </span>
-              </p>
-            </div>
-
-            <span className="mt-4 block h-px w-full bg-border" />
-
-            <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
+            <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
               Seu ganho no Nível 2
             </p>
 
@@ -259,7 +174,6 @@ export function Multiplicacao() {
                 2 / 3
               </span>
             </p>
-
           </article>
 
           {/* ETAPAS 3, 4 E 5 — bloco escuro com brilho roxo e dourado */}
