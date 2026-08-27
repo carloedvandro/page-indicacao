@@ -283,7 +283,7 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.25rem_1fr_7.5rem] items-center gap-3 py-2"
+                    className="grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2"
                   >
                     <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
@@ -317,7 +317,7 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_1fr_7.5rem] items-center gap-3 py-2">
+              <div className="mt-3 grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
