@@ -40,11 +40,8 @@ export function Hero() {
               por que você ainda não ganha com isso?
             </span>
           </p>
-
-
-
-          <span className="mt-6 block h-1 w-16 rounded-full bg-primary" />
         </div>
+
 
         <div
           id="video"
