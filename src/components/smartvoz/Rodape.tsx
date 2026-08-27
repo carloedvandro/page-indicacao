@@ -90,7 +90,7 @@ const selos = [
 export function Rodape() {
   return (
     <footer className="waves-bg px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-5">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-screen-2xl">
         <div className="grid gap-8 px-1 py-3 sm:px-2 sm:py-4 lg:grid-cols-[1.15fr_repeat(3,0.75fr)_1fr]">
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <Logo className="h-12 sm:h-16 lg:h-16" />
