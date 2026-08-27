@@ -97,15 +97,15 @@ export function ComoGanha() {
             </div>
           </div>
 
-          <article>
+          <article className="p-6 sm:p-8">
             <p className="text-center font-display text-sm font-bold tracking-[0.06em] text-ink sm:text-base">
               SUA REDE PODE CHEGAR{" "}
               <span className="text-primary">ATÉ O 5º NÍVEL</span>
             </p>
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-1">
-              <span className="flex size-14 items-center justify-center rounded-full bg-gradient-primary shadow-glow">
-                <User className="size-7 text-primary-foreground" aria-hidden="true" />
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <span className="flex size-11 items-center justify-center rounded-full bg-gradient-primary shadow-glow">
+                <User className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
               <span className="font-display text-xl font-extrabold text-ink">
                 VOCÊ
@@ -116,16 +116,16 @@ export function ComoGanha() {
               {niveis.map((n) => (
                 <li
                   key={n.nivel}
-                  className="grid grid-cols-[4.75rem_2rem_minmax(0,1fr)_7.5rem] items-center gap-3 py-2.5"
+                  className="grid grid-cols-[4.25rem_1.5rem_minmax(0,1fr)_6.5rem] items-center gap-2 py-2"
                 >
-                  <span className="rounded-full bg-primary/15 px-3 py-2 text-center font-display text-[0.65rem] font-bold tracking-wide text-primary">
+                  <span className="rounded-full bg-primary-soft px-2 py-1.5 text-center font-display text-[0.62rem] font-bold tracking-wide text-accent-foreground">
                     {n.nivel}
                   </span>
                   <Users className="size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="min-w-0 text-[0.85rem] leading-tight text-muted-foreground">
+                  <span className="min-w-0 text-[0.8rem] leading-tight text-muted-foreground">
                     {n.descricao}
                   </span>
-                  <span className="whitespace-pre-line text-right font-display text-[0.82rem] font-extrabold leading-tight tabular-nums text-primary">
+                  <span className="whitespace-pre-line text-right font-display text-[0.78rem] font-extrabold leading-tight tabular-nums text-primary">
                     {n.valor}
                   </span>
                 </li>

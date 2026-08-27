@@ -70,7 +70,7 @@ export function Multiplicacao() {
               </span>
               <span className="h-4 w-px bg-primary/40" />
               <span className="h-px w-[80%] bg-primary/40" />
-              <div className="grid w-full grid-cols-5">
+              <div className="flex w-full justify-between px-1">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -170,8 +170,8 @@ export function Multiplicacao() {
                 VOCÊ
               </span>
               <span className="h-4 w-px bg-primary/40" />
-              <span className="h-px w-[80%] bg-primary/40" />
-              <div className="grid w-full grid-cols-5">
+              <span className="h-px w-[88%] bg-primary/40" />
+              <div className="flex w-full justify-between">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -180,7 +180,7 @@ export function Multiplicacao() {
                       {n}
                     </span>
                     <span className="h-2 w-px bg-primary/40" />
-                    <span className="h-px w-12 bg-primary/40" />
+                    <span className="h-px w-6 bg-primary/40" />
                     <span className="mt-1 flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((m) => (
                         <User
@@ -262,28 +262,36 @@ export function Multiplicacao() {
 
           </article>
 
-          {/* ETAPAS 3, 4 E 5 */}
-          <article className="relative overflow-hidden">
+          {/* ETAPAS 3, 4 E 5 — bloco dourado */}
+          <article className="shadow-gold relative overflow-hidden rounded-3xl border border-gold/60 bg-ink p-6">
+            <span
+              className="pointer-events-none absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 80% 0%, oklch(0.79 0.15 82 / 0.35), transparent 55%), radial-gradient(circle at 0% 100%, oklch(0.49 0.26 283 / 0.4), transparent 55%)",
+              }}
+              aria-hidden="true"
+            />
             <div className="relative">
               <p className="text-center">
                 <span className="inline-block rounded-full bg-gradient-gold px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-ink">
                   ETAPAS 3, 4 E 5
                 </span>
               </p>
-              <h3 className="mt-5 text-center font-display text-2xl font-extrabold uppercase leading-tight text-ink">
+              <h3 className="mt-5 text-center font-display text-2xl font-extrabold uppercase leading-tight">
                 <span className="text-gradient-gold">A MULTIPLICAÇÃO</span>
-                <span className="block text-ink">NÃO PARA!</span>
+                <span className="block text-primary-foreground">NÃO PARA!</span>
               </h3>
-              <p className="mt-2 text-center text-sm text-muted-foreground">
+              <p className="mt-2 text-center text-sm text-primary-foreground/80">
                 Veja o poder nos{" "}
-                <span className="font-semibold text-primary">próximos níveis:</span>
+                <span className="font-semibold text-gold">próximos níveis:</span>
               </p>
 
               <ul className="mt-5 space-y-3">
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2"
+                    className="grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl bg-primary-foreground/[0.06] p-3"
                   >
                     <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
@@ -295,21 +303,21 @@ export function Multiplicacao() {
                       <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary">
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-lg font-extrabold text-ink">
+                      <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
                         {n.pessoas}{" "}
-                        <span className="text-xs font-semibold text-muted-foreground">
+                        <span className="text-xs font-semibold text-primary-foreground/70">
                           pessoas
                         </span>
                       </p>
-                      <span className="mt-1 inline-block rounded-full bg-primary/15 px-2.5 py-0.5 text-[0.65rem] font-semibold text-primary">
+                      <span className="mt-1 inline-block rounded-full bg-primary/70 px-2.5 py-0.5 text-[0.65rem] font-semibold text-primary-foreground">
                         {n.calculo}
                       </span>
                     </div>
-                    <span className="border-l border-border pl-3 text-right">
-                      <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-primary">
+                    <span className="border-l border-primary-foreground/15 pl-3 text-right">
+                      <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
                         {n.valor}
                       </span>
-                      <span className="block text-xs font-semibold text-muted-foreground">
+                      <span className="block text-xs font-semibold text-primary-foreground/70">
                         /mês
                       </span>
                     </span>
@@ -317,33 +325,33 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2">
+              <div className="mt-3 grid grid-cols-[3.25rem_minmax(0,1fr)_7.5rem] items-center gap-3 rounded-2xl border border-gold/50 bg-primary-foreground/[0.06] p-3">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-muted-foreground">
+                  <p className="font-display text-[0.7rem] font-bold tracking-[0.12em] text-primary-foreground/85">
                     TOTAL EM 5 NÍVEIS
                   </p>
-                  <p className="whitespace-nowrap font-display text-lg font-extrabold text-ink">
+                  <p className="whitespace-nowrap font-display text-lg font-extrabold text-primary-foreground">
                     3.905{" "}
-                    <span className="text-xs font-semibold text-muted-foreground">
+                    <span className="text-xs font-semibold text-primary-foreground/70">
                       pessoas
                     </span>
                   </p>
                 </div>
-                <span className="border-l border-gold/50 pl-3 text-right">
-                  <span className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold">
+                <span className="border-l border-gold/30 pl-3 text-right">
+                  <span className="block whitespace-nowrap font-display text-[1.1rem] font-extrabold tabular-nums text-gold">
                     R$ 20.500,00
                   </span>
-                  <span className="block text-xs font-semibold text-muted-foreground">
+                  <span className="block text-xs font-semibold text-primary-foreground/70">
                     /mês
                   </span>
                 </span>
               </div>
 
-              <div className="mt-3 px-4 py-5 text-center">
-                <span className="flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-muted-foreground">
+              <div className="mt-3 rounded-2xl bg-primary-foreground/[0.06] px-4 py-5 text-center">
+                <span className="flex items-center justify-center gap-2 font-display text-[0.66rem] font-bold tracking-[0.35em] text-primary-foreground/85">
                   <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
                   RENDA RECORRENTE
                 </span>
@@ -353,7 +361,7 @@ export function Multiplicacao() {
               </div>
 
               <p className="mt-4 text-center">
-                <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
+                <span className="inline-block rounded-full border border-primary/50 bg-primary-foreground/10 px-4 py-1 text-xs font-semibold text-primary-foreground/80">
                   3/3
                 </span>
               </p>
