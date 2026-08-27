@@ -83,10 +83,8 @@ export function Faq() {
 
         <div className="mt-8 text-center">
           <h2 className="text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
-            Ainda tem dúvidas?
-            <span className="block">
-              A gente <span className="text-primary">clareia tudo.</span>
-            </span>
+            Ainda tem dúvidas?{" "}
+            <span className="text-primary">A gente clareia tudo.</span>
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Respostas rápidas para você{" "}

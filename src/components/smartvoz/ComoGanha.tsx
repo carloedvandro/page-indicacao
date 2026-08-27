@@ -28,7 +28,7 @@ export function ComoGanha() {
             <CircleDollarSign className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">SIMPLES. JUSTO. RECORRENTE.</span>
           </p>
-          <h2 className="mx-auto mt-6 max-w-3xl text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
+          <h2 className="mx-auto mt-6 text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
             Como você ganha com o Poder da{" "}
             <span className="text-primary">Recorrência.</span>
           </h2>
