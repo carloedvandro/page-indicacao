@@ -128,31 +128,31 @@ export function ComoGanha() {
           </article>
         </div>
 
-        <div className="mt-8 flex items-center gap-4 px-2 sm:px-4">
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-            <InfinityIcon
-              className="size-7 text-primary-foreground"
-              aria-hidden="true"
-            />
-          </span>
-          <p className="max-w-md font-display text-sm font-bold leading-snug text-ink sm:text-base">
-            Uma única indicação pode gerar comissões na adesão e continuar
-            gerando <span className="text-primary">todos os meses</span>.
-          </p>
-        </div>
-
-        <div className="mt-6 flex flex-col items-center gap-5 px-2 sm:flex-row sm:px-4">
-          <ShieldCheck className="size-12 shrink-0 text-primary" aria-hidden="true" />
-          <div className="flex-1 text-center sm:text-left">
-            <p className="font-display text-base font-bold text-ink sm:text-lg">
-              Comissões pagas de forma transparente e recorrente.
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Acompanhe tudo pelo seu escritório virtual.
+        <div className="mt-8 flex flex-col gap-5 lg:flex-row lg:items-stretch lg:justify-between">
+          <div className="flex items-center gap-4 px-2 sm:px-4 lg:flex-1">
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+              <InfinityIcon
+                className="size-7 text-primary-foreground"
+                aria-hidden="true"
+              />
+            </span>
+            <p className="max-w-md font-display text-sm font-bold leading-snug text-ink sm:text-base">
+              Uma única indicação pode gerar comissões na adesão e continuar
+              gerando <span className="text-primary">todos os meses</span>.
             </p>
           </div>
-          <span className="hidden h-14 w-px bg-border sm:block" />
-          <MonitorSmartphone className="size-12 shrink-0 text-primary" aria-hidden="true" />
+
+          <div className="flex items-center gap-5 px-2 sm:px-4 lg:flex-1">
+            <ShieldCheck className="size-12 shrink-0 text-primary" aria-hidden="true" />
+            <div className="flex-1 text-left">
+              <p className="font-display text-base font-bold text-ink sm:text-lg">
+                Comissões pagas de forma transparente e recorrente.
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Acompanhe tudo pelo seu escritório virtual.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
