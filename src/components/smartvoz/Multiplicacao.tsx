@@ -201,6 +201,16 @@ export function Multiplicacao() {
               }}
             />
 
+            {/* brilho interno pulsante em tempo real */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 animate-pulse rounded-[2rem]"
+              style={{
+                background:
+                  "radial-gradient(700px 350px at 50% 15%, oklch(0.6 0.26 303 / 0.38), transparent 60%)",
+              }}
+            />
+
             <div className="relative">
               <p className="text-center">
                 <span
