@@ -70,7 +70,7 @@ export function Multiplicacao() {
               </span>
               <span className="h-4 w-px bg-primary/40" />
               <span className="h-px w-[80%] bg-primary/40" />
-              <div className="flex w-full justify-between px-1">
+              <div className="flex w-full justify-between px-2 sm:px-3">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -127,7 +127,7 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center gap-4 px-1 py-2">
+            <div className="mt-4 flex items-center gap-3 py-2">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
@@ -171,7 +171,7 @@ export function Multiplicacao() {
               </span>
               <span className="h-4 w-px bg-primary/40" />
               <span className="h-px w-[88%] bg-primary/40" />
-              <div className="flex w-full justify-between">
+              <div className="flex w-full justify-between px-1 sm:px-2">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -240,7 +240,7 @@ export function Multiplicacao() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center gap-4 px-1 py-2">
+            <div className="mt-4 flex items-center gap-3 py-2">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                 <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
               </span>
