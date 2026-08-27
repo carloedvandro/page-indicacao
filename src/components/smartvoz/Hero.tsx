@@ -24,9 +24,9 @@ export function Hero() {
 
       <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left">
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:whitespace-nowrap lg:text-left">
             O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
-            <span className="ml-1 text-brand-orange">MULTIPLICAÇÃO</span>
+            <span className="text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
 
 
@@ -135,9 +135,9 @@ export function Hero() {
             aria-label="Assista ao vídeo e entenda como funciona"
             className="group flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border border-primary/25 bg-card px-6 py-4 text-center shadow-soft transition-colors duration-200 hover:border-primary/50 sm:max-w-lg sm:gap-4 sm:px-8"
           >
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-primary transition-transform duration-200 ease-out group-hover:scale-110 sm:size-12">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#FF0000] shadow-md transition-transform duration-200 ease-out group-hover:scale-110 sm:size-12">
               <Play
-                className="ml-0.5 size-4 fill-current text-primary-foreground sm:size-5"
+                className="ml-0.5 size-5 fill-white text-white sm:size-6"
                 aria-hidden="true"
               />
             </span>
