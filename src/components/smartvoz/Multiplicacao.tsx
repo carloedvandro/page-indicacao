@@ -183,7 +183,7 @@ export function Multiplicacao() {
               backgroundImage:
                 "radial-gradient(900px 400px at 50% 0%, oklch(0.32 0.19 300 / 0.5), transparent 65%), linear-gradient(165deg, oklch(0.17 0.09 300), oklch(0.13 0.06 300) 60%, oklch(0.11 0.05 300))",
               boxShadow:
-                "0 0 0 1px oklch(0.6 0.26 303 / 0.65), 0 0 45px oklch(0.55 0.25 303 / 0.45), 0 24px 60px -24px oklch(0.4 0.22 302 / 0.6)",
+                "inset 0 0 60px oklch(0.55 0.25 303 / 0.35), 0 0 0 1px oklch(0.6 0.26 303 / 0.65)",
             }}
           >
             {/* pontos de constelação */}
