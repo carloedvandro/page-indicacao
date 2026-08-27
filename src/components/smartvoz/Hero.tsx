@@ -30,10 +30,10 @@ export function Hero() {
           </p>
 
 
-          <h1 className="mt-6 text-[1.85rem] font-extrabold leading-[1.08] text-ink sm:text-[2.45rem] lg:mt-5 lg:text-[3.25rem]">
+          <h1 className="mt-6 text-balance text-[1.85rem] font-extrabold leading-[1.08] text-ink sm:text-[2.45rem] lg:mt-5 lg:text-[3.25rem]">
             Todo mundo que você
-            <br className="hidden lg:block" /> conhece já paga internet
-            <br className="hidden lg:block" /> todos os meses.
+            <br className="lg:hidden" /> conhece já paga internet
+            <br className="lg:hidden" /> todos os meses.
           </h1>
 
           <p className="mt-5 font-display text-xl font-bold leading-[1.35] text-ink sm:text-3xl lg:mt-4">
