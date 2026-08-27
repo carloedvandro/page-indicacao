@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-8 lg:grid-cols-2 lg:items-start lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left lg:text-[1.2rem] lg:tracking-[0.08em]">
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left lg:text-[1.3rem] lg:tracking-[0.06em]">
             O PODER DA <span className="text-primary">RECORRÊNCIA</span> E DA{" "}
             <span className="text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
@@ -130,7 +130,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mt-1 flex justify-center lg:col-start-1 lg:-mt-10 lg:justify-start">
+        <div className="mt-1 flex justify-center lg:col-start-1 lg:-mt-20 lg:justify-start">
           <button
             type="button"
             onClick={abrirPlayer}
