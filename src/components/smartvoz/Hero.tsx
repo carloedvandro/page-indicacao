@@ -22,11 +22,10 @@ export function Hero() {
         <Logo className="h-[5.5rem] sm:h-24 lg:h-28" />
       </div>
 
-      <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-8 lg:grid-cols-2 lg:items-start lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-[1.15rem] lg:leading-tight">
-            O PODER DA <span className="text-primary">RECORRÊNCIA</span>
-            <br className="hidden lg:block" /> E DA{" "}
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left lg:text-[1.3rem] lg:leading-tight">
+            O PODER DA <span className="text-primary">RECORRÊNCIA</span> E DA{" "}
             <span className="text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
 
