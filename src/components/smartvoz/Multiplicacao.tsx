@@ -70,7 +70,7 @@ export function Multiplicacao() {
               </span>
               <span className="h-4 w-px bg-primary/40" />
               <span className="h-px w-[80%] bg-primary/40" />
-              <div className="flex w-full justify-between px-1">
+              <div className="grid w-full grid-cols-5">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -170,8 +170,8 @@ export function Multiplicacao() {
                 VOCÊ
               </span>
               <span className="h-4 w-px bg-primary/40" />
-              <span className="h-px w-[88%] bg-primary/40" />
-              <div className="flex w-full justify-between">
+              <span className="h-px w-[80%] bg-primary/40" />
+              <div className="grid w-full grid-cols-5">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <span key={n} className="flex flex-col items-center">
                     <span className="h-3 w-px bg-primary/40" />
@@ -180,7 +180,7 @@ export function Multiplicacao() {
                       {n}
                     </span>
                     <span className="h-2 w-px bg-primary/40" />
-                    <span className="h-px w-6 bg-primary/40" />
+                    <span className="h-px w-12 bg-primary/40" />
                     <span className="mt-1 flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((m) => (
                         <User
