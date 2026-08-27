@@ -130,32 +130,31 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto mb-6 mt-16 flex max-w-7xl justify-center sm:mb-12 sm:mt-16 lg:mb-14 lg:mt-20">
+      <div className="mx-auto mb-6 mt-7 flex max-w-7xl justify-center sm:mb-8 sm:mt-8">
         <button
           type="button"
           onClick={abrirPlayer}
           aria-label="Assista ao vídeo e entenda como funciona"
-          className="btn-video-3d flex w-full max-w-xl items-center justify-center gap-4 rounded-2xl px-5 py-5 text-center sm:gap-5 sm:px-8 sm:py-5"
+          className="group flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border border-primary/25 bg-card px-6 py-4 text-center shadow-soft transition-colors duration-200 hover:border-primary/50 sm:max-w-lg sm:gap-4 sm:px-8"
         >
-          <span className="btn-video-3d-shine" aria-hidden="true" />
-
-          <span className="group relative -ml-1 flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-red shadow-[0_6px_14px_-6px_oklch(0.4_0.2_28/0.9),0_1px_0_oklch(1_0_0/0.35)_inset] transition-transform duration-200 ease-out hover:scale-110 sm:-ml-2 sm:size-14">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-primary transition-transform duration-200 ease-out group-hover:scale-110 sm:size-12">
             <Play
-              className="ml-0.5 size-5 fill-current text-primary-foreground sm:size-6"
+              className="ml-0.5 size-4 fill-current text-primary-foreground sm:size-5"
               aria-hidden="true"
             />
           </span>
 
-          <span className="relative text-center text-primary-foreground">
-            <span className="block whitespace-nowrap font-display text-lg font-extrabold drop-shadow-[0_1px_2px_oklch(0.16_0.1_300/0.6)] sm:text-2xl">
+          <span className="text-left">
+            <span className="block whitespace-nowrap font-display text-base font-extrabold tracking-[0.06em] text-ink sm:text-lg">
               ASSISTA AO VÍDEO
             </span>
-            <span className="mt-1 block whitespace-nowrap font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary-foreground/80 sm:text-xs">
+            <span className="mt-0.5 block whitespace-nowrap font-display text-[0.6rem] font-semibold tracking-[0.18em] text-muted-foreground sm:text-[0.7rem]">
               E ENTENDA COMO FUNCIONA
             </span>
           </span>
         </button>
       </div>
+
 
     </header>
   );
