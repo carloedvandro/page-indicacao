@@ -256,9 +256,9 @@ export function Planos() {
           <span className="mx-auto mt-5 block h-1 w-14 rounded-full bg-primary" />
         </div>
 
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
+        <ul className="mx-auto mt-10 grid max-w-[26rem] gap-6 px-3 sm:max-w-none sm:grid-cols-2 sm:px-0 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {passos.map((p) => (
-            <li key={p.titulo} className="flex items-start gap-4 lg:px-4">
+            <li key={p.titulo} className="flex items-start gap-3 sm:gap-4 lg:px-4">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
                 <p.icone className="size-6 text-primary" aria-hidden="true" />
               </span>
