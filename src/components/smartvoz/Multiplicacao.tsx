@@ -263,7 +263,7 @@ export function Multiplicacao() {
           </article>
 
           {/* ETAPAS 3, 4 E 5 */}
-          <article className="relative overflow-hidden p-6">
+          <article className="relative overflow-hidden">
             <div className="relative">
               <p className="text-center">
                 <span className="inline-block rounded-full bg-gradient-gold px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-ink">
@@ -283,7 +283,7 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2"
+                    className="grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2"
                   >
                     <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
                       <Users
@@ -317,7 +317,7 @@ export function Multiplicacao() {
                 ))}
               </ul>
 
-              <div className="mt-3 grid grid-cols-[3.25rem_1fr_6.5rem] items-center gap-3 rounded-2xl p-2">
+              <div className="mt-3 grid grid-cols-[3.25rem_1fr_8.5rem] items-center gap-3 py-2">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-full bg-gold/15">
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
