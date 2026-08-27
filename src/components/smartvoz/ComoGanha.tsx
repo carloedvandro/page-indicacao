@@ -38,45 +38,49 @@ export function ComoGanha() {
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
-          <div className="relative grid gap-10 sm:grid-cols-2 sm:gap-6">
-            <article className="flex flex-col items-center p-2 text-center sm:p-4">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-5 py-2 font-display text-[0.7rem] font-bold tracking-[0.14em] text-accent-foreground">
-                <User className="size-4" aria-hidden="true" />
-                NA ADESÃO
-              </span>
-              <p className="mt-7 font-display text-5xl font-extrabold tracking-tight text-primary lg:text-6xl">
-                R$ 50,00
-              </p>
-              <span className="mt-7 block h-px w-full max-w-xs bg-border" />
-              <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
+          <div className="relative grid items-stretch gap-10 sm:grid-cols-2 sm:gap-6">
+            <article className="flex h-full flex-col items-center justify-between p-2 text-center sm:p-4">
+              <div className="flex flex-col items-center">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-5 py-2 font-display text-[0.7rem] font-bold tracking-[0.14em] text-accent-foreground">
+                  <User className="size-4" aria-hidden="true" />
+                  NA ADESÃO
+                </span>
+                <p className="mt-5 whitespace-nowrap font-display text-[2.5rem] font-extrabold tracking-tight text-primary lg:text-[3rem]">
+                  R$ 50,00
+                </p>
+              </div>
+              <span className="my-5 block h-px w-full max-w-xs bg-border" />
+              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 Você recebe <strong className="text-primary">R$ 50,00</strong>{" "}
                 quando sua indicação direta realizar a adesão.
               </p>
-              <span className="mx-auto mt-8 flex size-20 items-center justify-center rounded-full bg-primary-soft">
+              <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-primary-soft">
                 <Handshake className="size-10 text-primary" aria-hidden="true" />
               </span>
             </article>
 
-            <span className="absolute left-1/2 top-[42%] z-10 hidden size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-card sm:flex">
+            <span className="absolute left-1/2 top-1/2 z-10 hidden size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-card sm:flex">
               <Plus className="size-5 text-primary" aria-hidden="true" />
             </span>
 
-            <article className="flex flex-col items-center p-2 text-center sm:p-4">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-5 py-2 font-display text-[0.7rem] font-bold tracking-[0.14em] text-accent-foreground">
-                <RefreshCcw className="size-4" aria-hidden="true" />
-                RECORRÊNCIA MENSAL
-              </span>
-              <p className="mt-7 font-display text-5xl font-extrabold tracking-tight text-primary lg:text-6xl">
-                R$ 20,00
-                <span className="text-2xl font-bold">/mês</span>
-              </p>
-              <span className="mt-7 block h-px w-full max-w-xs bg-border" />
-              <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <article className="flex h-full flex-col items-center justify-between p-2 text-center sm:p-4">
+              <div className="flex flex-col items-center">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-5 py-2 font-display text-[0.7rem] font-bold tracking-[0.14em] text-accent-foreground">
+                  <RefreshCcw className="size-4" aria-hidden="true" />
+                  RECORRÊNCIA MENSAL
+                </span>
+                <p className="mt-5 whitespace-nowrap font-display text-[2.5rem] font-extrabold tracking-tight text-primary lg:text-[3rem]">
+                  R$ 20,00
+                  <span className="align-baseline text-xl font-bold">/mês</span>
+                </p>
+              </div>
+              <span className="my-5 block h-px w-full max-w-xs bg-border" />
+              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 Você recebe <strong className="text-primary">R$ 20,00</strong>{" "}
                 todo mês enquanto seu cliente direto permanecer ativo e
                 elegível.
               </p>
-              <span className="mx-auto mt-8 flex size-20 items-center justify-center rounded-full bg-primary-soft">
+              <span className="mx-auto mt-6 flex size-20 items-center justify-center rounded-full bg-primary-soft">
                 <CalendarClock className="size-10 text-primary" aria-hidden="true" />
               </span>
             </article>
