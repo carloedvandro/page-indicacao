@@ -127,31 +127,33 @@ export function Hero() {
             </div>
           </div>
         </div>
+
+        <div className="mt-1 flex justify-center lg:col-start-1 lg:-mt-6 lg:justify-start">
+          <button
+            type="button"
+            onClick={abrirPlayer}
+            aria-label="Assista ao vídeo e entenda como funciona"
+            className="group flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border border-primary/25 bg-card px-6 py-4 text-center shadow-soft transition-colors duration-200 hover:border-primary/50 sm:max-w-lg sm:gap-4 sm:px-8"
+          >
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-primary transition-transform duration-200 ease-out group-hover:scale-110 sm:size-12">
+              <Play
+                className="ml-0.5 size-4 fill-current text-primary-foreground sm:size-5"
+                aria-hidden="true"
+              />
+            </span>
+
+            <span className="text-left">
+              <span className="block whitespace-nowrap font-display text-base font-extrabold tracking-[0.06em] text-ink sm:text-lg">
+                ASSISTA AO VÍDEO
+              </span>
+              <span className="mt-0.5 block whitespace-nowrap font-display text-[0.6rem] font-semibold tracking-[0.18em] text-muted-foreground sm:text-[0.7rem]">
+                E ENTENDA COMO FUNCIONA
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div className="mx-auto mb-6 mt-7 flex max-w-screen-2xl justify-center sm:mb-8 sm:mt-8">
-        <button
-          type="button"
-          onClick={abrirPlayer}
-          aria-label="Assista ao vídeo e entenda como funciona"
-          className="group flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border border-primary/25 bg-card px-6 py-4 text-center shadow-soft transition-colors duration-200 hover:border-primary/50 sm:max-w-lg sm:gap-4 sm:px-8"
-        >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-primary transition-transform duration-200 ease-out group-hover:scale-110 sm:size-12">
-            <Play
-              className="ml-0.5 size-4 fill-current text-primary-foreground sm:size-5"
-              aria-hidden="true"
-            />
-          </span>
-
-          <span className="text-left">
-            <span className="block whitespace-nowrap font-display text-base font-extrabold tracking-[0.06em] text-ink sm:text-lg">
-              ASSISTA AO VÍDEO
-            </span>
-            <span className="mt-0.5 block whitespace-nowrap font-display text-[0.6rem] font-semibold tracking-[0.18em] text-muted-foreground sm:text-[0.7rem]">
-              E ENTENDA COMO FUNCIONA
-            </span>
-          </span>
-        </button>
       </div>
 
 
