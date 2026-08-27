@@ -130,7 +130,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mt-1 flex justify-center lg:col-start-1 lg:-mt-10 lg:justify-start">
+        <div className="mt-1 flex justify-center lg:col-start-1 lg:-mt-20 lg:justify-start">
           <button
             type="button"
             onClick={abrirPlayer}
