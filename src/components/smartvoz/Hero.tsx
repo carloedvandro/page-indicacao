@@ -24,17 +24,19 @@ export function Hero() {
 
       <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
-          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:whitespace-nowrap lg:text-left">
+          <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-[1.25rem] lg:whitespace-nowrap lg:text-left xl:text-[1.35rem]">
             O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
             <span className="text-brand-orange">MULTIPLICAÇÃO</span>
           </p>
 
 
-          <h1 className="mt-6 text-[1.75rem] font-extrabold leading-[1.08] text-ink sm:text-[2.45rem] lg:text-[3.15rem]">
-            Todo mundo que você conhece já paga internet todos os meses.
+          <h1 className="mt-6 text-[1.75rem] font-extrabold leading-[1.08] text-ink sm:text-[2.45rem] lg:mt-5 lg:text-[2.85rem]">
+            Todo mundo que você conhece
+            <br className="hidden lg:block" /> já paga internet
+            <br className="hidden lg:block" /> todos os meses.
           </h1>
 
-          <p className="mt-6 font-display text-xl font-bold leading-[1.35] text-ink sm:text-3xl">
+          <p className="mt-5 font-display text-xl font-bold leading-[1.35] text-ink sm:text-3xl lg:mt-4">
             <span className="block pb-1">A pergunta é:</span>
             <span className="block pb-1 text-primary">
               por que você ainda não ganha com isso?
