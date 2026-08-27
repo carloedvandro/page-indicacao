@@ -18,11 +18,11 @@ export function Hero() {
 
   return (
     <header className="waves-bg overflow-hidden px-3 pb-8 pt-6 sm:px-6 sm:pb-10 lg:pb-12">
-      <div className="mx-auto flex max-w-7xl items-center justify-center px-4">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-center px-4">
         <Logo className="h-[5.5rem] sm:h-32 lg:h-40" />
       </div>
 
-      <div className="mx-auto mt-4 grid max-w-7xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto mt-4 grid max-w-screen-2xl items-center gap-10 sm:mt-8 lg:mt-16 lg:grid-cols-2 lg:gap-14">
         <div className="rise-in">
           <p className="w-full text-center font-display text-[1.15rem] font-extrabold uppercase leading-tight tracking-[0.08em] text-ink sm:text-[1.45rem] sm:tracking-[0.1em] lg:text-left">
             O PODER DA <span className="mx-1 text-primary">RECORRÊNCIA</span> E DA{" "}
@@ -30,7 +30,7 @@ export function Hero() {
           </p>
 
 
-          <h1 className="mt-6 text-[1.85rem] font-extrabold leading-[1.08] text-ink sm:text-[2.6rem] lg:text-[3.4rem]">
+          <h1 className="mt-6 text-[1.75rem] font-extrabold leading-[1.08] text-ink sm:text-[2.45rem] lg:text-[3.15rem]">
             Todo mundo que você conhece já paga internet todos os meses.
           </h1>
 
@@ -131,7 +131,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto mb-6 mt-7 flex max-w-7xl justify-center sm:mb-8 sm:mt-8">
+      <div className="mx-auto mb-6 mt-7 flex max-w-screen-2xl justify-center sm:mb-8 sm:mt-8">
         <button
           type="button"
           onClick={abrirPlayer}
