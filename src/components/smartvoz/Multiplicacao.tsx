@@ -68,31 +68,32 @@ function BlocoGanho({
   valor: string;
 }) {
   return (
-    <div className="mt-5 flex items-center gap-3">
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+    <div className="mt-4 flex items-start gap-3 rounded-2xl bg-primary-soft/60 p-3.5">
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
         <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.12em] text-primary">
+        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.1em] text-primary">
           {titulo}
         </p>
-        <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-          <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
+        <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3">
+          <span className="whitespace-nowrap font-display text-xl font-extrabold tabular-nums text-ink">
             {formula}
           </span>
-          <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+          <span className="whitespace-nowrap rounded-xl bg-gradient-primary px-3.5 py-1.5 text-center font-display text-lg font-extrabold tabular-nums text-primary-foreground">
             {valor}
-            <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
-              /mês
-            </span>
+          </span>
+          <span className="mt-1 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+            De comissão recorrente
+          </span>
+          <span className="mt-1 text-right text-xs font-semibold text-muted-foreground">
+            /mês
           </span>
         </div>
-        <p className="mt-1.5 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-          De comissão recorrente
-        </p>
       </div>
     </div>
   );
+
 }
 
 function linhaHorizontal(i: number, total: number) {
