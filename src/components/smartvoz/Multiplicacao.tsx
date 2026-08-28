@@ -459,23 +459,20 @@ export function Multiplicacao() {
                 >
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
-                <div className="min-w-0">
-                  <p
-                    className="font-display text-[0.7rem] font-bold tracking-[0.12em]"
-                    style={{ color: "oklch(0.78 0.18 303)" }}
-                  >
-                    TOTAL EM 5 NÍVEIS
+                <div className="min-w-0 text-center">
+                  <p className="text-sm font-semibold text-primary-foreground/85">
+                    Total em 5 níveis:
                   </p>
-                  <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-[1.6rem] font-extrabold leading-tight text-primary-foreground">
                     3.905{" "}
-                    <span className="text-sm font-semibold text-primary-foreground/70">
+                    <span className="block text-sm font-semibold text-primary-foreground/70">
                       pessoas
                     </span>
                   </p>
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
                   <span
-                    className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
+                    className="block whitespace-nowrap font-display text-[1.7rem] font-extrabold tabular-nums text-gold"
                     style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
                   >
                     R$ 20.500
@@ -484,6 +481,7 @@ export function Multiplicacao() {
                     /mês
                   </span>
                 </span>
+
               </div>
 
               <div className="mt-6 text-center">
