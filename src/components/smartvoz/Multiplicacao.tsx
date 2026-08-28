@@ -381,14 +381,14 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_auto] items-center gap-2.5 rounded-2xl p-3 sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-3"
                     style={{
                       background: "oklch(1 0 0 / 0.05)",
                       border: "1px solid oklch(0.6 0.26 303 / 0.35)",
                     }}
                   >
                     <span
-                      className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                      className="flex size-11 shrink-0 items-center justify-center rounded-full sm:size-14"
                       style={{
                         backgroundImage:
                           "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
@@ -408,7 +408,7 @@ export function Multiplicacao() {
                       >
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground sm:text-xl">
                         {n.pessoas}{" "}
                         <span className="text-sm font-semibold text-primary-foreground/70">
                           pessoas
@@ -425,7 +425,7 @@ export function Multiplicacao() {
                     </div>
                     <span className="border-l border-primary-foreground/15 pl-3 text-right">
                       <span
-                        className="block whitespace-nowrap font-display text-[1.4rem] font-extrabold tabular-nums text-gold"
+                        className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold sm:text-[1.4rem]"
                         style={{
                           textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
                         }}
@@ -451,7 +451,7 @@ export function Multiplicacao() {
               >
                 <span className="flex shrink-0 items-center justify-center">
                   <Trophy
-                    className="size-16 text-gold"
+                    className="size-12 text-gold sm:size-16"
                     strokeWidth={1.4}
                     fill="oklch(0.8 0.16 84 / 0.35)"
                     style={{
@@ -462,10 +462,10 @@ export function Multiplicacao() {
                   />
                 </span>
                 <div className="min-w-0 text-center">
-                  <p className="text-sm font-semibold text-primary-foreground/85">
+                  <p className="text-xs font-semibold text-primary-foreground/85 sm:text-sm">
                     Total em 5 níveis:
                   </p>
-                  <p className="whitespace-nowrap font-display text-[1.6rem] font-extrabold leading-tight text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-[1.3rem] font-extrabold leading-tight text-primary-foreground sm:text-[1.6rem]">
                     3.905{" "}
                     <span className="block text-sm font-semibold text-primary-foreground/70">
                       pessoas
@@ -474,7 +474,7 @@ export function Multiplicacao() {
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
                   <span
-                    className="block whitespace-nowrap font-display text-[1.7rem] font-extrabold tabular-nums text-gold"
+                    className="block whitespace-nowrap font-display text-[1.3rem] font-extrabold tabular-nums text-gold sm:text-[1.7rem]"
                     style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
                   >
                     R$ 20.500
