@@ -9,10 +9,16 @@ import {
 } from "lucide-react";
 
 const proximosNiveis = [
-  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5,00", valor: "R$ 625,00" },
-  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5,00", valor: "R$ 3.125,00" },
-  { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5,00", valor: "R$ 15.625,00" },
+  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
+  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5", valor: "R$ 3.125" },
+  {
+    nivel: "NÍVEL 5",
+    pessoas: "3.125",
+    calculo: "3.125 x R$ 5",
+    valor: "R$ 15.625",
+  },
 ];
+
 
 function AvatarVoce({ size = "size-14" }: { size?: string }) {
   return (
@@ -62,31 +68,32 @@ function BlocoGanho({
   valor: string;
 }) {
   return (
-    <div className="mt-5 flex items-center gap-3">
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+    <div className="mt-4 flex items-start gap-3 rounded-2xl bg-primary-soft/60 p-3.5">
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
         <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.12em] text-primary">
+        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.1em] text-primary">
           {titulo}
         </p>
-        <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-          <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
+        <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3">
+          <span className="whitespace-nowrap font-display text-xl font-extrabold tabular-nums text-ink">
             {formula}
           </span>
-          <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+          <span className="whitespace-nowrap rounded-xl bg-gradient-primary px-3.5 py-1.5 text-center font-display text-lg font-extrabold tabular-nums text-primary-foreground">
             {valor}
-            <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
-              /mês
-            </span>
+          </span>
+          <span className="mt-1 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+            De comissão recorrente
+          </span>
+          <span className="mt-1 text-right text-xs font-semibold text-muted-foreground">
+            /mês
           </span>
         </div>
-        <p className="mt-1.5 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-          De comissão recorrente
-        </p>
       </div>
     </div>
   );
+
 }
 
 function linhaHorizontal(i: number, total: number) {
@@ -200,7 +207,6 @@ export function Multiplicacao() {
               <p className="mt-1 text-center text-sm text-muted-foreground">
                 Simples assim.
               </p>
-              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
               {/* árvore nível 1 */}
               <div className="mt-5 flex flex-col items-center">
@@ -219,8 +225,8 @@ export function Multiplicacao() {
 
               <BlocoGanho
                 titulo="Seu ganho no Nível 1"
-                formula="5 x R$ 20,00 ="
-                valor="R$ 100,00"
+                formula="5 x R$ 20 ="
+                valor="R$ 100"
               />
 
               <div className="mt-auto">
@@ -253,7 +259,6 @@ export function Multiplicacao() {
               <p className="mt-1 text-center text-sm text-muted-foreground">
                 O poder da <span className="text-primary">multiplicação!</span>
               </p>
-              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
               {/* árvore nível 2 */}
               <div className="mt-5 flex flex-col items-center">
@@ -275,8 +280,8 @@ export function Multiplicacao() {
 
               <BlocoGanho
                 titulo="Seu ganho no Nível 2"
-                formula="25 x R$ 5,00 ="
-                valor="R$ 125,00"
+                formula="25 x R$ 5 ="
+                valor="R$ 125"
               />
 
               <div className="mt-auto">
@@ -372,75 +377,69 @@ export function Multiplicacao() {
                 </span>
               </p>
 
-              <ul className="mt-6">
-                {proximosNiveis.map((n, i) => (
-                  <li key={n.nivel}>
-                    {i > 0 && (
-                      <span className="relative my-4 block h-px w-full bg-primary-foreground/15">
-                        <span
-                          className="absolute left-1/2 top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                          style={{
-                            background: "oklch(0.75 0.2 303)",
-                            boxShadow:
-                              "0 0 12px 3px oklch(0.65 0.26 303 / 0.9)",
-                          }}
-                        />
-                      </span>
-                    )}
-                    <div className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3">
+              <ul className="mt-5 space-y-3">
+                {proximosNiveis.map((n) => (
+                  <li
+                    key={n.nivel}
+                    className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                    style={{
+                      background: "oklch(1 0 0 / 0.05)",
+                      border: "1px solid oklch(0.6 0.26 303 / 0.35)",
+                    }}
+                  >
+                    <span
+                      className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
+                        boxShadow:
+                          "0 0 0 1px oklch(0.72 0.18 303 / 0.7), 0 0 24px oklch(0.55 0.26 303 / 0.8)",
+                      }}
+                    >
+                      <Users
+                        className="size-7 text-primary-foreground"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div className="min-w-0">
+                      <p
+                        className="font-display text-[0.8rem] font-bold tracking-[0.14em]"
+                        style={{ color: "oklch(0.75 0.2 303)" }}
+                      >
+                        {n.nivel}
+                      </p>
+                      <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                        {n.pessoas}{" "}
+                        <span className="text-sm font-semibold text-primary-foreground/70">
+                          pessoas
+                        </span>
+                      </p>
                       <span
-                        className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                        className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-display text-[0.7rem] font-semibold text-gold"
                         style={{
-                          backgroundImage:
-                            "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
-                          boxShadow:
-                            "0 0 0 1px oklch(0.72 0.18 303 / 0.7), 0 0 24px oklch(0.55 0.26 303 / 0.8)",
+                          border: "1px solid oklch(0.8 0.16 84 / 0.7)",
                         }}
                       >
-                        <Users
-                          className="size-7 text-primary-foreground"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div className="min-w-0">
-                        <p
-                          className="font-display text-[0.85rem] font-bold tracking-[0.14em]"
-                          style={{ color: "oklch(0.75 0.2 303)" }}
-                        >
-                          {n.nivel}
-                        </p>
-                        <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
-                          {n.pessoas}{" "}
-                          <span className="text-sm font-semibold text-primary-foreground/70">
-                            pessoas
-                          </span>
-                        </p>
-                        <span
-                          className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-display text-[0.72rem] font-semibold text-gold"
-                          style={{
-                            border: "1px solid oklch(0.8 0.16 84 / 0.7)",
-                          }}
-                        >
-                          {n.calculo}
-                        </span>
-                      </div>
-                      <span className="border-l border-primary-foreground/15 pl-3 text-right">
-                        <span
-                          className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
-                          style={{
-                            textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
-                          }}
-                        >
-                          {n.valor}
-                        </span>
-                        <span className="block text-xs font-semibold text-primary-foreground/70">
-                          /mês
-                        </span>
+                        {n.calculo}
                       </span>
                     </div>
+                    <span className="border-l border-primary-foreground/15 pl-3 text-right">
+                      <span
+                        className="block whitespace-nowrap font-display text-[1.4rem] font-extrabold tabular-nums text-gold"
+                        style={{
+                          textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
+                        }}
+                      >
+                        {n.valor}
+                      </span>
+                      <span className="block text-xs font-semibold text-primary-foreground/70">
+                        /mês
+                      </span>
+                    </span>
                   </li>
                 ))}
               </ul>
+
 
               <div
                 className="mt-5 grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
@@ -460,31 +459,29 @@ export function Multiplicacao() {
                 >
                   <Trophy className="size-7 text-gold" aria-hidden="true" />
                 </span>
-                <div className="min-w-0">
-                  <p
-                    className="font-display text-[0.7rem] font-bold tracking-[0.12em]"
-                    style={{ color: "oklch(0.78 0.18 303)" }}
-                  >
-                    TOTAL EM 5 NÍVEIS
+                <div className="min-w-0 text-center">
+                  <p className="text-sm font-semibold text-primary-foreground/85">
+                    Total em 5 níveis:
                   </p>
-                  <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-[1.6rem] font-extrabold leading-tight text-primary-foreground">
                     3.905{" "}
-                    <span className="text-sm font-semibold text-primary-foreground/70">
+                    <span className="block text-sm font-semibold text-primary-foreground/70">
                       pessoas
                     </span>
                   </p>
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
                   <span
-                    className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
+                    className="block whitespace-nowrap font-display text-[1.7rem] font-extrabold tabular-nums text-gold"
                     style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
                   >
-                    R$ 20.500,00
+                    R$ 20.500
                   </span>
                   <span className="block text-xs font-semibold text-primary-foreground/70">
                     /mês
                   </span>
                 </span>
+
               </div>
 
               <div className="mt-6 text-center">
