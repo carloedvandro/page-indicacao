@@ -131,8 +131,8 @@ export function Multiplicacao() {
 
         <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
           {/* ETAPA 1 */}
-          <article className="surface-card relative overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10">
+          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
+            <div className="relative z-10 flex flex-1 flex-col">
               <div className="text-center">
                 <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                   ETAPA 1
@@ -150,31 +150,7 @@ export function Multiplicacao() {
 
               {/* árvore nível 1 */}
               <div className="mt-5 flex flex-col items-center">
-                <AvatarVoce />
-                <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
-                  VOCÊ
-                </p>
-                <span aria-hidden="true" className="h-4 w-px bg-primary/40" />
-                <div className="relative w-full max-w-[16rem]">
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-[10%] right-[10%] top-0 h-px bg-primary/40"
-                  />
-                  <div className="flex justify-between">
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <div key={n} className="flex flex-col items-center">
-                        <span
-                          aria-hidden="true"
-                          className="h-3 w-px bg-primary/40"
-                        />
-                        <MiniAvatar />
-                        <span className="mt-1 text-xs font-semibold text-muted-foreground">
-                          {n}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <ArvoreRede />
               </div>
 
               <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
@@ -193,16 +169,19 @@ export function Multiplicacao() {
                 valor="R$ 100,00"
               />
 
-              <RendaRecorrente />
+              <div className="mt-auto">
+                <RendaRecorrente />
 
-              <p className="mt-4 text-center">
-                <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                  1 / 3
-                </span>
-              </p>
+                <p className="mt-4 text-center">
+                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
+                    1 / 3
+                  </span>
+                </p>
+              </div>
             </div>
             <WaveRodape />
           </article>
+
 
           {/* ETAPA 2 */}
           <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
