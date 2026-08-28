@@ -408,7 +408,7 @@ export function Multiplicacao() {
                       >
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-base font-extrabold text-primary-foreground sm:text-xl">
+                      <p className="font-display text-base font-extrabold text-primary-foreground sm:whitespace-nowrap sm:text-xl">
                         {n.pessoas}{" "}
                         <span className="text-sm font-semibold text-primary-foreground/70">
                           pessoas
@@ -442,7 +442,7 @@ export function Multiplicacao() {
 
 
               <div
-                className="mt-5 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 rounded-2xl p-4"
+                className="mt-5 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl p-3 sm:gap-4 sm:p-4"
                 style={{
                   border: "1px solid oklch(0.8 0.16 84 / 0.45)",
                   background: "oklch(1 0 0 / 0.04)",
