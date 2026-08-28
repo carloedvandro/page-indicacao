@@ -377,75 +377,69 @@ export function Multiplicacao() {
                 </span>
               </p>
 
-              <ul className="mt-6">
-                {proximosNiveis.map((n, i) => (
-                  <li key={n.nivel}>
-                    {i > 0 && (
-                      <span className="relative my-4 block h-px w-full bg-primary-foreground/15">
-                        <span
-                          className="absolute left-1/2 top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                          style={{
-                            background: "oklch(0.75 0.2 303)",
-                            boxShadow:
-                              "0 0 12px 3px oklch(0.65 0.26 303 / 0.9)",
-                          }}
-                        />
-                      </span>
-                    )}
-                    <div className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3">
+              <ul className="mt-5 space-y-3">
+                {proximosNiveis.map((n) => (
+                  <li
+                    key={n.nivel}
+                    className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                    style={{
+                      background: "oklch(1 0 0 / 0.05)",
+                      border: "1px solid oklch(0.6 0.26 303 / 0.35)",
+                    }}
+                  >
+                    <span
+                      className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
+                        boxShadow:
+                          "0 0 0 1px oklch(0.72 0.18 303 / 0.7), 0 0 24px oklch(0.55 0.26 303 / 0.8)",
+                      }}
+                    >
+                      <Users
+                        className="size-7 text-primary-foreground"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div className="min-w-0">
+                      <p
+                        className="font-display text-[0.8rem] font-bold tracking-[0.14em]"
+                        style={{ color: "oklch(0.75 0.2 303)" }}
+                      >
+                        {n.nivel}
+                      </p>
+                      <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                        {n.pessoas}{" "}
+                        <span className="text-sm font-semibold text-primary-foreground/70">
+                          pessoas
+                        </span>
+                      </p>
                       <span
-                        className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                        className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-display text-[0.7rem] font-semibold text-gold"
                         style={{
-                          backgroundImage:
-                            "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
-                          boxShadow:
-                            "0 0 0 1px oklch(0.72 0.18 303 / 0.7), 0 0 24px oklch(0.55 0.26 303 / 0.8)",
+                          border: "1px solid oklch(0.8 0.16 84 / 0.7)",
                         }}
                       >
-                        <Users
-                          className="size-7 text-primary-foreground"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div className="min-w-0">
-                        <p
-                          className="font-display text-[0.85rem] font-bold tracking-[0.14em]"
-                          style={{ color: "oklch(0.75 0.2 303)" }}
-                        >
-                          {n.nivel}
-                        </p>
-                        <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
-                          {n.pessoas}{" "}
-                          <span className="text-sm font-semibold text-primary-foreground/70">
-                            pessoas
-                          </span>
-                        </p>
-                        <span
-                          className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-display text-[0.72rem] font-semibold text-gold"
-                          style={{
-                            border: "1px solid oklch(0.8 0.16 84 / 0.7)",
-                          }}
-                        >
-                          {n.calculo}
-                        </span>
-                      </div>
-                      <span className="border-l border-primary-foreground/15 pl-3 text-right">
-                        <span
-                          className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
-                          style={{
-                            textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
-                          }}
-                        >
-                          {n.valor}
-                        </span>
-                        <span className="block text-xs font-semibold text-primary-foreground/70">
-                          /mês
-                        </span>
+                        {n.calculo}
                       </span>
                     </div>
+                    <span className="border-l border-primary-foreground/15 pl-3 text-right">
+                      <span
+                        className="block whitespace-nowrap font-display text-[1.4rem] font-extrabold tabular-nums text-gold"
+                        style={{
+                          textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
+                        }}
+                      >
+                        {n.valor}
+                      </span>
+                      <span className="block text-xs font-semibold text-primary-foreground/70">
+                        /mês
+                      </span>
+                    </span>
                   </li>
                 ))}
               </ul>
+
 
               <div
                 className="mt-5 grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
