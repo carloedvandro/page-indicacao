@@ -1,5 +1,6 @@
 import {
   Star,
+  User,
   Users,
   Coins,
   Trophy,
@@ -7,18 +8,105 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-
 const proximosNiveis = [
   { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5,00", valor: "R$ 625,00" },
   { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5,00", valor: "R$ 3.125,00" },
   { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5,00", valor: "R$ 15.625,00" },
 ];
 
+function AvatarVoce({ size = "size-14" }: { size?: string }) {
+  return (
+    <span
+      className={`flex ${size} items-center justify-center rounded-full bg-gradient-primary shadow-glow`}
+    >
+      <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
+    </span>
+  );
+}
+
+function MiniAvatar() {
+  return (
+    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary sm:size-10">
+      <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
+    </span>
+  );
+}
+
+function WaveRodape() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full"
+      viewBox="0 0 400 60"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M0,42 C90,12 310,66 400,26 L400,60 L0,60 Z"
+        fill="oklch(0.43 0.25 302 / 0.18)"
+      />
+      <path
+        d="M0,50 C110,24 290,70 400,38 L400,60 L0,60 Z"
+        fill="oklch(0.43 0.25 302 / 0.35)"
+      />
+    </svg>
+  );
+}
+
+function BlocoGanho({
+  titulo,
+  formula,
+  valor,
+}: {
+  titulo: string;
+  formula: string;
+  valor: string;
+}) {
+  return (
+    <div className="mt-5 flex items-center gap-3">
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
+        <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.12em] text-primary">
+          {titulo}
+        </p>
+        <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+          <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
+            {formula}
+          </span>
+          <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
+            {valor}
+            <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
+              /mês
+            </span>
+          </span>
+        </div>
+        <p className="mt-1.5 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+          De comissão recorrente
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function RendaRecorrente() {
+  return (
+    <div className="mt-6 flex items-center justify-center gap-3">
+      <span className="h-px flex-1 bg-border" />
+      <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
+      <span className="font-display text-[0.68rem] font-bold tracking-[0.28em] text-primary">
+        RENDA RECORRENTE
+      </span>
+      <span className="h-px flex-1 bg-border" />
+    </div>
+  );
+}
+
 export function Multiplicacao() {
   return (
     <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
+        <div className="text-center">
           <p className="eyebrow-pill">
             <Star className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">
@@ -31,149 +119,178 @@ export function Multiplicacao() {
           <h2 className="font-display text-[2rem] font-extrabold uppercase leading-[1.05] text-ink sm:text-[3.4rem]">
             O PODER DA <span className="text-primary">MULTIPLICAÇÃO!</span>
           </h2>
-          <p className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg">
-            INDIQUE <span className="text-primary">5 PESSOAS,</span> CADA UMA
-            INDICA <span className="text-primary">MAIS 5.</span>
+          <p className="mx-auto mt-4 flex items-center justify-center gap-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg">
+            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block" />
+            <span>
+              INDIQUE <span className="text-primary">5 PESSOAS,</span> CADA UMA
+              INDICA <span className="text-primary">MAIS 5.</span>
+            </span>
+            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block" />
           </p>
         </div>
 
-        <div className="mt-10 grid items-start gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
           {/* ETAPA 1 */}
-          <article className="relative overflow-hidden rounded-[2rem] p-6 lg:p-7">
-            <div className="text-center">
-              <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                ETAPA 1
-              </span>
-            </div>
-
-            <div className="mt-6 flex items-center gap-4">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-                <Users className="size-7 text-primary" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-base font-semibold leading-tight text-ink sm:text-lg">
-                  Você indica 5 pessoas
-                </p>
-                <p className="text-sm text-muted-foreground">(Nível 1)</p>
+          <article className="surface-card relative overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
+            <div className="relative z-10">
+              <div className="text-center">
+                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
+                  ETAPA 1
+                </span>
               </div>
-            </div>
 
-            <span className="mt-5 block h-px w-full bg-border" />
+              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
+                Você começa indicando{" "}
+                <span className="text-primary">5 pessoas.</span>
+              </p>
+              <p className="mt-1 text-center text-sm text-muted-foreground">
+                Simples assim.
+              </p>
+              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
-            <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
-              Seu ganho no Nível 1
-            </p>
-
-            <div className="mt-3 flex items-center gap-3">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
-              </span>
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
-                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
-                    5 x R$ 20,00 =
-                  </span>
-                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
-                    R$ 100,00
-                    <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
-                      /mês
-                    </span>
-                  </span>
+              {/* árvore nível 1 */}
+              <div className="mt-5 flex flex-col items-center">
+                <AvatarVoce />
+                <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
+                  VOCÊ
+                </p>
+                <span aria-hidden="true" className="h-4 w-px bg-primary/40" />
+                <div className="relative w-full max-w-[16rem]">
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[10%] right-[10%] top-0 h-px bg-primary/40"
+                  />
+                  <div className="flex justify-between">
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <div key={n} className="flex flex-col items-center">
+                        <span
+                          aria-hidden="true"
+                          className="h-3 w-px bg-primary/40"
+                        />
+                        <MiniAvatar />
+                        <span className="mt-1 text-xs font-semibold text-muted-foreground">
+                          {n}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="mt-2 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-                  De comissão recorrente
-                </p>
               </div>
-            </div>
 
-            <div className="mt-4 flex items-center gap-3 py-2">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
-              </span>
-              <div className="min-w-0">
-                <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-primary">
-                  RENDA RECORRENTE
-                </p>
-                <p className="mt-1 text-sm leading-snug text-muted-foreground">
-                  Ganhos todo mês enquanto sua rede permanece ativa.
-                </p>
+              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
+                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-bold leading-tight text-ink">
+                    Você indica 5 pessoas
+                  </p>
+                  <p className="text-xs text-muted-foreground">(Nível 1)</p>
+                </div>
               </div>
-            </div>
 
-            <p className="mt-5 text-center">
-              <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                1 / 3
-              </span>
-            </p>
+              <BlocoGanho
+                titulo="Seu ganho no Nível 1"
+                formula="5 x R$ 20,00 ="
+                valor="R$ 100,00"
+              />
+
+              <RendaRecorrente />
+
+              <p className="mt-4 text-center">
+                <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
+                  1 / 3
+                </span>
+              </p>
+            </div>
+            <WaveRodape />
           </article>
 
           {/* ETAPA 2 */}
-          <article className="relative overflow-hidden rounded-[2rem] p-6 lg:p-7">
-            <div className="text-center">
-              <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                ETAPA 2
-              </span>
-            </div>
-
-            <div className="mt-6 flex items-center gap-4">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-                <Users className="size-7 text-primary" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-base font-semibold leading-tight text-ink sm:text-lg">
-                  Total de 25 pessoas
-                </p>
-                <p className="text-sm text-muted-foreground">(Nível 2)</p>
+          <article className="surface-card relative overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
+            <div className="relative z-10">
+              <div className="text-center">
+                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
+                  ETAPA 2
+                </span>
               </div>
-            </div>
 
-            <span className="mt-5 block h-px w-full bg-border" />
+              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
+                Cada uma das 5 indica{" "}
+                <span className="text-primary">mais 5.</span>
+              </p>
+              <p className="mt-1 text-center text-sm text-muted-foreground">
+                O poder da <span className="text-primary">multiplicação!</span>
+              </p>
+              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
-            <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.06em] text-primary">
-              Seu ganho no Nível 2
-            </p>
-
-            <div className="mt-3 flex items-center gap-3">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
-              </span>
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
-                  <span className="whitespace-nowrap font-display text-base font-extrabold tabular-nums text-ink sm:text-lg">
-                    25 x R$ 5,00 =
-                  </span>
-                  <span className="inline-flex items-baseline gap-1 whitespace-nowrap rounded-full bg-gradient-primary px-4 py-2.5 font-display text-base font-extrabold tabular-nums text-primary-foreground sm:text-lg">
-                    R$ 125,00
-                    <span className="text-[0.65rem] font-semibold text-primary-foreground/80">
-                      /mês
-                    </span>
-                  </span>
+              {/* árvore nível 2 */}
+              <div className="mt-5 flex flex-col items-center">
+                <AvatarVoce size="size-12" />
+                <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
+                  VOCÊ
+                </p>
+                <span aria-hidden="true" className="h-3 w-px bg-primary/40" />
+                <div className="relative w-full max-w-[17rem]">
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[9%] right-[9%] top-0 h-px bg-primary/40"
+                  />
+                  <div className="flex justify-between">
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <div key={n} className="flex flex-col items-center">
+                        <span
+                          aria-hidden="true"
+                          className="h-2.5 w-px bg-primary/40"
+                        />
+                        <MiniAvatar />
+                        <span className="mt-0.5 text-[0.65rem] font-semibold text-muted-foreground">
+                          {n}
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="mt-0.5 h-2 w-px bg-primary/30"
+                        />
+                        <span className="mt-0.5 flex gap-0.5" aria-hidden="true">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <span
+                              key={i}
+                              className="size-1.5 rounded-full bg-primary/70"
+                            />
+                          ))}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="mt-2 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-                  De comissão recorrente
-                </p>
+                <span className="mt-2 inline-block rounded-full bg-primary-soft px-4 py-1 font-display text-xs font-bold text-accent-foreground">
+                  25 pessoas
+                </span>
               </div>
-            </div>
 
-            <div className="mt-4 flex items-center gap-3 py-2">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-primary">
-                <InfinityIcon className="size-6 text-primary-foreground" aria-hidden="true" />
-              </span>
-              <div className="min-w-0">
-                <p className="font-display text-[0.72rem] font-bold tracking-[0.22em] text-primary">
-                  RENDA RECORRENTE
-                </p>
-                <p className="mt-1 text-sm leading-snug text-muted-foreground">
-                  Ganhos todo mês enquanto sua rede permanece ativa.
-                </p>
+              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
+                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-bold leading-tight text-ink">
+                    Total de 25 pessoas
+                  </p>
+                  <p className="text-xs text-muted-foreground">(Nível 2)</p>
+                </div>
               </div>
-            </div>
 
-            <p className="mt-5 text-center">
-              <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                2 / 3
-              </span>
-            </p>
+              <BlocoGanho
+                titulo="Seu ganho no Nível 2"
+                formula="25 x R$ 5,00 ="
+                valor="R$ 125,00"
+              />
+
+              <RendaRecorrente />
+
+              <p className="mt-4 text-center">
+                <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
+                  2 / 3
+                </span>
+              </p>
+            </div>
+            <WaveRodape />
           </article>
 
           {/* ETAPAS 3, 4 E 5 — bloco escuro com brilho roxo e dourado */}
@@ -230,11 +347,11 @@ export function Multiplicacao() {
                   className="block text-[1.9rem] sm:text-[2.2rem]"
                   style={{
                     backgroundImage:
-                      "linear-gradient(180deg, oklch(0.85 0.12 303), oklch(0.62 0.24 303))",
+                      "linear-gradient(180deg, oklch(0.92 0.1 92), oklch(0.75 0.15 80))",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",
-                    textShadow: "0 0 30px oklch(0.6 0.26 303 / 0.45)",
+                    textShadow: "0 0 30px oklch(0.8 0.16 84 / 0.45)",
                   }}
                 >
                   A MULTIPLICAÇÃO
@@ -263,7 +380,8 @@ export function Multiplicacao() {
                           className="absolute left-1/2 top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
                           style={{
                             background: "oklch(0.75 0.2 303)",
-                            boxShadow: "0 0 12px 3px oklch(0.65 0.26 303 / 0.9)",
+                            boxShadow:
+                              "0 0 12px 3px oklch(0.65 0.26 303 / 0.9)",
                           }}
                         />
                       </span>
@@ -373,7 +491,9 @@ export function Multiplicacao() {
                   <span className="h-px w-14 bg-gold/50" />
                   <InfinityIcon
                     className="size-6 text-gold"
-                    style={{ filter: "drop-shadow(0 0 8px oklch(0.8 0.16 84 / 0.8))" }}
+                    style={{
+                      filter: "drop-shadow(0 0 8px oklch(0.8 0.16 84 / 0.8))",
+                    }}
                     aria-hidden="true"
                   />
                   <span className="h-px w-14 bg-gold/50" />
@@ -388,32 +508,32 @@ export function Multiplicacao() {
                   className="mt-1 block font-display text-[2.2rem] font-extrabold leading-none tracking-tight sm:text-[2.6rem]"
                   style={{
                     backgroundImage:
-                      "linear-gradient(180deg, oklch(0.82 0.14 303), oklch(0.55 0.25 303))",
+                      "linear-gradient(180deg, oklch(0.85 0.12 303), oklch(0.62 0.24 303))",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",
-                    textShadow: "0 0 34px oklch(0.6 0.26 303 / 0.4)",
                   }}
                 >
                   EM ESCALA
                 </span>
+                <p className="mt-4">
+                  <span
+                    className="inline-block rounded-full px-4 py-1 text-xs font-semibold text-gold"
+                    style={{ border: "1px solid oklch(0.8 0.16 84 / 0.6)" }}
+                  >
+                    3 / 3
+                  </span>
+                </p>
               </div>
-
-              <p className="mt-5 text-center">
-                <span
-                  className="inline-block rounded-full px-5 py-1.5 text-xs font-semibold text-primary-foreground"
-                  style={{ border: "1px solid oklch(0.72 0.18 303 / 0.7)" }}
-                >
-                  3/3
-                </span>
-              </p>
             </div>
           </article>
         </div>
 
-        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-xs text-muted-foreground sm:text-sm">
-          <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
+        <p className="mt-8 flex items-center justify-center gap-3 text-center text-xs text-muted-foreground sm:text-sm">
+          <span aria-hidden="true" className="hidden h-px w-16 bg-border sm:block" />
+          <ShieldCheck className="size-4 shrink-0 text-primary" aria-hidden="true" />
           Valores referentes às comissões elegíveis conforme regras do programa.
+          <span aria-hidden="true" className="hidden h-px w-16 bg-border sm:block" />
         </p>
       </div>
     </section>
