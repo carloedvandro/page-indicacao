@@ -89,7 +89,61 @@ function BlocoGanho({
   );
 }
 
+function linhaHorizontal(i: number, total: number) {
+  if (i === 0) return "left-1/2 right-0";
+  if (i === total - 1) return "left-0 right-1/2";
+  return "inset-x-0";
+}
+
+/** Árvore de rede com linhas "soldadas" (sem falhas no meio). */
+function ArvoreRede({ sub = false }: { sub?: boolean }) {
+  return (
+    <div className="flex w-full max-w-[17rem] flex-col items-center">
+      <AvatarVoce size={sub ? "size-12" : "size-14"} />
+      <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
+        VOCÊ
+      </p>
+      <span aria-hidden="true" className="h-4 w-px bg-primary/50" />
+      <div className="grid w-full grid-cols-5">
+        {[1, 2, 3, 4, 5].map((n, i) => (
+          <div key={n} className="flex flex-col items-center">
+            <div aria-hidden="true" className="relative h-4 w-full">
+              <span
+                className={`absolute top-0 h-px bg-primary/50 ${linhaHorizontal(i, 5)}`}
+              />
+              <span className="absolute left-1/2 top-0 h-4 w-px bg-primary/50" />
+            </div>
+            <MiniAvatar />
+            <span className="mt-1 text-[0.7rem] font-semibold text-muted-foreground">
+              {n}
+            </span>
+            {sub && (
+              <>
+                <span aria-hidden="true" className="h-2 w-px bg-primary/50" />
+                <div aria-hidden="true" className="grid w-full grid-cols-5">
+                  {[0, 1, 2, 3, 4].map((j) => (
+                    <div key={j} className="relative flex flex-col items-center">
+                      <div className="relative h-2 w-full">
+                        <span
+                          className={`absolute top-0 h-px bg-primary/50 ${linhaHorizontal(j, 5)}`}
+                        />
+                        <span className="absolute left-1/2 top-0 h-2 w-px bg-primary/50" />
+                      </div>
+                      <span className="size-1.5 rounded-full bg-primary/80" />
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function RendaRecorrente() {
+
   return (
     <div className="mt-6 flex items-center justify-center gap-3">
       <span className="h-px flex-1 bg-border" />
