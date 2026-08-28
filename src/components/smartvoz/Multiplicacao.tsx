@@ -8,6 +8,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import etapa1Art from "@/assets/etapa-1.png.asset.json";
+import etapa2Art from "@/assets/etapa-2.png.asset.json";
 
 const proximosNiveis = [
   { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
@@ -203,58 +204,14 @@ export function Multiplicacao() {
           </article>
 
 
-          {/* ETAPA 2 */}
-          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10 flex flex-1 flex-col">
-              <div className="text-center">
-                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                  ETAPA 2
-                </span>
-              </div>
-
-              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
-                Cada uma das 5 indica{" "}
-                <span className="text-primary">mais 5.</span>
-              </p>
-              <p className="mt-1 text-center text-sm text-muted-foreground">
-                O poder da <span className="text-primary">multiplicação!</span>
-              </p>
-
-              {/* árvore nível 2 */}
-              <div className="mt-5 flex flex-col items-center">
-                <ArvoreRede sub />
-                <span className="mt-2 inline-block rounded-full bg-primary-soft px-4 py-1 font-display text-xs font-bold text-accent-foreground">
-                  25 pessoas
-                </span>
-              </div>
-
-              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
-                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-bold leading-tight text-ink">
-                    Total de 25 pessoas
-                  </p>
-                  <p className="text-xs text-muted-foreground">(Nível 2)</p>
-                </div>
-              </div>
-
-              <BlocoGanho
-                titulo="Seu ganho no Nível 2"
-                formula="25 x R$ 5 ="
-                valor="R$ 125"
-              />
-
-              <div className="mt-auto">
-                <RendaRecorrente />
-
-                <p className="mt-4 text-center">
-                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                    2 / 3
-                  </span>
-                </p>
-              </div>
-            </div>
-            <WaveRodape />
+          {/* ETAPA 2 — arte oficial */}
+          <article className="relative h-full">
+            <img
+              src={etapa2Art.url}
+              alt="Etapa 2 — Cada uma das 5 indica mais 5. Total de 25 pessoas. Seu ganho no Nível 2: 25 x R$ 5 = R$ 125,00 por mês de comissão recorrente."
+              className="h-full w-full rounded-[2rem] object-contain drop-shadow-xl"
+              loading="lazy"
+            />
           </article>
 
 
