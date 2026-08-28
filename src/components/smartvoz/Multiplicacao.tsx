@@ -207,7 +207,6 @@ export function Multiplicacao() {
               <p className="mt-1 text-center text-sm text-muted-foreground">
                 Simples assim.
               </p>
-              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
               {/* árvore nível 1 */}
               <div className="mt-5 flex flex-col items-center">
@@ -226,8 +225,8 @@ export function Multiplicacao() {
 
               <BlocoGanho
                 titulo="Seu ganho no Nível 1"
-                formula="5 x R$ 20,00 ="
-                valor="R$ 100,00"
+                formula="5 x R$ 20 ="
+                valor="R$ 100"
               />
 
               <div className="mt-auto">
@@ -260,7 +259,6 @@ export function Multiplicacao() {
               <p className="mt-1 text-center text-sm text-muted-foreground">
                 O poder da <span className="text-primary">multiplicação!</span>
               </p>
-              <span className="mx-auto mt-3 block h-0.5 w-14 rounded-full bg-primary" />
 
               {/* árvore nível 2 */}
               <div className="mt-5 flex flex-col items-center">
@@ -282,8 +280,8 @@ export function Multiplicacao() {
 
               <BlocoGanho
                 titulo="Seu ganho no Nível 2"
-                formula="25 x R$ 5,00 ="
-                valor="R$ 125,00"
+                formula="25 x R$ 5 ="
+                valor="R$ 125"
               />
 
               <div className="mt-auto">
@@ -486,7 +484,7 @@ export function Multiplicacao() {
                     className="block whitespace-nowrap font-display text-[1.25rem] font-extrabold tabular-nums text-gold"
                     style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
                   >
-                    R$ 20.500,00
+                    R$ 20.500
                   </span>
                   <span className="block text-xs font-semibold text-primary-foreground/70">
                     /mês
