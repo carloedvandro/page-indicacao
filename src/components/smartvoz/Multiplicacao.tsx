@@ -442,7 +442,7 @@ export function Multiplicacao() {
 
 
               <div
-                className="mt-5 grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                className="mt-5 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 rounded-2xl p-4"
                 style={{
                   border: "1px solid oklch(0.8 0.16 84 / 0.45)",
                   background: "oklch(1 0 0 / 0.04)",
