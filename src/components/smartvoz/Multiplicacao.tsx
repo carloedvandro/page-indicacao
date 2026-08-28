@@ -119,13 +119,13 @@ export function Multiplicacao() {
           <h2 className="font-display text-[2rem] font-extrabold uppercase leading-[1.05] text-ink sm:text-[3.4rem]">
             O PODER DA <span className="text-primary">MULTIPLICAÇÃO!</span>
           </h2>
-          <p className="mx-auto mt-4 flex items-center justify-center gap-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg">
-            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block" />
+          <p className="mx-auto mt-4 flex items-center justify-center gap-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg lg:text-xl">
+            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block lg:w-24" />
             <span>
               INDIQUE <span className="text-primary">5 PESSOAS,</span> CADA UMA
               INDICA <span className="text-primary">MAIS 5.</span>
             </span>
-            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block" />
+            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block lg:w-24" />
           </p>
         </div>
 
