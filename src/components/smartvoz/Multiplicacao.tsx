@@ -32,7 +32,7 @@ function AvatarVoce({ size = "size-14" }: { size?: string }) {
 
 function MiniAvatar() {
   return (
-    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary sm:size-10">
+    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary shadow-[0_0_0_3px_white,0_2px_8px_oklch(0.43_0.25_302_/_0.35)] sm:size-10">
       <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
     </span>
   );
@@ -136,7 +136,7 @@ function ArvoreRede({ sub = false }: { sub?: boolean }) {
                         />
                         <span className="absolute left-1/2 top-0 h-2 w-px bg-primary/50" />
                       </div>
-                      <span className="size-1.5 rounded-full bg-primary/80" />
+                      <span className="size-2 rounded-full bg-primary shadow-[0_0_0_2px_white]" />
                     </div>
                   ))}
                 </div>
@@ -381,14 +381,14 @@ export function Multiplicacao() {
                 {proximosNiveis.map((n) => (
                   <li
                     key={n.nivel}
-                    className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                    className="grid grid-cols-[2.75rem_minmax(0,1fr)_auto] items-center gap-2.5 rounded-2xl p-3 sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-3"
                     style={{
                       background: "oklch(1 0 0 / 0.05)",
                       border: "1px solid oklch(0.6 0.26 303 / 0.35)",
                     }}
                   >
                     <span
-                      className="flex size-14 shrink-0 items-center justify-center rounded-full"
+                      className="flex size-11 shrink-0 items-center justify-center rounded-full sm:size-14"
                       style={{
                         backgroundImage:
                           "linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301))",
@@ -408,7 +408,7 @@ export function Multiplicacao() {
                       >
                         {n.nivel}
                       </p>
-                      <p className="whitespace-nowrap font-display text-xl font-extrabold text-primary-foreground">
+                      <p className="font-display text-base font-extrabold text-primary-foreground sm:whitespace-nowrap sm:text-xl">
                         {n.pessoas}{" "}
                         <span className="text-sm font-semibold text-primary-foreground/70">
                           pessoas
@@ -425,7 +425,7 @@ export function Multiplicacao() {
                     </div>
                     <span className="border-l border-primary-foreground/15 pl-3 text-right">
                       <span
-                        className="block whitespace-nowrap font-display text-[1.4rem] font-extrabold tabular-nums text-gold"
+                        className="block whitespace-nowrap font-display text-[1.05rem] font-extrabold tabular-nums text-gold sm:text-[1.4rem]"
                         style={{
                           textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)",
                         }}
@@ -442,28 +442,30 @@ export function Multiplicacao() {
 
 
               <div
-                className="mt-5 grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-3"
+                className="mt-5 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl p-3 sm:gap-4 sm:p-4"
                 style={{
                   border: "1px solid oklch(0.8 0.16 84 / 0.45)",
                   background: "oklch(1 0 0 / 0.04)",
                   boxShadow: "0 0 24px oklch(0.55 0.25 303 / 0.3)",
                 }}
               >
-                <span
-                  className="flex size-14 shrink-0 items-center justify-center rounded-full"
-                  style={{
-                    border: "1px solid oklch(0.8 0.16 84 / 0.65)",
-                    background: "oklch(0.8 0.16 84 / 0.1)",
-                    boxShadow: "0 0 20px oklch(0.8 0.16 84 / 0.35)",
-                  }}
-                >
-                  <Trophy className="size-7 text-gold" aria-hidden="true" />
+                <span className="flex shrink-0 items-center justify-center">
+                  <Trophy
+                    className="size-12 text-gold sm:size-16"
+                    strokeWidth={1.4}
+                    fill="oklch(0.8 0.16 84 / 0.35)"
+                    style={{
+                      filter:
+                        "drop-shadow(0 0 10px oklch(0.8 0.16 84 / 0.9)) drop-shadow(0 0 28px oklch(0.8 0.16 84 / 0.5))",
+                    }}
+                    aria-hidden="true"
+                  />
                 </span>
                 <div className="min-w-0 text-center">
-                  <p className="text-sm font-semibold text-primary-foreground/85">
+                  <p className="text-xs font-semibold text-primary-foreground/85 sm:text-sm">
                     Total em 5 níveis:
                   </p>
-                  <p className="whitespace-nowrap font-display text-[1.6rem] font-extrabold leading-tight text-primary-foreground">
+                  <p className="whitespace-nowrap font-display text-[1.3rem] font-extrabold leading-tight text-primary-foreground sm:text-[1.6rem]">
                     3.905{" "}
                     <span className="block text-sm font-semibold text-primary-foreground/70">
                       pessoas
@@ -472,7 +474,7 @@ export function Multiplicacao() {
                 </div>
                 <span className="border-l border-gold/30 pl-3 text-right">
                   <span
-                    className="block whitespace-nowrap font-display text-[1.7rem] font-extrabold tabular-nums text-gold"
+                    className="block whitespace-nowrap font-display text-[1.3rem] font-extrabold tabular-nums text-gold sm:text-[1.7rem]"
                     style={{ textShadow: "0 0 18px oklch(0.8 0.16 84 / 0.55)" }}
                   >
                     R$ 20.500
