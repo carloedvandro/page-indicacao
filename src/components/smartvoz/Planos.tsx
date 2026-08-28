@@ -248,12 +248,11 @@ export function Planos() {
           <h2 className="text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
             Tudo começa com uma <span className="text-primary">decisão.</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg lg:max-w-none lg:whitespace-nowrap lg:text-xl">
             Milhares de pessoas comuns já estão transformando indicações em{" "}
             <strong className="text-primary">renda recorrente</strong> todos os
             meses.
           </p>
-          <span className="mx-auto mt-5 block h-1 w-14 rounded-full bg-primary" />
         </div>
 
         <ul className="mx-auto mt-10 grid max-w-[26rem] gap-6 px-3 sm:max-w-none sm:grid-cols-2 sm:px-0 lg:grid-cols-4 lg:divide-x lg:divide-border">

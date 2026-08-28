@@ -133,8 +133,8 @@ export function Depoimentos() {
           </div>
         </div>
 
-        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-xs text-muted-foreground sm:text-sm">
-          <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
+        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-xs text-muted-foreground sm:text-sm lg:text-base">
+          <ShieldCheck className="size-4 text-primary lg:size-5" aria-hidden="true" />
           Resultados individuais podem variar. Não configuram promessa ou
           garantia de ganhos.
         </p>
