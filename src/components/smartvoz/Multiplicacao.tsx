@@ -7,6 +7,7 @@ import {
   Infinity as InfinityIcon,
   ShieldCheck,
 } from "lucide-react";
+import etapa1Art from "@/assets/etapa-1.png.asset.json";
 
 const proximosNiveis = [
   { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
@@ -191,55 +192,14 @@ export function Multiplicacao() {
         </div>
 
         <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
-          {/* ETAPA 1 */}
-          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10 flex flex-1 flex-col">
-              <div className="text-center">
-                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                  ETAPA 1
-                </span>
-              </div>
-
-              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
-                Você começa indicando{" "}
-                <span className="text-primary">5 pessoas.</span>
-              </p>
-              <p className="mt-1 text-center text-sm text-muted-foreground">
-                Simples assim.
-              </p>
-
-              {/* árvore nível 1 */}
-              <div className="mt-5 flex flex-col items-center">
-                <ArvoreRede />
-              </div>
-
-              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
-                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-bold leading-tight text-ink">
-                    Você indica 5 pessoas
-                  </p>
-                  <p className="text-xs text-muted-foreground">(Nível 1)</p>
-                </div>
-              </div>
-
-              <BlocoGanho
-                titulo="Seu ganho no Nível 1"
-                formula="5 x R$ 20 ="
-                valor="R$ 100"
-              />
-
-              <div className="mt-auto">
-                <RendaRecorrente />
-
-                <p className="mt-4 text-center">
-                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                    1 / 3
-                  </span>
-                </p>
-              </div>
-            </div>
-            <WaveRodape />
+          {/* ETAPA 1 — arte oficial */}
+          <article className="relative h-full">
+            <img
+              src={etapa1Art.url}
+              alt="Etapa 1 — Você começa indicando 5 pessoas. Seu ganho no Nível 1: 5 x R$ 20 = R$ 100,00 por mês de comissão recorrente."
+              className="h-full w-full rounded-[2rem] object-contain drop-shadow-xl"
+              loading="lazy"
+            />
           </article>
 
 
