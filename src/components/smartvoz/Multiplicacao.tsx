@@ -32,7 +32,7 @@ function AvatarVoce({ size = "size-14" }: { size?: string }) {
 
 function MiniAvatar() {
   return (
-    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary sm:size-10">
+    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary shadow-[0_0_0_3px_white,0_2px_8px_oklch(0.43_0.25_302_/_0.35)] sm:size-10">
       <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
     </span>
   );
@@ -136,7 +136,7 @@ function ArvoreRede({ sub = false }: { sub?: boolean }) {
                         />
                         <span className="absolute left-1/2 top-0 h-2 w-px bg-primary/50" />
                       </div>
-                      <span className="size-1.5 rounded-full bg-primary/80" />
+                      <span className="size-2 rounded-full bg-primary shadow-[0_0_0_2px_white]" />
                     </div>
                   ))}
                 </div>
@@ -449,15 +449,17 @@ export function Multiplicacao() {
                   boxShadow: "0 0 24px oklch(0.55 0.25 303 / 0.3)",
                 }}
               >
-                <span
-                  className="flex size-14 shrink-0 items-center justify-center rounded-full"
-                  style={{
-                    border: "1px solid oklch(0.8 0.16 84 / 0.65)",
-                    background: "oklch(0.8 0.16 84 / 0.1)",
-                    boxShadow: "0 0 20px oklch(0.8 0.16 84 / 0.35)",
-                  }}
-                >
-                  <Trophy className="size-7 text-gold" aria-hidden="true" />
+                <span className="flex shrink-0 items-center justify-center">
+                  <Trophy
+                    className="size-16 text-gold"
+                    strokeWidth={1.4}
+                    fill="oklch(0.8 0.16 84 / 0.35)"
+                    style={{
+                      filter:
+                        "drop-shadow(0 0 10px oklch(0.8 0.16 84 / 0.9)) drop-shadow(0 0 28px oklch(0.8 0.16 84 / 0.5))",
+                    }}
+                    aria-hidden="true"
+                  />
                 </span>
                 <div className="min-w-0 text-center">
                   <p className="text-sm font-semibold text-primary-foreground/85">
