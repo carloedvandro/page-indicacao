@@ -205,8 +205,8 @@ export function Multiplicacao() {
           </article>
 
           {/* ETAPA 2 */}
-          <article className="surface-card relative overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10">
+          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
+            <div className="relative z-10 flex flex-1 flex-col">
               <div className="text-center">
                 <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
                   ETAPA 2
@@ -224,43 +224,7 @@ export function Multiplicacao() {
 
               {/* árvore nível 2 */}
               <div className="mt-5 flex flex-col items-center">
-                <AvatarVoce size="size-12" />
-                <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
-                  VOCÊ
-                </p>
-                <span aria-hidden="true" className="h-3 w-px bg-primary/40" />
-                <div className="relative w-full max-w-[17rem]">
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-[9%] right-[9%] top-0 h-px bg-primary/40"
-                  />
-                  <div className="flex justify-between">
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <div key={n} className="flex flex-col items-center">
-                        <span
-                          aria-hidden="true"
-                          className="h-2.5 w-px bg-primary/40"
-                        />
-                        <MiniAvatar />
-                        <span className="mt-0.5 text-[0.65rem] font-semibold text-muted-foreground">
-                          {n}
-                        </span>
-                        <span
-                          aria-hidden="true"
-                          className="mt-0.5 h-2 w-px bg-primary/30"
-                        />
-                        <span className="mt-0.5 flex gap-0.5" aria-hidden="true">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <span
-                              key={i}
-                              className="size-1.5 rounded-full bg-primary/70"
-                            />
-                          ))}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <ArvoreRede sub />
                 <span className="mt-2 inline-block rounded-full bg-primary-soft px-4 py-1 font-display text-xs font-bold text-accent-foreground">
                   25 pessoas
                 </span>
@@ -282,16 +246,19 @@ export function Multiplicacao() {
                 valor="R$ 125,00"
               />
 
-              <RendaRecorrente />
+              <div className="mt-auto">
+                <RendaRecorrente />
 
-              <p className="mt-4 text-center">
-                <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                  2 / 3
-                </span>
-              </p>
+                <p className="mt-4 text-center">
+                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
+                    2 / 3
+                  </span>
+                </p>
+              </div>
             </div>
             <WaveRodape />
           </article>
+
 
           {/* ETAPAS 3, 4 E 5 — bloco escuro com brilho roxo e dourado */}
           <article
