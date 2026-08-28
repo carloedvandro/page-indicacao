@@ -9,10 +9,16 @@ import {
 } from "lucide-react";
 
 const proximosNiveis = [
-  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5,00", valor: "R$ 625,00" },
-  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5,00", valor: "R$ 3.125,00" },
-  { nivel: "NÍVEL 5", pessoas: "3.125", calculo: "3.125 x R$ 5,00", valor: "R$ 15.625,00" },
+  { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
+  { nivel: "NÍVEL 4", pessoas: "625", calculo: "625 x R$ 5", valor: "R$ 3.125" },
+  {
+    nivel: "NÍVEL 5",
+    pessoas: "3.125",
+    calculo: "3.125 x R$ 5",
+    valor: "R$ 15.625",
+  },
 ];
+
 
 function AvatarVoce({ size = "size-14" }: { size?: string }) {
   return (
