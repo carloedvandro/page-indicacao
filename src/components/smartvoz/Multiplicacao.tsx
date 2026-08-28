@@ -1,12 +1,12 @@
 import {
   Star,
-  User,
   Users,
-  Coins,
   Trophy,
   Infinity as InfinityIcon,
   ShieldCheck,
 } from "lucide-react";
+import etapa1Art from "@/assets/etapa-1.png.asset.json";
+import etapa2Art from "@/assets/etapa-2.png.asset.json";
 
 const proximosNiveis = [
   { nivel: "NÍVEL 3", pessoas: "125", calculo: "125 x R$ 5", valor: "R$ 625" },
@@ -19,149 +19,6 @@ const proximosNiveis = [
   },
 ];
 
-
-function AvatarVoce({ size = "size-14" }: { size?: string }) {
-  return (
-    <span
-      className={`flex ${size} items-center justify-center rounded-full bg-gradient-primary shadow-glow`}
-    >
-      <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
-    </span>
-  );
-}
-
-function MiniAvatar() {
-  return (
-    <span className="flex size-9 items-center justify-center rounded-full bg-gradient-primary shadow-[0_0_0_3px_white,0_2px_8px_oklch(0.43_0.25_302_/_0.35)] sm:size-10">
-      <User className="size-[55%] text-primary-foreground" aria-hidden="true" />
-    </span>
-  );
-}
-
-function WaveRodape() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full"
-      viewBox="0 0 400 60"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M0,42 C90,12 310,66 400,26 L400,60 L0,60 Z"
-        fill="oklch(0.43 0.25 302 / 0.18)"
-      />
-      <path
-        d="M0,50 C110,24 290,70 400,38 L400,60 L0,60 Z"
-        fill="oklch(0.43 0.25 302 / 0.35)"
-      />
-    </svg>
-  );
-}
-
-function BlocoGanho({
-  titulo,
-  formula,
-  valor,
-}: {
-  titulo: string;
-  formula: string;
-  valor: string;
-}) {
-  return (
-    <div className="mt-4 flex items-start gap-3 rounded-2xl bg-primary-soft/60 p-3.5">
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
-        <Coins className="size-6 text-primary-foreground" aria-hidden="true" />
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.1em] text-primary">
-          {titulo}
-        </p>
-        <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3">
-          <span className="whitespace-nowrap font-display text-xl font-extrabold tabular-nums text-ink">
-            {formula}
-          </span>
-          <span className="whitespace-nowrap rounded-xl bg-gradient-primary px-3.5 py-1.5 text-center font-display text-lg font-extrabold tabular-nums text-primary-foreground">
-            {valor}
-          </span>
-          <span className="mt-1 font-display text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-            De comissão recorrente
-          </span>
-          <span className="mt-1 text-right text-xs font-semibold text-muted-foreground">
-            /mês
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-
-}
-
-function linhaHorizontal(i: number, total: number) {
-  if (i === 0) return "left-1/2 right-0";
-  if (i === total - 1) return "left-0 right-1/2";
-  return "inset-x-0";
-}
-
-/** Árvore de rede com linhas "soldadas" (sem falhas no meio). */
-function ArvoreRede({ sub = false }: { sub?: boolean }) {
-  return (
-    <div className="flex w-full max-w-[17rem] flex-col items-center">
-      <AvatarVoce size={sub ? "size-12" : "size-14"} />
-      <p className="mt-1 font-display text-xs font-extrabold tracking-wide text-ink">
-        VOCÊ
-      </p>
-      <span aria-hidden="true" className="h-4 w-px bg-primary/50" />
-      <div className="grid w-full grid-cols-5">
-        {[1, 2, 3, 4, 5].map((n, i) => (
-          <div key={n} className="flex flex-col items-center">
-            <div aria-hidden="true" className="relative h-4 w-full">
-              <span
-                className={`absolute top-0 h-px bg-primary/50 ${linhaHorizontal(i, 5)}`}
-              />
-              <span className="absolute left-1/2 top-0 h-4 w-px bg-primary/50" />
-            </div>
-            <MiniAvatar />
-            <span className="mt-1 text-[0.7rem] font-semibold text-muted-foreground">
-              {n}
-            </span>
-            {sub && (
-              <>
-                <span aria-hidden="true" className="h-2 w-px bg-primary/50" />
-                <div aria-hidden="true" className="grid w-full grid-cols-5">
-                  {[0, 1, 2, 3, 4].map((j) => (
-                    <div key={j} className="relative flex flex-col items-center">
-                      <div className="relative h-2 w-full">
-                        <span
-                          className={`absolute top-0 h-px bg-primary/50 ${linhaHorizontal(j, 5)}`}
-                        />
-                        <span className="absolute left-1/2 top-0 h-2 w-px bg-primary/50" />
-                      </div>
-                      <span className="size-2 rounded-full bg-primary shadow-[0_0_0_2px_white]" />
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function RendaRecorrente() {
-
-  return (
-    <div className="mt-6 flex items-center justify-center gap-3">
-      <span className="h-px flex-1 bg-border" />
-      <InfinityIcon className="size-5 text-primary" aria-hidden="true" />
-      <span className="font-display text-[0.68rem] font-bold tracking-[0.28em] text-primary">
-        RENDA RECORRENTE
-      </span>
-      <span className="h-px flex-1 bg-border" />
-    </div>
-  );
-}
 
 export function Multiplicacao() {
   return (
@@ -191,110 +48,25 @@ export function Multiplicacao() {
         </div>
 
         <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
-          {/* ETAPA 1 */}
-          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10 flex flex-1 flex-col">
-              <div className="text-center">
-                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                  ETAPA 1
-                </span>
-              </div>
-
-              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
-                Você começa indicando{" "}
-                <span className="text-primary">5 pessoas.</span>
-              </p>
-              <p className="mt-1 text-center text-sm text-muted-foreground">
-                Simples assim.
-              </p>
-
-              {/* árvore nível 1 */}
-              <div className="mt-5 flex flex-col items-center">
-                <ArvoreRede />
-              </div>
-
-              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
-                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-bold leading-tight text-ink">
-                    Você indica 5 pessoas
-                  </p>
-                  <p className="text-xs text-muted-foreground">(Nível 1)</p>
-                </div>
-              </div>
-
-              <BlocoGanho
-                titulo="Seu ganho no Nível 1"
-                formula="5 x R$ 20 ="
-                valor="R$ 100"
-              />
-
-              <div className="mt-auto">
-                <RendaRecorrente />
-
-                <p className="mt-4 text-center">
-                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                    1 / 3
-                  </span>
-                </p>
-              </div>
-            </div>
-            <WaveRodape />
+          {/* ETAPA 1 — arte oficial */}
+          <article className="relative h-full">
+            <img
+              src={etapa1Art.url}
+              alt="Etapa 1 — Você começa indicando 5 pessoas. Seu ganho no Nível 1: 5 x R$ 20 = R$ 100,00 por mês de comissão recorrente."
+              className="h-full w-full rounded-[2rem] object-contain drop-shadow-xl"
+              loading="lazy"
+            />
           </article>
 
 
-          {/* ETAPA 2 */}
-          <article className="surface-card relative flex h-full flex-col overflow-hidden p-6 pb-16 lg:p-7 lg:pb-16">
-            <div className="relative z-10 flex flex-1 flex-col">
-              <div className="text-center">
-                <span className="inline-block rounded-full bg-gradient-primary px-5 py-2 font-display text-[0.68rem] font-bold tracking-[0.14em] text-primary-foreground">
-                  ETAPA 2
-                </span>
-              </div>
-
-              <p className="mt-5 text-center font-display text-xl font-extrabold leading-snug text-ink">
-                Cada uma das 5 indica{" "}
-                <span className="text-primary">mais 5.</span>
-              </p>
-              <p className="mt-1 text-center text-sm text-muted-foreground">
-                O poder da <span className="text-primary">multiplicação!</span>
-              </p>
-
-              {/* árvore nível 2 */}
-              <div className="mt-5 flex flex-col items-center">
-                <ArvoreRede sub />
-                <span className="mt-2 inline-block rounded-full bg-primary-soft px-4 py-1 font-display text-xs font-bold text-accent-foreground">
-                  25 pessoas
-                </span>
-              </div>
-
-              <div className="mt-5 flex items-center gap-3 rounded-2xl bg-primary-soft p-3.5">
-                <Users className="size-7 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-bold leading-tight text-ink">
-                    Total de 25 pessoas
-                  </p>
-                  <p className="text-xs text-muted-foreground">(Nível 2)</p>
-                </div>
-              </div>
-
-              <BlocoGanho
-                titulo="Seu ganho no Nível 2"
-                formula="25 x R$ 5 ="
-                valor="R$ 125"
-              />
-
-              <div className="mt-auto">
-                <RendaRecorrente />
-
-                <p className="mt-4 text-center">
-                  <span className="inline-block rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold text-muted-foreground">
-                    2 / 3
-                  </span>
-                </p>
-              </div>
-            </div>
-            <WaveRodape />
+          {/* ETAPA 2 — arte oficial */}
+          <article className="relative h-full">
+            <img
+              src={etapa2Art.url}
+              alt="Etapa 2 — Cada uma das 5 indica mais 5. Total de 25 pessoas. Seu ganho no Nível 2: 25 x R$ 5 = R$ 125,00 por mês de comissão recorrente."
+              className="h-full w-full rounded-[2rem] object-contain drop-shadow-xl"
+              loading="lazy"
+            />
           </article>
 
 
