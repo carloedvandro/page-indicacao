@@ -166,7 +166,7 @@ export function ComoGanha() {
               </ul>
             </div>
 
-            <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground lg:text-sm">
               Valores referentes às comissões elegíveis conforme regras do
               programa.
             </p>
