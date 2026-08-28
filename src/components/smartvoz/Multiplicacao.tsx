@@ -295,7 +295,8 @@ export function Multiplicacao() {
 
           {/* ETAPAS 3, 4 E 5 — bloco escuro com brilho roxo e dourado */}
           <article
-            className="relative overflow-hidden rounded-[2rem] p-6 sm:p-7"
+            className="relative flex h-full flex-col overflow-hidden rounded-[2rem] p-6 sm:p-7"
+
             style={{
               backgroundImage:
                 "radial-gradient(900px 400px at 50% 0%, oklch(0.32 0.19 300 / 0.5), transparent 65%), linear-gradient(165deg, oklch(0.17 0.09 300), oklch(0.13 0.06 300) 60%, oklch(0.11 0.05 300))",
