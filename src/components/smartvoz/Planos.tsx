@@ -1,9 +1,6 @@
 import {
   Rocket,
   Users,
-  RefreshCcw,
-  TrendingUp,
-  Gem,
   ArrowRight,
   Lock,
   MapPinned,
