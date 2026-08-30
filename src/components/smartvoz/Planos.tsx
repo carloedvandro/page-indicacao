@@ -9,39 +9,34 @@ import {
   Gauge,
   Gift,
   Landmark,
+  Wallet,
+  TrendingUp,
+  Diamond,
 } from "lucide-react";
 
 import { whatsappLink } from "@/lib/smartvoz";
 import mapaRoxo from "@/assets/mapa-cobertura-roxo.png";
 import mapaDourado from "@/assets/mapa-cobertura-dourado.png";
-import iconIndique from "@/assets/icon-3d-indique.png";
-import iconComissoes from "@/assets/icon-3d-comissoes.png";
-import iconCarteira from "@/assets/icon-3d-carteira.png";
-import iconLiberdade from "@/assets/icon-3d-liberdade.png";
 
 const passos = [
   {
-    icone: iconIndique,
-    alt: "Ícone 3D de duas pessoas indicando",
+    icone: Users,
     titulo: "Indique pessoas",
     texto: "Conecte amigos e familiares com um serviço que todos já usam.",
   },
   {
-    icone: iconComissoes,
-    alt: "Ícone 3D de moeda com setas de recorrência",
+    icone: Wallet,
     titulo: "Receba comissões",
     texto:
       "Ganhe na adesão e continue recebendo na recorrência mês após mês.",
   },
   {
-    icone: iconCarteira,
-    alt: "Ícone 3D de gráfico de crescimento com moedas",
+    icone: TrendingUp,
     titulo: "Construa sua carteira",
     texto: "Sua carteira cresce e pode gerar renda para você por muito tempo.",
   },
   {
-    icone: iconLiberdade,
-    alt: "Ícone 3D de diamante representando liberdade",
+    icone: Diamond,
     titulo: "Viva da liberdade",
     texto:
       "Mais tempo, mais escolha e mais qualidade de vida para você e sua família.",
@@ -266,18 +261,10 @@ export function Planos() {
               key={p.titulo}
               className="group flex items-start gap-3 sm:gap-4 lg:px-4"
             >
-              <span className="relative flex size-14 shrink-0 items-center justify-center sm:size-16">
-                <span
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors duration-300 group-hover:bg-primary-deep sm:size-14">
+                <p.icone
+                  className="size-6 sm:size-7"
                   aria-hidden="true"
-                  className="absolute inset-0 rounded-full bg-primary-soft blur-sm transition-all duration-300 group-hover:bg-accent group-hover:blur-md"
-                />
-                <img
-                  src={p.icone}
-                  alt={p.alt}
-                  width={512}
-                  height={512}
-                  loading="lazy"
-                  className="relative size-14 object-contain drop-shadow-[0_10px_14px_oklch(0.43_0.25_302/0.35)] transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110 sm:size-16"
                 />
               </span>
               <div>
