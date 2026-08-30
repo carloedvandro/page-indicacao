@@ -17,26 +17,34 @@ import {
 import { whatsappLink } from "@/lib/smartvoz";
 import mapaRoxo from "@/assets/mapa-cobertura-roxo.png";
 import mapaDourado from "@/assets/mapa-cobertura-dourado.png";
+import iconIndique from "@/assets/icon-3d-indique.png";
+import iconComissoes from "@/assets/icon-3d-comissoes.png";
+import iconCarteira from "@/assets/icon-3d-carteira.png";
+import iconLiberdade from "@/assets/icon-3d-liberdade.png";
 
 const passos = [
   {
-    icone: Users,
+    icone: iconIndique,
+    alt: "Ícone 3D de duas pessoas indicando",
     titulo: "Indique pessoas",
     texto: "Conecte amigos e familiares com um serviço que todos já usam.",
   },
   {
-    icone: RefreshCcw,
+    icone: iconComissoes,
+    alt: "Ícone 3D de moeda com setas de recorrência",
     titulo: "Receba comissões",
     texto:
       "Ganhe na adesão e continue recebendo na recorrência mês após mês.",
   },
   {
-    icone: TrendingUp,
+    icone: iconCarteira,
+    alt: "Ícone 3D de gráfico de crescimento com moedas",
     titulo: "Construa sua carteira",
     texto: "Sua carteira cresce e pode gerar renda para você por muito tempo.",
   },
   {
-    icone: Gem,
+    icone: iconLiberdade,
+    alt: "Ícone 3D de diamante representando liberdade",
     titulo: "Viva da liberdade",
     texto:
       "Mais tempo, mais escolha e mais qualidade de vida para você e sua família.",
