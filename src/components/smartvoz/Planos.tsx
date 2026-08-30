@@ -265,9 +265,23 @@ export function Planos() {
 
         <ul className="mx-auto mt-10 grid max-w-[26rem] gap-6 px-3 sm:max-w-none sm:grid-cols-2 sm:px-0 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {passos.map((p) => (
-            <li key={p.titulo} className="flex items-start gap-3 sm:gap-4 lg:px-4">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-                <p.icone className="size-6 text-primary" aria-hidden="true" />
+            <li
+              key={p.titulo}
+              className="group flex items-start gap-3 sm:gap-4 lg:px-4"
+            >
+              <span className="relative flex size-14 shrink-0 items-center justify-center sm:size-16">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 rounded-full bg-primary-soft blur-sm transition-all duration-300 group-hover:bg-accent group-hover:blur-md"
+                />
+                <img
+                  src={p.icone}
+                  alt={p.alt}
+                  width={512}
+                  height={512}
+                  loading="lazy"
+                  className="relative size-14 object-contain drop-shadow-[0_10px_14px_oklch(0.43_0.25_302/0.35)] transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110 sm:size-16"
+                />
               </span>
               <div>
                 <p className="font-display text-base font-bold text-primary">
