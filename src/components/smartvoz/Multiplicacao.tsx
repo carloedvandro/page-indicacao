@@ -23,12 +23,12 @@ export function Multiplicacao() {
             O PODER DA <span className="text-primary">MULTIPLICAÇÃO!</span>
           </h2>
           <p className="mx-auto mt-4 flex items-center justify-center gap-4 font-display text-sm font-bold uppercase tracking-wide text-ink sm:text-lg lg:text-xl">
-            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block lg:w-24" />
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
             <span>
               INDIQUE <span className="text-primary">5 PESSOAS,</span> CADA UMA
               INDICA <span className="text-primary">MAIS 5.</span>
             </span>
-            <span aria-hidden="true" className="hidden h-px w-16 bg-primary/40 sm:block lg:w-24" />
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
           </p>
         </div>
 
@@ -69,10 +69,10 @@ export function Multiplicacao() {
         </div>
 
         <p className="mt-8 flex items-center justify-center gap-3 text-center text-xs text-muted-foreground sm:text-sm lg:text-base">
-          <span aria-hidden="true" className="hidden h-px w-16 bg-border sm:block lg:w-24" />
+          <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-border sm:block lg:w-24" />
           <ShieldCheck className="size-4 shrink-0 text-primary lg:size-5" aria-hidden="true" />
           Valores referentes às comissões elegíveis conforme regras do programa.
-          <span aria-hidden="true" className="hidden h-px w-16 bg-border sm:block lg:w-24" />
+          <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-border sm:block lg:w-24" />
         </p>
       </div>
     </section>

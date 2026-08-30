@@ -86,9 +86,13 @@ export function Faq() {
             Ainda tem dúvidas?{" "}
             <span className="text-primary">A gente clareia tudo.</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Respostas rápidas para você{" "}
-            <strong className="text-primary">decidir com segurança.</strong>
+          <p className="mt-4 flex items-center justify-center gap-4 text-base text-muted-foreground sm:text-lg">
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
+            <span>
+              Respostas rápidas para você{" "}
+              <strong className="text-primary">decidir com segurança.</strong>
+            </span>
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
           </p>
         </div>
 
