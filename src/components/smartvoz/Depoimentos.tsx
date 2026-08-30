@@ -55,8 +55,10 @@ export function Depoimentos() {
             Veja quem já começou a construir{" "}
             <span className="text-primary">sua carteira.</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Pessoas comuns. Resultados reais. Oportunidade verdadeira.
+          <p className="mt-4 flex items-center justify-center gap-4 text-base text-muted-foreground sm:text-lg">
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
+            <span>Pessoas comuns. Resultados reais. Oportunidade verdadeira.</span>
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
           </p>
         </div>
 
@@ -133,10 +135,11 @@ export function Depoimentos() {
           </div>
         </div>
 
-        <p className="mt-10 flex flex-wrap items-center justify-center gap-2 text-center text-xs text-muted-foreground sm:text-sm lg:text-base">
-          <ShieldCheck className="size-4 text-primary lg:size-5" aria-hidden="true" />
-          Resultados individuais podem variar. Não configuram promessa ou
-          garantia de ganhos.
+        <p className="mt-10 flex items-center justify-center gap-3 text-center text-xs text-muted-foreground sm:text-sm lg:text-base">
+          <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-border sm:block lg:w-24" />
+          <ShieldCheck className="size-4 shrink-0 text-primary lg:size-5" aria-hidden="true" />
+          Resultados individuais podem variar. Não configuram promessa ou garantia de ganhos.
+          <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-border sm:block lg:w-24" />
         </p>
       </div>
     </section>

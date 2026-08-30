@@ -39,8 +39,10 @@ export function ComoGanha() {
             Como você ganha com o Poder da{" "}
             <span className="text-primary">Recorrência.</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Indique. Construa sua carteira. Receba comissões todos os meses.
+          <p className="mt-4 flex items-center justify-center gap-4 text-base text-muted-foreground sm:text-lg">
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
+            <span>Indique. Construa sua carteira. Receba comissões todos os meses.</span>
+            <span aria-hidden="true" className="hidden h-[2px] w-16 rounded-full bg-primary/40 sm:block lg:w-24" />
           </p>
         </div>
 
