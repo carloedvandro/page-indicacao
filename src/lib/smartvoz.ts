@@ -14,17 +14,29 @@ export const smartvoz = {
   videoDuracao: "06:24",
   whatsappNumero: "5521999999999",
   whatsappExibicao: "(21) 99999-9999",
-  email: "contato@smartvoz.com.br",
-  horario: "Seg a Sex, das 9h às 18h",
+  email: "atendimento@smartvoz.com.br",
+  horario: "Segunda a sexta-feira, em horário comercial",
+  /** CNPJ exibido no rodapé. */
+  cnpj: "66.856.703/0001-24",
 };
+
+/**
+ * Redes sociais oficiais SmartVoz.
+ * As URLs estão vazias por padrão — preencha com os links reais quando
+ * disponíveis. Não inventar URLs.
+ */
+export const redesSociais: { nome: string; href: string }[] = [
+  { nome: "Instagram", href: "" },
+  { nome: "YouTube", href: "" },
+  { nome: "Facebook", href: "" },
+  { nome: "TikTok", href: "" },
+];
 
 /** Extrai o ID do vídeo de uma URL do YouTube ou devolve o próprio ID. */
 export function youtubeId(valor: string): string {
   const bruto = valor.trim();
   if (!bruto) return "";
-  const match = bruto.match(
-    /(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/,
-  );
+  const match = bruto.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
   return match?.[1] ?? bruto;
 }
 
