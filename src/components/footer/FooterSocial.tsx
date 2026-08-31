@@ -15,6 +15,9 @@ const icones: Record<string, typeof Instagram> = {
   TikTok: Music2,
 };
 
+const classeBase =
+  "flex size-11 items-center justify-center rounded-full border border-primary/35 text-primary transition-colors sm:size-12";
+
 /**
  * Redes sociais do rodapé.
  *
@@ -23,18 +26,17 @@ const icones: Record<string, typeof Instagram> = {
  */
 export function FooterSocial() {
   return (
-    <div className="flex w-full items-center justify-center gap-3 lg:justify-start">
+    <div className="flex w-full items-center gap-3 sm:gap-3.5">
       {redesSociais.map((rede) => {
         const Icone = icones[rede.nome] ?? Instagram;
-        const comHref = rede.href.length > 0;
-        return comHref ? (
+        return rede.href ? (
           <a
             key={rede.nome}
             href={rede.href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={rede.nome}
-            className="flex size-11 items-center justify-center rounded-full border border-primary/30 text-primary transition-colors hover:bg-primary-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className={`${classeBase} hover:bg-primary-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring`}
           >
             <Icone className="size-5" aria-hidden="true" />
           </a>
@@ -42,7 +44,7 @@ export function FooterSocial() {
           <span
             key={rede.nome}
             aria-label={`${rede.nome} (link em breve)`}
-            className="flex size-11 items-center justify-center rounded-full border border-primary/30 text-primary/60"
+            className={`${classeBase} text-primary/60`}
           >
             <Icone className="size-5" aria-hidden="true" />
           </span>

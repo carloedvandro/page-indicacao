@@ -13,7 +13,15 @@ export const footerNavigation: {
   institucional: FooterLink[];
   informacoes: FooterLink[];
   suporte: FooterLink[];
+  /** Coluna "Ajuda e Suporte" exibida no rodapé. */
+  ajudaESuporte: FooterLink[];
 } = {
+  ajudaESuporte: [
+    { label: "Central de Ajuda", href: "/central-de-ajuda" },
+    { label: "Tutoriais e Guias", href: "/tutoriais" },
+    { label: "Acompanhamento", href: "/acompanhamento" },
+    { label: "FAQ - Perguntas Frequentes", href: "/perguntas-frequentes" },
+  ],
   institucional: [
     { label: "Quem somos", href: "/quem-somos" },
     { label: "Missão e Valores", href: "/missao-e-valores" },

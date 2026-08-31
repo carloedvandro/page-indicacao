@@ -18,6 +18,14 @@ export const smartvoz = {
   horario: "Segunda a sexta-feira, em horário comercial",
   /** CNPJ exibido no rodapé. */
   cnpj: "66.856.703/0001-24",
+  /**
+   * URL do Escritório Virtual / área de login já existente em produção.
+   *
+   * TODO (programador): preencher com a URL real do sistema. Enquanto estiver
+   * vazia, o botão "Login" do header aponta para /acompanhamento.
+   * Exemplo: "https://escritorio.smartvoz.com.br/login"
+   */
+  loginUrl: "",
 };
 
 /**

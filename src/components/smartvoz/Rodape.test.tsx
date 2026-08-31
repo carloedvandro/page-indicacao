@@ -18,23 +18,35 @@ vi.mock("@tanstack/react-router", () => ({
 import { Rodape } from "./Rodape";
 
 describe("Rodape", () => {
-  it("exibe logo oficial, CNPJ e copyright", () => {
+  it("exibe CNPJ e copyright", () => {
     render(<Rodape />);
 
-    expect(screen.getByAltText("SmartVoz")).toBeInTheDocument();
-    expect(screen.getByText("66.856.703/0001-24")).toBeInTheDocument();
+    expect(screen.getByText(/66\.856\.703\/0001-24/)).toBeInTheDocument();
     expect(screen.getByText(/Todos os direitos reservados/i)).toBeInTheDocument();
   });
 
-  it("exibe as colunas institucionais e o atendimento (desktop)", () => {
+  it("exibe as três colunas do rodapé", () => {
     render(<Rodape />);
 
-    expect(screen.getAllByText("INSTITUCIONAL").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("INFORMAÇÕES").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("SUPORTE").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("ATENDIMENTO").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("SIGA NOSSAS REDES").length).toBeGreaterThan(0);
+    expect(screen.getByText("AJUDA E SUPORTE")).toBeInTheDocument();
+    expect(screen.getByText("ATENDIMENTO")).toBeInTheDocument();
+    expect(screen.getByText("SIGA NOSSAS REDES")).toBeInTheDocument();
+  });
+
+  it("exibe os links de ajuda e suporte", () => {
+    render(<Rodape />);
+
+    expect(screen.getByText("Central de Ajuda")).toBeInTheDocument();
+    expect(screen.getByText("Tutoriais e Guias")).toBeInTheDocument();
+    expect(screen.getByText("Acompanhamento")).toBeInTheDocument();
+    expect(screen.getByText("FAQ - Perguntas Frequentes")).toBeInTheDocument();
+  });
+
+  it("exibe os selos de segurança", () => {
+    render(<Rodape />);
+
     expect(screen.getByText(/Ambiente seguro/i)).toBeInTheDocument();
+    expect(screen.getByText(/Seus dados protegidos/i)).toBeInTheDocument();
   });
 
   it("não exibe mais 'Plano de Carreira' nem 'Status do Sistema'", () => {
@@ -47,6 +59,6 @@ describe("Rodape", () => {
   it("exibe o e-mail de atendimento atualizado", () => {
     render(<Rodape />);
 
-    expect(screen.getAllByText("atendimento@smartvoz.com.br").length).toBeGreaterThan(0);
+    expect(screen.getByText("atendimento@smartvoz.com.br")).toBeInTheDocument();
   });
 });

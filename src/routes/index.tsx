@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Hero } from "@/components/smartvoz/Hero";
+import { SiteChrome } from "@/components/site/SiteChrome";
+import { VideoHeroSection } from "@/components/hero/VideoHeroSection";
 import { Depoimentos } from "@/components/smartvoz/Depoimentos";
 import { ComoGanha } from "@/components/smartvoz/ComoGanha";
 import { Multiplicacao } from "@/components/smartvoz/Multiplicacao";
 import { Planos } from "@/components/smartvoz/Planos";
 import { Faq } from "@/components/smartvoz/Faq";
-import { Rodape } from "@/components/smartvoz/Rodape";
 
 const titulo = "SmartVoz | O Poder da Recorrência e da Multiplicação";
 const descricao =
@@ -28,14 +28,13 @@ export const Route = createFileRoute("/")({
 
 function PaginaOficial() {
   return (
-    <main>
-      <Hero />
+    <SiteChrome>
+      <VideoHeroSection />
       <Depoimentos />
       <ComoGanha />
       <Multiplicacao />
       <Planos />
       <Faq />
-      <Rodape />
-    </main>
+    </SiteChrome>
   );
 }
