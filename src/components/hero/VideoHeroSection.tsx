@@ -21,7 +21,7 @@ export function VideoHeroSection() {
       <div className="relative mx-auto w-full max-w-[1540px] overflow-hidden rounded-[26px] lg:w-[95%]">
         <HeroBackground />
 
-        <div className="relative grid items-center gap-8 px-5 py-10 sm:px-9 sm:py-12 lg:min-h-[620px] lg:grid-cols-[43%_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-12 lg:py-14 xl:gap-14">
+        <div className="relative grid items-center gap-8 px-5 py-10 sm:px-9 sm:py-12 lg:min-h-[620px] lg:grid-cols-[47%_minmax(0,1fr)] lg:items-start lg:gap-6 lg:px-12 lg:pb-14 lg:pt-10 xl:gap-8">
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 text-left">
             {/* Texto superior */}
@@ -46,13 +46,12 @@ export function VideoHeroSection() {
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text text-pretty font-display text-[clamp(1.25rem,1.75vw,1.8rem)] font-bold leading-[1.18] text-transparent"
+              className="mt-2 bg-clip-text text-pretty font-display text-[clamp(1.25rem,1.75vw,1.8rem)] font-bold leading-[1.18] text-transparent lg:whitespace-nowrap"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
             >
-              por que você ainda não
-              <br className="hidden xl:block" /> ganha com isso?
+              por que você ainda não ganha com isso?
             </p>
 
             {/* Botão ASSISTA AO VÍDEO */}
@@ -89,7 +88,7 @@ export function VideoHeroSection() {
           </div>
 
           {/* Coluna direita — vídeo */}
-          <div className="rise-in order-2 w-full lg:pt-1">
+          <div className="rise-in order-2 w-full">
             <VideoPlayer />
           </div>
         </div>
