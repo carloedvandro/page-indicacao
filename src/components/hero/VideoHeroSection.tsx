@@ -25,20 +25,20 @@ export function VideoHeroSection() {
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 text-left">
             {/* Texto superior */}
-            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-white sm:text-[0.95rem] lg:text-[1rem]">
-              O PODER DA <span className="text-[#C084FC]">RECORRÊNCIA</span> E DA{" "}
+            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-ink sm:text-[0.95rem] lg:text-[1rem]">
+              O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
               <span className="text-[#F97316]">MULTIPLICAÇÃO</span>
             </p>
 
             {/* Título principal */}
-            <h1 className="mt-6 text-[1.8rem] font-extrabold leading-[1.12] text-white sm:text-[2.3rem] lg:mt-7 lg:text-[2.7rem] xl:text-[2.9rem]">
+            <h1 className="mt-6 text-[1.8rem] font-extrabold leading-[1.12] text-ink sm:text-[2.3rem] lg:mt-7 lg:text-[2.7rem] xl:text-[2.9rem]">
               Todo mundo que você
               <br /> conhece já paga internet
               <br /> todos os meses.
             </h1>
 
             {/* Pergunta */}
-            <p className="mt-6 font-display text-[1.1rem] font-semibold text-white sm:text-[1.25rem] lg:mt-7 lg:text-[1.35rem]">
+            <p className="mt-6 font-display text-[1.1rem] font-semibold text-ink sm:text-[1.25rem] lg:mt-7 lg:text-[1.35rem]">
               A pergunta é:
             </p>
             <p
@@ -56,7 +56,7 @@ export function VideoHeroSection() {
               type="button"
               onClick={irParaVideo}
               aria-label="Assista ao vídeo e entenda como funciona"
-              className="group mt-7 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:max-w-[20rem] sm:px-5 lg:mt-8"
+              className="group mt-7 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:max-w-[20rem] sm:px-5 lg:mt-8"
             >
               {/* Play estilo YouTube */}
               <span

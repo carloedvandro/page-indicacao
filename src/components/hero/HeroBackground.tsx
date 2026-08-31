@@ -10,11 +10,14 @@ import heroMundoRede from "@/assets/hero-mundo-rede.png.asset.json";
 export function HeroBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <img
-        src={heroMundoRede.url}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+      {/* Base lilás — garante o tom correto enquanto a arte carrega */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "linear-gradient(120deg, #F3ECFC 0%, #E4D4F8 45%, #C9A9EF 100%)",
+        }}
       />
+      <img src={heroMundoRede.url} alt="" className="absolute inset-0 h-full w-full object-cover" />
       {/* Véu suave à esquerda para garantir leitura dos textos */}
       <div
         className="absolute inset-0"
