@@ -48,7 +48,7 @@ export function VideoHeroSection() {
               }}
             >
               por que você ainda não
-              <br className="hidden sm:block" /> ganha com isso?
+              <br /> ganha com isso?
             </p>
 
             {/* Botão ASSISTA AO VÍDEO */}
@@ -56,16 +56,16 @@ export function VideoHeroSection() {
               type="button"
               onClick={irParaVideo}
               aria-label="Assista ao vídeo e entenda como funciona"
-              className="group mt-8 flex w-full max-w-[22rem] items-center gap-4 rounded-[18px] bg-white px-5 py-3.5 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:max-w-[24rem] sm:px-6 lg:mt-10"
+              className="group mt-7 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:max-w-[20rem] sm:px-5 lg:mt-8"
             >
               {/* Play estilo YouTube */}
               <span
-                className="flex size-11 shrink-0 items-center justify-center rounded-full sm:size-12"
+                className="flex size-10 shrink-0 items-center justify-center rounded-full sm:size-11"
                 style={{ backgroundColor: "#FF0000" }}
               >
                 <svg
                   viewBox="0 0 24 24"
-                  className="ml-0.5 size-5 sm:size-6"
+                  className="ml-0.5 size-4.5 sm:size-5"
                   fill="#FFFFFF"
                   aria-hidden="true"
                 >
@@ -74,10 +74,10 @@ export function VideoHeroSection() {
               </span>
 
               <span className="min-w-0">
-                <span className="block whitespace-nowrap font-display text-[0.95rem] font-extrabold tracking-[0.02em] text-[#1B0A2A] sm:text-base">
+                <span className="block whitespace-nowrap font-display text-[0.88rem] font-extrabold tracking-[0.02em] text-[#1B0A2A] sm:text-[0.95rem]">
                   ASSISTA AO VÍDEO
                 </span>
-                <span className="mt-0.5 block whitespace-nowrap font-display text-[0.62rem] font-semibold tracking-[0.14em] text-[#5B21B6] sm:text-[0.7rem]">
+                <span className="mt-0.5 block whitespace-nowrap font-display text-[0.58rem] font-semibold tracking-[0.14em] text-[#5B21B6] sm:text-[0.64rem]">
                   E ENTENDA COMO FUNCIONA
                 </span>
               </span>
