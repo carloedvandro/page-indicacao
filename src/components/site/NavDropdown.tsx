@@ -32,7 +32,7 @@ export function NavDropdown({
       const rect = botao.current.getBoundingClientRect();
       const viewport = window.innerWidth;
       const margemSeguranca = 16;
-      const maxWidth = menu.grupos.length === 2 ? 576 : 320;
+      const maxWidth = menu.grupos.length === 2 ? 576 : 224;
       let left = rect.left;
 
       // Garante que o mega-menu nao ultrapasse as bordas da tela.
@@ -66,7 +66,7 @@ export function NavDropdown({
   const totalGrupos = menu.grupos.length;
 
   const conteudoClasses: Record<number, string> = {
-    1: "max-w-80 grid-cols-1",
+    1: "max-w-56 grid-cols-1",
     2: "max-w-[36rem] grid-cols-2",
     3: "max-w-[48rem] grid-cols-3",
     4: "max-w-[56rem] grid-cols-4",
