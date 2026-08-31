@@ -47,19 +47,16 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
         aria-hidden="true"
       />
 
-      {/* INDIQUE. CONSTRUA. RECEBA. */}
-      <span className="absolute left-6 top-1/2 -translate-y-1/2 text-left sm:left-8 lg:left-10">
-        <span className="block font-display text-[1.35rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
+      {/* INDIQUE. CONSTRUA. RECEBA. + Play — centralizados verticalmente */}
+      <span className="absolute inset-0 flex items-center gap-2 px-6 sm:gap-3 sm:px-8 lg:gap-4 lg:px-10">
+        <span className="font-display text-[1.35rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
           <span className="block text-white">INDIQUE.</span>
           <span className="block text-[#A855F7]">CONSTRUA.</span>
           <span className="block text-[#F97316]">RECEBA.</span>
         </span>
-      </span>
 
-      {/* Play vermelho estilo YouTube */}
-      <span className="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 sm:left-[60%] lg:left-[62%]">
         <span
-          className="flex h-[3.1rem] w-[4.4rem] items-center justify-center rounded-[1.1rem] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[3.6rem] sm:w-[5.2rem] lg:h-[4.1rem] lg:w-[5.9rem]"
+          className="mt-1.5 flex h-[3.1rem] w-[4.4rem] shrink-0 items-center justify-center rounded-[1.1rem] transition-transform duration-300 group-hover:scale-[1.04] sm:mt-2 sm:h-[3.6rem] sm:w-[5.2rem] lg:mt-2.5 lg:h-[4.1rem] lg:w-[5.9rem]"
           style={{
             backgroundColor: "#FF0000",
             boxShadow: "0 8px 26px -8px rgba(255, 0, 0, 0.5)",
