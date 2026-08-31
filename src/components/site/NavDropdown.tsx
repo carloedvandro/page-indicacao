@@ -12,7 +12,13 @@ import type { NavMenu } from "@/lib/header-navigation";
  *
  * Renderiza um mega-menu com colunas quando o menu possui múltiplos grupos.
  */
-export function NavDropdown({ menu }: { menu: NavMenu }) {
+export function NavDropdown({
+  menu,
+  alinhamento = "centro",
+}: {
+  menu: NavMenu;
+  alinhamento?: "esquerda" | "centro" | "direita";
+}) {
   const [aberto, setAberto] = useState(false);
   const container = useRef<HTMLDivElement>(null);
 
@@ -44,6 +50,12 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
     5: "max-w-[72rem] grid-cols-5",
   };
 
+  const alinhamentoClasse = {
+    esquerda: "mr-auto",
+    centro: "mx-auto",
+    direita: "ml-auto",
+  };
+
   return (
     <div
       ref={container}
@@ -70,7 +82,9 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       {aberto ? (
         <div className="fixed inset-x-0 top-16 z-50">
           <div className="w-full border-y border-border bg-card py-2 shadow-card">
-            <div className={`mx-auto grid w-full overflow-hidden ${conteudoClasses[totalGrupos]}`}>
+            <div
+              className={`grid w-full overflow-hidden ${alinhamentoClasse[alinhamento]} ${conteudoClasses[totalGrupos]}`}
+            >
               {menu.grupos.map((grupo, gIdx) => (
                 <div
                   key={grupo.titulo ?? `grupo-${gIdx}`}
