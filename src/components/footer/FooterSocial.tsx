@@ -16,7 +16,7 @@ const icones: Record<string, typeof Instagram> = {
 };
 
 const classeBase =
-  "flex size-11 items-center justify-center rounded-full border border-primary/35 text-primary transition-colors sm:size-12";
+  "flex size-12 items-center justify-center rounded-full border-2 border-primary/60 text-primary transition-colors sm:size-[3.25rem]";
 
 /**
  * Redes sociais do rodapé.
@@ -38,15 +38,11 @@ export function FooterSocial() {
             aria-label={rede.nome}
             className={`${classeBase} hover:bg-primary-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring`}
           >
-            <Icone className="size-5" aria-hidden="true" />
+            <Icone className="size-6" strokeWidth={2.1} aria-hidden="true" />
           </a>
         ) : (
-          <span
-            key={rede.nome}
-            aria-label={`${rede.nome} (link em breve)`}
-            className={`${classeBase} text-primary/60`}
-          >
-            <Icone className="size-5" aria-hidden="true" />
+          <span key={rede.nome} aria-label={`${rede.nome} (link em breve)`} className={classeBase}>
+            <Icone className="size-6" strokeWidth={2.1} aria-hidden="true" />
           </span>
         );
       })}

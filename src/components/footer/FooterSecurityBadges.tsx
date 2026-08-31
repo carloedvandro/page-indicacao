@@ -23,8 +23,8 @@ export function FooterSecurityBadges() {
       <ul className="grid grid-cols-1 gap-5 min-[420px]:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-border">
         {selos.map((s) => (
           <li key={s.linha1} className="flex items-center gap-3 lg:justify-center lg:px-5">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft sm:size-11">
-              <s.icone className="size-5 text-primary" aria-hidden="true" />
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary shadow-[0_6px_16px_-8px_oklch(0.43_0.25_302/0.55)] sm:size-12">
+              <s.icone className="size-[1.35rem] text-primary-foreground" aria-hidden="true" />
             </span>
             <p className="text-sm leading-snug text-ink">
               {s.linha1}
