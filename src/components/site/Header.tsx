@@ -31,28 +31,32 @@ export function Header() {
         rolou ? "shadow-[0_1px_12px_oklch(0.2_0.05_300/0.08)]" : "border-b border-border/60"
       }`}
     >
-      <div className="mx-auto flex h-[68px] max-w-screen-2xl items-center gap-4 px-5 sm:px-6 lg:h-[82px]">
-        {/* Logo */}
-        <Link
-          to="/"
-          aria-label="Ir para a página inicial da SmartVoz"
-          className="flex shrink-0 items-center lg:pl-6"
-        >
-          <Logo className="h-9 sm:h-10 lg:h-11" />
-        </Link>
+      {/* A geometria abaixo espelha o card do Hero (VideoHeroSection) para que
+          o logo e o Login fiquem alinhados com as bordas da arte. */}
+      <div className="px-4 sm:px-5">
+        <div className="mx-auto flex h-[68px] w-full max-w-[1540px] items-center gap-4 lg:h-[82px] lg:w-[95%]">
+          {/* Logo */}
+          <Link
+            to="/"
+            aria-label="Ir para a página inicial da SmartVoz"
+            className="flex shrink-0 items-center lg:pl-6"
+          >
+            <Logo className="h-9 sm:h-10 lg:h-11" />
+          </Link>
 
-        {/* Menus centrais (desktop) — próximos à esquerda, junto à logo */}
-        <div className="lg:ml-10">
-          <DesktopNavigation />
+          {/* Menus centrais (desktop) — próximos à esquerda, junto à logo */}
+          <div className="lg:ml-10">
+            <DesktopNavigation />
+          </div>
+
+          {/* Login (desktop) — alinhado com a borda direita do card do Hero */}
+          <div className="ml-auto hidden shrink-0 items-center lg:flex lg:pr-6">
+            <LoginLink compacto />
+          </div>
+
+          {/* Hamburger (mobile) */}
+          <MobileNavigation />
         </div>
-
-        {/* Login (desktop) — sem o risquinho separador */}
-        <div className="ml-auto hidden shrink-0 items-center lg:flex">
-          <LoginLink compacto />
-        </div>
-
-        {/* Hamburger (mobile) */}
-        <MobileNavigation />
       </div>
     </header>
   );
