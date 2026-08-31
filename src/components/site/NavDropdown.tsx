@@ -37,11 +37,11 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
   const multiGrupo = menu.grupos.length > 1;
   const totalGrupos = menu.grupos.length;
 
-  const colClasses: Record<number, string> = {
-    2: "grid-cols-2 min-w-[36rem]",
-    3: "grid-cols-3 min-w-[48rem]",
-    4: "grid-cols-4 min-w-[56rem]",
-    5: "grid-cols-5 min-w-[72rem]",
+  const conteudoClasses = {
+    2: "max-w-[36rem] grid-cols-2",
+    3: "max-w-[48rem] grid-cols-3",
+    4: "max-w-[56rem] grid-cols-4",
+    5: "max-w-[72rem] grid-cols-5",
   };
 
   return (
@@ -71,46 +71,54 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
         <div
           className={`z-50 ${
             multiGrupo
-              ? "fixed left-1/2 top-16 -translate-x-1/2"
+              ? "fixed inset-x-0 top-16"
               : "absolute left-1/2 top-full -translate-x-1/2 pt-2"
           }`}
         >
           <div
-            className={`max-w-[98vw] overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
-              multiGrupo ? `grid ${colClasses[totalGrupos]}` : "min-w-72"
+            className={`border-y border-border bg-card py-2 shadow-card ${
+              multiGrupo ? "w-full" : "rounded-none border-x"
             }`}
           >
-            {menu.grupos.map((grupo, gIdx) => (
-              <div
-                key={grupo.titulo ?? `grupo-${gIdx}`}
-                className={`px-2.5 py-2 ${gIdx > 0 && multiGrupo ? "border-l border-border" : ""}`}
-              >
-                {grupo.titulo ? (
-                  <p className="mb-1 pt-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-ink">
-                    {grupo.titulo}
-                  </p>
-                ) : null}
-                <ul>
-                  {grupo.itens.map((item) => (
-                    <li key={`${menu.label}-${item.label}`}>
-                      {item.href ? (
-                        <Link
-                          to={item.href}
-                          onClick={() => setAberto(false)}
-                          className="block whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
-                        >
-                          {item.label}
-                        </Link>
-                      ) : (
-                        <span className="block cursor-pointer whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
-                          {item.label}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div
+              className={`mx-auto grid overflow-hidden ${
+                multiGrupo ? `w-full ${conteudoClasses[totalGrupos]}` : "min-w-72"
+              }`}
+            >
+              {menu.grupos.map((grupo, gIdx) => (
+                <div
+                  key={grupo.titulo ?? `grupo-${gIdx}`}
+                  className={`border-l border-border px-2.5 py-2 ${
+                    gIdx === totalGrupos - 1 ? "border-r" : ""
+                  }`}
+                >
+                  {grupo.titulo ? (
+                    <p className="mb-1 pt-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-ink">
+                      {grupo.titulo}
+                    </p>
+                  ) : null}
+                  <ul>
+                    {grupo.itens.map((item) => (
+                      <li key={`${menu.label}-${item.label}`}>
+                        {item.href ? (
+                          <Link
+                            to={item.href}
+                            onClick={() => setAberto(false)}
+                            className="block whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                          >
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <span className="block cursor-pointer whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
+                            {item.label}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ) : null}
