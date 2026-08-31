@@ -87,26 +87,18 @@ export const headerNavigation: NavMenu[] = [
         itens: [
           { label: "Dúvidas sobre Celular" },
           { label: "Dúvidas sobre Internet" },
-          { label: "Dúvidas sobre TV" },
           { label: "Dúvidas sobre Serviços Digitais" },
-          { label: "Dúvidas sobre Fraudes" },
           { label: "Dúvidas sobre Loja Online SmartVoz" },
         ],
       },
       {
         titulo: "Resolva agora",
-        itens: [
-          { label: "Conexão de internet" },
-          { label: "Devolução de equipamentos" },
-          { label: "Dicas para Wi-Fi" },
-          { label: "Mudança de endereço" },
-        ],
+        itens: [{ label: "Conexão de internet" }, { label: "Mudança de endereço" }],
       },
       {
         titulo: "Fale com a SmartVoz",
         itens: [
           { label: "Aura" },
-          { label: "Encontre uma loja" },
           { label: "Consultas" },
           { label: "Segurança da Informação" },
           { label: "Canais de Comunicação" },
