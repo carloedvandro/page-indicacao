@@ -59,7 +59,7 @@ export function Multiplicacao() {
           <article className="relative h-full">
             <img
               src={etapa3Art.url}
-              alt="Etapas 3, 4 e 5 — Nível 3: 125 pessoas, R$ 625,00 por mês. Nível 4: 625 pessoas, R$ 3.125,00 por mês. Nível 5: 3.125 pessoas, R$ 15.625,00 por mês. Total em 5 níveis: 3.905 pessoas, R$ 20.500,00 por mês. Renda recorrente em escala."
+              alt="Etapas 3, 4 e 5 — Nível 3: 125 pessoas, R$ 625,00 por mês. Nível 4: 625 pessoas, R$ 3.125,00 por mês. Nível 5: 3.125 pessoas, R$ 15.625,00 por mês. Total em 5 níveis: 3.905 pessoas, R$ 19.600,00 por mês. Renda recorrente em escala."
               className="h-full w-full rounded-[2rem] object-contain drop-shadow-xl"
               loading="lazy"
             />
