@@ -35,11 +35,11 @@ export function Header() {
           o logo e o Login fiquem alinhados com as bordas da arte. */}
       <div className="px-4 sm:px-5">
         <div className="mx-auto flex h-[68px] w-full max-w-[1540px] items-center gap-4 lg:h-[82px] lg:w-[95%]">
-          {/* Logo */}
+          {/* Logo — alinhado com a borda esquerda do card do Hero */}
           <Link
             to="/"
             aria-label="Ir para a página inicial da SmartVoz"
-            className="flex shrink-0 items-center lg:pl-6"
+            className="flex shrink-0 items-center"
           >
             <Logo className="h-9 sm:h-10 lg:h-11" />
           </Link>
@@ -50,7 +50,7 @@ export function Header() {
           </div>
 
           {/* Login (desktop) — alinhado com a borda direita do card do Hero */}
-          <div className="ml-auto hidden shrink-0 items-center lg:flex lg:pr-6">
+          <div className="ml-auto hidden shrink-0 items-center lg:flex">
             <LoginLink compacto />
           </div>
 
