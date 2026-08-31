@@ -41,7 +41,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
     2: "grid-cols-2 min-w-[36rem]",
     3: "grid-cols-3 min-w-[48rem]",
     4: "grid-cols-4 min-w-[56rem]",
-    5: "grid-cols-5 min-w-[78rem]",
+    5: "grid-cols-5 min-w-[96rem]",
   };
 
   return (
@@ -68,9 +68,15 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       </button>
 
       {aberto ? (
-        <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2">
+        <div
+          className={`z-50 pt-2 ${
+            multiGrupo
+              ? "fixed left-1/2 top-[66px] -translate-x-1/2"
+              : "absolute left-1/2 top-full -translate-x-1/2"
+          }`}
+        >
           <div
-            className={`max-w-[95vw] overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
+            className={`max-w-[98vw] overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
               multiGrupo ? `grid ${colClasses[totalGrupos]}` : "min-w-72"
             }`}
           >
