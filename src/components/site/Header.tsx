@@ -41,7 +41,7 @@ export function Header() {
             aria-label="Ir para a página inicial da SmartVoz"
             className="flex shrink-0 items-center"
           >
-            <Logo className="h-9 sm:h-10 lg:h-11" />
+            <Logo className="h-10 sm:h-11 lg:h-11" />
           </Link>
 
           {/* Menus centrais (desktop) — próximos à esquerda, junto à logo */}
@@ -55,7 +55,9 @@ export function Header() {
           </div>
 
           {/* Hamburger (mobile) */}
-          <MobileNavigation />
+          <div className="ml-auto lg:hidden">
+            <MobileNavigation />
+          </div>
         </div>
       </div>
     </header>

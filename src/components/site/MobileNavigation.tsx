@@ -62,7 +62,7 @@ export function MobileNavigation() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu de navegação"
-            className="fixed inset-y-0 right-0 z-50 flex w-[min(88vw,22rem)] flex-col overflow-y-auto bg-background shadow-card"
+            className="fixed inset-y-0 right-0 z-50 flex w-full flex-col overflow-y-auto bg-background shadow-card"
           >
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <span className="font-display text-sm font-bold tracking-wide text-ink">MENU</span>
