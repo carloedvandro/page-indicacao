@@ -25,30 +25,34 @@ export function VideoHeroSection() {
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 text-left">
             {/* Texto superior */}
-            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-ink sm:text-[0.95rem] lg:text-[1rem]">
+            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.78rem,1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
               O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
               <span className="text-[#F97316]">MULTIPLICAÇÃO</span>
             </p>
 
-            {/* Título principal */}
-            <h1 className="mt-6 text-[1.8rem] font-extrabold leading-[1.12] text-ink sm:text-[2.3rem] lg:mt-7 lg:text-[2.7rem] xl:text-[2.9rem]">
+            {/* Título principal
+                Tamanho fluido: acompanha a largura da coluna para não estourar
+                a linha em telas ~1536px (Windows 1920x1200 com escala 125% e
+                zoom 100%). As quebras fixas só entram no xl, onde há espaço;
+                abaixo disso o texto quebra naturalmente e equilibrado. */}
+            <h1 className="mt-6 text-pretty text-[clamp(1.7rem,2.6vw,2.7rem)] font-extrabold leading-[1.12] text-ink lg:mt-7">
               Todo mundo que você
-              <br /> conhece já paga internet
-              <br /> todos os meses.
+              <br className="hidden xl:block" /> conhece já paga internet
+              <br className="hidden xl:block" /> todos os meses.
             </h1>
 
             {/* Pergunta */}
-            <p className="mt-6 font-display text-[1.1rem] font-semibold text-ink sm:text-[1.25rem] lg:mt-7 lg:text-[1.35rem]">
+            <p className="mt-6 font-display text-[clamp(1.05rem,1.3vw,1.35rem)] font-semibold text-ink lg:mt-7">
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text font-display text-[1.35rem] font-bold leading-[1.18] text-transparent sm:text-[1.6rem] lg:text-[1.8rem]"
+              className="mt-2 bg-clip-text text-pretty font-display text-[clamp(1.25rem,1.75vw,1.8rem)] font-bold leading-[1.18] text-transparent"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
             >
               por que você ainda não
-              <br /> ganha com isso?
+              <br className="hidden xl:block" /> ganha com isso?
             </p>
 
             {/* Botão ASSISTA AO VÍDEO */}
