@@ -58,8 +58,8 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       {aberto ? (
         <div className="absolute left-0 top-full z-50 pt-2">
           <ul
-            className={`min-w-56 overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
-              menu.itens.length > 3 ? "grid grid-cols-2" : ""
+            className={`overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
+              menu.itens.length > 3 ? "grid min-w-[30rem] grid-cols-2" : "min-w-72"
             }`}
           >
             {menu.itens.map((item, idx) => {
@@ -72,7 +72,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
                   <Link
                     to={item.href}
                     onClick={() => setAberto(false)}
-                    className="block px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                    className="block whitespace-nowrap px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
                   >
                     {item.label}
                   </Link>
