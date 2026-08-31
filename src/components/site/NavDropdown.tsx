@@ -32,13 +32,20 @@ export function NavDropdown({
       const rect = botao.current.getBoundingClientRect();
       const viewport = window.innerWidth;
       const margemSeguranca = 16;
+      const maxWidth = menu.grupos.length === 2 ? 576 : 320;
       let left = rect.left;
 
-      // Garante que o mega-menu nao ultrapasse a borda direita da tela.
-      const maxWidth = menu.grupos.length === 2 ? 576 : 320;
+      if (alinhamento === "direita") {
+        // Alinha a direita do mega-menu com o final do botao.
+        left = rect.right - maxWidth;
+      }
 
+      // Garante que o mega-menu nao ultrapasse as bordas da tela.
       if (left + maxWidth > viewport - margemSeguranca) {
         left = Math.max(margemSeguranca, viewport - maxWidth - margemSeguranca);
+      }
+      if (left < margemSeguranca) {
+        left = margemSeguranca;
       }
 
       setDeslocamento(left);
