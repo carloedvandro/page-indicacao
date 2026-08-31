@@ -104,7 +104,7 @@ export function NavDropdown({
       </button>
 
       {aberto ? (
-        <div className="fixed inset-x-0 top-16 z-50">
+        <div className="fixed inset-x-0 top-[66px] z-50">
           <div className="w-full border-y border-border bg-card py-2 shadow-card">
             <div
               className={`grid w-full overflow-hidden ${
