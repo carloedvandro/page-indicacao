@@ -155,12 +155,12 @@ export function NavDropdown({
                           <Link
                             to={item.href}
                             onClick={() => setAberto(false)}
-                            className="block whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                            className="block whitespace-nowrap rounded py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
                           >
                             {item.label}
                           </Link>
                         ) : (
-                          <span className="block cursor-pointer whitespace-nowrap rounded-md py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
+                          <span className="block cursor-pointer whitespace-nowrap rounded py-1.5 text-[0.8rem] text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
                             {item.label}
                           </span>
                         )}
