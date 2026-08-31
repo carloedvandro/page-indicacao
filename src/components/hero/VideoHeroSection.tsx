@@ -21,11 +21,11 @@ export function VideoHeroSection() {
       <div className="relative mx-auto w-full max-w-[1540px] overflow-hidden rounded-[26px] lg:w-[95%]">
         <HeroBackground />
 
-        <div className="relative grid items-center gap-8 px-5 py-10 sm:px-9 sm:py-12 lg:min-h-[700px] lg:grid-cols-[43%_minmax(0,1fr)] lg:items-start lg:gap-10 lg:px-12 lg:py-14 xl:gap-14">
+        <div className="relative grid items-center gap-8 px-5 py-10 sm:px-9 sm:py-12 lg:min-h-[620px] lg:grid-cols-[43%_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-12 lg:py-14 xl:gap-14">
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 text-left">
             {/* Texto superior */}
-            <p className="whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-white sm:text-[0.95rem] lg:text-[1rem]">
+            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-white sm:text-[0.95rem] lg:text-[1rem]">
               O PODER DA <span className="text-[#C084FC]">RECORRÊNCIA</span> E DA{" "}
               <span className="text-[#F97316]">MULTIPLICAÇÃO</span>
             </p>
