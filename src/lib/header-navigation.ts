@@ -67,8 +67,6 @@ export const headerNavigation: NavMenu[] = [
           { label: "Ativando o chip" },
           { label: "Cadastro no App SmartVoz" },
           { label: "Consumo de internet" },
-          { label: "Serviço de instalação" },
-          { label: "Ativando assinaturas inclusas" },
         ],
       },
       {
