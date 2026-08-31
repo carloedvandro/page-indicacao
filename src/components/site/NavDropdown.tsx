@@ -23,6 +23,23 @@ export function NavDropdown({
   const [deslocamento, setDeslocamento] = useState<number | null>(null);
   const container = useRef<HTMLDivElement>(null);
   const botao = useRef<HTMLButtonElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelarFechamento = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const agendarFechamento = () => {
+    cancelarFechamento();
+    timeoutRef.current = setTimeout(() => setAberto(false), 200);
+  };
+
+  useEffect(() => {
+    return () => cancelarFechamento();
+  }, []);
 
   useEffect(() => {
     if (!aberto) return;
@@ -83,8 +100,11 @@ export function NavDropdown({
     <div
       ref={container}
       className="relative"
-      onMouseEnter={() => setAberto(true)}
-      onMouseLeave={() => setAberto(false)}
+      onMouseEnter={() => {
+        cancelarFechamento();
+        setAberto(true);
+      }}
+      onMouseLeave={agendarFechamento}
     >
       <button
         ref={botao}
@@ -104,7 +124,11 @@ export function NavDropdown({
       </button>
 
       {aberto ? (
-        <div className="fixed inset-x-0 top-[66px] z-50">
+        <div
+          className="fixed inset-x-0 top-[66px] z-50"
+          onMouseEnter={cancelarFechamento}
+          onMouseLeave={agendarFechamento}
+        >
           <div className="w-full border-y border-border bg-card py-2 shadow-card">
             <div
               className={`grid w-full overflow-hidden ${
