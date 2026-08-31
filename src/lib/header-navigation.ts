@@ -73,11 +73,10 @@ export const headerNavigation: NavMenu[] = [
         titulo: "Minha fatura",
         itens: [
           { label: "Entenda sua fatura" },
-          { label: "2ª via de fatura" },
+          { label: "2ª via de fatura", href: "/ajuda/segunda-via" },
           { label: "Fatura Digital" },
-          { label: "Pix Automático" },
           { label: "Pagamento" },
-          { label: "SmartVoz em Dia" },
+          { label: "Débito Automático" },
         ],
       },
       {

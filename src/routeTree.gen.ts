@@ -30,6 +30,7 @@ import { Route as AcademyMarketingDigitalRouteImport } from './routes/academy/ma
 import { Route as AcademyMentalidadeRouteImport } from './routes/academy/mentalidade'
 import { Route as AcademyTrafegoRouteImport } from './routes/academy/trafego'
 import { Route as AcademyVendasRouteImport } from './routes/academy/vendas'
+import { Route as AjudaSegundaViaRouteImport } from './routes/ajuda/segunda-via'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -137,6 +138,11 @@ const AcademyVendasRoute = AcademyVendasRouteImport.update({
   path: '/vendas',
   getParentRoute: () => AcademyRoute,
 } as any)
+const AjudaSegundaViaRoute = AjudaSegundaViaRouteImport.update({
+  id: '/ajuda/segunda-via',
+  path: '/ajuda/segunda-via',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/academy/mentalidade': typeof AcademyMentalidadeRoute
   '/academy/trafego': typeof AcademyTrafegoRoute
   '/academy/vendas': typeof AcademyVendasRoute
+  '/ajuda/segunda-via': typeof AjudaSegundaViaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -183,6 +190,7 @@ export interface FileRoutesByTo {
   '/academy/mentalidade': typeof AcademyMentalidadeRoute
   '/academy/trafego': typeof AcademyTrafegoRoute
   '/academy/vendas': typeof AcademyVendasRoute
+  '/ajuda/segunda-via': typeof AjudaSegundaViaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/academy/mentalidade': typeof AcademyMentalidadeRoute
   '/academy/trafego': typeof AcademyTrafegoRoute
   '/academy/vendas': typeof AcademyVendasRoute
+  '/ajuda/segunda-via': typeof AjudaSegundaViaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
     | '/academy/mentalidade'
     | '/academy/trafego'
     | '/academy/vendas'
+    | '/ajuda/segunda-via'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/academy/mentalidade'
     | '/academy/trafego'
     | '/academy/vendas'
+    | '/ajuda/segunda-via'
   id:
     | '__root__'
     | '/'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/academy/mentalidade'
     | '/academy/trafego'
     | '/academy/vendas'
+    | '/ajuda/segunda-via'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -295,6 +307,7 @@ export interface RootRouteChildren {
   RegulamentoProgramaRoute: typeof RegulamentoProgramaRoute
   TermosECondicoesRoute: typeof TermosECondicoesRoute
   TutoriaisRoute: typeof TutoriaisRoute
+  AjudaSegundaViaRoute: typeof AjudaSegundaViaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -446,6 +459,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademyVendasRouteImport
       parentRoute: typeof AcademyRoute
     }
+    '/ajuda/segunda-via': {
+      id: '/ajuda/segunda-via'
+      path: '/ajuda/segunda-via'
+      fullPath: '/ajuda/segunda-via'
+      preLoaderRoute: typeof AjudaSegundaViaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -487,6 +507,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegulamentoProgramaRoute: RegulamentoProgramaRoute,
   TermosECondicoesRoute: TermosECondicoesRoute,
   TutoriaisRoute: TutoriaisRoute,
+  AjudaSegundaViaRoute: AjudaSegundaViaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
