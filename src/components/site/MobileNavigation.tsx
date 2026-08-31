@@ -147,7 +147,7 @@ export function LoginLink({
   compacto?: boolean;
 }) {
   const classe = compacto
-    ? "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    ? "inline-flex items-center gap-2 rounded-lg pl-3 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     : "flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-primary px-5 py-3.5 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow";
 
   const conteudo = (

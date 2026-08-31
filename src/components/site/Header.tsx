@@ -34,7 +34,7 @@ export function Header() {
       {/* A geometria abaixo espelha o card do Hero (VideoHeroSection) para que
           o logo e o Login fiquem alinhados com as bordas da arte. */}
       <div className="px-4 sm:px-5">
-        <div className="mx-auto flex h-[68px] w-full max-w-[1540px] items-center gap-4 lg:h-[82px] lg:w-[95%]">
+        <div className="mx-auto flex h-[68px] w-full max-w-[1540px] items-center gap-4 lg:h-[66px] lg:w-[95%]">
           {/* Logo — alinhado com a borda esquerda do card do Hero */}
           <Link
             to="/"
