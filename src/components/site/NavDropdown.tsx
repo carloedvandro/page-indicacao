@@ -41,7 +41,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
     2: "grid-cols-2 min-w-[36rem]",
     3: "grid-cols-3 min-w-[48rem]",
     4: "grid-cols-4 min-w-[56rem]",
-    5: "grid-cols-5 min-w-[96rem]",
+    5: "grid-cols-5 min-w-[84rem]",
   };
 
   return (
@@ -69,10 +69,10 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
 
       {aberto ? (
         <div
-          className={`z-50 pt-2 ${
+          className={`z-50 ${
             multiGrupo
-              ? "fixed left-1/2 top-[66px] -translate-x-1/2"
-              : "absolute left-1/2 top-full -translate-x-1/2"
+              ? "fixed left-1/2 top-16 -translate-x-1/2"
+              : "absolute left-1/2 top-full -translate-x-1/2 pt-2"
           }`}
         >
           <div
@@ -83,10 +83,10 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
             {menu.grupos.map((grupo, gIdx) => (
               <div
                 key={grupo.titulo ?? `grupo-${gIdx}`}
-                className={`px-4 py-2 ${gIdx > 0 && multiGrupo ? "border-l border-border" : ""}`}
+                className={`px-3 py-2 ${gIdx > 0 && multiGrupo ? "border-l border-border" : ""}`}
               >
                 {grupo.titulo ? (
-                  <p className="mb-2 px-2 pt-1 text-xs font-bold uppercase tracking-wide text-ink">
+                  <p className="mb-2 pt-1 text-xs font-bold uppercase tracking-wide text-ink">
                     {grupo.titulo}
                   </p>
                 ) : null}
@@ -97,12 +97,12 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
                         <Link
                           to={item.href}
                           onClick={() => setAberto(false)}
-                          className="block whitespace-nowrap rounded-md px-2 py-2 pr-3 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                          className="block whitespace-nowrap rounded-md py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
                         >
                           {item.label}
                         </Link>
                       ) : (
-                        <span className="block cursor-pointer whitespace-nowrap rounded-md px-2 py-2 pr-3 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
+                        <span className="block cursor-pointer whitespace-nowrap rounded-md py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
                           {item.label}
                         </span>
                       )}
