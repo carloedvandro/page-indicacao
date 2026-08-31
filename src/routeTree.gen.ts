@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcademyRouteImport } from './routes/academy'
 import { Route as AcompanhamentoRouteImport } from './routes/acompanhamento'
 import { Route as AtendimentoRouteImport } from './routes/atendimento'
 import { Route as CentralDeAjudaRouteImport } from './routes/central-de-ajuda'
@@ -22,10 +23,22 @@ import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as RegulamentoProgramaRouteImport } from './routes/regulamento-programa'
 import { Route as TermosECondicoesRouteImport } from './routes/termos-e-condicoes'
 import { Route as TutoriaisRouteImport } from './routes/tutoriais'
+import { Route as AcademyDesenvolvimentoPessoalRouteImport } from './routes/academy/desenvolvimento-pessoal'
+import { Route as AcademyEmpreendedorismoRouteImport } from './routes/academy/empreendedorismo'
+import { Route as AcademyGestaoFinanceiraRouteImport } from './routes/academy/gestao-financeira'
+import { Route as AcademyMarketingDigitalRouteImport } from './routes/academy/marketing-digital'
+import { Route as AcademyMentalidadeRouteImport } from './routes/academy/mentalidade'
+import { Route as AcademyTrafegoRouteImport } from './routes/academy/trafego'
+import { Route as AcademyVendasRouteImport } from './routes/academy/vendas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademyRoute = AcademyRouteImport.update({
+  id: '/academy',
+  path: '/academy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcompanhamentoRoute = AcompanhamentoRouteImport.update({
@@ -88,9 +101,46 @@ const TutoriaisRoute = TutoriaisRouteImport.update({
   path: '/tutoriais',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademyDesenvolvimentoPessoalRoute =
+  AcademyDesenvolvimentoPessoalRouteImport.update({
+    id: '/desenvolvimento-pessoal',
+    path: '/desenvolvimento-pessoal',
+    getParentRoute: () => AcademyRoute,
+  } as any)
+const AcademyEmpreendedorismoRoute = AcademyEmpreendedorismoRouteImport.update({
+  id: '/empreendedorismo',
+  path: '/empreendedorismo',
+  getParentRoute: () => AcademyRoute,
+} as any)
+const AcademyGestaoFinanceiraRoute = AcademyGestaoFinanceiraRouteImport.update({
+  id: '/gestao-financeira',
+  path: '/gestao-financeira',
+  getParentRoute: () => AcademyRoute,
+} as any)
+const AcademyMarketingDigitalRoute = AcademyMarketingDigitalRouteImport.update({
+  id: '/marketing-digital',
+  path: '/marketing-digital',
+  getParentRoute: () => AcademyRoute,
+} as any)
+const AcademyMentalidadeRoute = AcademyMentalidadeRouteImport.update({
+  id: '/mentalidade',
+  path: '/mentalidade',
+  getParentRoute: () => AcademyRoute,
+} as any)
+const AcademyTrafegoRoute = AcademyTrafegoRouteImport.update({
+  id: '/trafego',
+  path: '/trafego',
+  getParentRoute: () => AcademyRoute,
+} as any)
+const AcademyVendasRoute = AcademyVendasRouteImport.update({
+  id: '/vendas',
+  path: '/vendas',
+  getParentRoute: () => AcademyRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRouteWithChildren
   '/acompanhamento': typeof AcompanhamentoRoute
   '/atendimento': typeof AtendimentoRoute
   '/central-de-ajuda': typeof CentralDeAjudaRoute
@@ -103,9 +153,17 @@ export interface FileRoutesByFullPath {
   '/regulamento-programa': typeof RegulamentoProgramaRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/tutoriais': typeof TutoriaisRoute
+  '/academy/desenvolvimento-pessoal': typeof AcademyDesenvolvimentoPessoalRoute
+  '/academy/empreendedorismo': typeof AcademyEmpreendedorismoRoute
+  '/academy/gestao-financeira': typeof AcademyGestaoFinanceiraRoute
+  '/academy/marketing-digital': typeof AcademyMarketingDigitalRoute
+  '/academy/mentalidade': typeof AcademyMentalidadeRoute
+  '/academy/trafego': typeof AcademyTrafegoRoute
+  '/academy/vendas': typeof AcademyVendasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRouteWithChildren
   '/acompanhamento': typeof AcompanhamentoRoute
   '/atendimento': typeof AtendimentoRoute
   '/central-de-ajuda': typeof CentralDeAjudaRoute
@@ -118,10 +176,18 @@ export interface FileRoutesByTo {
   '/regulamento-programa': typeof RegulamentoProgramaRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/tutoriais': typeof TutoriaisRoute
+  '/academy/desenvolvimento-pessoal': typeof AcademyDesenvolvimentoPessoalRoute
+  '/academy/empreendedorismo': typeof AcademyEmpreendedorismoRoute
+  '/academy/gestao-financeira': typeof AcademyGestaoFinanceiraRoute
+  '/academy/marketing-digital': typeof AcademyMarketingDigitalRoute
+  '/academy/mentalidade': typeof AcademyMentalidadeRoute
+  '/academy/trafego': typeof AcademyTrafegoRoute
+  '/academy/vendas': typeof AcademyVendasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRouteWithChildren
   '/acompanhamento': typeof AcompanhamentoRoute
   '/atendimento': typeof AtendimentoRoute
   '/central-de-ajuda': typeof CentralDeAjudaRoute
@@ -134,11 +200,19 @@ export interface FileRoutesById {
   '/regulamento-programa': typeof RegulamentoProgramaRoute
   '/termos-e-condicoes': typeof TermosECondicoesRoute
   '/tutoriais': typeof TutoriaisRoute
+  '/academy/desenvolvimento-pessoal': typeof AcademyDesenvolvimentoPessoalRoute
+  '/academy/empreendedorismo': typeof AcademyEmpreendedorismoRoute
+  '/academy/gestao-financeira': typeof AcademyGestaoFinanceiraRoute
+  '/academy/marketing-digital': typeof AcademyMarketingDigitalRoute
+  '/academy/mentalidade': typeof AcademyMentalidadeRoute
+  '/academy/trafego': typeof AcademyTrafegoRoute
+  '/academy/vendas': typeof AcademyVendasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/academy'
     | '/acompanhamento'
     | '/atendimento'
     | '/central-de-ajuda'
@@ -151,9 +225,17 @@ export interface FileRouteTypes {
     | '/regulamento-programa'
     | '/termos-e-condicoes'
     | '/tutoriais'
+    | '/academy/desenvolvimento-pessoal'
+    | '/academy/empreendedorismo'
+    | '/academy/gestao-financeira'
+    | '/academy/marketing-digital'
+    | '/academy/mentalidade'
+    | '/academy/trafego'
+    | '/academy/vendas'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/academy'
     | '/acompanhamento'
     | '/atendimento'
     | '/central-de-ajuda'
@@ -166,9 +248,17 @@ export interface FileRouteTypes {
     | '/regulamento-programa'
     | '/termos-e-condicoes'
     | '/tutoriais'
+    | '/academy/desenvolvimento-pessoal'
+    | '/academy/empreendedorismo'
+    | '/academy/gestao-financeira'
+    | '/academy/marketing-digital'
+    | '/academy/mentalidade'
+    | '/academy/trafego'
+    | '/academy/vendas'
   id:
     | '__root__'
     | '/'
+    | '/academy'
     | '/acompanhamento'
     | '/atendimento'
     | '/central-de-ajuda'
@@ -181,10 +271,18 @@ export interface FileRouteTypes {
     | '/regulamento-programa'
     | '/termos-e-condicoes'
     | '/tutoriais'
+    | '/academy/desenvolvimento-pessoal'
+    | '/academy/empreendedorismo'
+    | '/academy/gestao-financeira'
+    | '/academy/marketing-digital'
+    | '/academy/mentalidade'
+    | '/academy/trafego'
+    | '/academy/vendas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcademyRoute: typeof AcademyRouteWithChildren
   AcompanhamentoRoute: typeof AcompanhamentoRoute
   AtendimentoRoute: typeof AtendimentoRoute
   CentralDeAjudaRoute: typeof CentralDeAjudaRoute
@@ -206,6 +304,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academy': {
+      id: '/academy'
+      path: '/academy'
+      fullPath: '/academy'
+      preLoaderRoute: typeof AcademyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/acompanhamento': {
@@ -292,11 +397,84 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TutoriaisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academy/desenvolvimento-pessoal': {
+      id: '/academy/desenvolvimento-pessoal'
+      path: '/desenvolvimento-pessoal'
+      fullPath: '/academy/desenvolvimento-pessoal'
+      preLoaderRoute: typeof AcademyDesenvolvimentoPessoalRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/empreendedorismo': {
+      id: '/academy/empreendedorismo'
+      path: '/empreendedorismo'
+      fullPath: '/academy/empreendedorismo'
+      preLoaderRoute: typeof AcademyEmpreendedorismoRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/gestao-financeira': {
+      id: '/academy/gestao-financeira'
+      path: '/gestao-financeira'
+      fullPath: '/academy/gestao-financeira'
+      preLoaderRoute: typeof AcademyGestaoFinanceiraRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/marketing-digital': {
+      id: '/academy/marketing-digital'
+      path: '/marketing-digital'
+      fullPath: '/academy/marketing-digital'
+      preLoaderRoute: typeof AcademyMarketingDigitalRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/mentalidade': {
+      id: '/academy/mentalidade'
+      path: '/mentalidade'
+      fullPath: '/academy/mentalidade'
+      preLoaderRoute: typeof AcademyMentalidadeRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/trafego': {
+      id: '/academy/trafego'
+      path: '/trafego'
+      fullPath: '/academy/trafego'
+      preLoaderRoute: typeof AcademyTrafegoRouteImport
+      parentRoute: typeof AcademyRoute
+    }
+    '/academy/vendas': {
+      id: '/academy/vendas'
+      path: '/vendas'
+      fullPath: '/academy/vendas'
+      preLoaderRoute: typeof AcademyVendasRouteImport
+      parentRoute: typeof AcademyRoute
+    }
   }
 }
 
+interface AcademyRouteChildren {
+  AcademyDesenvolvimentoPessoalRoute: typeof AcademyDesenvolvimentoPessoalRoute
+  AcademyEmpreendedorismoRoute: typeof AcademyEmpreendedorismoRoute
+  AcademyGestaoFinanceiraRoute: typeof AcademyGestaoFinanceiraRoute
+  AcademyMarketingDigitalRoute: typeof AcademyMarketingDigitalRoute
+  AcademyMentalidadeRoute: typeof AcademyMentalidadeRoute
+  AcademyTrafegoRoute: typeof AcademyTrafegoRoute
+  AcademyVendasRoute: typeof AcademyVendasRoute
+}
+
+const AcademyRouteChildren: AcademyRouteChildren = {
+  AcademyDesenvolvimentoPessoalRoute: AcademyDesenvolvimentoPessoalRoute,
+  AcademyEmpreendedorismoRoute: AcademyEmpreendedorismoRoute,
+  AcademyGestaoFinanceiraRoute: AcademyGestaoFinanceiraRoute,
+  AcademyMarketingDigitalRoute: AcademyMarketingDigitalRoute,
+  AcademyMentalidadeRoute: AcademyMentalidadeRoute,
+  AcademyTrafegoRoute: AcademyTrafegoRoute,
+  AcademyVendasRoute: AcademyVendasRoute,
+}
+
+const AcademyRouteWithChildren =
+  AcademyRoute._addFileChildren(AcademyRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcademyRoute: AcademyRouteWithChildren,
   AcompanhamentoRoute: AcompanhamentoRoute,
   AtendimentoRoute: AtendimentoRoute,
   CentralDeAjudaRoute: CentralDeAjudaRoute,
