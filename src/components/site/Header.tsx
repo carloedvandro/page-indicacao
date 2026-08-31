@@ -42,10 +42,7 @@ export function Header() {
         </Link>
 
         {/* Menus centrais (desktop) — próximos à esquerda, junto à logo */}
-        <div className="hidden lg:ml-10 lg:block">
-          <DesktopNavigation />
-        </div>
-        <div className="lg:hidden">
+        <div className="lg:ml-10">
           <DesktopNavigation />
         </div>
 
