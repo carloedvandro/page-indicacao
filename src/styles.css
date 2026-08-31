@@ -91,40 +91,18 @@
   --input: oklch(0.89 0.04 302);
   --ring: oklch(0.43 0.25 302);
 
-  --gradient-primary: linear-gradient(
-    135deg,
-    oklch(0.32 0.2 300),
-    oklch(0.5 0.26 305)
-  );
-  --gradient-primary-deep: linear-gradient(
-    160deg,
-    oklch(0.18 0.12 300),
-    oklch(0.3 0.21 303)
-  );
-  --gradient-gold: linear-gradient(
-    135deg,
-    oklch(0.7 0.15 68),
-    oklch(0.88 0.16 92)
-  );
-  --gradient-page: radial-gradient(
-      1200px 600px at 100% 0%,
-      oklch(0.93 0.06 303 / 0.75),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 0% 100%,
-      oklch(0.95 0.05 88 / 0.5),
-      transparent 60%
-    );
+  --gradient-primary: linear-gradient(135deg, oklch(0.32 0.2 300), oklch(0.5 0.26 305));
+  --gradient-primary-deep: linear-gradient(160deg, oklch(0.18 0.12 300), oklch(0.3 0.21 303));
+  --gradient-gold: linear-gradient(135deg, oklch(0.7 0.15 68), oklch(0.88 0.16 92));
+  --gradient-page:
+    radial-gradient(1200px 600px at 100% 0%, oklch(0.93 0.06 303 / 0.75), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, oklch(0.95 0.05 88 / 0.5), transparent 60%);
 
-  --shadow-soft: 0 1px 2px oklch(0.2 0.05 300 / 0.05),
-    0 12px 30px -12px oklch(0.2 0.09 300 / 0.16);
-  --shadow-card: 0 2px 4px oklch(0.2 0.05 300 / 0.05),
-    0 24px 50px -20px oklch(0.25 0.12 300 / 0.2);
-  --shadow-glow: 0 0 0 6px oklch(0.43 0.25 302 / 0.14),
-    0 20px 45px -18px oklch(0.35 0.24 301 / 0.55);
-  --shadow-gold: 0 0 0 1px oklch(0.8 0.16 84 / 0.55),
-    0 24px 60px -24px oklch(0.7 0.15 68 / 0.6);
+  --shadow-soft: 0 1px 2px oklch(0.2 0.05 300 / 0.05), 0 12px 30px -12px oklch(0.2 0.09 300 / 0.16);
+  --shadow-card: 0 2px 4px oklch(0.2 0.05 300 / 0.05), 0 24px 50px -20px oklch(0.25 0.12 300 / 0.2);
+  --shadow-glow:
+    0 0 0 6px oklch(0.43 0.25 302 / 0.14), 0 20px 45px -18px oklch(0.35 0.24 301 / 0.55);
+  --shadow-gold: 0 0 0 1px oklch(0.8 0.16 84 / 0.55), 0 24px 60px -24px oklch(0.7 0.15 68 / 0.6);
 }
 
 @layer base {
@@ -156,7 +134,6 @@
     overflow-x: hidden;
     scrollbar-width: none;
   }
-
 
   h1,
   h2,
@@ -240,7 +217,6 @@
   isolation: isolate;
 }
 
-
 @utility rise-in {
   animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -277,18 +253,11 @@
   position: relative;
   isolation: isolate;
   border-radius: 1rem;
-  background-image: linear-gradient(
-      180deg,
-      oklch(1 0 0 / 0.28),
-      oklch(1 0 0 / 0) 46%
-    ),
-    linear-gradient(
-      180deg,
-      oklch(0.5 0.26 303),
-      oklch(0.34 0.22 301) 55%,
-      oklch(0.26 0.17 300)
-    );
-  box-shadow: 0 0 0 1px oklch(0.72 0.18 303 / 0.65),
+  background-image:
+    linear-gradient(180deg, oklch(1 0 0 / 0.28), oklch(1 0 0 / 0) 46%),
+    linear-gradient(180deg, oklch(0.5 0.26 303), oklch(0.34 0.22 301) 55%, oklch(0.26 0.17 300));
+  box-shadow:
+    0 0 0 1px oklch(0.72 0.18 303 / 0.65),
     0 1px 0 oklch(1 0 0 / 0.35) inset,
     0 -10px 22px -12px oklch(0.16 0.1 300 / 0.9) inset;
 }
@@ -299,10 +268,23 @@
   inset: 2px 2px auto 2px;
   height: 45%;
   border-radius: 0.85rem;
-  background-image: linear-gradient(
-    180deg,
-    oklch(1 0 0 / 0.3),
-    oklch(1 0 0 / 0)
-  );
+  background-image: linear-gradient(180deg, oklch(1 0 0 / 0.3), oklch(1 0 0 / 0));
   pointer-events: none;
+}
+
+/*
+ * Offset vertical do texto do hero para alinhar com o topo do card de vídeo.
+ *
+ * O card está centralizado verticalmente em um container de 620px (540px de
+ * área útil após py-10). A altura do card depende da sua largura (aspect-video
+ * 16:9), que por sua vez depende da largura da viewport. O offset do topo do
+ * card em relação à área útil é: (540 - cardHeight) / 2.
+ *
+ * Esse offset varia linearmente com a largura da viewport de ~146px (1024px)
+ * até ~64px (1621px+, quando o container atinge max-w-[1540px]).
+ *
+ * Fórmula: max(64px, calc(287px - 13.75vw))
+ */
+@utility hero-text-offset {
+  padding-top: max(64px, calc(287px - 13.75vw));
 }
