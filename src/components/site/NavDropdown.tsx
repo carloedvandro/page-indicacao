@@ -41,7 +41,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
     2: "grid-cols-2 min-w-[36rem]",
     3: "grid-cols-3 min-w-[48rem]",
     4: "grid-cols-4 min-w-[56rem]",
-    5: "grid-cols-5 min-w-[68rem]",
+    5: "grid-cols-5 min-w-[78rem]",
   };
 
   return (
@@ -68,9 +68,9 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       </button>
 
       {aberto ? (
-        <div className="absolute left-0 top-full z-50 pt-2">
+        <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2">
           <div
-            className={`overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
+            className={`max-w-[95vw] overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
               multiGrupo ? `grid ${colClasses[totalGrupos]}` : "min-w-72"
             }`}
           >
@@ -91,12 +91,12 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
                         <Link
                           to={item.href}
                           onClick={() => setAberto(false)}
-                          className="block whitespace-nowrap rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                          className="block whitespace-nowrap rounded-md px-2 py-2 pr-3 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
                         >
                           {item.label}
                         </Link>
                       ) : (
-                        <span className="block cursor-pointer whitespace-nowrap rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
+                        <span className="block cursor-pointer whitespace-nowrap rounded-md px-2 py-2 pr-3 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
                           {item.label}
                         </span>
                       )}
