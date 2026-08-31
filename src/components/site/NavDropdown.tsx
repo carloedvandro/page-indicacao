@@ -34,10 +34,10 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
     };
   }, [aberto]);
 
-  const multiGrupo = menu.grupos.length > 1;
   const totalGrupos = menu.grupos.length;
 
-  const conteudoClasses = {
+  const conteudoClasses: Record<number, string> = {
+    1: "max-w-80 grid-cols-1",
     2: "max-w-[36rem] grid-cols-2",
     3: "max-w-[48rem] grid-cols-3",
     4: "max-w-[56rem] grid-cols-4",
@@ -68,23 +68,9 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       </button>
 
       {aberto ? (
-        <div
-          className={`z-50 ${
-            multiGrupo
-              ? "fixed inset-x-0 top-16"
-              : "absolute left-1/2 top-full -translate-x-1/2 pt-2"
-          }`}
-        >
-          <div
-            className={`border-y border-border bg-card py-2 shadow-card ${
-              multiGrupo ? "w-full" : "rounded-none border-x"
-            }`}
-          >
-            <div
-              className={`mx-auto grid overflow-hidden ${
-                multiGrupo ? `w-full ${conteudoClasses[totalGrupos]}` : "min-w-72"
-              }`}
-            >
+        <div className="fixed inset-x-0 top-16 z-50">
+          <div className="w-full border-y border-border bg-card py-2 shadow-card">
+            <div className={`mx-auto grid w-full overflow-hidden ${conteudoClasses[totalGrupos]}`}>
               {menu.grupos.map((grupo, gIdx) => (
                 <div
                   key={grupo.titulo ?? `grupo-${gIdx}`}
