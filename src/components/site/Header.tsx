@@ -31,22 +31,23 @@ export function Header() {
         rolou ? "shadow-[0_1px_12px_oklch(0.2_0.05_300/0.08)]" : "border-b border-border/60"
       }`}
     >
-      <div className="mx-auto flex h-[68px] max-w-screen-2xl items-center justify-between gap-4 px-5 sm:px-6 lg:h-[82px]">
+      <div className="mx-auto flex h-[68px] max-w-screen-2xl items-center gap-4 px-5 sm:px-6 lg:h-[82px]">
         {/* Logo */}
         <Link
           to="/"
           aria-label="Ir para a página inicial da SmartVoz"
-          className="flex shrink-0 items-center"
+          className="flex shrink-0 items-center lg:pl-6"
         >
           <Logo className="h-9 sm:h-10 lg:h-11" />
         </Link>
 
-        {/* Menus centrais (desktop) */}
-        <DesktopNavigation />
+        {/* Menus centrais (desktop) — próximos à esquerda, junto à logo */}
+        <div className="lg:ml-10">
+          <DesktopNavigation />
+        </div>
 
-        {/* Login (desktop) */}
-        <div className="hidden shrink-0 items-center gap-4 lg:flex">
-          <span className="h-8 w-px bg-border" aria-hidden="true" />
+        {/* Login (desktop) — sem o risquinho separador */}
+        <div className="ml-auto hidden shrink-0 items-center lg:flex">
           <LoginLink compacto />
         </div>
 

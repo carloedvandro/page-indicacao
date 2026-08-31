@@ -279,7 +279,7 @@ function Field({
   children,
 }: {
   label: string;
-  error?: string;
+  error?: string | undefined;
   required?: boolean;
   children: React.ReactNode;
 }) {
