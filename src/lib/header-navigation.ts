@@ -38,7 +38,10 @@ export const headerNavigation: NavMenu[] = [
     grupos: [
       {
         titulo: "Planos de celular",
-        itens: [{ label: "Plano Smart Senior de 100 GB" }, { label: "Smart Premium de 120 GB" }],
+        itens: [
+          { label: "Plano Smart Senior de 100 GB" },
+          { label: "Plano Smart Premium de 120 GB" },
+        ],
       },
       {
         titulo: "Serviços digitais Academy",
