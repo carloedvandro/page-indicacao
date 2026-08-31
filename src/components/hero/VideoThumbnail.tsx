@@ -57,7 +57,7 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
       </span>
 
       {/* Play vermelho estilo YouTube */}
-      <span className="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 sm:left-[60%]">
+      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <span
           className="flex h-[3.1rem] w-[4.4rem] items-center justify-center rounded-[1.1rem] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[3.6rem] sm:w-[5.2rem] lg:h-[4.1rem] lg:w-[5.9rem]"
           style={{
