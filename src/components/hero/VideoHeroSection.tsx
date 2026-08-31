@@ -25,24 +25,24 @@ export function VideoHeroSection() {
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 text-left">
             {/* Texto superior */}
-            <p className="font-display text-[1.05rem] font-bold uppercase leading-snug tracking-[0.02em] text-white sm:text-[1.35rem] lg:text-[1.45rem]">
+            <p className="whitespace-nowrap font-display text-[0.82rem] font-bold uppercase leading-snug tracking-[0.02em] text-white sm:text-[0.95rem] lg:text-[1rem]">
               O PODER DA <span className="text-[#C084FC]">RECORRÊNCIA</span> E DA{" "}
               <span className="text-[#F97316]">MULTIPLICAÇÃO</span>
             </p>
 
             {/* Título principal */}
-            <h1 className="mt-7 text-[2.1rem] font-extrabold leading-[1.08] text-white sm:text-[2.9rem] lg:mt-8 lg:text-[3.4rem] xl:text-[3.75rem]">
+            <h1 className="mt-6 text-[1.8rem] font-extrabold leading-[1.12] text-white sm:text-[2.3rem] lg:mt-7 lg:text-[2.7rem] xl:text-[2.9rem]">
               Todo mundo que você
-              <br className="hidden sm:block" /> conhece já paga internet
-              <br className="hidden sm:block" /> todos os meses.
+              <br /> conhece já paga internet
+              <br /> todos os meses.
             </h1>
 
             {/* Pergunta */}
-            <p className="mt-7 font-display text-[1.35rem] font-semibold text-white sm:text-[1.7rem] lg:mt-8 lg:text-[1.85rem]">
+            <p className="mt-6 font-display text-[1.1rem] font-semibold text-white sm:text-[1.25rem] lg:mt-7 lg:text-[1.35rem]">
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text font-display text-[1.7rem] font-bold leading-[1.16] text-transparent sm:text-[2.2rem] lg:text-[2.55rem]"
+              className="mt-2 bg-clip-text font-display text-[1.35rem] font-bold leading-[1.18] text-transparent sm:text-[1.6rem] lg:text-[1.8rem]"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
