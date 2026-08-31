@@ -56,7 +56,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
         aria-haspopup="true"
-        className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         {menu.label}
         <ChevronDown
