@@ -55,6 +55,64 @@ export const headerNavigation: NavMenu[] = [
     ],
   },
   {
+    label: "Ajuda",
+    grupos: [
+      {
+        titulo: "Sou novo aqui",
+        itens: [
+          { label: "Portabilidade" },
+          { label: "Ativando o chip" },
+          { label: "Cadastro no App SmartVoz" },
+          { label: "Consumo de internet" },
+          { label: "Serviço de instalação" },
+          { label: "Ativando assinaturas inclusas" },
+        ],
+      },
+      {
+        titulo: "Minha fatura",
+        itens: [
+          { label: "Entenda sua fatura" },
+          { label: "2ª via de fatura" },
+          { label: "Fatura Digital" },
+          { label: "Pix Automático" },
+          { label: "Pagamento" },
+          { label: "SmartVoz em Dia" },
+        ],
+      },
+      {
+        titulo: "Dúvidas",
+        itens: [
+          { label: "Dúvidas sobre Celular" },
+          { label: "Dúvidas sobre Internet" },
+          { label: "Dúvidas sobre TV" },
+          { label: "Dúvidas sobre Serviços Digitais" },
+          { label: "Dúvidas sobre Fraudes" },
+          { label: "Dúvidas sobre Loja Online SmartVoz" },
+        ],
+      },
+      {
+        titulo: "Resolva agora",
+        itens: [
+          { label: "Conexão de internet" },
+          { label: "Devolução de equipamentos" },
+          { label: "Dicas para Wi-Fi" },
+          { label: "Mudança de endereço" },
+        ],
+      },
+      {
+        titulo: "Fale com a SmartVoz",
+        itens: [
+          { label: "Aura" },
+          { label: "Encontre uma loja" },
+          { label: "Consultas" },
+          { label: "Segurança da Informação" },
+          { label: "Canais de Comunicação" },
+          { label: "Fale conosco" },
+        ],
+      },
+    ],
+  },
+  {
     label: "Sobre a SmartVoz",
     grupos: [
       {

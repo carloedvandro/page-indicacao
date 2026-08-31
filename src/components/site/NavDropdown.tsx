@@ -35,6 +35,14 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
   }, [aberto]);
 
   const multiGrupo = menu.grupos.length > 1;
+  const totalGrupos = menu.grupos.length;
+
+  const colClasses: Record<number, string> = {
+    2: "grid-cols-2 min-w-[36rem]",
+    3: "grid-cols-3 min-w-[48rem]",
+    4: "grid-cols-4 min-w-[56rem]",
+    5: "grid-cols-5 min-w-[68rem]",
+  };
 
   return (
     <div
@@ -63,7 +71,7 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
         <div className="absolute left-0 top-full z-50 pt-2">
           <div
             className={`overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
-              multiGrupo ? "grid min-w-[36rem] grid-cols-2" : "min-w-72"
+              multiGrupo ? `grid ${colClasses[totalGrupos]}` : "min-w-72"
             }`}
           >
             {menu.grupos.map((grupo, gIdx) => (
