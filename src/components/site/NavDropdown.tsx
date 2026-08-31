@@ -20,10 +20,31 @@ export function NavDropdown({
   alinhamento?: "esquerda" | "centro" | "direita";
 }) {
   const [aberto, setAberto] = useState(false);
+  const [deslocamento, setDeslocamento] = useState<number | null>(null);
   const container = useRef<HTMLDivElement>(null);
+  const botao = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!aberto) return;
+
+    // Alinha o conteudo abaixo do botao para menus pequenos (1 ou 2 colunas).
+    if (botao.current && menu.grupos.length <= 2) {
+      const rect = botao.current.getBoundingClientRect();
+      const viewport = window.innerWidth;
+      const margemSeguranca = 16;
+      let left = rect.left;
+
+      // Garante que o mega-menu nao ultrapasse a borda direita da tela.
+      const maxWidth = menu.grupos.length === 2 ? 576 : 320;
+
+      if (left + maxWidth > viewport - margemSeguranca) {
+        left = Math.max(margemSeguranca, viewport - maxWidth - margemSeguranca);
+      }
+
+      setDeslocamento(left);
+    } else {
+      setDeslocamento(null);
+    }
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setAberto(false);
@@ -38,7 +59,7 @@ export function NavDropdown({
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onClickFora);
     };
-  }, [aberto]);
+  }, [aberto, menu.grupos.length]);
 
   const totalGrupos = menu.grupos.length;
 
@@ -64,11 +85,12 @@ export function NavDropdown({
       onMouseLeave={() => setAberto(false)}
     >
       <button
+        ref={botao}
         type="button"
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
         aria-haspopup="true"
-        className="flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.95rem] font-medium text-ink transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         {menu.label}
         <ChevronDown
@@ -83,7 +105,10 @@ export function NavDropdown({
         <div className="fixed inset-x-0 top-16 z-50">
           <div className="w-full border-y border-border bg-card py-2 shadow-card">
             <div
-              className={`grid w-full overflow-hidden ${alinhamentoClasse[alinhamento]} ${conteudoClasses[totalGrupos]}`}
+              className={`grid w-full overflow-hidden ${
+                deslocamento != null ? "" : alinhamentoClasse[alinhamento]
+              } ${conteudoClasses[totalGrupos]}`}
+              style={{ marginLeft: deslocamento ?? undefined }}
             >
               {menu.grupos.map((grupo, gIdx) => (
                 <div
