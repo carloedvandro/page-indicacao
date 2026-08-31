@@ -9,6 +9,8 @@ import type { NavMenu } from "@/lib/header-navigation";
  *
  * Abre no hover e também no clique/teclado (acessibilidade). Fecha ao sair com
  * o mouse, ao pressionar Escape ou ao clicar fora.
+ *
+ * Renderiza um mega-menu com colunas quando o menu possui múltiplos grupos.
  */
 export function NavDropdown({ menu }: { menu: NavMenu }) {
   const [aberto, setAberto] = useState(false);
@@ -31,6 +33,8 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
       document.removeEventListener("mousedown", onClickFora);
     };
   }, [aberto]);
+
+  const multiGrupo = menu.grupos.length > 1;
 
   return (
     <div
@@ -57,29 +61,43 @@ export function NavDropdown({ menu }: { menu: NavMenu }) {
 
       {aberto ? (
         <div className="absolute left-0 top-full z-50 pt-2">
-          <ul
+          <div
             className={`overflow-hidden rounded-none border border-border bg-card py-2 shadow-card ${
-              menu.itens.length > 3 ? "grid min-w-[30rem] grid-cols-2" : "min-w-72"
+              multiGrupo ? "grid min-w-[36rem] grid-cols-2" : "min-w-72"
             }`}
           >
-            {menu.itens.map((item, idx) => {
-              const segundaColuna = menu.itens.length > 3 && idx % 2 === 1;
-              return (
-                <li
-                  key={`${menu.label}-${item.label}`}
-                  className={`${segundaColuna ? "border-l border-border" : ""}`}
-                >
-                  <Link
-                    to={item.href}
-                    onClick={() => setAberto(false)}
-                    className="block whitespace-nowrap px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            {menu.grupos.map((grupo, gIdx) => (
+              <div
+                key={grupo.titulo ?? `grupo-${gIdx}`}
+                className={`px-4 py-2 ${gIdx > 0 && multiGrupo ? "border-l border-border" : ""}`}
+              >
+                {grupo.titulo ? (
+                  <p className="mb-2 px-2 pt-1 text-xs font-bold uppercase tracking-wide text-ink">
+                    {grupo.titulo}
+                  </p>
+                ) : null}
+                <ul>
+                  {grupo.itens.map((item) => (
+                    <li key={`${menu.label}-${item.label}`}>
+                      {item.href ? (
+                        <Link
+                          to={item.href}
+                          onClick={() => setAberto(false)}
+                          className="block whitespace-nowrap rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary"
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span className="block cursor-pointer whitespace-nowrap rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary focus-visible:outline-none focus-visible:bg-primary-soft focus-visible:text-primary">
+                          {item.label}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       ) : null}
     </div>

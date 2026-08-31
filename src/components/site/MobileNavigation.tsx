@@ -102,19 +102,36 @@ export function MobileNavigation() {
                           ativo ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                         }`}
                       >
-                        <ul className="min-h-0 space-y-1 pb-3">
-                          {menu.itens.map((item) => (
-                            <li key={`${menu.label}-${item.label}`}>
-                              <Link
-                                to={item.href}
-                                onClick={fechar}
-                                className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary"
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
+                        <div className="min-h-0 pb-3">
+                          {menu.grupos.map((grupo) => (
+                            <div key={grupo.titulo ?? menu.label} className="py-1">
+                              {grupo.titulo ? (
+                                <p className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-ink">
+                                  {grupo.titulo}
+                                </p>
+                              ) : null}
+                              <ul className="space-y-1">
+                                {grupo.itens.map((item) => (
+                                  <li key={`${menu.label}-${item.label}`}>
+                                    {item.href ? (
+                                      <Link
+                                        to={item.href}
+                                        onClick={fechar}
+                                        className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary-soft hover:text-primary"
+                                      >
+                                        {item.label}
+                                      </Link>
+                                    ) : (
+                                      <span className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground">
+                                        {item.label}
+                                      </span>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     </li>
                   );
