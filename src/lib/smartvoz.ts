@@ -10,7 +10,7 @@
  *   youtubeVideo: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
  */
 export const smartvoz = {
-  youtubeVideo: "",
+  youtubeVideo: "https://youtu.be/Qb0utsp_uks",
   videoDuracao: "06:24",
   whatsappNumero: "5521999999999",
   whatsappExibicao: "(21) 99999-9999",

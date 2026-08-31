@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { HeroBackground } from "./HeroBackground";
 import { VideoPlayer } from "./VideoPlayer";
 
@@ -12,7 +13,10 @@ import { VideoPlayer } from "./VideoPlayer";
  * vídeo.
  */
 export function VideoHeroSection() {
-  const irParaVideo = () => {
+  const [tocando, setTocando] = useState(false);
+
+  const tocarVideo = () => {
+    setTocando(true);
     document.getElementById("video")?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
@@ -57,7 +61,7 @@ export function VideoHeroSection() {
             {/* Botão ASSISTA AO VÍDEO */}
             <button
               type="button"
-              onClick={irParaVideo}
+              onClick={tocarVideo}
               aria-label="Assista ao vídeo e entenda como funciona"
               className="group mt-7 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:max-w-[20rem] sm:px-5 lg:mt-8"
             >
@@ -89,7 +93,7 @@ export function VideoHeroSection() {
 
           {/* Coluna direita — vídeo */}
           <div className="rise-in order-2 w-full self-center">
-            <VideoPlayer />
+            <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { smartvoz, youtubeId } from "@/lib/smartvoz";
 import { VideoThumbnail } from "./VideoThumbnail";
 
@@ -9,9 +7,11 @@ import { VideoThumbnail } from "./VideoThumbnail";
  * Inicialmente exibe apenas a thumbnail personalizada + botão Play. O iframe
  * do YouTube só é carregado APÓS o clique do usuário — nunca no carregamento
  * da página.
+ *
+ * O estado `tocando` é controlado pelo pai (VideoHeroSection) para que o
+ * botão "ASSISTA AO VÍDEO" da coluna esquerda também possa disparar a reprodução.
  */
-export function VideoPlayer() {
-  const [tocando, setTocando] = useState(false);
+export function VideoPlayer({ tocando, onPlay }: { tocando: boolean; onPlay: () => void }) {
   const id = youtubeId(smartvoz.youtubeVideo);
 
   return (
@@ -29,7 +29,7 @@ export function VideoPlayer() {
           allowFullScreen
         />
       ) : (
-        <VideoThumbnail onPlay={() => setTocando(true)} />
+        <VideoThumbnail onPlay={onPlay} />
       )}
     </div>
   );
