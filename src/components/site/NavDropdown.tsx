@@ -144,7 +144,7 @@ export function NavDropdown({
                   }`}
                 >
                   {grupo.titulo ? (
-                    <p className="mb-1 pt-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-ink">
+                    <p className="mb-2 pt-0.5 text-[0.85rem] font-extrabold uppercase tracking-wide text-ink">
                       {grupo.titulo}
                     </p>
                   ) : null}
