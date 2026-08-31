@@ -17,13 +17,9 @@ export function HeroBackground() {
           backgroundImage: "linear-gradient(120deg, #F3ECFC 0%, #E4D4F8 45%, #C9A9EF 100%)",
         }}
       />
-      {/* Arte oficial — altura reduzida para cortar o excesso inferior e manter o topo */}
-      <div className="absolute inset-x-0 top-0 h-[78%] overflow-hidden">
-        <img
-          src={heroMundoRede.url}
-          alt=""
-          className="h-full w-full object-cover object-top"
-        />
+      {/* Arte oficial — preenche toda a area do hero */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img src={heroMundoRede.url} alt="" className="h-full w-full object-cover object-top" />
       </div>
       {/* Véu suave à esquerda para garantir leitura dos textos */}
       <div
