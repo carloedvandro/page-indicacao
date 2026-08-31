@@ -49,7 +49,7 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
 
       {/* INDIQUE. CONSTRUA. RECEBA. + Play — centralizados verticalmente */}
       <span className="absolute inset-0 flex items-center gap-2 px-6 sm:gap-3 sm:px-8 lg:gap-4 lg:px-10">
-        <span className="font-display text-[1.35rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
+        <span className="text-left font-display text-[1.35rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
           <span className="block text-white">INDIQUE.</span>
           <span className="block text-[#A855F7]">CONSTRUA.</span>
           <span className="block text-[#F97316]">RECEBA.</span>
