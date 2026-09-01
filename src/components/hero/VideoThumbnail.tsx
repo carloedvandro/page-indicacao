@@ -47,25 +47,39 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
         aria-hidden="true"
       />
 
+      {/* Logo oficial SmartVoz dentro do vídeo */}
+      <img
+        src={logoSmartvoz.url}
+        alt="SmartVoz"
+        className="absolute left-6 top-5 h-6 w-auto drop-shadow-[0_2px_10px_rgba(168,85,247,0.55)] sm:left-8 sm:top-6 sm:h-7 lg:left-10 lg:h-8"
+      />
+
       {/* INDIQUE. CONSTRUA. RECEBA. + Play — centralizados verticalmente */}
-      <span className="absolute inset-0 flex items-center gap-2 px-6 sm:gap-3 sm:px-8 lg:gap-4 lg:px-10">
-        <span className="text-left font-display text-[1.35rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
-          <span className="block text-white">INDIQUE.</span>
-          <span className="block text-[#A855F7]">CONSTRUA.</span>
-          <span className="block text-[#F97316]">RECEBA.</span>
+      <span className="absolute inset-0 flex items-center gap-4 px-6 sm:gap-6 sm:px-8 lg:gap-8 lg:px-10">
+        <span className="text-left font-display text-[1.35rem] font-extrabold leading-[1.4] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
+          <span className="block text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.25)]">
+            INDIQUE.
+          </span>
+          <span className="block text-[#A855F7] drop-shadow-[0_2px_14px_rgba(168,85,247,0.6)]">
+            CONSTRUA.
+          </span>
+          <span className="block text-[#F97316] drop-shadow-[0_2px_14px_rgba(249,115,22,0.55)]">
+            RECEBA.
+          </span>
         </span>
 
+        {/* Play circular preto com aro branco e brilho roxo */}
         <span
-          className="mt-1.5 flex h-[3.1rem] w-[4.4rem] shrink-0 items-center justify-center rounded-[1.1rem] transition-transform duration-300 group-hover:scale-[1.04] sm:mt-2 sm:h-[3.6rem] sm:w-[5.2rem] lg:mt-2.5 lg:h-[4.1rem] lg:w-[5.9rem]"
+          className="flex size-[3.4rem] shrink-0 items-center justify-center rounded-full border-2 border-white/95 transition-transform duration-300 group-hover:scale-[1.06] sm:size-[4.2rem] lg:size-[5rem]"
           style={{
-            backgroundColor: "#FF0000",
-            boxShadow: "0 8px 26px -8px rgba(255, 0, 0, 0.5)",
+            backgroundColor: "#08040F",
+            boxShadow:
+              "0 0 0 6px rgba(168, 85, 247, 0.16), 0 0 34px 8px rgba(168, 85, 247, 0.45)",
           }}
         >
-          {/* Triângulo branco centralizado */}
           <svg
             viewBox="0 0 24 24"
-            className="ml-0.5 size-6 sm:size-7 lg:size-8"
+            className="ml-0.5 size-6 sm:size-7 lg:size-9"
             fill="#FFFFFF"
             aria-hidden="true"
           >
