@@ -22,10 +22,10 @@ export function VideoHeroSection() {
 
   return (
     <section className="px-4 pb-6 pt-4 sm:px-5 sm:pb-8 sm:pt-6">
-      <div className="relative mx-auto min-h-[620px] w-full max-w-[1540px] overflow-hidden rounded-[26px] lg:w-[95%]">
+      <div className="relative mx-auto min-h-[520px] w-full max-w-[1540px] overflow-hidden rounded-[26px] lg:w-[95%]">
         <HeroBackground />
 
-        <div className="relative grid h-full min-h-[620px] w-full px-5 py-10 sm:px-9 sm:py-12 lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-10 xl:gap-8">
+        <div className="relative grid h-full min-h-[520px] w-full px-5 py-8 sm:px-9 sm:py-10 lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-6 xl:gap-8">
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 self-start text-left lg:hero-text-offset">
             {/* Texto superior */}
