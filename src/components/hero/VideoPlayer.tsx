@@ -23,7 +23,7 @@ export function VideoPlayer({ tocando, onPlay }: { tocando: boolean; onPlay: () 
       {tocando && id ? (
         <iframe
           className="absolute inset-0 size-full"
-          src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1&modestbranding=1&showinfo=0&iv_load_policy=3&cc_load_policy=0&hl=pt-BR&cc_lang_pref=pt-BR&color=white&fs=1`}
           title="Assista ao vídeo SmartVoz"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
