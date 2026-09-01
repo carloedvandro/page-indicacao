@@ -1,4 +1,5 @@
 import capaVideo from "@/assets/video-capa.jpg";
+import logoSmartvoz from "@/assets/smartvoz-logo.png.asset.json";
 
 /**
  * Thumbnail personalizada do vídeo institucional.
