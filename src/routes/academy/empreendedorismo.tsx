@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteChrome } from "@/components/site/SiteChrome";
 import { AcademyAreaPage } from "@/components/academy/AcademyAreaPage";
-import { academyAreas } from "@/lib/academy-content";
+import { getAcademyAreaBySlug } from "@/lib/academy-content";
 
 export const Route = createFileRoute("/academy/empreendedorismo")({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/academy/empreendedorismo")({
 });
 
 function EmpreendedorismoRoute() {
-  const area = academyAreas[4];
+  const area = getAcademyAreaBySlug("empreendedorismo");
   return (
     <SiteChrome>
       <AcademyAreaPage area={area} />
