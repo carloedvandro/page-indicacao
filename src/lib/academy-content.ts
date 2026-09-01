@@ -453,6 +453,12 @@ export const academyAreas: AcademyArea[] = [
   },
 ];
 
+export function getAcademyAreaBySlug(slug: string): AcademyArea {
+  const area = academyAreas.find((a) => a.slug === slug);
+  if (!area) throw new Error(`Academy area not found: ${slug}`);
+  return area;
+}
+
 /** Itens do menu "O que você terá acesso" — comuns a todas as áreas. */
 export const academyAcessoComum = [
   "Treinamentos ao vivo",

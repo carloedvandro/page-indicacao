@@ -101,7 +101,8 @@ export function AcademyHome() {
             return (
               <Link
                 key={area.slug}
-                to={`/academy/${area.slug}`}
+                to={`/academy/${area.slug}` as "/academy/:slug"}
+                params={{ slug: area.slug }}
                 className="surface-card group flex flex-col gap-3 p-5 transition-shadow hover:shadow-glow"
               >
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary-soft">

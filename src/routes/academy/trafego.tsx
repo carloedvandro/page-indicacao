@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteChrome } from "@/components/site/SiteChrome";
 import { AcademyAreaPage } from "@/components/academy/AcademyAreaPage";
-import { academyAreas } from "@/lib/academy-content";
+import { getAcademyAreaBySlug } from "@/lib/academy-content";
 
 export const Route = createFileRoute("/academy/trafego")({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/academy/trafego")({
 });
 
 function TrafegoRoute() {
-  const area = academyAreas[1];
+  const area = getAcademyAreaBySlug("trafego");
   return (
     <SiteChrome>
       <AcademyAreaPage area={area} />
