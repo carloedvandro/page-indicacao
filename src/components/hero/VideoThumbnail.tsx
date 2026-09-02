@@ -46,8 +46,8 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
         aria-hidden="true"
       />
 
-      {/* INDIQUE. CONSTRUA. RECEBA. — alinhado à esquerda, largura do card */}
-      <span className="absolute left-0 top-0 w-full px-5 pt-7 text-left font-display text-[1.05rem] font-extrabold leading-[1.35] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)] sm:px-7 sm:pt-9 sm:text-[1.2rem] lg:px-9 lg:pt-10 lg:text-[1.35rem]">
+      {/* INDIQUE. CONSTRUA. RECEBA. — canto superior esquerdo */}
+      <span className="absolute left-0 top-0 px-3 pt-4 text-left font-display text-[1.05rem] font-extrabold leading-[1.35] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)] sm:px-4 sm:pt-5 sm:text-[1.2rem] lg:px-5 lg:pt-6 lg:text-[1.35rem]">
         <span className="block text-white">
           INDIQUE.
         </span>
