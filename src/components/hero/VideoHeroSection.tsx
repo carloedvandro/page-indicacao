@@ -8,9 +8,10 @@ import { VideoPlayer } from "./VideoPlayer";
  * Seção FIXA — não é carrossel. Sem setas, bolinhas, indicadores ou autoplay
  * de slides.
  *
- * Desktop: duas colunas (texto à esquerda, vídeo à direita).
- * Mobile: uma coluna na ordem texto superior → título → pergunta → botão →
- * vídeo.
+ * Desktop: duas colunas (texto à esquerda, vídeo à direita, botão abaixo do
+ * texto).
+ * Mobile: uma coluna na ordem texto superior → título → pergunta → vídeo →
+ * botão centralizado.
  */
 export function VideoHeroSection() {
   const [tocando, setTocando] = useState(false);
