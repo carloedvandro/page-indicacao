@@ -1,12 +1,11 @@
 import capaVideo from "@/assets/video-capa.jpg";
-import logoSmartvoz from "@/assets/smartvoz-logo.png.asset.json";
 
 /**
  * Thumbnail personalizada do vídeo institucional.
  *
  * Fundo escuro (não preto) com o mapa digital de conexões da SmartVoz.
  * À esquerda: INDIQUE. / CONSTRUA. / RECEBA.
- * Ao centro/direita: botão de Play vermelho no estilo YouTube.
+ * Abaixo, largura total do card: botão de Play estendido.
  *
  * O player real (iframe) só é carregado após o clique — ver VideoPlayer.
  */
@@ -16,7 +15,7 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
       type="button"
       onClick={onPlay}
       aria-label="Reproduzir o vídeo de apresentação da SmartVoz"
-      className="group absolute inset-0 size-full cursor-pointer overflow-hidden"
+      className="group absolute inset-0 flex size-full cursor-pointer flex-col overflow-hidden"
       style={{ backgroundColor: "#0D0717" }}
     >
       {/* Mapa digital de conexões */}
@@ -25,7 +24,7 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
         alt="Rede de pessoas conectadas em todo o mundo representando a multiplicação SmartVoz"
         width={1600}
         height={900}
-        className="size-full object-cover"
+        className="absolute inset-0 size-full object-cover"
       />
 
       {/* Áreas mais claras para dar profundidade sem virar preto puro */}
@@ -48,44 +47,41 @@ export function VideoThumbnail({ onPlay }: { onPlay: () => void }) {
         aria-hidden="true"
       />
 
-      {/* Logo oficial SmartVoz dentro do vídeo */}
-      <img
-        src={logoSmartvoz.url}
-        alt="SmartVoz"
-        className="absolute left-6 top-5 h-6 w-auto drop-shadow-[0_2px_10px_rgba(168,85,247,0.55)] sm:left-8 sm:top-6 sm:h-7 lg:left-10 lg:h-8"
-      />
-
-      {/* INDIQUE. CONSTRUA. RECEBA. + Play — centralizados verticalmente */}
-      <span className="absolute inset-0 flex items-center gap-4 px-6 sm:gap-6 sm:px-8 lg:gap-8 lg:px-10">
-        <span className="text-left font-display text-[1.35rem] font-extrabold leading-[1.4] tracking-tight sm:text-[1.7rem] lg:text-[2rem]">
-          <span className="block text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.25)]">
-            INDIQUE.
-          </span>
-          <span className="block text-[#A855F7] drop-shadow-[0_2px_14px_rgba(168,85,247,0.6)]">
-            CONSTRUA.
-          </span>
-          <span className="block text-[#F97316] drop-shadow-[0_2px_14px_rgba(249,115,22,0.55)]">
-            RECEBA.
-          </span>
+      {/* INDIQUE. CONSTRUA. RECEBA. — alinhado à esquerda, largura do card */}
+      <span className="relative z-10 w-full px-5 pt-7 text-left font-display text-[1.05rem] font-extrabold leading-[1.35] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)] sm:px-7 sm:pt-9 sm:text-[1.2rem] lg:px-9 lg:pt-10 lg:text-[1.35rem]">
+        <span className="block text-white">
+          INDIQUE.
         </span>
+        <span className="block text-[#A855F7]">
+          CONSTRUA.
+        </span>
+        <span className="block text-[#F97316]">
+          RECEBA.
+        </span>
+      </span>
 
-        {/* Play circular preto com aro branco e brilho roxo */}
+      {/* Play estendido na largura do card */}
+      <span className="relative z-10 mt-auto w-full px-5 pb-6 sm:px-7 sm:pb-8 lg:px-9">
         <span
-          className="flex size-[3.4rem] shrink-0 items-center justify-center rounded-full border-2 border-white/95 transition-transform duration-300 group-hover:scale-[1.06] sm:size-[4.2rem] lg:size-[5rem]"
+          className="flex w-full items-center justify-center gap-2 rounded-full py-3 transition-transform duration-300 group-hover:scale-[1.01] sm:gap-3 sm:py-3.5 lg:py-4"
           style={{
             backgroundColor: "#08040F",
+            border: "2px solid rgba(255, 255, 255, 0.95)",
             boxShadow:
-              "0 0 0 6px rgba(168, 85, 247, 0.16), 0 0 34px 8px rgba(168, 85, 247, 0.45)",
+              "0 0 0 5px rgba(168, 85, 247, 0.16), 0 0 28px 6px rgba(168, 85, 247, 0.45)",
           }}
         >
           <svg
             viewBox="0 0 24 24"
-            className="ml-0.5 size-6 sm:size-7 lg:size-9"
+            className="ml-0.5 size-5 sm:size-6 lg:size-7"
             fill="#FFFFFF"
             aria-hidden="true"
           >
             <path d="M8 5v14l11-7z" />
           </svg>
+          <span className="font-display text-[0.85rem] font-extrabold uppercase tracking-[0.06em] text-white sm:text-[0.95rem] lg:text-[1.05rem]">
+            Assista ao vídeo
+          </span>
         </span>
       </span>
     </button>
