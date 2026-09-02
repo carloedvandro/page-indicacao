@@ -1,4 +1,4 @@
-import logoOficial from "@/assets/smartvoz-logo.png.asset.json";
+import logoOficial from "@/assets/smartvoz-logo-oficial.png.asset.json";
 
 type LogoProps = {
   className?: string;
@@ -10,7 +10,7 @@ export function Logo({ className = "" }: LogoProps) {
     <img
       src={logoOficial.url}
       alt="SmartVoz"
-      className={`h-9 w-auto shrink-0 select-none object-contain sm:h-11 ${className}`}
+      className={`h-11 w-auto shrink-0 select-none object-contain sm:h-12 lg:h-11 ${className}`}
     />
   );
 }
