@@ -57,13 +57,22 @@ export function VideoHeroSection() {
             >
               por que você ainda não ganha com isso?
             </p>
+          </div>
 
-            {/* Botão ASSISTA AO VÍDEO */}
+          {/* Coluna direita — vídeo */}
+          <div className="rise-in order-2 w-full self-center">
+            <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
+          </div>
+
+          {/* Botão ASSISTA AO VÍDEO
+              Mobile: fica abaixo do vídeo (order-3) e centralizado.
+              Desktop: retorna à coluna da esquerda, abaixo do texto. */}
+          <div className="rise-in order-3 flex w-full justify-center lg:col-start-1 lg:row-start-2 lg:justify-start">
             <button
               type="button"
               onClick={tocarVideo}
               aria-label="Assista ao vídeo e entenda como funciona"
-              className="group mt-7 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:max-w-[20rem] sm:px-5 lg:mt-8"
+              className="group mt-5 flex w-full max-w-[19rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:max-w-[20rem] sm:px-5 lg:mt-8"
             >
               {/* Play estilo YouTube */}
               <span
@@ -89,11 +98,6 @@ export function VideoHeroSection() {
                 </span>
               </span>
             </button>
-          </div>
-
-          {/* Coluna direita — vídeo */}
-          <div className="rise-in order-2 w-full self-center">
-            <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
         </div>
       </div>
