@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
-import { whatsappLink } from "@/lib/smartvoz";
+import { ArrowRight, Lock } from "lucide-react";
 
 
 const SPARKS = [
@@ -73,11 +72,17 @@ function useRocketSound() {
     return () => stopRef.current?.();
   }, [on]);
 
-  return { on, toggle: () => setOn((v) => !v) };
+  return { start: () => setOn(true), stop: () => setOn(false) };
 }
 
 export function HeroCta() {
-  const { on, toggle } = useRocketSound();
+  const { start, stop } = useRocketSound();
+
+  const irParaPlanos = (e: React.MouseEvent) => {
+    e.preventDefault();
+    stop();
+    document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div
@@ -279,14 +284,6 @@ export function HeroCta() {
           className="relative mx-auto h-[120px] w-24 lg:h-[128px] lg:w-[104px]"
           style={{ gridArea: "rocket" }}
         >
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={on ? "Desligar som do foguete" : "Ligar som do foguete"}
-            className="absolute right-0 top-0 z-20 flex size-7 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground/80 backdrop-blur transition hover:bg-primary-foreground/20"
-          >
-            {on ? <Volume2 className="size-3.5" /> : <VolumeX className="size-3.5" />}
-          </button>
           <div className="absolute left-1/2 top-1 w-[58px] -translate-x-1/2 lg:w-[62px]">
           <div className="hero-cta-rocket relative w-full">
             <svg
@@ -435,9 +432,12 @@ export function HeroCta() {
         {/* Ações */}
         <div className="flex flex-col gap-2" style={{ gridArea: "actions" }}>
           <a
-            href={whatsappLink("Olá! Quero começar agora.")}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#planos"
+            onClick={irParaPlanos}
+            onMouseEnter={start}
+            onMouseLeave={stop}
+            onFocus={start}
+            onBlur={stop}
             className="relative isolate flex h-[52px] items-center justify-center gap-3 overflow-hidden whitespace-nowrap rounded-full px-6 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:h-[56px] sm:text-base"
             style={{
               backgroundImage: "linear-gradient(180deg,#b954ff,#8e24e6 50%,#7214c9 100%)",
