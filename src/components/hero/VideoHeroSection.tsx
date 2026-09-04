@@ -26,9 +26,9 @@ export function VideoHeroSection() {
       <div className="relative mx-auto min-h-[460px] w-full max-w-[1540px] lg:min-h-[420px] lg:w-[95%]">
         <div className="relative grid h-full min-h-[460px] w-full py-4 sm:px-9 sm:py-6 lg:min-h-[420px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-12 lg:px-12 lg:py-3 xl:gap-16">
           {/* Coluna esquerda — texto */}
-          <div className="rise-in order-1 min-w-0 self-start text-left lg:pl-6">
+          <div className="rise-in order-1 min-w-0 self-start text-left px-1 sm:px-0 lg:pl-6">
             {/* Texto superior */}
-            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.78rem,1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
+            <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.85rem,1.1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
               O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
               <span className="text-[#F97316]">MULTIPLICAÇÃO</span>
             </p>
@@ -38,18 +38,18 @@ export function VideoHeroSection() {
                 a linha em telas ~1536px (Windows 1920x1200 com escala 125% e
                 zoom 100%). As quebras fixas só entram no xl, onde há espaço;
                 abaixo disso o texto quebra naturalmente e equilibrado. */}
-            <h1 className="mt-6 text-pretty text-[clamp(1.7rem,2.6vw,2.7rem)] font-extrabold leading-[1.12] text-ink lg:mt-7 lg:text-[clamp(1.9rem,2.9vw,3rem)]">
+            <h1 className="mt-6 text-pretty text-[clamp(1.85rem,2.9vw,2.7rem)] font-extrabold leading-[1.12] text-ink lg:mt-7 lg:text-[clamp(1.9rem,2.9vw,3rem)]">
               Todo mundo que você
               <br className="hidden xl:block" /> conhece já paga internet
               <br className="hidden xl:block" /> todos os meses.
             </h1>
 
             {/* Pergunta */}
-            <p className="mt-6 font-display text-[clamp(1.05rem,1.3vw,1.35rem)] font-semibold text-ink lg:mt-7 lg:text-[clamp(1.15rem,1.5vw,1.55rem)]">
+            <p className="mt-6 font-display text-[clamp(1.1rem,1.4vw,1.35rem)] font-semibold text-ink lg:mt-7 lg:text-[clamp(1.15rem,1.5vw,1.55rem)]">
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text font-display text-[clamp(0.9rem,4.3vw,1.5rem)] font-bold leading-[1.18] text-transparent whitespace-nowrap lg:text-[clamp(1.05rem,3vw,1.75rem)]"
+              className="mt-2 bg-clip-text font-display text-[clamp(0.95rem,4.5vw,1.55rem)] font-bold leading-[1.18] text-transparent whitespace-nowrap lg:text-[clamp(1.05rem,3vw,1.75rem)]"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
