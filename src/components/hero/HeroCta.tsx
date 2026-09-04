@@ -1,4 +1,5 @@
-import { ArrowRight, Lock } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const METEORS = [
