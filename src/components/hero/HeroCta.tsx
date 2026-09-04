@@ -13,17 +13,77 @@ const METEORS = [
 ];
 
 const SPARKS = [
-  { x: "22%", dur: 0.9, drift: "-6px", delay: 0.1 },
-  { x: "38%", dur: 0.7, drift: "4px", delay: 0.3 },
+  { x: "40%", dur: 0.9, drift: "-6px", delay: 0.1 },
+  { x: "46%", dur: 0.7, drift: "4px", delay: 0.3 },
   { x: "52%", dur: 1.0, drift: "-3px", delay: 0.5 },
-  { x: "66%", dur: 0.8, drift: "7px", delay: 0.2 },
-  { x: "28%", dur: 0.9, drift: "-5px", delay: 0.7 },
-  { x: "46%", dur: 0.7, drift: "2px", delay: 0.4 },
-  { x: "60%", dur: 1.1, drift: "-8px", delay: 0.6 },
-  { x: "74%", dur: 0.8, drift: "5px", delay: 0.9 },
-  { x: "34%", dur: 0.9, drift: "-4px", delay: 1.0 },
-  { x: "56%", dur: 0.7, drift: "6px", delay: 1.2 },
+  { x: "58%", dur: 0.8, drift: "7px", delay: 0.2 },
+  { x: "43%", dur: 0.9, drift: "-5px", delay: 0.7 },
+  { x: "49%", dur: 0.7, drift: "2px", delay: 0.4 },
+  { x: "55%", dur: 1.1, drift: "-8px", delay: 0.6 },
+  { x: "61%", dur: 0.8, drift: "5px", delay: 0.9 },
+  { x: "47%", dur: 0.9, drift: "-4px", delay: 1.0 },
+  { x: "53%", dur: 0.7, drift: "6px", delay: 1.2 },
 ];
+
+/** Som contínuo de propulsão (ruído filtrado) gerado no navegador. */
+function useRocketSound() {
+  const [on, setOn] = useState(false);
+  const ctxRef = useRef<AudioContext | null>(null);
+  const stopRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    if (!on) {
+      stopRef.current?.();
+      stopRef.current = null;
+      return;
+    }
+    const AC =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    const ctx = ctxRef.current ?? new AC();
+    ctxRef.current = ctx;
+    void ctx.resume();
+
+    const frames = Math.floor(ctx.sampleRate * 2);
+    const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    let last = 0;
+    for (let i = 0; i < frames; i++) {
+      const white = Math.random() * 2 - 1;
+      last = 0.02 * white + 0.98 * last;
+      data[i] = last * 3.2;
+    }
+
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+    src.loop = true;
+
+    const lp = ctx.createBiquadFilter();
+    lp.type = "lowpass";
+    lp.frequency.value = 620;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    gain.gain.linearRampToValueAtTime(0.16, ctx.currentTime + 0.5);
+
+    src.connect(lp).connect(gain).connect(ctx.destination);
+    src.start();
+
+    stopRef.current = () => {
+      try {
+        gain.gain.cancelScheduledValues(ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+        src.stop(ctx.currentTime + 0.35);
+      } catch {
+        /* noop */
+      }
+    };
+    return () => stopRef.current?.();
+  }, [on]);
+
+  return { on, toggle: () => setOn((v) => !v) };
+}
 
 export function HeroCta() {
   return (
