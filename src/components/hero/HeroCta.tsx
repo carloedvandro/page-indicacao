@@ -4,7 +4,7 @@ import { whatsappLink } from "@/lib/smartvoz";
 export function HeroCta() {
   return (
     <div
-      className="rise-in relative mt-4 flex flex-col items-center gap-6 overflow-hidden rounded-[2rem] p-6 text-center sm:mt-5 lg:flex-row lg:p-10 lg:text-left"
+      className="rise-in relative mt-3 flex flex-col items-center gap-6 overflow-hidden rounded-[2rem] p-6 text-center sm:mt-4 lg:flex-row lg:p-10 lg:text-left"
       style={{
         backgroundImage:
           "radial-gradient(1200px 400px at 85% 50%, oklch(0.3 0.18 300 / 0.75), transparent 70%), linear-gradient(120deg, oklch(0.16 0.09 300), oklch(0.2 0.13 300) 55%, oklch(0.13 0.07 300))",
