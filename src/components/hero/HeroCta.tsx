@@ -301,7 +301,8 @@ export function HeroCta() {
           >
             {on ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
           </button>
-          <div className="hero-cta-rocket absolute left-1/2 top-3 w-20 lg:w-[82px]">
+          <div className="absolute left-1/2 top-3 w-20 -translate-x-1/2 lg:w-[86px]">
+          <div className="hero-cta-rocket relative w-full">
             <svg
               viewBox="0 0 120 160"
               fill="none"
@@ -310,37 +311,69 @@ export function HeroCta() {
               aria-hidden="true"
             >
               <defs>
-                <linearGradient id="ctaBodyGrad" x1="30" y1="10" x2="96" y2="120" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#c07aff" />
-                  <stop offset=".45" stopColor="#9b3ef0" />
-                  <stop offset="1" stopColor="#5c11a8" />
+                {/* Corpo: volume 3D com luz à esquerda e sombra profunda à direita */}
+                <linearGradient id="ctaBodyGrad" x1="24" y1="60" x2="96" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#5d16a6" />
+                  <stop offset=".16" stopColor="#a濃" stopOpacity="0" />
+                  <stop offset=".18" stopColor="#b06bfa" />
+                  <stop offset=".38" stopColor="#c894ff" />
+                  <stop offset=".62" stopColor="#8b2fe0" />
+                  <stop offset=".86" stopColor="#4d0f92" />
+                  <stop offset="1" stopColor="#31075f" />
                 </linearGradient>
-                <linearGradient id="ctaNoseGrad" x1="60" y1="0" x2="60" y2="48" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#ffe9a8" />
-                  <stop offset=".5" stopColor="#f6c756" />
-                  <stop offset="1" stopColor="#d99b1c" />
+                <linearGradient id="ctaNoseGrad" x1="34" y1="6" x2="88" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#fff3c4" />
+                  <stop offset=".3" stopColor="#ffdb7a" />
+                  <stop offset=".62" stopColor="#f0b53c" />
+                  <stop offset="1" stopColor="#b8781a" />
                 </linearGradient>
                 <linearGradient id="ctaFinGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stopColor="#ffd980" />
-                  <stop offset="1" stopColor="#d99b1c" />
+                  <stop offset="0" stopColor="#ffe6a3" />
+                  <stop offset=".55" stopColor="#eeb43c" />
+                  <stop offset="1" stopColor="#9c6212" />
                 </linearGradient>
-                <linearGradient id="ctaWindowGrad" x1="38" y1="24" x2="62" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#e8f8ff" />
-                  <stop offset=".35" stopColor="#b8ecff" />
-                  <stop offset="1" stopColor="#4bb9ff" />
+                <radialGradient id="ctaWindowGrad" cx=".38" cy=".32" r=".85">
+                  <stop offset="0" stopColor="#eafcff" />
+                  <stop offset=".3" stopColor="#8fe4ff" />
+                  <stop offset=".7" stopColor="#1e9bd8" />
+                  <stop offset="1" stopColor="#0a3f78" />
+                </radialGradient>
+                <linearGradient id="ctaNozzleGrad" x1="34" y1="120" x2="86" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#3d0b74" />
+                  <stop offset=".35" stopColor="#7a2bc4" />
+                  <stop offset=".7" stopColor="#400d7a" />
+                  <stop offset="1" stopColor="#26054c" />
                 </linearGradient>
               </defs>
-              <path d="M24 86 L2 124 C1 127 3 129 6 128 L28 118 L30 92 Z" fill="url(#ctaFinGrad)" />
-              <path d="M96 86 L118 124 C119 127 117 129 114 128 L92 118 L90 92 Z" fill="url(#ctaFinGrad)" />
-              <path d="M46 96 L60 142 L74 96 Z" fill="url(#ctaFinGrad)" />
-              <path d="M60 0 C34 0 24 52 24 88 C24 112 36 122 60 122 C84 122 96 112 96 88 C96 52 86 0 60 0 Z" fill="url(#ctaBodyGrad)" />
-              <path d="M60 0 C44 0 37 28 36 46 C48 38 72 38 84 46 C83 28 76 0 60 0 Z" fill="url(#ctaNoseGrad)" />
-              <circle cx="60" cy="46" r="16" fill="#38006b" stroke="#5a109e" strokeWidth="2" />
-              <circle cx="60" cy="46" r="12" fill="url(#ctaWindowGrad)" />
-              <ellipse cx="56" cy="40" rx="4" ry="2.5" fill="#fff" opacity="0.8" />
-              <path d="M60 122 C36 122 24 112 24 96 L24 100 C24 118 38 128 60 128 C82 128 96 118 96 100 L96 96 C96 112 84 122 60 122 Z" fill="#000" opacity="0.12" />
-              <path d="M60 58 L60 108" stroke="#7a35c9" strokeWidth="1.5" opacity="0.35" />
-              <path d="M44 74 L76 74" stroke="#7a35c9" strokeWidth="1.5" opacity="0.25" />
+
+              {/* Aletas */}
+              <path d="M26 84 L3 124 C2 127 4 129 7 128 L29 117 L31 90 Z" fill="url(#ctaFinGrad)" />
+              <path d="M26 84 L10 112 L29 117 Z" fill="#000" opacity=".14" />
+              <path d="M94 84 L117 124 C118 127 116 129 113 128 L91 117 L89 90 Z" fill="url(#ctaFinGrad)" />
+              <path d="M94 84 L110 112 L91 117 Z" fill="#000" opacity=".26" />
+
+              {/* Corpo */}
+              <path d="M60 2 C35 2 24 52 24 88 C24 110 36 121 60 121 C84 121 96 110 96 88 C96 52 85 2 60 2 Z" fill="url(#ctaBodyGrad)" />
+              {/* Reflexo especular */}
+              <path d="M44 24 C37 46 34 72 36 104 C40 106 44 107 47 107 C43 74 45 46 51 22 Z" fill="#fff" opacity=".26" />
+              <path d="M84 32 C89 56 90 82 86 106 C83 108 80 109 78 109 C83 84 84 58 79 30 Z" fill="#1c0338" opacity=".35" />
+
+              {/* Bico dourado */}
+              <path d="M60 2 C45 2 37 28 36 47 C48 39 72 39 84 47 C83 28 75 2 60 2 Z" fill="url(#ctaNoseGrad)" />
+              <path d="M60 2 C53 2 47 16 44 34 C49 31 55 30 59 30 C58 18 59 8 60 2 Z" fill="#fff" opacity=".38" />
+              <path d="M36 47 C48 39 72 39 84 47 L84 51 C72 43 48 43 36 51 Z" fill="#8d5a10" opacity=".55" />
+
+              {/* Janela */}
+              <circle cx="60" cy="47" r="17" fill="#2b0555" />
+              <circle cx="60" cy="47" r="15" fill="url(#ctaWindowGrad)" />
+              <circle cx="60" cy="47" r="15" fill="none" stroke="#f6c756" strokeWidth="2.4" opacity=".9" />
+              <ellipse cx="54" cy="40" rx="5" ry="3" fill="#fff" opacity=".85" />
+              <ellipse cx="65" cy="54" rx="6" ry="3.4" fill="#fff" opacity=".18" />
+
+              {/* Bocal */}
+              <path d="M38 112 C46 118 74 118 82 112 L86 128 C74 134 46 134 34 128 Z" fill="url(#ctaNozzleGrad)" />
+              <path d="M34 128 C46 134 74 134 86 128 L85 131 C74 137 46 137 35 131 Z" fill="#12002a" opacity=".6" />
+              <ellipse cx="60" cy="115" rx="22" ry="5" fill="#1a0333" opacity=".45" />
             </svg>
             {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
             <div className="pointer-events-none absolute left-1/2 top-[78%] w-10 -translate-x-1/2">
