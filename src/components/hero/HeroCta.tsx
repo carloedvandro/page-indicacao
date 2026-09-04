@@ -278,7 +278,7 @@ export function HeroCta() {
           }
         }
         @media (prefers-reduced-motion: reduce) {
-          .hero-cta-meteor, .hero-cta-rocket, .hero-cta-satellite, .hero-cta-flame-outer, .hero-cta-flame-mid,
+          .hero-cta-rocket, .hero-cta-nebula, .hero-cta-dust, .hero-cta-star-field, .hero-cta-flame-outer, .hero-cta-flame-mid,
           .hero-cta-flame-core, .hero-cta-flame-glow, .hero-cta-spark, .hero-cta-btn-shine {
             animation: none !important;
           }
