@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Star } from "lucide-react";
 import { HeroBackground } from "./HeroBackground";
 import { VideoPlayer } from "./VideoPlayer";
+import { HeroCta } from "./HeroCta";
 
 /**
  * Seção principal (Hero) da página SmartVoz.
@@ -69,13 +69,7 @@ export function VideoHeroSection() {
         </div>
       </div>
 
-      {/* Pill abaixo do vídeo */}
-      <div className="rise-in mt-6 flex justify-center px-4 sm:mt-8">
-        <p className="eyebrow-pill">
-          <Star className="size-4 text-primary" aria-hidden="true" />
-          <span className="text-primary">RESULTADOS REAIS. PESSOAS REAIS.</span>
-        </p>
-      </div>
+      <HeroCta />
     </section>
   );
 }
