@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
 import { ArrowRight, Lock } from "lucide-react";
 
 
@@ -78,7 +79,7 @@ function useRocketSound() {
 export function HeroCta() {
   const { start, stop } = useRocketSound();
 
-  const irParaPlanos = (e: React.MouseEvent) => {
+  const irParaPlanos = (e: MouseEvent) => {
     e.preventDefault();
     stop();
     document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
