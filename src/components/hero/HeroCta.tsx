@@ -222,10 +222,7 @@ export function HeroCta() {
 
       {/* Conteúdo */}
       <div
-        className="relative z-10 grid min-h-[250px] items-center gap-5 px-5 py-7 text-center sm:px-6 lg:gap-7 lg:px-8 lg:py-9 lg:text-left xl:grid-cols-[150px_1.5fr_1fr_1.28fr]"
-        style={{
-          gridTemplateAreas: "'rocket' 'copy' 'mid' 'actions'",
-        }}
+        className="hero-cta-grid relative z-10 min-h-[250px] items-center gap-5 px-5 py-7 text-center sm:px-6 lg:gap-7 lg:px-8 lg:py-9 lg:text-left"
       >
         {/* Foguete sem círculo */}
         <div
