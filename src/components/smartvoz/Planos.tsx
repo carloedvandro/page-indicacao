@@ -1,5 +1,7 @@
+import { useState } from "react";
 import {
   Rocket,
+  Check,
   Users,
   ArrowRight,
   Lock,
@@ -73,16 +75,25 @@ const beneficios = [
 
 type PlanoProps = {
   variante: "senior" | "premium";
+  numero: number;
+  selecionado: boolean;
+  onSelecionar: () => void;
 };
 
-function Plano({ variante }: PlanoProps) {
+function Plano({ variante, numero, selecionado, onSelecionar }: PlanoProps) {
   const premium = variante === "premium";
 
   return (
     <article
       id={premium ? "plano-premium" : "plano-senior"}
-      className={`flex flex-col overflow-hidden rounded-[1.75rem] border-2 bg-card shadow-card ${
-        premium ? "border-gold/60" : "border-primary/25"
+      className={`flex flex-col overflow-hidden rounded-[1.75rem] border-2 bg-card shadow-card transition-all duration-300 ${
+        selecionado
+          ? premium
+            ? "border-gold shadow-gold ring-2 ring-gold/40"
+            : "border-primary shadow-glow ring-2 ring-primary/35"
+          : premium
+            ? "border-gold/60"
+            : "border-primary/25"
       }`}
     >
       <p className="text-center">
@@ -202,23 +213,28 @@ function Plano({ variante }: PlanoProps) {
       </div>
 
       <div className="p-4 sm:p-6">
-        <a
-          href={whatsappLink(
-            premium
-              ? "Olá! Quero começar agora (Plano Premium - R$ 124,90/mês)."
-              : "Olá! Quero começar agora (Plano Senior - R$ 99,90/mês).",
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={onSelecionar}
+          aria-pressed={selecionado}
           className={`flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-4 font-display text-[0.9rem] font-extrabold tracking-wide transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:px-6 sm:text-base ${
             premium
               ? "shadow-gold bg-gradient-gold text-ink"
               : "bg-gradient-primary text-primary-foreground shadow-glow"
           }`}
         >
-          QUERO COMEÇAR AGORA
-          <ArrowRight className="size-5" aria-hidden="true" />
-        </a>
+          {selecionado ? (
+            <>
+              PLANO {numero} SELECIONADO
+              <Check className="size-5" aria-hidden="true" />
+            </>
+          ) : (
+            <>
+              ESCOLHER PLANO {numero}
+              <ArrowRight className="size-5" aria-hidden="true" />
+            </>
+          )}
+        </button>
 
         <p className="mt-3 flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
           <Gift
@@ -233,7 +249,26 @@ function Plano({ variante }: PlanoProps) {
 }
 
 
+/** Planos disponíveis para escolha e para o fluxo de cadastro/pagamento. */
+const planosDisponiveis = [
+  {
+    variante: "senior" as const,
+    numero: 1,
+    nome: "Plano 1 — Smart Senior 100 GB + 20 GB",
+    preco: "R$ 99,90/mês",
+  },
+  {
+    variante: "premium" as const,
+    numero: 2,
+    nome: "Plano 2 — Smart Premium 120 GB + 20 GB",
+    preco: "R$ 124,90/mês",
+  },
+];
+
 export function Planos() {
+  const [escolhido, setEscolhido] = useState<number | null>(null);
+  const plano = planosDisponiveis.find((p) => p.numero === escolhido);
+
   return (
     <section id="planos" className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-screen-2xl">
@@ -279,9 +314,47 @@ export function Planos() {
           ))}
         </ul>
 
-        <div className="mt-10 grid gap-6 xl:grid-cols-2">
-          <Plano variante="senior" />
-          <Plano variante="premium" />
+        <div id="escolher-plano" className="mt-10 grid gap-6 xl:grid-cols-2">
+          {planosDisponiveis.map((p) => (
+            <Plano
+              key={p.numero}
+              variante={p.variante}
+              numero={p.numero}
+              selecionado={escolhido === p.numero}
+              onSelecionar={() => setEscolhido(p.numero)}
+            />
+          ))}
+        </div>
+
+        {/* Fluxo de cadastro e pagamento do plano escolhido */}
+        <div className="mt-8 rounded-[1.75rem] border-2 border-primary/25 bg-card p-5 text-center shadow-card sm:p-7">
+          <p className="font-display text-lg font-extrabold text-ink sm:text-xl">
+            {plano
+              ? `Você escolheu o ${plano.nome} — ${plano.preco}`
+              : "Escolha o seu plano acima para seguir para o cadastro"}
+          </p>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+            Depois de escolher, você segue direto para o cadastro e o pagamento
+            com um dos nossos atendentes.
+          </p>
+          <a
+            href={whatsappLink(
+              plano
+                ? `Olá! Quero fazer o cadastro no ${plano.nome} (${plano.preco}) e seguir para o pagamento.`
+                : "Olá! Quero começar agora e escolher o meu plano.",
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-disabled={!plano}
+            className={`mt-5 inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 font-display text-sm font-extrabold tracking-wide transition-transform duration-300 sm:text-base ${
+              plano
+                ? "bg-gradient-primary text-primary-foreground shadow-glow hover:-translate-y-0.5"
+                : "pointer-events-none bg-muted text-muted-foreground"
+            }`}
+          >
+            CONTINUAR PARA O CADASTRO
+            <ArrowRight className="size-5" aria-hidden="true" />
+          </a>
         </div>
 
         <p className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
