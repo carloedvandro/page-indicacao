@@ -24,9 +24,9 @@ export function VideoHeroSection() {
   return (
     <section className="px-4 pb-6 pt-4 sm:px-5 sm:pb-8 sm:pt-6">
       <div className="relative mx-auto min-h-[480px] w-full max-w-[1540px] lg:min-h-[440px] lg:w-[95%]">
-        <div className="relative grid h-full min-h-[480px] w-full py-8 sm:px-9 sm:py-10 lg:min-h-[440px] lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-5 xl:gap-8">
+        <div className="relative grid h-full min-h-[480px] w-full py-8 sm:px-9 sm:py-10 lg:min-h-[440px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-12 lg:px-12 lg:py-5 xl:gap-16">
           {/* Coluna esquerda — texto */}
-          <div className="rise-in order-1 self-start text-left lg:hero-text-offset">
+          <div className="rise-in order-1 min-w-0 self-start text-left">
             {/* Texto superior */}
             <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.78rem,1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
               O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
@@ -59,7 +59,7 @@ export function VideoHeroSection() {
           </div>
 
           {/* Coluna direita — vídeo */}
-          <div className="rise-in order-2 mt-8 w-full self-center lg:mt-0">
+          <div className="rise-in order-2 mt-8 min-w-0 w-full self-center lg:mt-0 lg:self-start">
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
 
