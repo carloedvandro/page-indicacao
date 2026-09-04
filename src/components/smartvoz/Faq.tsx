@@ -53,7 +53,7 @@ const perguntas = [
     icone: CreditCard,
     pergunta: "O que está incluído nos R$ 99,90?",
     resposta:
-      "Internet móvel, Smart Academy, benefícios exclusivos (incluindo auxílio funeral*) e o programa de indicações.",
+      "Um ambiente de capacitação e desenvolvimento, com conteúdos sobre: Marketing Digital; Tráfego Pago e Orgânico; Vendas; Gestão Financeira; Empreendedorismo; Mentalidade; Desenvolvimento Pessoal; e outros conteúdos para ajudar no seu desenvolvimento pessoal e profissional.",
   },
   {
     icone: HelpCircle,
