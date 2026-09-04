@@ -59,7 +59,7 @@ export function VideoHeroSection() {
           </div>
 
           {/* Coluna direita — vídeo */}
-          <div className="rise-in order-2 w-full self-center">
+          <div className="rise-in order-2 mt-8 w-full self-center lg:mt-0">
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
 
