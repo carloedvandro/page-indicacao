@@ -167,16 +167,20 @@ export function HeroCta() {
           filter: drop-shadow(0 12px 10px rgba(0,0,0,.30)) drop-shadow(0 0 12px rgba(158,72,245,.22));
         }
         .hero-cta-flame-outer {
-          animation: heroCtaFlameA .32s ease-in-out infinite alternate;
+          transform-origin: 50% 0;
+          animation: heroCtaFlameA .72s ease-in-out infinite alternate;
         }
         .hero-cta-flame-mid {
-          animation: heroCtaFlameB .26s ease-in-out infinite alternate;
+          transform-origin: 50% 0;
+          animation: heroCtaFlameB .64s ease-in-out infinite alternate;
         }
         .hero-cta-flame-core {
-          animation: heroCtaFlameC .22s ease-in-out infinite alternate;
+          transform-origin: 50% 0;
+          animation: heroCtaFlameC .58s ease-in-out infinite alternate;
         }
         .hero-cta-flame-glow {
-          animation: heroCtaFlameGlow .5s ease-in-out infinite alternate;
+          transform-origin: 50% 0;
+          animation: heroCtaFlameGlow .9s ease-in-out infinite alternate;
         }
         .hero-cta-spark {
           position: absolute;
@@ -238,20 +242,20 @@ export function HeroCta() {
           50% { transform: translateY(-8px); }
         }
         @keyframes heroCtaFlameA {
-          from { transform: translateX(-50%) scaleX(.86) scaleY(.90); }
-          to { transform: translateX(-50%) scaleX(1.10) scaleY(1.15); }
+          from { transform: translateX(-50%) scaleY(.96); }
+          to { transform: translateX(-50%) scaleY(1.06); }
         }
         @keyframes heroCtaFlameB {
-          from { transform: translateX(-50%) scaleX(.88) scaleY(.92); }
-          to { transform: translateX(-50%) scaleX(1.08) scaleY(1.12); }
+          from { transform: translateX(-50%) scaleY(.97); }
+          to { transform: translateX(-50%) scaleY(1.05); }
         }
         @keyframes heroCtaFlameC {
-          from { transform: translateX(-50%) scaleY(.86); }
-          to { transform: translateX(-50%) scaleY(1.18); }
+          from { transform: translateX(-50%) scaleY(.98); }
+          to { transform: translateX(-50%) scaleY(1.04); }
         }
         @keyframes heroCtaFlameGlow {
-          from { opacity: .52; transform: translateX(-50%) scale(.92); }
-          to { opacity: .96; transform: translateX(-50%) scale(1.08); }
+          from { opacity: .58; transform: translateX(-50%) scaleY(.98); }
+          to { opacity: .82; transform: translateX(-50%) scaleY(1.04); }
         }
         @keyframes heroCtaSparkDrop {
           0% { transform: translateY(0) scale(1); opacity: 0; }
@@ -397,7 +401,7 @@ export function HeroCta() {
               <ellipse cx="60" cy="115" rx="22" ry="5" fill="#1a0333" opacity=".45" />
             </svg>
             {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
-            <div className="pointer-events-none absolute left-1/2 top-[76%] w-8 -translate-x-1/2">
+            <div className="pointer-events-none absolute left-[calc(50%-1px)] top-[80%] w-8 -translate-x-1/2">
               <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[42px] w-[40px] rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
               <span
                 className="hero-cta-flame-outer absolute left-1/2 h-[46px] w-[19px]"
