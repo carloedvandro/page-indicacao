@@ -90,10 +90,10 @@ export function HeroCta() {
 
   return (
     <div
-      className="rise-in relative mt-4 w-full overflow-hidden rounded-[2.75rem] text-primary-foreground sm:mt-5"
+      className="rise-in relative mt-4 w-full overflow-hidden rounded-[2rem] text-primary-foreground sm:mt-5"
       style={{
         isolation: "isolate",
-        minHeight: 250,
+        minHeight: 176,
         backgroundImage:
           "radial-gradient(circle at 78% 22%, rgba(177,70,255,.20), transparent 25%), linear-gradient(115deg, #16002d 0%, #23003f 48%, #2a004c 74%, #1a0032 100%)",
         boxShadow:
@@ -243,14 +243,8 @@ export function HeroCta() {
         }
         @media (min-width: 1024px) {
           .hero-cta-grid {
-            grid-template-areas: "rocket copy copy" "rocket mid actions";
-            grid-template-columns: 120px 1fr 1fr;
-          }
-        }
-        @media (min-width: 1280px) {
-          .hero-cta-grid {
             grid-template-areas: "rocket copy mid actions";
-            grid-template-columns: 150px 1.5fr 1fr 1.28fr;
+            grid-template-columns: 112px 1.3fr 1.05fr 1.25fr;
           }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -286,22 +280,22 @@ export function HeroCta() {
 
       {/* Conteúdo */}
       <div
-        className="hero-cta-grid relative z-10 min-h-[250px] items-center gap-5 px-5 py-7 text-center sm:px-6 lg:gap-7 lg:px-8 lg:py-9 lg:text-left"
+        className="hero-cta-grid relative z-10 min-h-[176px] items-center gap-4 px-5 py-6 text-center sm:px-6 lg:gap-6 lg:px-7 lg:py-6 lg:text-left"
       >
         {/* Foguete sem círculo */}
         <div
-          className="relative mx-auto h-[154px] w-32 lg:h-[168px] lg:w-32"
+          className="relative mx-auto h-[120px] w-24 lg:h-[128px] lg:w-[104px]"
           style={{ gridArea: "rocket" }}
         >
           <button
             type="button"
             onClick={toggle}
             aria-label={on ? "Desligar som do foguete" : "Ligar som do foguete"}
-            className="absolute right-0 top-0 z-20 flex size-8 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground/80 backdrop-blur transition hover:bg-primary-foreground/20"
+            className="absolute right-0 top-0 z-20 flex size-7 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground/80 backdrop-blur transition hover:bg-primary-foreground/20"
           >
-            {on ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+            {on ? <Volume2 className="size-3.5" /> : <VolumeX className="size-3.5" />}
           </button>
-          <div className="absolute left-1/2 top-3 w-20 -translate-x-1/2 lg:w-[86px]">
+          <div className="absolute left-1/2 top-1 w-[58px] -translate-x-1/2 lg:w-[62px]">
           <div className="hero-cta-rocket relative w-full">
             <svg
               viewBox="0 0 120 160"
@@ -375,10 +369,10 @@ export function HeroCta() {
               <ellipse cx="60" cy="115" rx="22" ry="5" fill="#1a0333" opacity=".45" />
             </svg>
             {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
-            <div className="pointer-events-none absolute left-1/2 top-[78%] w-10 -translate-x-1/2">
-              <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[58px] w-[54px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
+            <div className="pointer-events-none absolute left-1/2 top-[76%] w-8 -translate-x-1/2">
+              <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[42px] w-[40px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
               <span
-                className="hero-cta-flame-outer absolute left-1/2 h-[66px] w-[26px] -translate-x-1/2"
+                className="hero-cta-flame-outer absolute left-1/2 h-[46px] w-[19px] -translate-x-1/2"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
@@ -388,7 +382,7 @@ export function HeroCta() {
                 }}
               />
               <span
-                className="hero-cta-flame-mid absolute left-1/2 h-[50px] w-[16px] -translate-x-1/2"
+                className="hero-cta-flame-mid absolute left-1/2 h-[34px] w-[12px] -translate-x-1/2"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
@@ -397,7 +391,7 @@ export function HeroCta() {
                 }}
               />
               <span
-                className="hero-cta-flame-core absolute left-1/2 h-[30px] w-2 -translate-x-1/2"
+                className="hero-cta-flame-core absolute left-1/2 h-[22px] w-1.5 -translate-x-1/2"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
@@ -426,7 +420,7 @@ export function HeroCta() {
 
         {/* Título */}
         <div style={{ gridArea: "copy" }}>
-          <p className="font-display text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold leading-[1.05] tracking-tight">
+          <p className="font-display text-[clamp(1.35rem,2.6vw,2rem)] font-extrabold leading-[1.12] tracking-tight">
             Pronto para começar a construir{" "}
             <span style={{ color: "#c992ff" }}>sua carteira?</span>
           </p>
@@ -434,10 +428,10 @@ export function HeroCta() {
 
         {/* Descrição */}
         <div
-          className="mx-auto max-w-sm border-t border-primary-foreground/10 pt-5 lg:mx-0 lg:max-w-none lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0"
+          className="mx-auto max-w-sm border-t border-primary-foreground/10 pt-4 lg:mx-0 lg:max-w-none lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0"
           style={{ gridArea: "mid" }}
         >
-          <p className="text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
+          <p className="text-sm leading-relaxed text-primary-foreground/80 sm:text-base">
             Junte-se a milhares de parceiros que já transformaram indicações em{" "}
             <span className="font-semibold" style={{ color: "#f6c756" }}>
               liberdade financeira
@@ -447,12 +441,12 @@ export function HeroCta() {
         </div>
 
         {/* Ações */}
-        <div className="flex flex-col gap-3" style={{ gridArea: "actions" }}>
+        <div className="flex flex-col gap-2" style={{ gridArea: "actions" }}>
           <a
             href={whatsappLink("Olá! Quero começar agora.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative isolate flex h-[62px] items-center justify-center gap-3 overflow-hidden rounded-full px-7 font-display text-base font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:h-[74px] sm:text-lg"
+            className="relative isolate flex h-[52px] items-center justify-center gap-3 overflow-hidden whitespace-nowrap rounded-full px-6 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:h-[56px] sm:text-base"
             style={{
               backgroundImage: "linear-gradient(180deg,#b954ff,#8e24e6 50%,#7214c9 100%)",
               border: "1px solid rgba(255,255,255,.28)",
@@ -462,9 +456,9 @@ export function HeroCta() {
           >
             <span className="hero-cta-btn-shine" />
             <span className="relative z-10">QUERO COMEÇAR AGORA</span>
-            <ArrowRight className="relative z-10 size-5" aria-hidden="true" />
+            <ArrowRight className="relative z-10 size-4" aria-hidden="true" />
           </a>
-          <p className="flex items-center justify-center gap-2 text-xs text-primary-foreground/70 sm:text-sm">
+          <p className="flex items-center justify-center gap-2 text-xs text-primary-foreground/70">
             <Lock className="size-3.5" aria-hidden="true" />
             Ambiente seguro e 100% online
           </p>
