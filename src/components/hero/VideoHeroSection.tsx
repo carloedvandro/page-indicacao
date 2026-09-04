@@ -24,11 +24,9 @@ export function VideoHeroSection() {
   return (
     <section className="px-4 pb-6 pt-4 sm:px-5 sm:pb-8 sm:pt-6">
       <div className="relative mx-auto min-h-[480px] w-full max-w-[1540px] lg:min-h-[440px] lg:w-[95%]">
-        <HeroBackground />
-
         <div className="relative grid h-full min-h-[480px] w-full px-5 py-8 sm:px-9 sm:py-10 lg:min-h-[440px] lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-5 xl:gap-8">
           {/* Coluna esquerda — texto */}
-          <div className="rise-in order-1 self-start text-left lg:hero-text-offset">
+          <div className="rise-in order-1 self-center text-left lg:hero-text-offset">
             {/* Texto superior */}
             <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.78rem,1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
               O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
