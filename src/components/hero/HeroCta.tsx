@@ -174,6 +174,7 @@ export function HeroCta() {
           85%, 100% { left: 124%; }
         }
         .hero-cta-grid {
+          display: grid;
           grid-template-areas: "rocket" "copy" "mid" "actions";
           grid-template-columns: 1fr;
         }
