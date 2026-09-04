@@ -24,7 +24,7 @@ export function VideoHeroSection() {
   return (
     <section className="px-4 pb-6 pt-4 sm:px-5 sm:pb-8 sm:pt-6">
       <div className="relative mx-auto min-h-[480px] w-full max-w-[1540px] lg:min-h-[440px] lg:w-[95%]">
-        <div className="relative grid h-full min-h-[480px] w-full px-5 py-8 sm:px-9 sm:py-10 lg:min-h-[440px] lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-5 xl:gap-8">
+        <div className="relative grid h-full min-h-[480px] w-full py-8 sm:px-9 sm:py-10 lg:min-h-[440px] lg:grid-cols-[47%_minmax(0,1fr)] lg:px-12 lg:py-5 xl:gap-8">
           {/* Coluna esquerda — texto */}
           <div className="rise-in order-1 self-start text-left lg:hero-text-offset">
             {/* Texto superior */}
@@ -49,7 +49,7 @@ export function VideoHeroSection() {
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text text-pretty font-display text-[clamp(1.25rem,1.75vw,1.8rem)] font-bold leading-[1.18] text-transparent lg:whitespace-nowrap"
+              className="mt-2 bg-clip-text font-display text-[clamp(0.9rem,4.3vw,1.5rem)] font-bold leading-[1.18] text-transparent whitespace-nowrap"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
@@ -59,7 +59,7 @@ export function VideoHeroSection() {
           </div>
 
           {/* Coluna direita — vídeo */}
-          <div className="rise-in order-2 w-full self-center">
+          <div className="rise-in order-2 mt-8 w-full self-center lg:mt-0">
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
 
