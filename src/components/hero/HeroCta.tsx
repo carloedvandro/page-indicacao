@@ -401,7 +401,7 @@ export function HeroCta() {
               <ellipse cx="60" cy="115" rx="22" ry="5" fill="#1a0333" opacity=".45" />
             </svg>
             {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
-            <div className="pointer-events-none absolute left-[calc(50%-1px)] top-[80%] w-8 -translate-x-1/2">
+            <div className="pointer-events-none absolute left-1/2 top-[80%] -ml-px w-8 -translate-x-1/2">
               <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[42px] w-[40px] rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
               <span
                 className="hero-cta-flame-outer absolute left-1/2 h-[46px] w-[19px]"
