@@ -1,28 +1,28 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Lock, Satellite, Volume2, VolumeX } from "lucide-react";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const METEORS = [
-  { top: "12%", left: "4%", len: 110, dur: 2.6, delay: 0.2, gold: false },
-  { top: "28%", left: "18%", len: 80, dur: 3.1, delay: 1.4, gold: true },
-  { top: "8%", left: "55%", len: 130, dur: 2.3, delay: 2.1, gold: false },
-  { top: "42%", left: "62%", len: 90, dur: 2.8, delay: 0.7, gold: false },
-  { top: "18%", left: "80%", len: 100, dur: 3.4, delay: 3.0, gold: true },
-  { top: "52%", left: "36%", len: 75, dur: 2.0, delay: 1.1, gold: false },
-  { top: "34%", left: "88%", len: 120, dur: 2.5, delay: 0.5, gold: false },
+  { top: "12%", left: "4%", len: 110, dur: 6.8, delay: 0.5, gold: false },
+  { top: "28%", left: "18%", len: 80, dur: 8.1, delay: 3.6, gold: true },
+  { top: "8%", left: "55%", len: 130, dur: 6.0, delay: 5.5, gold: false },
+  { top: "42%", left: "62%", len: 90, dur: 7.3, delay: 1.8, gold: false },
+  { top: "18%", left: "80%", len: 100, dur: 8.8, delay: 7.8, gold: true },
+  { top: "52%", left: "36%", len: 75, dur: 5.2, delay: 2.9, gold: false },
+  { top: "34%", left: "88%", len: 120, dur: 6.5, delay: 1.3, gold: false },
 ];
 
 const SPARKS = [
-  { x: "40%", dur: 0.9, drift: "-6px", delay: 0.1 },
-  { x: "46%", dur: 0.7, drift: "4px", delay: 0.3 },
-  { x: "52%", dur: 1.0, drift: "-3px", delay: 0.5 },
-  { x: "58%", dur: 0.8, drift: "7px", delay: 0.2 },
-  { x: "43%", dur: 0.9, drift: "-5px", delay: 0.7 },
-  { x: "49%", dur: 0.7, drift: "2px", delay: 0.4 },
-  { x: "55%", dur: 1.1, drift: "-8px", delay: 0.6 },
-  { x: "61%", dur: 0.8, drift: "5px", delay: 0.9 },
-  { x: "47%", dur: 0.9, drift: "-4px", delay: 1.0 },
-  { x: "53%", dur: 0.7, drift: "6px", delay: 1.2 },
+  { x: "40%", dur: 1.80, drift: "-6px", delay: 0.20 },
+  { x: "46%", dur: 1.40, drift: "4px", delay: 0.60 },
+  { x: "52%", dur: 2.00, drift: "-3px", delay: 1.00 },
+  { x: "58%", dur: 1.60, drift: "7px", delay: 0.40 },
+  { x: "43%", dur: 1.80, drift: "-5px", delay: 1.40 },
+  { x: "49%", dur: 1.40, drift: "2px", delay: 0.80 },
+  { x: "55%", dur: 2.20, drift: "-8px", delay: 1.20 },
+  { x: "61%", dur: 1.60, drift: "5px", delay: 1.80 },
+  { x: "47%", dur: 1.80, drift: "-4px", delay: 2.00 },
+  { x: "53%", dur: 1.40, drift: "6px", delay: 2.40 },
 ];
 
 /** Som contínuo de propulsão (ruído filtrado) gerado no navegador. */
@@ -128,7 +128,7 @@ export function HeroCta() {
             rgba(255,255,255,.98) 100%);
           filter: drop-shadow(0 0 8px rgba(179,91,255,.65));
           opacity: 0;
-          animation: heroCtaMeteorFall var(--dur) ease-in var(--delay) infinite;
+          animation: heroCtaMeteorFall var(--dur) linear var(--delay) infinite;
         }
         .hero-cta-meteor.gold {
           background: linear-gradient(90deg,
@@ -163,20 +163,20 @@ export function HeroCta() {
           z-index: 2;
         }
         .hero-cta-rocket {
-          animation: heroCtaRocketFloat 2.2s ease-in-out infinite;
+          animation: heroCtaRocketFloat 5.2s ease-in-out infinite;
           filter: drop-shadow(0 12px 10px rgba(0,0,0,.30)) drop-shadow(0 0 12px rgba(158,72,245,.22));
         }
         .hero-cta-flame-outer {
-          animation: heroCtaFlameA .10s ease-in-out infinite alternate;
+          animation: heroCtaFlameA .32s ease-in-out infinite alternate;
         }
         .hero-cta-flame-mid {
-          animation: heroCtaFlameB .075s ease-in-out infinite alternate;
+          animation: heroCtaFlameB .26s ease-in-out infinite alternate;
         }
         .hero-cta-flame-core {
-          animation: heroCtaFlameC .06s ease-in-out infinite alternate;
+          animation: heroCtaFlameC .22s ease-in-out infinite alternate;
         }
         .hero-cta-flame-glow {
-          animation: heroCtaFlameGlow .14s ease-in-out infinite alternate;
+          animation: heroCtaFlameGlow .5s ease-in-out infinite alternate;
         }
         .hero-cta-spark {
           position: absolute;
@@ -191,6 +191,32 @@ export function HeroCta() {
           animation: heroCtaSparkDrop var(--dur) linear infinite;
           animation-delay: var(--delay);
         }
+        .hero-cta-satellite {
+          position: absolute;
+          top: 22%;
+          left: -12%;
+          width: 30px;
+          height: 30px;
+          color: rgba(226,204,255,.85);
+          opacity: .9;
+          animation: heroCtaSatellite 26s linear infinite;
+          pointer-events: none;
+          z-index: 3;
+        }
+        .hero-cta-satellite-2 {
+          top: 66%;
+          width: 22px;
+          height: 22px;
+          opacity: .55;
+          animation-duration: 38s;
+          animation-delay: 9s;
+        }
+        @keyframes heroCtaSatellite {
+          0% { transform: translate3d(0,0,0) rotate(-8deg); opacity: 0; }
+          6% { opacity: .9; }
+          92% { opacity: .9; }
+          100% { transform: translate3d(120vw,-40px,0) rotate(12deg); opacity: 0; }
+        }
         .hero-cta-btn-shine {
           position: absolute;
           top: -50%;
@@ -199,7 +225,7 @@ export function HeroCta() {
           height: 200%;
           background: linear-gradient(90deg, transparent, rgba(255,255,255,.68), transparent);
           transform: rotate(18deg);
-          animation: heroCtaBtnShine 3.3s ease-in-out infinite;
+          animation: heroCtaBtnShine 6.5s ease-in-out infinite;
         }
         @keyframes heroCtaMeteorFall {
           0% { opacity: 0; transform: translate3d(0,0,0) rotate(-28deg) scaleX(.7); }
@@ -208,8 +234,8 @@ export function HeroCta() {
           100% { opacity: 0; transform: translate3d(340px,170px,0) rotate(-28deg) scaleX(1.08); }
         }
         @keyframes heroCtaRocketFloat {
-          0%, 100% { transform: translateY(6px) rotate(-1.2deg); }
-          50% { transform: translateY(-11px) rotate(1.2deg); }
+          0%, 100% { transform: translateY(5px); }
+          50% { transform: translateY(-8px); }
         }
         @keyframes heroCtaFlameA {
           from { transform: translateX(-50%) scaleX(.86) scaleY(.90); }
@@ -248,7 +274,7 @@ export function HeroCta() {
           }
         }
         @media (prefers-reduced-motion: reduce) {
-          .hero-cta-meteor, .hero-cta-rocket, .hero-cta-flame-outer, .hero-cta-flame-mid,
+          .hero-cta-meteor, .hero-cta-rocket, .hero-cta-satellite, .hero-cta-flame-outer, .hero-cta-flame-mid,
           .hero-cta-flame-core, .hero-cta-flame-glow, .hero-cta-spark, .hero-cta-btn-shine {
             animation: none !important;
           }
@@ -370,9 +396,9 @@ export function HeroCta() {
             </svg>
             {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
             <div className="pointer-events-none absolute left-1/2 top-[76%] w-8 -translate-x-1/2">
-              <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[42px] w-[40px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
+              <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[42px] w-[40px] rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
               <span
-                className="hero-cta-flame-outer absolute left-1/2 h-[46px] w-[19px] -translate-x-1/2"
+                className="hero-cta-flame-outer absolute left-1/2 h-[46px] w-[19px]"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
@@ -382,7 +408,7 @@ export function HeroCta() {
                 }}
               />
               <span
-                className="hero-cta-flame-mid absolute left-1/2 h-[34px] w-[12px] -translate-x-1/2"
+                className="hero-cta-flame-mid absolute left-1/2 h-[34px] w-[12px]"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
@@ -391,7 +417,7 @@ export function HeroCta() {
                 }}
               />
               <span
-                className="hero-cta-flame-core absolute left-1/2 h-[22px] w-1.5 -translate-x-1/2"
+                className="hero-cta-flame-core absolute left-1/2 h-[22px] w-1.5"
                 style={{
                   borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
