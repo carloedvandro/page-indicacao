@@ -195,32 +195,14 @@ export function HeroCta() {
           animation: heroCtaSparkDrop var(--dur) linear infinite;
           animation-delay: var(--delay);
         }
-        .hero-cta-satellite {
+        .hero-cta-vignette {
           position: absolute;
-          top: 22%;
-          left: -12%;
-          width: 30px;
-          height: 30px;
-          color: rgba(226,204,255,.85);
-          opacity: .9;
-          animation: heroCtaSatellite 26s linear infinite;
+          inset: 0;
           pointer-events: none;
-          z-index: 3;
+          background:
+            radial-gradient(120% 100% at 50% 50%, transparent 45%, rgba(6,0,16,.55) 100%);
         }
-        .hero-cta-satellite-2 {
-          top: 66%;
-          width: 22px;
-          height: 22px;
-          opacity: .55;
-          animation-duration: 38s;
-          animation-delay: 9s;
-        }
-        @keyframes heroCtaSatellite {
-          0% { transform: translate3d(0,0,0) rotate(-8deg); opacity: 0; }
-          6% { opacity: .9; }
-          92% { opacity: .9; }
-          100% { transform: translate3d(120vw,-40px,0) rotate(12deg); opacity: 0; }
-        }
+
         .hero-cta-btn-shine {
           position: absolute;
           top: -50%;
