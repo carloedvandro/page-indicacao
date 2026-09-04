@@ -303,6 +303,8 @@ export function HeroCta() {
 
       {/* Brilho ambiente atrás do botão */}
       <span aria-hidden="true" className="hero-cta-glow" />
+      <Satellite className="hero-cta-satellite" aria-hidden="true" />
+      <Satellite className="hero-cta-satellite hero-cta-satellite-2" aria-hidden="true" />
 
       {/* Conteúdo */}
       <div
