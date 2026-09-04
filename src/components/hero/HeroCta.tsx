@@ -310,20 +310,19 @@ export function HeroCta() {
               aria-hidden="true"
             >
               <defs>
-                <linearGradient id="ctaBodyGrad" x1="60" y1="0" x2="60" y2="120" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#f3e7ff" />
-                  <stop offset=".35" stopColor="#ffffff" />
-                  <stop offset=".75" stopColor="#d9c2ff" />
-                  <stop offset="1" stopColor="#b388ff" />
+                <linearGradient id="ctaBodyGrad" x1="30" y1="10" x2="96" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#c07aff" />
+                  <stop offset=".45" stopColor="#9b3ef0" />
+                  <stop offset="1" stopColor="#5c11a8" />
                 </linearGradient>
-                <linearGradient id="ctaNoseGrad" x1="60" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#ffffff" />
-                  <stop offset=".55" stopColor="#e4ccff" />
-                  <stop offset="1" stopColor="#a66bff" />
+                <linearGradient id="ctaNoseGrad" x1="60" y1="0" x2="60" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#ffe9a8" />
+                  <stop offset=".5" stopColor="#f6c756" />
+                  <stop offset="1" stopColor="#d99b1c" />
                 </linearGradient>
                 <linearGradient id="ctaFinGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stopColor="#8e24e6" />
-                  <stop offset="1" stopColor="#4a0e8a" />
+                  <stop offset="0" stopColor="#ffd980" />
+                  <stop offset="1" stopColor="#d99b1c" />
                 </linearGradient>
                 <linearGradient id="ctaWindowGrad" x1="38" y1="24" x2="62" y2="52" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stopColor="#e8f8ff" />
