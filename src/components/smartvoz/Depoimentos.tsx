@@ -41,6 +41,15 @@ export function Depoimentos() {
   return (
     <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-screen-2xl">
+        <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
+          <p className="eyebrow-pill">
+            <Star className="size-4 text-primary" aria-hidden="true" />
+            <span className="text-primary">
+              RESULTADOS REAIS. PESSOAS REAIS.
+            </span>
+          </p>
+        </div>
+
         <div className="mt-8 text-center">
           <h2 className="text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
             Veja quem já começou a construir{" "}
