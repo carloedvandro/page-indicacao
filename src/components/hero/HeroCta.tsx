@@ -1,16 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Lock, Satellite, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
 import { whatsappLink } from "@/lib/smartvoz";
 
-const METEORS = [
-  { top: "12%", left: "4%", len: 110, dur: 6.8, delay: 0.5, gold: false },
-  { top: "28%", left: "18%", len: 80, dur: 8.1, delay: 3.6, gold: true },
-  { top: "8%", left: "55%", len: 130, dur: 6.0, delay: 5.5, gold: false },
-  { top: "42%", left: "62%", len: 90, dur: 7.3, delay: 1.8, gold: false },
-  { top: "18%", left: "80%", len: 100, dur: 8.8, delay: 7.8, gold: true },
-  { top: "52%", left: "36%", len: 75, dur: 5.2, delay: 2.9, gold: false },
-  { top: "34%", left: "88%", len: 120, dur: 6.5, delay: 1.3, gold: false },
-];
 
 const SPARKS = [
   { x: "40%", dur: 1.80, drift: "-6px", delay: 0.20 },
