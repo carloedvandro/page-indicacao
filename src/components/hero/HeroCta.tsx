@@ -86,6 +86,8 @@ function useRocketSound() {
 }
 
 export function HeroCta() {
+  const { on, toggle } = useRocketSound();
+
   return (
     <div
       className="rise-in relative mt-4 w-full overflow-hidden rounded-[2.75rem] text-primary-foreground sm:mt-5"
