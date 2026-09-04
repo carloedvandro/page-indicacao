@@ -173,6 +173,22 @@ export function HeroCta() {
           0%, 55% { left: -34%; }
           85%, 100% { left: 124%; }
         }
+        .hero-cta-grid {
+          grid-template-areas: "rocket" "copy" "mid" "actions";
+          grid-template-columns: 1fr;
+        }
+        @media (min-width: 1024px) {
+          .hero-cta-grid {
+            grid-template-areas: "rocket copy copy" "rocket mid actions";
+            grid-template-columns: 120px 1fr 1fr;
+          }
+        }
+        @media (min-width: 1280px) {
+          .hero-cta-grid {
+            grid-template-areas: "rocket copy mid actions";
+            grid-template-columns: 150px 1.5fr 1fr 1.28fr;
+          }
+        }
         @media (prefers-reduced-motion: reduce) {
           .hero-cta-meteor, .hero-cta-rocket, .hero-cta-flame-outer, .hero-cta-flame-mid,
           .hero-cta-flame-core, .hero-cta-flame-glow, .hero-cta-spark, .hero-cta-btn-shine {
