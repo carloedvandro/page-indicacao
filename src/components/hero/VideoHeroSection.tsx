@@ -65,41 +65,6 @@ export function VideoHeroSection() {
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
           </div>
 
-          {/* Botão ASSISTA AO VÍDEO
-              Mobile: fica abaixo do vídeo (order-3) e centralizado.
-              Desktop: retorna à coluna da esquerda, abaixo do texto. */}
-          <div className="rise-in order-3 flex w-full justify-center lg:col-start-1 lg:row-start-2 lg:justify-start">
-            <button
-              type="button"
-              onClick={tocarVideo}
-              aria-label="Assista ao vídeo e entenda como funciona"
-              className="group mt-5 flex w-full max-w-[21rem] items-center gap-3.5 rounded-[16px] bg-white px-4.5 py-3 text-left shadow-[0_10px_30px_-14px_rgba(8,3,16,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-14px_rgba(8,3,16,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:max-w-[22rem] sm:px-5 lg:mt-8"
-            >
-              {/* Play estilo YouTube */}
-              <span
-                className="flex size-10 shrink-0 items-center justify-center rounded-full sm:size-11"
-                style={{ backgroundColor: "#FF0000" }}
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="ml-0.5 size-4.5 sm:size-5"
-                  fill="#FFFFFF"
-                  aria-hidden="true"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </span>
-
-              <span className="min-w-0">
-                <span className="block whitespace-nowrap font-display text-[0.88rem] font-extrabold tracking-[0.02em] text-[#1B0A2A] sm:text-[0.95rem]">
-                  ASSISTA AO VÍDEO
-                </span>
-                <span className="mt-0.5 block whitespace-nowrap font-display text-[0.58rem] font-semibold tracking-[0.14em] text-[#5B21B6] sm:text-[0.64rem]">
-                  E ENTENDA COMO FUNCIONA
-                </span>
-              </span>
-            </button>
-          </div>
         </div>
       </div>
     </section>
