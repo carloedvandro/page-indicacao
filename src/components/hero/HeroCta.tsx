@@ -291,6 +291,14 @@ export function HeroCta() {
           className="relative mx-auto h-[154px] w-32 lg:h-[168px] lg:w-32"
           style={{ gridArea: "rocket" }}
         >
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={on ? "Desligar som do foguete" : "Ligar som do foguete"}
+            className="absolute right-0 top-0 z-20 flex size-8 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground/80 backdrop-blur transition hover:bg-primary-foreground/20"
+          >
+            {on ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+          </button>
           <div className="hero-cta-rocket absolute left-1/2 top-3 w-20 lg:w-[82px]">
             <svg
               viewBox="0 0 120 160"
