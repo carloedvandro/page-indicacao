@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { HeroBackground } from "./HeroBackground";
 import { VideoPlayer } from "./VideoPlayer";
 import { HeroCta } from "./HeroCta";
 
