@@ -231,11 +231,17 @@ export function HeroCta() {
           transform: rotate(18deg);
           animation: heroCtaBtnShine 6.5s ease-in-out infinite;
         }
-        @keyframes heroCtaMeteorFall {
-          0% { opacity: 0; transform: translate3d(0,0,0) rotate(-28deg) scaleX(.7); }
-          8% { opacity: 1; }
-          45% { opacity: 1; }
-          100% { opacity: 0; transform: translate3d(340px,170px,0) rotate(-28deg) scaleX(1.08); }
+        @keyframes heroCtaNebula {
+          0%, 100% { transform: translate3d(-2%, 0, 0) scale(1.05); opacity: .85; }
+          50% { transform: translate3d(2%, -1.5%, 0) scale(1.12); opacity: 1; }
+        }
+        @keyframes heroCtaDust {
+          from { background-position: 0 0, 0 0; }
+          to { background-position: -600px 0, -300px 40px; }
+        }
+        @keyframes heroCtaTwinkle {
+          0%, 100% { opacity: .35; }
+          50% { opacity: .85; }
         }
         @keyframes heroCtaRocketFloat {
           0%, 100% { transform: translateY(5px); }
