@@ -285,30 +285,16 @@ export function HeroCta() {
         }
       `}</style>
 
-      {/* Fundo estrelado */}
+      {/* Nebulosa e poeira estelar */}
+      <span aria-hidden="true" className="hero-cta-nebula" />
+      <span aria-hidden="true" className="hero-cta-dust" />
       <span aria-hidden="true" className="hero-cta-star-field" />
-
-      {/* Meteoros */}
-      <span aria-hidden="true" className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
-        {METEORS.map((m, i) => (
-          <span
-            key={i}
-            className={`hero-cta-meteor ${m.gold ? "gold" : ""}`}
-            style={{
-              ["--top" as string]: m.top,
-              ["--left" as string]: m.left,
-              ["--len" as string]: `${m.len}px`,
-              ["--dur" as string]: `${m.dur}s`,
-              ["--delay" as string]: `${m.delay}s`,
-            }}
-          />
-        ))}
-      </span>
+      <span aria-hidden="true" className="hero-cta-star-field hero-cta-star-field-2" />
+      <span aria-hidden="true" className="hero-cta-vignette" />
 
       {/* Brilho ambiente atrás do botão */}
       <span aria-hidden="true" className="hero-cta-glow" />
-      <Satellite className="hero-cta-satellite" aria-hidden="true" />
-      <Satellite className="hero-cta-satellite hero-cta-satellite-2" aria-hidden="true" />
+
 
       {/* Conteúdo */}
       <div
