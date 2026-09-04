@@ -87,7 +87,7 @@ export function HeroCta() {
 
   return (
     <div
-      className="rise-in relative mt-4 w-full overflow-hidden rounded-[2rem] text-primary-foreground sm:mt-5"
+      className="rise-in relative mt-4 w-full overflow-hidden rounded-[2rem] text-primary-foreground sm:mt-5 lg:-mt-[18px]"
       style={{
         isolation: "isolate",
         minHeight: 176,
