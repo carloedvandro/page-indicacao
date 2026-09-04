@@ -26,7 +26,7 @@ export function VideoHeroSection() {
       <div className="relative mx-auto min-h-[460px] w-full max-w-[1540px] lg:min-h-[420px] lg:w-[95%]">
         <div className="relative grid h-full min-h-[460px] w-full py-4 sm:px-9 sm:py-6 lg:min-h-[420px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-12 lg:px-12 lg:py-3 xl:gap-16">
           {/* Coluna esquerda — texto */}
-          <div className="rise-in order-1 min-w-0 self-start text-left">
+          <div className="rise-in order-1 min-w-0 self-start text-left lg:pl-6">
             {/* Texto superior */}
             <p className="max-[380px]:whitespace-normal whitespace-nowrap font-display text-[clamp(0.78rem,1vw,1rem)] font-bold uppercase leading-snug tracking-[0.02em] text-ink">
               O PODER DA <span className="text-[#7C3AED]">RECORRÊNCIA</span> E DA{" "}
