@@ -49,7 +49,7 @@ export function VideoHeroSection() {
               A pergunta é:
             </p>
             <p
-              className="mt-2 bg-clip-text text-pretty font-display text-[clamp(1.25rem,1.75vw,1.8rem)] font-bold leading-[1.18] text-transparent lg:whitespace-nowrap"
+              className="mt-2 bg-clip-text font-display text-[clamp(0.9rem,4.3vw,1.5rem)] font-bold leading-[1.18] text-transparent whitespace-nowrap"
               style={{
                 backgroundImage: "linear-gradient(100deg, #A855F7, #7C3AED)",
               }}
