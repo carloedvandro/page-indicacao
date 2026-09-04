@@ -1,4 +1,5 @@
-import { ArrowRight, Lock } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
 import { whatsappLink } from "@/lib/smartvoz";
 
 const METEORS = [
@@ -12,19 +13,81 @@ const METEORS = [
 ];
 
 const SPARKS = [
-  { x: "22%", dur: 0.9, drift: "-6px", delay: 0.1 },
-  { x: "38%", dur: 0.7, drift: "4px", delay: 0.3 },
+  { x: "40%", dur: 0.9, drift: "-6px", delay: 0.1 },
+  { x: "46%", dur: 0.7, drift: "4px", delay: 0.3 },
   { x: "52%", dur: 1.0, drift: "-3px", delay: 0.5 },
-  { x: "66%", dur: 0.8, drift: "7px", delay: 0.2 },
-  { x: "28%", dur: 0.9, drift: "-5px", delay: 0.7 },
-  { x: "46%", dur: 0.7, drift: "2px", delay: 0.4 },
-  { x: "60%", dur: 1.1, drift: "-8px", delay: 0.6 },
-  { x: "74%", dur: 0.8, drift: "5px", delay: 0.9 },
-  { x: "34%", dur: 0.9, drift: "-4px", delay: 1.0 },
-  { x: "56%", dur: 0.7, drift: "6px", delay: 1.2 },
+  { x: "58%", dur: 0.8, drift: "7px", delay: 0.2 },
+  { x: "43%", dur: 0.9, drift: "-5px", delay: 0.7 },
+  { x: "49%", dur: 0.7, drift: "2px", delay: 0.4 },
+  { x: "55%", dur: 1.1, drift: "-8px", delay: 0.6 },
+  { x: "61%", dur: 0.8, drift: "5px", delay: 0.9 },
+  { x: "47%", dur: 0.9, drift: "-4px", delay: 1.0 },
+  { x: "53%", dur: 0.7, drift: "6px", delay: 1.2 },
 ];
 
+/** Som contínuo de propulsão (ruído filtrado) gerado no navegador. */
+function useRocketSound() {
+  const [on, setOn] = useState(false);
+  const ctxRef = useRef<AudioContext | null>(null);
+  const stopRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    if (!on) {
+      stopRef.current?.();
+      stopRef.current = null;
+      return;
+    }
+    const AC =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    const ctx = ctxRef.current ?? new AC();
+    ctxRef.current = ctx;
+    void ctx.resume();
+
+    const frames = Math.floor(ctx.sampleRate * 2);
+    const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    let last = 0;
+    for (let i = 0; i < frames; i++) {
+      const white = Math.random() * 2 - 1;
+      last = 0.02 * white + 0.98 * last;
+      data[i] = last * 3.2;
+    }
+
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+    src.loop = true;
+
+    const lp = ctx.createBiquadFilter();
+    lp.type = "lowpass";
+    lp.frequency.value = 620;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    gain.gain.linearRampToValueAtTime(0.16, ctx.currentTime + 0.5);
+
+    src.connect(lp).connect(gain).connect(ctx.destination);
+    src.start();
+
+    stopRef.current = () => {
+      try {
+        gain.gain.cancelScheduledValues(ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+        src.stop(ctx.currentTime + 0.35);
+      } catch {
+        /* noop */
+      }
+    };
+    return () => stopRef.current?.();
+  }, [on]);
+
+  return { on, toggle: () => setOn((v) => !v) };
+}
+
 export function HeroCta() {
+  const { on, toggle } = useRocketSound();
+
   return (
     <div
       className="rise-in relative mt-4 w-full overflow-hidden rounded-[2.75rem] text-primary-foreground sm:mt-5"
@@ -230,6 +293,14 @@ export function HeroCta() {
           className="relative mx-auto h-[154px] w-32 lg:h-[168px] lg:w-32"
           style={{ gridArea: "rocket" }}
         >
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={on ? "Desligar som do foguete" : "Ligar som do foguete"}
+            className="absolute right-0 top-0 z-20 flex size-8 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground/80 backdrop-blur transition hover:bg-primary-foreground/20"
+          >
+            {on ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+          </button>
           <div className="hero-cta-rocket absolute left-1/2 top-3 w-20 lg:w-[82px]">
             <svg
               viewBox="0 0 120 160"
@@ -239,20 +310,19 @@ export function HeroCta() {
               aria-hidden="true"
             >
               <defs>
-                <linearGradient id="ctaBodyGrad" x1="60" y1="0" x2="60" y2="120" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#f3e7ff" />
-                  <stop offset=".35" stopColor="#ffffff" />
-                  <stop offset=".75" stopColor="#d9c2ff" />
-                  <stop offset="1" stopColor="#b388ff" />
+                <linearGradient id="ctaBodyGrad" x1="30" y1="10" x2="96" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#c07aff" />
+                  <stop offset=".45" stopColor="#9b3ef0" />
+                  <stop offset="1" stopColor="#5c11a8" />
                 </linearGradient>
-                <linearGradient id="ctaNoseGrad" x1="60" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#ffffff" />
-                  <stop offset=".55" stopColor="#e4ccff" />
-                  <stop offset="1" stopColor="#a66bff" />
+                <linearGradient id="ctaNoseGrad" x1="60" y1="0" x2="60" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#ffe9a8" />
+                  <stop offset=".5" stopColor="#f6c756" />
+                  <stop offset="1" stopColor="#d99b1c" />
                 </linearGradient>
                 <linearGradient id="ctaFinGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stopColor="#8e24e6" />
-                  <stop offset="1" stopColor="#4a0e8a" />
+                  <stop offset="0" stopColor="#ffd980" />
+                  <stop offset="1" stopColor="#d99b1c" />
                 </linearGradient>
                 <linearGradient id="ctaWindowGrad" x1="38" y1="24" x2="62" y2="52" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stopColor="#e8f8ff" />
@@ -272,54 +342,53 @@ export function HeroCta() {
               <path d="M60 58 L60 108" stroke="#7a35c9" strokeWidth="1.5" opacity="0.35" />
               <path d="M44 74 L76 74" stroke="#7a35c9" strokeWidth="1.5" opacity="0.25" />
             </svg>
-          </div>
+            {/* Chamas — ancoradas ao foguete (acompanham o movimento) */}
+            <div className="pointer-events-none absolute left-1/2 top-[78%] w-10 -translate-x-1/2">
+              <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[58px] w-[54px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
+              <span
+                className="hero-cta-flame-outer absolute left-1/2 h-[58px] w-[30px] -translate-x-1/2"
+                style={{
+                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  mixBlendMode: "screen",
+                  background:
+                    "linear-gradient(180deg,#fff 0 7%,#d9f5ff 10%,#7ed8ff 27%,#168bff 53%,#0545c8 73%,rgba(5,69,200,0) 100%)",
+                  filter: "drop-shadow(0 7px 11px rgba(19,129,255,.45))",
+                }}
+              />
+              <span
+                className="hero-cta-flame-mid absolute left-1/2 h-11 w-[19px] -translate-x-1/2"
+                style={{
+                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  mixBlendMode: "screen",
+                  background:
+                    "linear-gradient(180deg,#fff 0 14%,#dff7ff 25%,#8fddff 47%,#278fff 72%,rgba(39,143,255,0) 100%)",
+                }}
+              />
+              <span
+                className="hero-cta-flame-core absolute left-1/2 h-[30px] w-2 -translate-x-1/2"
+                style={{
+                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  mixBlendMode: "screen",
+                  background:
+                    "linear-gradient(180deg,#fff 0 46%,#c8f5ff 59%,#8ee3ff 73%,rgba(142,227,255,0) 100%)",
+                }}
+              />
 
-          {/* Chamas */}
-          <div className="pointer-events-none absolute left-1/2 top-[88px] w-10 -translate-x-1/2">
-            <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[58px] w-[54px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
-            <span
-              className="hero-cta-flame-outer absolute left-1/2 h-[58px] w-[30px] -translate-x-1/2"
-              style={{
-                borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
-                mixBlendMode: "screen",
-                background:
-                  "linear-gradient(180deg,#fff 0 7%,#d9f5ff 10%,#7ed8ff 27%,#168bff 53%,#0545c8 73%,rgba(5,69,200,0) 100%)",
-                filter: "drop-shadow(0 7px 11px rgba(19,129,255,.45))",
-              }}
-            />
-            <span
-              className="hero-cta-flame-mid absolute left-1/2 h-11 w-[19px] -translate-x-1/2"
-              style={{
-                borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
-                mixBlendMode: "screen",
-                background:
-                  "linear-gradient(180deg,#fff 0 14%,#dff7ff 25%,#8fddff 47%,#278fff 72%,rgba(39,143,255,0) 100%)",
-              }}
-            />
-            <span
-              className="hero-cta-flame-core absolute left-1/2 h-[30px] w-2 -translate-x-1/2"
-              style={{
-                borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
-                mixBlendMode: "screen",
-                background:
-                  "linear-gradient(180deg,#fff 0 46%,#c8f5ff 59%,#8ee3ff 73%,rgba(142,227,255,0) 100%)",
-              }}
-            />
+              {/* Fagulhas */}
+              {SPARKS.map((s, i) => (
+                <span
+                  key={i}
+                  className="hero-cta-spark"
+                  style={{
+                    ["--x" as string]: s.x,
+                    ["--dur" as string]: `${s.dur}s`,
+                    ["--drift" as string]: s.drift,
+                    ["--delay" as string]: `${s.delay}s`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
-
-          {/* Fagulhas */}
-          {SPARKS.map((s, i) => (
-            <span
-              key={i}
-              className="hero-cta-spark"
-              style={{
-                ["--x" as string]: s.x,
-                ["--dur" as string]: `${s.dur}s`,
-                ["--drift" as string]: s.drift,
-                ["--delay" as string]: `${s.delay}s`,
-              }}
-            />
-          ))}
         </div>
 
         {/* Título */}
