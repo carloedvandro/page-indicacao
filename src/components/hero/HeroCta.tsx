@@ -1,16 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Lock, Satellite, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Lock, Volume2, VolumeX } from "lucide-react";
 import { whatsappLink } from "@/lib/smartvoz";
 
-const METEORS = [
-  { top: "12%", left: "4%", len: 110, dur: 6.8, delay: 0.5, gold: false },
-  { top: "28%", left: "18%", len: 80, dur: 8.1, delay: 3.6, gold: true },
-  { top: "8%", left: "55%", len: 130, dur: 6.0, delay: 5.5, gold: false },
-  { top: "42%", left: "62%", len: 90, dur: 7.3, delay: 1.8, gold: false },
-  { top: "18%", left: "80%", len: 100, dur: 8.8, delay: 7.8, gold: true },
-  { top: "52%", left: "36%", len: 75, dur: 5.2, delay: 2.9, gold: false },
-  { top: "34%", left: "88%", len: 120, dur: 6.5, delay: 1.3, gold: false },
-];
 
 const SPARKS = [
   { x: "40%", dur: 1.80, drift: "-6px", delay: 0.20 },
@@ -101,55 +92,50 @@ export function HeroCta() {
       }}
     >
       <style>{`
+        .hero-cta-nebula {
+          position: absolute;
+          inset: -12%;
+          pointer-events: none;
+          background:
+            radial-gradient(38% 62% at 22% 32%, rgba(150,60,235,.42), transparent 68%),
+            radial-gradient(46% 70% at 68% 68%, rgba(84,26,168,.46), transparent 70%),
+            radial-gradient(30% 46% at 84% 22%, rgba(214,132,255,.24), transparent 72%),
+            radial-gradient(34% 50% at 46% 84%, rgba(30,8,72,.55), transparent 72%);
+          filter: blur(24px) saturate(115%);
+          animation: heroCtaNebula 42s ease-in-out infinite;
+        }
+        .hero-cta-dust {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          opacity: .35;
+          mix-blend-mode: screen;
+          background-image:
+            radial-gradient(circle, rgba(255,255,255,.42) .6px, transparent .7px),
+            radial-gradient(circle, rgba(216,180,255,.32) .5px, transparent .6px);
+          background-size: 160px 90px, 90px 120px;
+          animation: heroCtaDust 90s linear infinite;
+        }
         .hero-cta-star-field {
           position: absolute;
           inset: 0;
+          pointer-events: none;
           background-image:
-            radial-gradient(circle, rgba(206,160,255,.26) 1px, transparent 1px),
-            radial-gradient(circle, rgba(255,255,255,.10) .8px, transparent .8px);
-          background-size: 20px 20px, 34px 34px;
-          background-position: 0 0, 8px 10px;
-          opacity: .70;
-          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 96%, transparent 100%);
+            radial-gradient(circle, rgba(255,255,255,.9) 1.1px, transparent 1.3px),
+            radial-gradient(circle, rgba(226,206,255,.55) .8px, transparent 1px);
+          background-size: 210px 140px, 130px 190px;
+          background-position: 18px 30px, 70px 12px;
+          opacity: .6;
+          animation: heroCtaTwinkle 6s ease-in-out infinite;
         }
-        .hero-cta-meteor {
-          position: absolute;
-          top: var(--top);
-          left: var(--left);
-          width: var(--len);
-          height: 2px;
-          border-radius: 999px;
-          transform: rotate(-28deg);
-          transform-origin: left center;
-          background: linear-gradient(90deg,
-            rgba(255,255,255,0) 0%,
-            rgba(205,158,255,.25) 28%,
-            rgba(182,102,255,.78) 72%,
-            rgba(255,255,255,.98) 100%);
-          filter: drop-shadow(0 0 8px rgba(179,91,255,.65));
-          opacity: 0;
-          animation: heroCtaMeteorFall var(--dur) linear var(--delay) infinite;
+        .hero-cta-star-field-2 {
+          background-size: 170px 110px, 240px 160px;
+          background-position: 90px 70px, 20px 100px;
+          opacity: .4;
+          animation-duration: 9s;
+          animation-delay: 2.5s;
         }
-        .hero-cta-meteor.gold {
-          background: linear-gradient(90deg,
-            rgba(255,255,255,0) 0%,
-            rgba(246,199,86,.20) 30%,
-            rgba(246,199,86,.78) 75%,
-            #fff7cf 100%);
-          filter: drop-shadow(0 0 8px rgba(246,199,86,.52));
-        }
-        .hero-cta-meteor::after {
-          content: "";
-          position: absolute;
-          right: -2px;
-          top: 50%;
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: #fff;
-          transform: translateY(-50%);
-          box-shadow: 0 0 9px rgba(255,255,255,.95);
-        }
+
         .hero-cta-glow {
           position: absolute;
           right: 30px;
@@ -195,32 +181,14 @@ export function HeroCta() {
           animation: heroCtaSparkDrop var(--dur) linear infinite;
           animation-delay: var(--delay);
         }
-        .hero-cta-satellite {
+        .hero-cta-vignette {
           position: absolute;
-          top: 22%;
-          left: -12%;
-          width: 30px;
-          height: 30px;
-          color: rgba(226,204,255,.85);
-          opacity: .9;
-          animation: heroCtaSatellite 26s linear infinite;
+          inset: 0;
           pointer-events: none;
-          z-index: 3;
+          background:
+            radial-gradient(120% 100% at 50% 50%, transparent 45%, rgba(6,0,16,.55) 100%);
         }
-        .hero-cta-satellite-2 {
-          top: 66%;
-          width: 22px;
-          height: 22px;
-          opacity: .55;
-          animation-duration: 38s;
-          animation-delay: 9s;
-        }
-        @keyframes heroCtaSatellite {
-          0% { transform: translate3d(0,0,0) rotate(-8deg); opacity: 0; }
-          6% { opacity: .9; }
-          92% { opacity: .9; }
-          100% { transform: translate3d(120vw,-40px,0) rotate(12deg); opacity: 0; }
-        }
+
         .hero-cta-btn-shine {
           position: absolute;
           top: -50%;
@@ -231,11 +199,17 @@ export function HeroCta() {
           transform: rotate(18deg);
           animation: heroCtaBtnShine 6.5s ease-in-out infinite;
         }
-        @keyframes heroCtaMeteorFall {
-          0% { opacity: 0; transform: translate3d(0,0,0) rotate(-28deg) scaleX(.7); }
-          8% { opacity: 1; }
-          45% { opacity: 1; }
-          100% { opacity: 0; transform: translate3d(340px,170px,0) rotate(-28deg) scaleX(1.08); }
+        @keyframes heroCtaNebula {
+          0%, 100% { transform: translate3d(-2%, 0, 0) scale(1.05); opacity: .85; }
+          50% { transform: translate3d(2%, -1.5%, 0) scale(1.12); opacity: 1; }
+        }
+        @keyframes heroCtaDust {
+          from { background-position: 0 0, 0 0; }
+          to { background-position: -600px 0, -300px 40px; }
+        }
+        @keyframes heroCtaTwinkle {
+          0%, 100% { opacity: .35; }
+          50% { opacity: .85; }
         }
         @keyframes heroCtaRocketFloat {
           0%, 100% { transform: translateY(5px); }
@@ -278,37 +252,23 @@ export function HeroCta() {
           }
         }
         @media (prefers-reduced-motion: reduce) {
-          .hero-cta-meteor, .hero-cta-rocket, .hero-cta-satellite, .hero-cta-flame-outer, .hero-cta-flame-mid,
+          .hero-cta-rocket, .hero-cta-nebula, .hero-cta-dust, .hero-cta-star-field, .hero-cta-flame-outer, .hero-cta-flame-mid,
           .hero-cta-flame-core, .hero-cta-flame-glow, .hero-cta-spark, .hero-cta-btn-shine {
             animation: none !important;
           }
         }
       `}</style>
 
-      {/* Fundo estrelado */}
+      {/* Nebulosa e poeira estelar */}
+      <span aria-hidden="true" className="hero-cta-nebula" />
+      <span aria-hidden="true" className="hero-cta-dust" />
       <span aria-hidden="true" className="hero-cta-star-field" />
-
-      {/* Meteoros */}
-      <span aria-hidden="true" className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
-        {METEORS.map((m, i) => (
-          <span
-            key={i}
-            className={`hero-cta-meteor ${m.gold ? "gold" : ""}`}
-            style={{
-              ["--top" as string]: m.top,
-              ["--left" as string]: m.left,
-              ["--len" as string]: `${m.len}px`,
-              ["--dur" as string]: `${m.dur}s`,
-              ["--delay" as string]: `${m.delay}s`,
-            }}
-          />
-        ))}
-      </span>
+      <span aria-hidden="true" className="hero-cta-star-field hero-cta-star-field-2" />
+      <span aria-hidden="true" className="hero-cta-vignette" />
 
       {/* Brilho ambiente atrás do botão */}
       <span aria-hidden="true" className="hero-cta-glow" />
-      <Satellite className="hero-cta-satellite" aria-hidden="true" />
-      <Satellite className="hero-cta-satellite hero-cta-satellite-2" aria-hidden="true" />
+
 
       {/* Conteúdo */}
       <div
