@@ -378,9 +378,9 @@ export function HeroCta() {
             <div className="pointer-events-none absolute left-1/2 top-[78%] w-10 -translate-x-1/2">
               <span className="hero-cta-flame-glow absolute left-1/2 top-px h-[58px] w-[54px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(78,178,255,.32),transparent_68%)] blur-[5px]" />
               <span
-                className="hero-cta-flame-outer absolute left-1/2 h-[58px] w-[30px] -translate-x-1/2"
+                className="hero-cta-flame-outer absolute left-1/2 h-[66px] w-[26px] -translate-x-1/2"
                 style={{
-                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
                   background:
                     "linear-gradient(180deg,#fff 0 7%,#d9f5ff 10%,#7ed8ff 27%,#168bff 53%,#0545c8 73%,rgba(5,69,200,0) 100%)",
@@ -388,9 +388,9 @@ export function HeroCta() {
                 }}
               />
               <span
-                className="hero-cta-flame-mid absolute left-1/2 h-11 w-[19px] -translate-x-1/2"
+                className="hero-cta-flame-mid absolute left-1/2 h-[50px] w-[16px] -translate-x-1/2"
                 style={{
-                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
                   background:
                     "linear-gradient(180deg,#fff 0 14%,#dff7ff 25%,#8fddff 47%,#278fff 72%,rgba(39,143,255,0) 100%)",
@@ -399,7 +399,7 @@ export function HeroCta() {
               <span
                 className="hero-cta-flame-core absolute left-1/2 h-[30px] w-2 -translate-x-1/2"
                 style={{
-                  borderRadius: "50% 50% 72% 72% / 18% 18% 82% 82%",
+                  borderRadius: "50% 50% 46% 46% / 14% 14% 86% 86%",
                   mixBlendMode: "screen",
                   background:
                     "linear-gradient(180deg,#fff 0 46%,#c8f5ff 59%,#8ee3ff 73%,rgba(142,227,255,0) 100%)",
