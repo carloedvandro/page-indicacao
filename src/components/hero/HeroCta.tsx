@@ -314,7 +314,6 @@ export function HeroCta() {
                 {/* Corpo: volume 3D com luz à esquerda e sombra profunda à direita */}
                 <linearGradient id="ctaBodyGrad" x1="24" y1="60" x2="96" y2="60" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stopColor="#5d16a6" />
-                  <stop offset=".16" stopColor="#a濃" stopOpacity="0" />
                   <stop offset=".18" stopColor="#b06bfa" />
                   <stop offset=".38" stopColor="#c894ff" />
                   <stop offset=".62" stopColor="#8b2fe0" />
@@ -421,6 +420,7 @@ export function HeroCta() {
                 />
               ))}
             </div>
+          </div>
           </div>
         </div>
 
