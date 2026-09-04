@@ -208,8 +208,8 @@ export function HeroCta() {
           100% { opacity: 0; transform: translate3d(340px,170px,0) rotate(-28deg) scaleX(1.08); }
         }
         @keyframes heroCtaRocketFloat {
-          0%, 100% { transform: translateX(-50%) translateY(6px) rotate(-1.2deg); }
-          50% { transform: translateX(-50%) translateY(-11px) rotate(1.2deg); }
+          0%, 100% { transform: translateY(6px) rotate(-1.2deg); }
+          50% { transform: translateY(-11px) rotate(1.2deg); }
         }
         @keyframes heroCtaFlameA {
           from { transform: translateX(-50%) scaleX(.86) scaleY(.90); }
