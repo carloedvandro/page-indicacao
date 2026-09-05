@@ -39,9 +39,9 @@ export function Depoimentos() {
   };
 
   return (
-    <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
+    <section className="waves-bg px-3 pb-6 pt-0 sm:px-6 lg:pb-10 lg:pt-2">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="relative flex flex-col items-center gap-3 lg:text-center">
+        <div className="relative flex flex-col items-center gap-2 lg:text-center">
           <p className="eyebrow-pill">
             <Star className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">
@@ -50,7 +50,7 @@ export function Depoimentos() {
           </p>
         </div>
 
-        <div className="mt-5 text-center">
+        <div className="mt-3 text-center">
           <h2 className="text-[2rem] font-extrabold leading-[1.08] text-ink sm:text-5xl">
             Veja quem já começou a construir{" "}
             <span className="text-primary">sua carteira.</span>
