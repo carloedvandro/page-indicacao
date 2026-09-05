@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight, Play, Star, ShieldCheck } from "lucide-react";
 
+import { CtaButton } from "@/components/ui/CtaButton";
 import lucas from "@/assets/depoimento-lucas.jpg";
 import juliana from "@/assets/depoimento-juliana.jpg";
 import rafael from "@/assets/depoimento-rafael.jpg";
@@ -41,13 +42,14 @@ export function Depoimentos() {
   return (
     <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="relative flex flex-col items-center gap-6 lg:block lg:text-center">
+        <div className="relative flex flex-col items-center gap-5 lg:block lg:text-center">
           <p className="eyebrow-pill">
             <Star className="size-4 text-primary" aria-hidden="true" />
             <span className="text-primary">
               RESULTADOS REAIS. PESSOAS REAIS.
             </span>
           </p>
+          <CtaButton className="max-w-[22rem]" />
         </div>
 
         <div className="mt-8 text-center">
