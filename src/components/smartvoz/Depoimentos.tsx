@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight, Play, Star, ShieldCheck } from "lucide-react";
 
-import { CtaButton } from "@/components/ui/CtaButton";
 import lucas from "@/assets/depoimento-lucas.jpg";
 import juliana from "@/assets/depoimento-juliana.jpg";
 import rafael from "@/assets/depoimento-rafael.jpg";
