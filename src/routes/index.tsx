@@ -6,6 +6,7 @@ import { Depoimentos } from "@/components/smartvoz/Depoimentos";
 import { ComoGanha } from "@/components/smartvoz/ComoGanha";
 import { Multiplicacao } from "@/components/smartvoz/Multiplicacao";
 import { Planos } from "@/components/smartvoz/Planos";
+import { HeroCta } from "@/components/hero/HeroCta";
 import { Faq } from "@/components/smartvoz/Faq";
 
 const titulo = "SmartVoz | O Poder da Recorrência e da Multiplicação";
@@ -34,6 +35,9 @@ function PaginaOficial() {
       <ComoGanha />
       <Multiplicacao />
       <Planos />
+      <section className="waves-bg px-4 pb-2 pt-2 sm:px-5 sm:pb-3 sm:pt-4 lg:px-8 lg:pb-4 lg:pt-6">
+        <HeroCta />
+      </section>
       <Faq />
     </SiteChrome>
   );
