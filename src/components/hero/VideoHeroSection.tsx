@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { VideoPlayer } from "./VideoPlayer";
 
 /**
@@ -7,10 +8,10 @@ import { VideoPlayer } from "./VideoPlayer";
  * Seção FIXA — não é carrossel. Sem setas, bolinhas, indicadores ou autoplay
  * de slides.
  *
- * Desktop: duas colunas (texto à esquerda, vídeo à direita, botão abaixo do
- * texto).
+ * Desktop: duas colunas (texto à esquerda, vídeo à direita, CTA abaixo do
+ * vídeo).
  * Mobile: uma coluna na ordem texto superior → título → pergunta → vídeo →
- * botão centralizado.
+ * botão "QUERO COMEÇAR AGORA" centralizado abaixo do vídeo.
  */
 export function VideoHeroSection() {
   const [tocando, setTocando] = useState(false);
@@ -18,6 +19,10 @@ export function VideoHeroSection() {
   const tocarVideo = () => {
     setTocando(true);
     document.getElementById("video")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const irParaPlanos = () => {
+    document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -57,9 +62,19 @@ export function VideoHeroSection() {
             </p>
           </div>
 
-          {/* Coluna direita — vídeo */}
+          {/* Coluna direita — vídeo + CTA logo abaixo */}
           <div className="rise-in order-2 mt-8 min-w-0 w-full self-center lg:mt-0 lg:self-start">
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
+
+            <button
+              type="button"
+              onClick={irParaPlanos}
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-6 py-4 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:text-base"
+              aria-label="Quero começar agora"
+            >
+              QUERO COMEÇAR AGORA
+              <ArrowRight className="size-5" aria-hidden="true" />
+            </button>
           </div>
 
         </div>
