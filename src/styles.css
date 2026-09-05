@@ -288,3 +288,20 @@
 @utility hero-text-offset {
   padding-top: max(64px, calc(287px - 13.75vw));
 }
+
+/* Botão CTA principal com brilho */
+@utility btn-cta-shine {
+  position: absolute;
+  top: -50%;
+  left: -34%;
+  width: 24%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.68), transparent);
+  transform: rotate(18deg);
+  animation: btnCtaShine 6.5s ease-in-out infinite;
+}
+
+@keyframes btnCtaShine {
+  0%, 55% { left: -34%; }
+  85%, 100% { left: 124%; }
+}
