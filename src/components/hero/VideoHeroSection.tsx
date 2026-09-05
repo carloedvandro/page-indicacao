@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { VideoPlayer } from "./VideoPlayer";
-import { HeroCta } from "./HeroCta";
 
 /**
  * Seção principal (Hero) da página SmartVoz.
@@ -65,8 +64,6 @@ export function VideoHeroSection() {
 
         </div>
       </div>
-
-      <HeroCta />
     </section>
   );
 }
