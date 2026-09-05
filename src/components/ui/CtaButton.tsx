@@ -39,7 +39,7 @@ export function CtaButton({
   };
 
   const baseClasses = cn(
-    "relative isolate flex w-full items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full px-6 py-4 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:gap-3 sm:text-base",
+    "relative isolate flex w-full items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-2xl px-6 py-4 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:gap-3 sm:text-base",
     className
   );
 

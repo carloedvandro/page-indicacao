@@ -439,7 +439,7 @@ export function HeroCta() {
             onMouseLeave={stop}
             onFocus={start}
             onBlur={stop}
-            className="relative isolate flex h-[52px] items-center justify-center gap-3 overflow-hidden whitespace-nowrap rounded-full px-6 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:h-[56px] sm:text-base"
+            className="relative isolate flex h-[52px] items-center justify-center gap-3 overflow-hidden whitespace-nowrap rounded-2xl px-6 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:h-[56px] sm:text-base"
             style={{
               backgroundImage: "linear-gradient(180deg,#b954ff,#8e24e6 50%,#7214c9 100%)",
               border: "1px solid rgba(255,255,255,.28)",
