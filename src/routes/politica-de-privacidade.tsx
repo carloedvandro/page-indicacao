@@ -26,7 +26,7 @@ function PoliticaPrivacidade() {
       <LegalDocumentLayout documento={privacidade}>
         <a
           href={`mailto:${smartvoz.email}`}
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-2xl bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
         >
           <Mail className="size-4" aria-hidden="true" />
           ENTRAR EM CONTATO

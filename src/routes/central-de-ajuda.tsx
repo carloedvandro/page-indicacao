@@ -65,7 +65,7 @@ function CentralDeAjuda() {
           </h2>
           <Link
             to="/atendimento"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-2xl bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
           >
             <MessageCircle className="size-4" aria-hidden="true" />
             FALAR COM O ATENDIMENTO

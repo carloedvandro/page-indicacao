@@ -158,7 +158,7 @@ function SegundaViaFatura() {
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <button
             type="button"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-6 py-3 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
           >
             VISUALIZAR MINHA FATURA
             <ArrowRight className="size-4" aria-hidden="true" />
@@ -239,7 +239,7 @@ function SegundaViaFatura() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 font-display text-sm font-bold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-primary px-5 py-2.5 font-display text-sm font-bold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
               <QrCode className="size-4" aria-hidden="true" />
               PAGAR COM PIX
@@ -382,7 +382,7 @@ function SegundaViaFatura() {
             </div>
             <button
               type="button"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+              className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-gradient-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
               PAGAR FATURA
             </button>
