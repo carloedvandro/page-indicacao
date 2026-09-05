@@ -22,7 +22,7 @@ export function VideoHeroSection() {
   };
 
   const irParaPlanos = () => {
-    document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("escolher-plano")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -66,14 +66,37 @@ export function VideoHeroSection() {
           <div className="rise-in order-2 mt-8 min-w-0 w-full self-center lg:mt-0 lg:self-start">
             <VideoPlayer tocando={tocando} onPlay={() => setTocando(true)} />
 
+            <style>{`
+              @keyframes heroVideoBtnShine {
+                0%, 55% { left: -34%; }
+                85%, 100% { left: 124%; }
+              }
+              .hero-video-btn-shine {
+                position: absolute;
+                top: -50%;
+                left: -34%;
+                width: 24%;
+                height: 200%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,.68), transparent);
+                transform: rotate(18deg);
+                animation: heroVideoBtnShine 6.5s ease-in-out infinite;
+              }
+            `}</style>
             <button
               type="button"
               onClick={irParaPlanos}
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-6 py-4 font-display text-sm font-extrabold tracking-wide text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 sm:gap-3 sm:text-base"
+              className="relative isolate mt-5 flex w-full items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full px-6 py-4 font-display text-sm font-extrabold tracking-wide text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 sm:gap-3 sm:text-base"
+              style={{
+                backgroundImage: "linear-gradient(180deg,#b954ff,#8e24e6 50%,#7214c9 100%)",
+                border: "1px solid rgba(255,255,255,.28)",
+                boxShadow:
+                  "0 12px 28px rgba(119,22,210,.40), 0 0 24px rgba(179,68,255,.24), inset 0 2px 0 rgba(255,255,255,.24)",
+              }}
               aria-label="Quero começar agora"
             >
-              QUERO COMEÇAR AGORA
-              <ArrowRight className="size-5" aria-hidden="true" />
+              <span className="hero-video-btn-shine" aria-hidden="true" />
+              <span className="relative z-10">QUERO COMEÇAR AGORA</span>
+              <ArrowRight className="relative z-10 size-5" aria-hidden="true" />
             </button>
           </div>
 
