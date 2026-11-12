@@ -2,14 +2,14 @@ import { Star, ShieldCheck } from "lucide-react";
 import etapa1Art from "@/assets/etapa-1.png.asset.json";
 import etapa2Art from "@/assets/etapa-2.png.asset.json";
 import headingArt from "@/assets/multiplication-heading.jpg.asset.json";
-import peopleArt from "@/assets/multiplication-people.jpg.asset.json";
-import trophyArt from "@/assets/multiplication-trophy.jpg.asset.json";
+import peopleArt from "@/assets/multiplication-people.png.asset.json";
+import trophyArt from "@/assets/multiplication-trophy.png.asset.json";
 import { commissionLevels, commissionTotals, formatBRL, formatPeople } from "@/lib/commissions";
 
 export function Multiplicacao() {
   return (
     <section className="waves-bg px-3 pb-6 pt-2 sm:px-6 lg:pb-10 lg:pt-4">
-      <div className="mx-auto max-w-[1120px]">
+      <div className="mx-auto max-w-[1280px]">
         <div className="text-center">
           <p className="eyebrow-pill">
             <Star className="size-4 text-primary" aria-hidden="true" />
@@ -36,7 +36,7 @@ export function Multiplicacao() {
         {/* Etapas 1 e 2 à esquerda; painel das etapas 3 a 8 à direita. A altura do painel
             manda: as artes da esquerda se ajustam a ela, então cards mais baixos
             não deixam vão embaixo. */}
-        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,40fr)_minmax(0,60fr)] lg:gap-6">
+        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)] lg:gap-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1 lg:content-start lg:gap-6">
             <article className="min-h-0">
               <img
@@ -66,7 +66,7 @@ export function Multiplicacao() {
             <ol className="mt-3 flex flex-col gap-2 lg:flex-1 lg:gap-2.5">
               {commissionLevels.slice(2).map((row) => (
                 <li key={row.level} className="multiplication-row grid grid-cols-[2.75rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[4.5rem_minmax(0,1fr)_minmax(0,40%)] sm:gap-4 sm:px-4 lg:flex-1">
-                  <img src={peopleArt.url} alt="" className="mx-auto w-10 mix-blend-screen sm:w-14" />
+                  <img src={peopleArt.url} alt="" className="mx-auto w-10 sm:w-14" />
                   <div className="min-w-0 border-x border-gold px-2 sm:px-4">
                     <p className="font-display multiplication-level text-[0.75rem] font-extrabold tracking-wide sm:text-lg">NÍVEL {row.level}</p>
                     <div className="mt-0.5 flex flex-col items-start gap-1">
@@ -81,7 +81,7 @@ export function Multiplicacao() {
                 </li>
               ))}
               <li className="multiplication-row grid grid-cols-[2.75rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[4.5rem_minmax(0,1fr)_minmax(0,40%)] sm:gap-4 sm:px-4 lg:flex-1">
-                <img src={trophyArt.url} alt="" className="mx-auto w-10 mix-blend-screen sm:w-14" />
+                <img src={trophyArt.url} alt="" className="mx-auto w-10 sm:w-14" />
                 <div className="min-w-0 border-x border-gold px-2 text-primary-foreground sm:px-4">
                   <p className="text-xs font-semibold sm:text-sm">Total em 8 níveis:</p>
                   <p className="multiplication-people leading-tight"><strong className="font-display text-base font-extrabold sm:text-2xl">{formatPeople(commissionTotals.people)}</strong> <span className="text-xs sm:text-sm">pessoas</span></p>
