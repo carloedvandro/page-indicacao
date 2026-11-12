@@ -3,7 +3,7 @@ import etapa1Art from "@/assets/etapa-1.png.asset.json";
 import etapa2Art from "@/assets/etapa-2.png.asset.json";
 import headingArt from "@/assets/multiplication-heading.jpg.asset.json";
 import peopleArt from "@/assets/multiplication-people-hd.png.asset.json";
-import trophyArt from "@/assets/multiplication-trophy-original.png.asset.json";
+import trophyArt from "@/assets/multiplication-trophy-transparent.png";
 import { commissionLevels, commissionTotals, formatBRL, formatPeople } from "@/lib/commissions";
 
 export function Multiplicacao() {
@@ -79,7 +79,7 @@ export function Multiplicacao() {
                 </li>
               ))}
               <li className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
-                <img src={trophyArt.url} alt="" className="mx-auto w-full object-contain mix-blend-screen" />
+                <img src={trophyArt} alt="" className="mx-auto w-full object-contain" />
                 <div className="min-w-0 border-x border-gold px-2 text-primary-foreground sm:px-4">
                   <p className="text-xs font-semibold sm:text-sm">Total em 8 níveis:</p>
                   <p className="multiplication-people shrink-0 whitespace-nowrap leading-tight"><strong className="font-display text-base font-extrabold sm:text-xl">{formatPeople(commissionTotals.people)}</strong> <span className="text-xs sm:text-sm">pessoas</span></p>
