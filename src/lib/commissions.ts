@@ -1,5 +1,5 @@
 /** Projeção ilustrativa: cinco pessoas por participante em cada nível completo. */
-export const commissionLevels = [20, 5, 5, 2, 2, 2, 2, 2].map((commission, index) => {
+export const commissionLevels = [20, 5, 4, 4, 3, 2, 1, 1].map((commission, index) => {
   const level = index + 1;
   const people = 5 ** level;
   return { level, percentage: commission, commission, people, monthly: people * commission };
