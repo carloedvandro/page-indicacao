@@ -13,6 +13,10 @@ export const Route = createFileRoute("/academy/desenvolvimento-pessoal")({
         content:
           "Desenvolva competências que melhoram sua vida profissional e seus relacionamentos.",
       },
+      { property: "og:title", content: "SmartVoz Academy | Desenvolvimento Pessoal" },
+      { property: "og:description", content: "Desenvolva competências que melhoram sua vida profissional e seus relacionamentos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: DesenvolvimentoPessoalRoute,

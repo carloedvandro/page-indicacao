@@ -27,9 +27,9 @@ const perguntas = [
   },
   {
     icone: Users,
-    pergunta: "Como funcionam os 5 níveis?",
+    pergunta: "Como funcionam os 8 níveis?",
     resposta:
-      "Você ganha R$ 50 na adesão e R$ 20 de recorrência dos seus clientes diretos (nível 1) e R$ 5 dos níveis 2 até o 5, conforme regras do programa.",
+      "Você ganha R$ 50 na adesão direta. Na recorrência mensal por pessoa elegível, recebe R$ 20 (20%) no nível 1, R$ 5 (5%) nos níveis 2 e 3, e R$ 2 (2%) em cada nível do 4 ao 8, conforme regras do programa.",
   },
   {
     icone: Calendar,
@@ -59,7 +59,7 @@ const perguntas = [
     icone: HelpCircle,
     pergunta: "Preciso montar equipe para ganhar mais?",
     resposta:
-      "Não. Você pode construir sua carteira no seu ritmo. Mas sua rede pode chegar até 5 níveis.",
+      "Não. Você pode construir sua carteira no seu ritmo. Mas sua rede pode chegar até 8 níveis.",
   },
 ];
 

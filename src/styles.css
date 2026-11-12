@@ -6,7 +6,7 @@
 
 /*
  * SmartVoz — design system
- * Roxo/violeta como cor principal, dourado para o bloco "Etapas 3, 4 e 5"
+ * Roxo/violeta como cor principal, dourado para o bloco "Etapas 3 a 8"
  * e o plano Premium. Todas as cores em oklch.
  */
 
@@ -44,6 +44,7 @@
   --color-brand-red: var(--brand-red);
   --color-brand-orange: var(--brand-orange);
   --color-ink: var(--ink);
+  --color-multiplication-highlight: var(--multiplication-highlight);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -80,6 +81,8 @@
   --gold: oklch(0.8 0.16 84);
   --gold-deep: oklch(0.6 0.14 70);
   --gold-soft: oklch(0.95 0.06 88);
+  --multiplication-highlight: oklch(0.72 0.22 305);
+  --gradient-multiplication: linear-gradient(145deg, oklch(0.1 0.02 300), oklch(0.16 0.08 302) 70%, oklch(0.09 0.02 300));
 
   --brand-red: oklch(0.58 0.22 28);
   --brand-orange: oklch(0.68 0.2 55);
@@ -177,6 +180,10 @@
 
 @utility bg-gradient-gold {
   background-image: var(--gradient-gold);
+}
+
+@utility multiplication-panel {
+  background-image: var(--gradient-multiplication);
 }
 
 @utility shadow-soft {

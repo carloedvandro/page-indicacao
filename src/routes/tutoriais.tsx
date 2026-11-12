@@ -14,6 +14,10 @@ export const Route = createFileRoute("/tutoriais")({
         content:
           "Aprenda a utilizar os principais recursos da plataforma SmartVoz por meio de tutoriais rápidos e objetivos.",
       },
+      { property: "og:title", content: "SmartVoz | Tutoriais e Guias" },
+      { property: "og:description", content: "Aprenda a utilizar os principais recursos da plataforma SmartVoz por meio de tutoriais rápidos e objetivos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Tutoriais,

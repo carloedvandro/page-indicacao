@@ -10,18 +10,14 @@ import {
   Handshake,
   MonitorSmartphone,
 } from "lucide-react";
+import { commissionLevels, formatBRL } from "@/lib/commissions";
 
-const niveis = [
-  {
-    nivel: "NÍVEL 1",
-    descricao: "Suas indicações diretas",
-    valor: "R$ 50,00\n+ R$ 20,00/mês",
-  },
-  { nivel: "NÍVEL 2", descricao: "Rede do 2º nível", valor: "R$ 5,00" },
-  { nivel: "NÍVEL 3", descricao: "Rede do 3º nível", valor: "R$ 5,00" },
-  { nivel: "NÍVEL 4", descricao: "Rede do 4º nível", valor: "R$ 5,00" },
-  { nivel: "NÍVEL 5", descricao: "Rede do 5º nível", valor: "R$ 5,00" },
-];
+const niveis = commissionLevels.map((row) => ({
+  nivel: `NÍVEL ${row.level}`,
+  descricao: row.level === 1 ? "Suas indicações diretas" : `Rede do ${row.level}º nível`,
+  percentual: row.percentage,
+  valor: row.level === 1 ? "R$ 50,00 na adesão\n+ R$ 20,00/mês" : `${formatBRL(row.commission)}/mês`,
+}));
 
 export function ComoGanha() {
   return (
@@ -124,7 +120,7 @@ export function ComoGanha() {
           <article className="surface-card p-5 sm:p-6">
             <p className="text-center font-display text-sm font-bold tracking-[0.06em] text-ink sm:text-base">
               SUA REDE PODE CHEGAR{" "}
-              <span className="text-primary">ATÉ O 5º NÍVEL</span>
+              <span className="text-primary">ATÉ O 8º NÍVEL</span>
             </p>
 
             <div className="mt-5 flex items-center justify-center gap-3">
@@ -159,6 +155,7 @@ export function ComoGanha() {
                     />
                     <span className="min-w-0 text-[0.82rem] leading-tight text-muted-foreground">
                       {n.descricao}
+                      <span className="mt-1 block font-bold text-primary">{n.percentual}% de recorrência</span>
                     </span>
                     <span className="whitespace-pre-line text-right font-display text-[0.8rem] font-extrabold leading-tight tabular-nums text-primary">
                       {n.valor}

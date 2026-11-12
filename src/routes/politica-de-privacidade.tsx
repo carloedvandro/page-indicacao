@@ -15,6 +15,10 @@ export const Route = createFileRoute("/politica-de-privacidade")({
         content:
           "Política de Privacidade SmartVoz: privacidade, transparência e proteção das suas informações.",
       },
+      { property: "og:title", content: "SmartVoz | Política de Privacidade" },
+      { property: "og:description", content: "Política de Privacidade SmartVoz: privacidade, transparência e proteção das suas informações." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PoliticaPrivacidade,

@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep recurring commission rates and five-by-five projections in `src/lib/commissions.ts`, shared by the earnings and multiplication sections, so displayed levels and totals cannot diverge.

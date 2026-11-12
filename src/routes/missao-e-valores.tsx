@@ -14,6 +14,10 @@ export const Route = createFileRoute("/missao-e-valores")({
         content:
           "Missão, visão e valores da SmartVoz: transparência, confiança, tecnologia, responsabilidade, relacionamento e evolução.",
       },
+      { property: "og:title", content: "SmartVoz | Missão e Valores" },
+      { property: "og:description", content: "Missão, visão e valores da SmartVoz: transparência, confiança, tecnologia, responsabilidade, relacionamento e evolução." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: MissaoValores,

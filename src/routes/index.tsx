@@ -11,7 +11,7 @@ import { Faq } from "@/components/smartvoz/Faq";
 
 const titulo = "SmartVoz | O Poder da Recorrência e da Multiplicação";
 const descricao =
-  "Indique, construa sua carteira e receba comissões todos os meses: R$ 50 na adesão, R$ 20/mês de recorrência e rede de até 5 níveis.";
+  "Indique, construa sua carteira e receba comissões elegíveis: R$ 50 na adesão e recorrência em até 8 níveis, com percentuais de 20%, 5% e 2%.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

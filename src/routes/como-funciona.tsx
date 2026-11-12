@@ -13,6 +13,10 @@ export const Route = createFileRoute("/como-funciona")({
         content:
           "Entenda como funciona a SmartVoz: do cadastro ao acompanhamento das suas indicações e benefícios.",
       },
+      { property: "og:title", content: "SmartVoz | Como Funciona" },
+      { property: "og:description", content: "Entenda como funciona a SmartVoz: do cadastro ao acompanhamento das suas indicações e benefícios." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ComoFunciona,

@@ -13,6 +13,10 @@ export const Route = createFileRoute("/acompanhamento")({
         content:
           "Acesse sua conta para consultar solicitações, indicações, movimentações e demais informações.",
       },
+      { property: "og:title", content: "SmartVoz | Acompanhamento" },
+      { property: "og:description", content: "Acesse sua conta para consultar solicitações, indicações, movimentações e demais informações." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Acompanhamento,

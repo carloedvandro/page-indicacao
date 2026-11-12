@@ -14,6 +14,10 @@ export const Route = createFileRoute("/quem-somos")({
         content:
           "Conheça a SmartVoz: uma empresa brasileira que conecta pessoas, tecnologia e oportunidades.",
       },
+      { property: "og:title", content: "SmartVoz | Quem Somos" },
+      { property: "og:description", content: "Conheça a SmartVoz: uma empresa brasileira que conecta pessoas, tecnologia e oportunidades." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: QuemSomos,

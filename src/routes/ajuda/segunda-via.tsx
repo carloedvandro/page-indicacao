@@ -32,6 +32,10 @@ export const Route = createFileRoute("/ajuda/segunda-via")({
         content:
           "Consulte sua 2ª via de fatura SmartVoz de forma rápida, simples e segura pelo Escritório Virtual.",
       },
+      { property: "og:title", content: "SmartVoz | 2ª via de fatura" },
+      { property: "og:description", content: "Consulte sua 2ª via de fatura SmartVoz de forma rápida, simples e segura pelo Escritório Virtual." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: SegundaViaFatura,

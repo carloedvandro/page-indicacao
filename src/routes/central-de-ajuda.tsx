@@ -18,6 +18,10 @@ export const Route = createFileRoute("/central-de-ajuda")({
         content:
           "Central de Ajuda SmartVoz: encontre artigos sobre conta, cadastro, contratação, pagamentos, indicações, rede, comissões e mais.",
       },
+      { property: "og:title", content: "SmartVoz | Central de Ajuda" },
+      { property: "og:description", content: "Central de Ajuda SmartVoz: encontre artigos sobre conta, cadastro, contratação, pagamentos, indicações, rede, comissões e mais." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CentralDeAjuda,

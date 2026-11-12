@@ -13,6 +13,10 @@ export const Route = createFileRoute("/regulamento-programa")({
         content:
           "Regulamento do Programa de Indicação SmartVoz: critérios de elegibilidade, indicações, formação da rede, benefícios e comissões.",
       },
+      { property: "og:title", content: "SmartVoz | Regulamento do Programa" },
+      { property: "og:description", content: "Regulamento do Programa de Indicação SmartVoz: critérios de elegibilidade, indicações, formação da rede, benefícios e comissões." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: RegulamentoPrograma,

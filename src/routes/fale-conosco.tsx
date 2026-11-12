@@ -28,6 +28,10 @@ export const Route = createFileRoute("/fale-conosco")({
         content:
           "Fale com a equipe SmartVoz sobre cadastro, contratação, pagamentos, indicações e demais assuntos.",
       },
+      { property: "og:title", content: "SmartVoz | Fale Conosco" },
+      { property: "og:description", content: "Fale com a equipe SmartVoz sobre cadastro, contratação, pagamentos, indicações e demais assuntos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: FaleConosco,

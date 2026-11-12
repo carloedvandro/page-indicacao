@@ -13,6 +13,10 @@ export const Route = createFileRoute("/academy/marketing-digital")({
         content:
           "Aprenda a construir presença, posicionamento e relacionamento no ambiente digital.",
       },
+      { property: "og:title", content: "SmartVoz Academy | Marketing Digital" },
+      { property: "og:description", content: "Aprenda a construir presença, posicionamento e relacionamento no ambiente digital." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: MarketingDigitalRoute,

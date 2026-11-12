@@ -13,6 +13,10 @@ export const Route = createFileRoute("/perguntas-frequentes")({
         content:
           "Encontre rapidamente respostas sobre a SmartVoz: conta, cadastro, indicações, comissões e suporte.",
       },
+      { property: "og:title", content: "SmartVoz | Perguntas Frequentes" },
+      { property: "og:description", content: "Encontre rapidamente respostas sobre a SmartVoz: conta, cadastro, indicações, comissões e suporte." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PerguntasFrequentes,
