@@ -1,6 +1,9 @@
-import { Star, ShieldCheck, Trophy } from "lucide-react";
+import { Star, ShieldCheck } from "lucide-react";
 import etapa1Art from "@/assets/etapa-1.png.asset.json";
 import etapa2Art from "@/assets/etapa-2.png.asset.json";
+import headingArt from "@/assets/multiplication-heading.jpg.asset.json";
+import peopleArt from "@/assets/multiplication-people.jpg.asset.json";
+import trophyArt from "@/assets/multiplication-trophy.jpg.asset.json";
 import { commissionLevels, commissionTotals, formatBRL, formatPeople } from "@/lib/commissions";
 
 
@@ -57,41 +60,40 @@ export function Multiplicacao() {
           </article>
 
 
-          {/* Dados vivos preservam o estilo roxo e dourado da terceira arte. */}
-          <article aria-label="Etapas 3 a 8" className="multiplication-panel flex h-full min-w-0 flex-col rounded-[2rem] px-4 py-5 shadow-card sm:px-5">
+          {/* Arte oficial restaurada, com seis linhas de dados atualizados. */}
+          <article aria-label="Etapas 3 a 8" className="multiplication-panel flex min-w-0 flex-col rounded-[2rem] px-4 py-5 shadow-card sm:px-5">
             <div className="text-center">
-              <span className="rounded-full border border-gold/70 px-4 py-1 font-display text-xs font-bold text-primary-foreground">ETAPAS 3 A 8</span>
-              <h3 className="mt-3 font-display text-2xl font-extrabold uppercase leading-tight sm:text-3xl">
-                <span className="text-gradient-gold">A MULTIPLICAÇÃO</span><br />
-                <span className="text-primary-foreground">NÃO </span><span className="text-multiplication-highlight">PARA!</span>
-              </h3>
-              <p className="mt-2 text-xs text-primary-foreground">Veja o poder nos próximos níveis:</p>
+              <span className="multiplication-label inline-block rounded-full border border-gold px-4 py-1 font-display text-sm font-bold text-primary-foreground">ETAPAS 3 A 8</span>
+              <h3 className="mt-3"><img src={headingArt.url} alt="A MULTIPLICAÇÃO NÃO PARA!" className="w-full mix-blend-screen" /></h3>
+              <p className="mt-1 text-sm font-semibold text-primary-foreground">Veja o poder nos <span className="text-multiplication-highlight">próximos níveis:</span></p>
             </div>
-            <ol className="mt-4 flex flex-1 flex-col justify-center divide-y divide-gold/30">
+            <ol className="mt-3 space-y-2">
               {commissionLevels.slice(2).map((row) => (
-                <li key={row.level} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 py-2.5">
-                  <div className="min-w-0">
-                    <p className="font-display text-xs font-bold text-multiplication-highlight">NÍVEL {row.level} <span className="ml-1 text-gold">· {row.percentage}%</span></p>
-                    <p className="text-primary-foreground"><strong className="font-display text-lg">{formatPeople(row.people)}</strong> <span className="text-xs">pessoas</span></p>
-                    <p className="text-[0.65rem] text-primary-foreground/80">{formatPeople(row.people)} × {formatBRL(row.commission)}</p>
+                <li key={row.level} className="multiplication-row grid grid-cols-[18%_39%_43%] items-center rounded-xl border border-gold py-2">
+                  <img src={peopleArt.url} alt="" className="mx-auto w-[90%] mix-blend-screen" />
+                  <div className="min-w-0 border-x border-gold px-2">
+                    <p className="font-display text-xs font-extrabold text-multiplication-highlight">NÍVEL {row.level} <span className="text-gold">· {row.percentage}%</span></p>
+                    <p className="text-primary-foreground"><strong className="font-display text-xl font-extrabold">{formatPeople(row.people)}</strong><span className="block text-[0.65rem] leading-tight">pessoas</span></p>
+                    <p className="multiplication-formula mt-1 rounded-md border border-primary/60 px-1 py-0.5 text-center text-[0.6rem] font-bold text-primary-foreground">{formatPeople(row.people)} × {formatBRL(row.commission)}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="font-display text-base font-extrabold tabular-nums text-gold sm:text-lg">{formatBRL(row.monthly)}</p>
-                    <p className="text-xs text-primary-foreground">/mês</p>
+                  <div className="min-w-0 px-2 text-right">
+                    <p className="multiplication-amount font-display text-base font-extrabold tabular-nums text-gradient-gold">{formatBRL(row.monthly)}</p>
+                    <p className="text-xs font-semibold text-primary-foreground">/mês</p>
                   </div>
                 </li>
               ))}
             </ol>
-            <div className="mt-3 flex items-center gap-2 border-y border-gold/60 py-3">
-              <Trophy className="size-8 shrink-0 text-gold" aria-hidden="true" />
-              <div className="min-w-0 flex-1 text-primary-foreground">
-                <p className="text-[0.65rem]">Total em 8 níveis:</p>
-                <p className="font-display text-lg font-extrabold">{formatPeople(commissionTotals.people)} <span className="text-xs font-normal">pessoas</span></p>
+            <div className="multiplication-row mt-2 grid grid-cols-[18%_39%_43%] items-center rounded-xl border border-gold py-2">
+              <img src={trophyArt.url} alt="" className="mx-auto w-full mix-blend-screen" />
+              <div className="min-w-0 border-x border-gold px-2 text-primary-foreground">
+                <p className="text-[0.65rem] font-semibold">Total em 8 níveis:</p>
+                <p className="font-display text-xl font-extrabold">{formatPeople(commissionTotals.people)}</p>
+                <p className="text-xs">pessoas</p>
               </div>
-              <p className="text-right font-display text-base font-extrabold tabular-nums text-gold sm:text-lg">{formatBRL(commissionTotals.monthly)}<span className="block text-xs font-normal text-primary-foreground">/mês</span></p>
+              <div className="min-w-0 px-2 text-right"><p className="multiplication-amount font-display text-base font-extrabold tabular-nums text-gradient-gold">{formatBRL(commissionTotals.monthly)}</p><p className="text-xs font-semibold text-primary-foreground">/mês</p></div>
             </div>
-            <p className="mt-3 text-center font-display text-[0.65rem] font-bold text-primary-foreground">RENDA RECORRENTE <span className="text-multiplication-highlight">EM ESCALA</span></p>
-            <p className="mt-2 text-center text-[0.65rem] text-gold">3/3</p>
+            <p className="multiplication-row mt-2 rounded-xl border border-gold px-2 py-3 text-center font-display text-xs font-extrabold text-primary-foreground">RENDA RECORRENTE <span className="text-multiplication-highlight">EM ESCALA</span></p>
+            <div className="mt-2 flex items-center justify-center gap-2" aria-hidden="true"><span className="h-px w-10 bg-gold" /><span className="multiplication-label rounded-full border border-gold px-5 text-sm font-bold text-primary-foreground">3/3</span><span className="h-px w-10 bg-gold" /></div>
           </article>
 
 

@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep recurring commission rates and five-by-five projections in `src/lib/commissions.ts`, shared by the earnings and multiplication sections, so displayed levels and totals cannot diverge.
+- Reuse cropped official artwork assets for the multiplication heading and 3D icons while rendering commission rows as live data, so changes preserve the original visual without stale values baked into images.

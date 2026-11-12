@@ -82,7 +82,10 @@
   --gold-deep: oklch(0.6 0.14 70);
   --gold-soft: oklch(0.95 0.06 88);
   --multiplication-highlight: oklch(0.72 0.22 305);
-  --gradient-multiplication: linear-gradient(145deg, oklch(0.1 0.02 300), oklch(0.16 0.08 302) 70%, oklch(0.09 0.02 300));
+  --gradient-multiplication: linear-gradient(145deg, oklch(0.08 0.015 300) 5%, oklch(0.15 0.09 302) 25%, oklch(0.08 0.015 300) 40%, oklch(0.12 0.06 302) 72%, oklch(0.08 0.015 300) 88%);
+  --gradient-multiplication-row: linear-gradient(145deg, oklch(0.23 0.13 302 / 0.8), oklch(0.08 0.015 300) 35%, oklch(0.08 0.015 300) 80%, oklch(0.18 0.07 302 / 0.7));
+  --shadow-multiplication-row: inset 0 1px 2px oklch(0.98 0.02 90 / 0.6), inset 0 0 12px oklch(0.47 0.24 303 / 0.22);
+  --shadow-multiplication-text: 0 2px 1px oklch(0.3 0.1 75 / 0.8);
 
   --brand-red: oklch(0.58 0.22 28);
   --brand-orange: oklch(0.68 0.2 55);
@@ -184,6 +187,31 @@
 
 @utility multiplication-panel {
   background-image: var(--gradient-multiplication);
+  container-type: inline-size;
+}
+
+@utility multiplication-row {
+  background-image: var(--gradient-multiplication-row);
+  box-shadow: var(--shadow-multiplication-row);
+}
+
+@utility multiplication-label {
+  background-image: var(--gradient-multiplication-row);
+  box-shadow: var(--shadow-multiplication-row);
+}
+
+@utility multiplication-formula {
+  background-image: var(--gradient-primary);
+}
+
+@utility multiplication-amount {
+  filter: drop-shadow(var(--shadow-multiplication-text));
+  overflow-wrap: normal;
+}
+
+@container (max-width: 290px) {
+  .multiplication-amount { font-size: 0.875rem; }
+  .multiplication-row > div { padding-inline: 0.25rem; }
 }
 
 @utility shadow-soft {
