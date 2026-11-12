@@ -35,7 +35,7 @@ export function Multiplicacao() {
 
         {/* Etapas 1 e 2 à esquerda, preenchendo a largura da coluna; o painel das
             etapas 3 a 8 estica as linhas para acompanhar a altura, sem vão embaixo. */}
-        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)] lg:gap-6">
+        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,41fr)_minmax(0,59fr)] lg:gap-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-col lg:gap-5">
             <article className="min-w-0">
               <img
@@ -59,12 +59,12 @@ export function Multiplicacao() {
           <article aria-label="Etapas 3 a 8" className="multiplication-panel flex min-w-0 flex-col rounded-[2rem] px-3 py-4 shadow-card sm:px-6 lg:px-6 lg:py-5">
             <div className="text-center">
               <span className="multiplication-label inline-block rounded-full border border-gold px-5 py-1 font-display text-sm font-bold tracking-wide text-primary-foreground sm:text-base">ETAPAS 3 A 8</span>
-              <h3 className="mx-auto mt-2 w-full max-w-[440px]"><img src={headingArt.url} alt="A MULTIPLICAÇÃO NÃO PARA!" className="w-full mix-blend-screen" /></h3>
-              <p className="mt-1 text-sm font-semibold text-primary-foreground sm:text-lg">Veja o poder nos <span className="multiplication-level">próximos níveis:</span></p>
+              <h3 className="mx-auto mt-2 w-full max-w-[440px] lg:mt-4 lg:max-w-[540px]"><img src={headingArt.url} alt="A MULTIPLICAÇÃO NÃO PARA!" className="w-full mix-blend-screen" /></h3>
+              <p className="mt-1 text-sm font-semibold text-primary-foreground sm:text-lg lg:text-xl">Veja o poder nos <span className="multiplication-level">próximos níveis:</span></p>
             </div>
-            <ol className="mt-3 flex flex-1 flex-col gap-2 lg:gap-3">
+            <ol className="mt-3 flex flex-1 flex-col gap-2 lg:justify-evenly lg:gap-3">
               {commissionLevels.slice(2).map((row) => (
-                <li key={row.level} className="multiplication-row grid flex-1 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+                <li key={row.level} className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                   <img src={peopleArt.url} alt="" className="mx-auto w-9 drop-shadow-lg sm:w-12" />
                   <div className="min-w-0 border-x border-gold px-2 sm:px-4">
                     <p className="font-display multiplication-level text-[0.75rem] font-extrabold leading-tight tracking-wide sm:text-base">NÍVEL {row.level}</p>
@@ -79,7 +79,7 @@ export function Multiplicacao() {
                   </div>
                 </li>
               ))}
-              <li className="multiplication-row grid flex-1 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+              <li className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                 <img src={trophyArt.url} alt="" className="mx-auto w-9 drop-shadow-lg sm:w-12" />
                 <div className="min-w-0 border-x border-gold px-2 text-primary-foreground sm:px-4">
                   <p className="text-xs font-semibold sm:text-sm">Total em 8 níveis:</p>
