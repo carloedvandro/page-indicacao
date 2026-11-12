@@ -33,29 +33,26 @@ export function Multiplicacao() {
           </p>
         </div>
 
-        {/* Etapas 1 e 2 à esquerda; painel das etapas 3 a 8 à direita. A altura do painel
-            manda: as artes da esquerda se ajustam a ela, então cards mais baixos
-            não deixam vão embaixo. */}
+        {/* Etapas 1 e 2 à esquerda, preenchendo a largura da coluna; o painel das
+            etapas 3 a 8 estica as linhas para acompanhar a altura, sem vão embaixo. */}
         <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)] lg:gap-6">
-          <div className="lg:relative">
-          <div className="grid gap-5 sm:grid-cols-2 lg:absolute lg:inset-0 lg:flex lg:flex-col lg:gap-5">
-            <article className="min-h-0 lg:flex lg:flex-1 lg:justify-center">
+          <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-col lg:gap-5">
+            <article className="min-w-0">
               <img
                 src={etapa1Art.url}
                 alt="Etapa 1 — Você começa indicando 5 pessoas. Seu ganho no Nível 1: 5 x R$ 20 = R$ 100,00 por mês de comissão recorrente."
-                className="w-full rounded-[2rem] object-contain drop-shadow-xl lg:h-full lg:w-auto lg:max-w-full"
+                className="w-full rounded-[2rem] object-contain drop-shadow-xl"
                 loading="lazy"
               />
             </article>
-            <article className="min-h-0 lg:flex lg:flex-1 lg:justify-center">
+            <article className="min-w-0">
               <img
                 src={etapa2Art.url}
                 alt="Etapa 2 — Cada uma das 5 indica mais 5. Total de 25 pessoas. Seu ganho no Nível 2: 25 x R$ 5 = R$ 125,00 por mês de comissão recorrente."
-                className="w-full rounded-[2rem] object-contain drop-shadow-xl lg:h-full lg:w-auto lg:max-w-full"
+                className="w-full rounded-[2rem] object-contain drop-shadow-xl"
                 loading="lazy"
               />
             </article>
-          </div>
           </div>
 
           {/* Arte oficial restaurada, com as linhas dos níveis 3 a 8 em dados ao vivo. */}
@@ -65,9 +62,9 @@ export function Multiplicacao() {
               <h3 className="mx-auto mt-2 w-full max-w-[440px]"><img src={headingArt.url} alt="A MULTIPLICAÇÃO NÃO PARA!" className="w-full mix-blend-screen" /></h3>
               <p className="mt-1 text-sm font-semibold text-primary-foreground sm:text-lg">Veja o poder nos <span className="multiplication-level">próximos níveis:</span></p>
             </div>
-            <ol className="mt-3 flex flex-col gap-2 lg:gap-3">
+            <ol className="mt-3 flex flex-1 flex-col gap-2 lg:gap-3">
               {commissionLevels.slice(2).map((row) => (
-                <li key={row.level} className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+                <li key={row.level} className="multiplication-row grid flex-1 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                   <img src={peopleArt.url} alt="" className="mx-auto w-9 drop-shadow-lg sm:w-12" />
                   <div className="min-w-0 border-x border-gold px-2 sm:px-4">
                     <p className="font-display multiplication-level text-[0.75rem] font-extrabold leading-tight tracking-wide sm:text-base">NÍVEL {row.level}</p>
@@ -82,7 +79,7 @@ export function Multiplicacao() {
                   </div>
                 </li>
               ))}
-              <li className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+              <li className="multiplication-row grid flex-1 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                 <img src={trophyArt.url} alt="" className="mx-auto w-9 drop-shadow-lg sm:w-12" />
                 <div className="min-w-0 border-x border-gold px-2 text-primary-foreground sm:px-4">
                   <p className="text-xs font-semibold sm:text-sm">Total em 8 níveis:</p>
