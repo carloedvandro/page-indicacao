@@ -35,7 +35,7 @@ export function Multiplicacao() {
 
         {/* Etapas 1 e 2 à esquerda, preenchendo a largura da coluna; o painel das
             etapas 3 a 8 estica as linhas para acompanhar a altura, sem vão embaixo. */}
-        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,41fr)_minmax(0,59fr)] lg:gap-6">
+        <div className="mx-auto mt-10 grid items-stretch gap-5 lg:max-w-[1040px] lg:grid-cols-[minmax(0,41fr)_minmax(0,59fr)] lg:gap-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-col lg:gap-5">
             <article className="min-w-0">
               <img
