@@ -36,7 +36,7 @@ export function Multiplicacao() {
         {/* Etapas 1 e 2 à esquerda; painel das etapas 3 a 8 à direita. A altura do painel
             manda: as artes da esquerda se ajustam a ela, então cards mais baixos
             não deixam vão embaixo. */}
-        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] lg:gap-6">
+        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[minmax(0,46fr)_minmax(0,54fr)] lg:gap-6">
           <div className="lg:relative">
           <div className="grid gap-5 sm:grid-cols-2 lg:absolute lg:inset-0 lg:flex lg:flex-col lg:gap-5">
             <article className="min-h-0 lg:flex lg:flex-1 lg:justify-center">
