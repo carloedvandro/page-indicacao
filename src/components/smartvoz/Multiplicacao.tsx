@@ -34,7 +34,7 @@ export function Multiplicacao() {
         </div>
 
         {/* Artes à esquerda um pouco mais largas, sem esticar os cards dos níveis. */}
-        <div className="mx-auto mt-10 grid items-stretch gap-5 lg:max-w-[1100px] lg:grid-cols-[minmax(0,43fr)_minmax(0,57fr)] lg:gap-6">
+        <div className="mx-auto mt-10 grid items-stretch gap-5 lg:max-w-[1180px] lg:grid-cols-[minmax(0,43fr)_minmax(0,57fr)] lg:gap-6">
           <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-col lg:gap-5">
             <article className="min-w-0">
               <img
@@ -63,28 +63,28 @@ export function Multiplicacao() {
             </div>
             <ol className="mt-3 flex flex-1 flex-col gap-2 lg:justify-evenly lg:gap-3">
               {commissionLevels.slice(2).map((row) => (
-                <li key={row.level} className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+                <li key={row.level} className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_6.75rem] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[2.75rem_minmax(0,1fr)_8.25rem] xl:grid-cols-[3.5rem_minmax(0,1fr)_10.5rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                   <img src={peopleArt.url} alt="" className="mx-auto w-9 drop-shadow-lg sm:w-12" />
-                  <div className="min-w-0 border-x border-gold px-2 sm:px-4">
+                  <div className="min-w-0 border-x border-gold px-2 sm:px-4 lg:px-3 xl:px-4">
                     <p className="font-display multiplication-level text-[0.75rem] font-extrabold leading-tight tracking-wide sm:text-base">NÍVEL {row.level}</p>
-                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 sm:flex-nowrap sm:gap-2 xl:gap-3">
-                      <p className="multiplication-people shrink-0 whitespace-nowrap leading-tight text-primary-foreground"><strong className="font-display text-base font-extrabold sm:text-xl">{formatPeople(row.people)}</strong> <span className="text-xs sm:text-sm">pessoas</span></p>
-                      <p className="multiplication-formula inline-block shrink-0 whitespace-nowrap rounded-lg border border-multiplication-highlight/50 px-2 py-0.5 text-center text-[0.6rem] font-bold text-primary-foreground sm:text-[0.7rem]">{formatPeople(row.people)} × {formatBRL(row.commission)}</p>
+                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 sm:flex-nowrap sm:gap-2 lg:gap-1.5 xl:gap-3">
+                      <p className="multiplication-people shrink-0 whitespace-nowrap leading-tight text-primary-foreground"><strong className="font-display text-base font-extrabold sm:text-xl lg:text-lg xl:text-xl">{formatPeople(row.people)}</strong> <span className="text-xs sm:text-sm">pessoas</span></p>
+                      <p className="multiplication-formula inline-block shrink-0 whitespace-nowrap rounded-lg border border-multiplication-highlight/50 px-2 py-0.5 lg:px-1.5 xl:px-2 text-center text-[0.6rem] font-bold text-primary-foreground sm:text-[0.7rem]">{formatPeople(row.people)} × {formatBRL(row.commission)}</p>
                     </div>
                   </div>
                   <div className="shrink-0 px-1 text-right sm:px-2">
-                    <p className="multiplication-amount font-display text-sm font-extrabold leading-none tabular-nums text-gradient-gold sm:text-xl lg:text-lg xl:text-[1.4rem]">{formatBRL(row.monthly)}</p>
+                    <p className="multiplication-amount font-display text-sm font-extrabold leading-none tabular-nums text-gradient-gold sm:text-xl lg:text-base xl:text-[1.3rem]">{formatBRL(row.monthly)}</p>
                     <p className="mt-0.5 text-[0.65rem] font-semibold text-primary-foreground sm:text-xs">/mês</p>
                   </div>
                 </li>
               ))}
-              <li className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[3.25rem_minmax(0,1fr)_9rem] xl:grid-cols-[3.75rem_minmax(0,1fr)_12rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
+              <li className="multiplication-row grid grid-cols-[2.5rem_minmax(0,1fr)_6.75rem] items-center gap-2 rounded-2xl border border-gold px-2 py-1.5 sm:grid-cols-[3.75rem_minmax(0,1fr)_10.5rem] lg:grid-cols-[2.75rem_minmax(0,1fr)_8.25rem] xl:grid-cols-[3.5rem_minmax(0,1fr)_10.5rem] sm:gap-3 sm:px-4 sm:py-2 lg:py-3">
                 <img src={trophyArt} alt="" className="mx-auto w-full object-contain" />
                 <div className="min-w-0 border-x border-gold px-2 text-primary-foreground sm:px-4">
                   <p className="text-xs font-semibold sm:text-sm">Total em 8 níveis:</p>
                   <p className="multiplication-people shrink-0 whitespace-nowrap leading-tight"><strong className="font-display text-base font-extrabold sm:text-xl">{formatPeople(commissionTotals.people)}</strong> <span className="text-xs sm:text-sm">pessoas</span></p>
                 </div>
-                <div className="shrink-0 px-1 text-right sm:px-2"><p className="multiplication-amount font-display text-sm font-extrabold leading-none tabular-nums text-gradient-gold sm:text-xl lg:text-lg xl:text-[1.4rem]">{formatBRL(commissionTotals.monthly)}</p><p className="mt-0.5 text-[0.65rem] font-semibold text-primary-foreground sm:text-xs">/mês</p></div>
+                <div className="shrink-0 px-1 text-right sm:px-2"><p className="multiplication-amount font-display text-sm font-extrabold leading-none tabular-nums text-gradient-gold sm:text-xl lg:text-base xl:text-[1.3rem]">{formatBRL(commissionTotals.monthly)}</p><p className="mt-0.5 text-[0.65rem] font-semibold text-primary-foreground sm:text-xs">/mês</p></div>
               </li>
             </ol>
             <p className="multiplication-row mt-2 rounded-xl border border-gold px-2 py-2 text-center font-display text-xs font-extrabold tracking-[0.25em] text-primary-foreground sm:text-base">RENDA RECORRENTE <span className="multiplication-level">EM ESCALA</span></p>
